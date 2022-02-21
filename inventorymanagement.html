@@ -1,0 +1,1467 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <!-- Tell the browser to be responsive to screen width -->
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+    <!-- Favicon icon -->
+    <link rel="icon" type="image/png" sizes="16x16" href="../assets/images/" />
+    <title>OMS - User Management</title>
+    <!-- This Page CSS -->
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="node_modules/datatables.net-bs4/css/dataTables.bootstrap4.css"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="node_modules/datatables.net-bs4/css/responsive.dataTables.min.css"
+    />
+    <!-- Custom CSS -->
+    <link href="dist/css/style.min.css" rel="stylesheet" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>
+    <style>
+      #myTable_wrapper {
+        padding: 0px;
+      }
+    
+
+      ul.nav .nav-item a {
+        text-align: center;
+        width: 200px;
+      }
+      ul.nav .nav-item .nav-link.active {
+        background-color: #fb9678;
+      }
+      .categorysection .card .card-body .tab-content#pills-tabContent {
+        padding: 30px 0 !important;
+      }
+      /*latest styles*/
+.section .card {
+  border-radius: 10px;
+  border: none;
+  position: relative;
+  margin-bottom: 30px;
+  box-shadow: 0 0.46875rem 2.1875rem rgb(90 97 105 / 10%),
+    0 0.9375rem 1.40625rem rgb(90 97 105 / 10%),
+    0 0.25rem 0.53125rem rgb(90 97 105 / 12%),
+    0 0.125rem 0.1875rem rgb(90 97 105 / 10%);
+}
+.section .card .card-statistic-3 {
+  position: relative;
+  color: black;
+  padding: 15px;
+  border-radius: 3px;
+  overflow: hidden;
+}
+.categorysection .formwrap .form-group {
+  align-items: center;
+  display: flex;
+}
+.categorysection .formwrap .form-group label {
+  margin-right: 10px;
+  font-weight: 600;
+  font-size: 14px;
+}
+.categorysection .formwrap .form-group select#worklist {
+  width: 200px !important;
+  appearance: auto;
+}
+.categorysection .table-responsive .myTable_wrapper #myTable tbody tr.odd td i {
+  font-size: 18px;
+}
+.categorysection .table-responsive .myTable_wrapper table tbody tr.odd td span {
+  font-size: 18px !important;
+}
+.categorysection .cart-plus-minus {
+  display: flex;
+  /* width: 80px; */
+  margin-right: 10px;
+  /* padding-top: 10px; */
+  color: white;
+}
+.categorysection .cart-plus-minus label {
+  color: black;
+  display: flex;
+  align-items: center;
+  margin-right: 10px;
+  font-weight: 600;
+}
+.categorysection .cart-plus-minus .qtybutton {
+  background: #007bff none repeat scroll 0 0;
+  cursor: pointer;
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 38px;
+  color: #fff;
+  float: left;
+  font-family: lato;
+  height: 40px;
+  text-align: center;
+  width: 30px;
+}
+.categorysection input.cart-plus-minus-box {
+  color: #fff;
+  float: left;
+  font-family: lato;
+  height: 40px;
+  text-align: center;
+  width: 30px;
+  background-color: #007bff;
+  border: none;
+  outline: none;
+}
+.categorysection .pricewrap input.form-control.price {
+  width: 30%;
+  margin-right: 10px;
+  font-weight: 500;
+}
+.navbar-collapse ul li {
+  display: flex;
+  align-items: center;
+}
+    </style>
+  </head>
+
+  <body class="skin-default-dark fixed-layout">
+    <div id="main-wrapper">
+      <header class="topbar">
+        <nav class="navbar top-navbar navbar-expand-md navbar-dark">
+          <!-- ============================================================== -->
+          <!-- Logo -->
+          <!-- ============================================================== -->
+          <div
+            class="navbar-header"
+            style="text-align: center; padding-left: 0px;"
+          >
+            <a class="navbar-brand" href="#">
+              <!-- Logo icon -->
+              <b>
+                <!--You can put here icon as well // <i class="wi wi-sunset"></i> //-->
+                <!-- Dark Logo icon -->
+                <img
+                  src="dist/images/logo-icon.png"
+                  alt="homepage"
+                  class="dark-logo"
+                />
+                <!-- Light Logo icon -->
+                <img
+                  src="dist/images/logo-light-icon.png"
+                  alt="homepage"
+                  class="light-logo"
+                />
+              </b>
+              <!--End Logo icon -->
+              <!-- Logo text -->
+              <span>
+                <!-- dark Logo text -->
+                <img
+                  src="dist/images/images/logo-text.png"
+                  alt="homepage"
+                  class="dark-logo"
+                />
+                <!-- Light Logo text -->
+                <img
+                  src="dist/images/logo-light-text.png"
+                  class="light-logo"
+                  alt="homepage"
+                />
+              </span>
+            </a>
+          </div>
+          <!-- ============================================================== -->
+          <!-- End Logo -->
+          <!-- ============================================================== -->
+          <div class="navbar-collapse">
+            <!-- ============================================================== -->
+            <!-- toggle and nav items -->
+            <!-- ============================================================== -->
+            <ul class="navbar-nav me-auto">
+              <!-- This is  -->
+              <li class="nav-item">
+                <a
+                  class="nav-link nav-toggler d-block d-md-none waves-effect waves-dark"
+                  href="javascript:void(0)"
+                >
+                  <i class="ti-menu"></i>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a
+                  class="nav-link sidebartoggler d-none d-lg-block d-md-block waves-effect waves-dark"
+                  href="javascript:void(0)"
+                >
+                  <i class="icon-menu"></i>
+                </a>
+              </li>
+              <!-- ============================================================== -->
+              <!-- Search -->
+              <!-- ============================================================== -->
+              <li class="nav-item">
+                <form class="app-search d-none d-md-block d-lg-block">
+                  <input
+                    type="text"
+                    class="form-control"
+                    placeholder="Search & enter"
+                  />
+                </form>
+              </li>
+            </ul>
+            <!-- ============================================================== -->
+            <!-- User profile and search -->
+            <!-- ============================================================== -->
+            <ul class="navbar-nav my-lg-0">
+              <!-- ============================================================== -->
+              <!-- Comment -->
+              <!-- ============================================================== -->
+              <li class="nav-item dropdown">
+                <a
+                  class="nav-link dropdown-toggle waves-effect waves-dark"
+                  href="#"
+                  data-bs-toggle="dropdown"
+                  aria-haspopup="true"
+                  aria-expanded="false"
+                >
+                  <i class="ti-email"></i>
+                  <div class="notify">
+                    <span class="heartbit"></span>
+                    <span class="point"></span>
+                  </div>
+                </a>
+                <div
+                  class="dropdown-menu dropdown-menu-end mailbox animated bounceInDown"
+                >
+                  <ul>
+                    <li>
+                      <div class="drop-title">Notifications</div>
+                    </li>
+                    <li>
+                      <div class="message-center">
+                        <!-- Message -->
+                        <a href="javascript:void(0)">
+                          <div class="btn btn-danger btn-circle text-white">
+                            <i class="ti-calendar"></i>
+                          </div>
+                          <div class="mail-contnet">
+                            <h5>Event today</h5>
+                            <span class="mail-desc">
+                              Just see the my new admin!
+                            </span>
+                            <span class="time">9:30 AM</span>
+                          </div>
+                        </a>
+                        <!-- Message -->
+                        <a href="javascript:void(0)">
+                          <div class="btn btn-success btn-circle text-white">
+                            <i class="ti-calendar"></i>
+                          </div>
+                          <div class="mail-contnet">
+                            <h5>Event today</h5>
+                            <span class="mail-desc">
+                              Just a reminder that you have event
+                            </span>
+                            <span class="time">9:10 AM</span>
+                          </div>
+                        </a>
+                      </div>
+                    </li>
+                    <li>
+                      <a
+                        class="nav-link text-center link"
+                        href="javascript:void(0);"
+                      >
+                        <strong>Check all notifications</strong>
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+              </li>
+              <!-- ============================================================== -->
+              <!-- End Comment -->
+            </ul>
+          </div>
+        </nav>
+      </header>
+      <!-- ============================================================== -->
+      <!-- End Topbar header -->
+      <!-- ============================================================== -->
+      <!-- ============================================================== -->
+      <!-- Left Sidebar - style you can find in sidebar.scss  -->
+      <!-- ============================================================== -->
+      <aside class="left-sidebar">
+        <!-- Sidebar scroll-->
+        <div class="scroll-sidebar">
+          <!-- User Profile-->
+          <div class="user-profile">
+            <div class="user-pro-body">
+              <div>
+                <img
+                  src="dist/images/users/2.jpg"
+                  alt="user-img"
+                  class="img-circle"
+                />
+              </div>
+              <div class="dropdown">
+                <a
+                  href="javascript:void(0)"
+                  class="dropdown-toggle u-dropdown link hide-menu"
+                  data-bs-toggle="dropdown"
+                  role="button"
+                  aria-haspopup="true"
+                  aria-expanded="false"
+                >
+                  Steave Gection
+                  <span class="caret"></span>
+                </a>
+                <div class="dropdown-menu animated flipInY">
+                  <!-- text-->
+                  <a href="javascript:void(0)" class="dropdown-item">
+                    <i class="ti-user"></i>
+                    My Profile
+                  </a>
+                  <!-- text-->
+                  <a href="#" class="dropdown-item">
+                    <i class="mdi mdi-logout-variant"></i>
+                    Logout
+                  </a>
+                  <!-- text-->
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Sidebar navigation-->
+          <nav class="sidebar-nav">
+            <ul id="sidebarnav">
+              <li class="nav-small-cap">--- PERSONAL</li>
+              <li>
+                <a
+                  class="waves-effect waves-dark"
+                  href="javascript:void(0)"
+                  aria-expanded="false"
+                >
+                  <i class="icon-speedometer"></i>
+                  <span class="hide-menu">Dashboard</span>
+                </a>
+              </li>
+              <li>
+                <a
+                  class="waves-effect waves-dark"
+                  href="javascript:void(0)"
+                  aria-expanded="false"
+                >
+                  <i class="ti-layout-grid2"></i>
+                  <span class="hide-menu">User Management</span>
+                </a>
+              </li>
+              <li class="active">
+                <a
+                  class="has-arrow waves-effect waves-dark active"
+                  href="inventorymanagement.html"
+                  aria-expanded="false"
+                >
+                  <i class="ti-email"></i>
+                  <span class="hide-menu">Inventory Management</span>
+                </a>
+                <ul aria-expanded="false" class="collapse in">
+                  <li>
+                    <a href="users.html">Users</a>
+                  </li>
+                  <li>
+                    <a href="permission.html">Permissions</a>
+                  </li>
+                  <li><a href="inventory.html">Inventory</a></li>
+                  <li><a href="addstock.html">Add stock</a></li>
+                  <li><a href="import.html">Import</a></li>
+                  <li><a href="export.html">Export</a></li>
+                </ul>
+              </li>
+              <li>
+                <a
+                  class="has-arrow waves-effect waves-dark"
+                  href="javascript:void(0)"
+                  aria-expanded="false"
+                >
+                  <i class="ti-palette"></i>
+                  <span class="hide-menu">External</span>
+                </a>
+                <ul aria-expanded="false" class="collapse">
+                  <li>
+                    <a href="#">Users</a>
+                  </li>
+                  <li>
+                    <a href="#">Permissions</a>
+                  </li>
+                </ul>
+              </li>
+            </ul>
+          </nav>
+          <!-- End Sidebar navigation -->
+        </div>
+        <!-- End Sidebar scroll-->
+      </aside>
+      <!-- ============================================================== -->
+      <!-- End Left Sidebar - style you can find in sidebar.scss  -->
+      <!-- ============================================================== -->
+      <!-- ============================================================== -->
+      <!-- Page wrapper  -->
+      <!-- ============================================================== -->
+      <div class="page-wrapper">
+        <!-- ============================================================== -->
+        <!-- Container fluid  -->
+        <!-- ============================================================== -->
+        <div class="container-fluid">
+          <!-- ============================================================== -->
+          <!-- Bread crumb and right sidebar toggle -->
+          <!-- ============================================================== -->
+          <div class="row page-titles">
+            <div class="col-md-5 align-self-center">
+              <h4 class="text-themecolor">Inventory Management</h4>
+            </div>
+            <div class="col-md-7 align-self-center text-end">
+              <div class="d-flex justify-content-end align-items-center">
+                <ol class="breadcrumb justify-content-end">
+                  <li class="breadcrumb-item">
+                    <a href="javascript:void(0)">Home</a>
+                  </li>
+                  <li class="breadcrumb-item active">Inventory Management</li>
+                </ol>
+              </div>
+            </div>
+          </div>
+          <!-- ============================================================== -->
+          <!-- End Bread crumb and right sidebar toggle -->
+          <!-- ============================================================== -->
+          <!-- ============================================================== -->
+          <!-- Start Page Content -->
+          <!-- ============================================================== -->
+
+          <section class="categorysection">
+            <div class="container">
+              <div class="row">
+                <div
+                  class="modal"
+                  id="exampleModal"
+                  tabindex="-1"
+                  role="dialog"
+                  aria-labelledby="exampleModalLabel1"
+                >
+                  <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <h4 class="modal-title" id="exampleModalLabel1">
+                          Import
+                        </h4>
+                        <button
+                          type="button"
+                          class="btn-close"
+                          data-bs-dismiss="modal"
+                          aria-label="Close"
+                        >
+                          <span aria-hidden="true"></span>
+                        </button>
+                      </div>
+                      <div class="modal-body">
+                        <form>
+                          <div class="row">
+                            <div class="col-md-12 form-group">
+                              <!-- <label for="recipient-name" class="form-label">
+                                <strong>Main Category:</strong>
+                              </label> -->
+                            </div>
+                            <div class="col-md-6 form-group">
+                              <label for="recipient-name" class="form-label">
+                                Main Category:
+                              </label>
+                              <select
+                                class="form-select col-12"
+                                id="inlineFormCustomSelect"
+                              >
+                                <option selected=""></option>
+                                <option value="1">One</option>
+                                <option value="2">Two</option>
+                                <option value="3">Three</option>
+                              </select>
+                            </div>
+                            <div class="col-md-6 form-group">
+                              <label for="recipient-name" class="form-label">
+                                Sub Category:
+                              </label>
+                              <select
+                                class="form-select col-12"
+                                id="inlineFormCustomSelect"
+                              >
+                                <option selected=""></option>
+                                <option value="1">One</option>
+                                <option value="2">Two</option>
+                                <option value="3">Three</option>
+                              </select>
+                            </div>
+                            <div class="col-md-6 form-group">
+                              <label for="recipient-name" class="form-label">
+                                Product:
+                              </label>
+                              <select
+                                class="form-select col-12"
+                                id="inlineFormCustomSelect"
+                              >
+                                <option selected=""></option>
+                                <option value="1">One</option>
+                                <option value="2">Two</option>
+                                <option value="3">Three</option>
+                              </select>
+                            </div>
+                            <div class="col-md-6 form-group">
+                              <label for="recipient-name" class="form-label">
+                                Current Stock:
+                              </label>
+                              <input
+                                type="datetime-local"
+                                class="form-control"
+                              />
+                            </div>
+                            <div class="col-md-6 form-group">
+                              <label for="recipient-name" class="form-label">
+                                New Stock:
+                              </label>
+                              <input
+                                type="datetime-local"
+                                class="form-control"
+                              />
+                            </div>
+                          </div>
+                        </form>
+                      </div>
+                      <div class="modal-footer">
+                        <button
+                          type="button"
+                          class="btn btn-primary text-white"
+                        >
+                          Import
+                        </button>
+                        <button
+                          type="button"
+                          class="btn btn-default"
+                          data-bs-dismiss="modal"
+                        >
+                          Cancel
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col-12">
+                  <div class="card">
+                    <div class="card-body">
+                      <ul
+                        class="nav nav-pills mb-3"
+                        id="pills-tab"
+                        role="tablist"
+                      >
+                        <li class="nav-item">
+                          <a
+                            class="nav-link active"
+                            id="pills-home-tab"
+                            data-toggle="pill"
+                            href="#pills-home"
+                            role="tab"
+                            aria-controls="pills-home"
+                            aria-selected="true"
+                          >
+                            Inventory
+                          </a>
+                        </li>
+                        <li class="nav-item">
+                          <a
+                            class="nav-link"
+                            id="pills-profile-tab"
+                            data-toggle="pill"
+                            href="#pills-profile"
+                            role="tab"
+                            aria-controls="pills-profile"
+                            aria-selected="false"
+                          >
+                            Add Stock
+                          </a>
+                        </li>
+                        <li class="nav-item">
+                          <a
+                            class="nav-link"
+                            id="pills-contact-tab"
+                            data-toggle="pill"
+                            href="#pills-contact"
+                            role="tab"
+                            aria-controls="pills-contact"
+                            aria-selected="false"
+                          >
+                            Import
+                          </a>
+                        </li>
+                        <li class="nav-item">
+                          <a
+                            class="nav-link"
+                            id="pills-export-tab"
+                            data-toggle="pill"
+                            href="#pills-export"
+                            role="tab"
+                            aria-controls="pills-export"
+                            aria-selected="false"
+                          >
+                            Export
+                          </a>
+                        </li>
+                        <li class="nav-item">
+                          <a
+                            class="nav-link"
+                            id="pills-reports-tab"
+                            data-toggle="pill"
+                            href="#pills-reports"
+                            role="tab"
+                            aria-controls="pills-reports"
+                            aria-selected="false"
+                          >
+                            Reports
+                          </a>
+                        </li>
+                      </ul>
+                      <div class="tab-content" id="pills-tabContent">
+                        <div
+                          class="tab-pane fade show active"
+                          id="pills-home"
+                          role="tabpanel"
+                          aria-labelledby="pills-home-tab"
+                        >
+                        <section class="section">
+                            <div class="row">
+                              <div class="col-xl-3 col-lg-3">
+                                <div class="card l-bg-green-dark">
+                                  <div class="card-statistic-3">
+                                    <div class="card-content">
+                                      <h4 class="card-title">Total Products</h4>
+                                      <span>524</span>
+                                      <div
+                                        class="progress mt-1 mb-1"
+                                        data-height="8"
+                                        style="height: 8px;"
+                                      >
+                                        <div
+                                          class="progress-bar l-bg-purple"
+                                          role="progressbar"
+                                          data-width="25%"
+                                          aria-valuenow="25"
+                                          aria-valuemin="0"
+                                          aria-valuemax="100"
+                                          style="width: 25%;"
+                                        ></div>
+                                      </div>
+                                      <p class="mb-0 text-sm">
+                                        <span class="mr-2">
+                                          <i class="fa fa-arrow-up"></i>
+                                          10%
+                                        </span>
+                                        <span class="text-nowrap">Since last month</span>
+                                      </p>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="col-xl-3 col-lg-3">
+                                <div class="card l-bg-cyan-dark">
+                                  <div class="card-statistic-3">
+                                    <div class="card-content">
+                                      <h4 class="card-title">Out of Stock</h4>
+                                      <span>1,258</span>
+                                      <div
+                                        class="progress mt-1 mb-1"
+                                        data-height="8"
+                                        style="height: 8px;"
+                                      >
+                                        <div
+                                          class="progress-bar l-bg-orange"
+                                          role="progressbar"
+                                          data-width="25%"
+                                          aria-valuenow="25"
+                                          aria-valuemin="0"
+                                          aria-valuemax="100"
+                                          style="width: 25%;"
+                                        ></div>
+                                      </div>
+                                      <p class="mb-0 text-sm">
+                                        <span class="mr-2">
+                                          <i class="fa fa-arrow-up"></i>
+                                          10%
+                                        </span>
+                                        <span class="text-nowrap">Since last month</span>
+                                      </p>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="col-xl-3 col-lg-3">
+                                <div class="card l-bg-purple-dark">
+                                  <div class="card-statistic-3">
+                                    <div class="card-content">
+                                      <h4 class="card-title">Low Stock</h4>
+                                      <span>10,225</span>
+                                      <div
+                                        class="progress mt-1 mb-1"
+                                        data-height="8"
+                                        style="height: 8px;"
+                                      >
+                                        <div
+                                          class="progress-bar l-bg-cyan"
+                                          role="progressbar"
+                                          data-width="25%"
+                                          aria-valuenow="25"
+                                          aria-valuemin="0"
+                                          aria-valuemax="100"
+                                          style="width: 25%;"
+                                        ></div>
+                                      </div>
+                                      <p class="mb-0 text-sm">
+                                        <span class="mr-2">
+                                          <i class="fa fa-arrow-up"></i>
+                                          10%
+                                        </span>
+                                        <span class="text-nowrap">Since last month</span>
+                                      </p>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="col-xl-3 col-lg-3">
+                                <div class="card l-bg-orange-dark">
+                                  <div class="card-statistic-3">
+                                    <div class="card-content">
+                                      <h4 class="card-title">Required Products</h4>
+                                      <span>$2,658</span>
+                                      <div
+                                        class="progress mt-1 mb-1"
+                                        data-height="8"
+                                        style="height: 8px;"
+                                      >
+                                        <div
+                                          class="progress-bar l-bg-green"
+                                          role="progressbar"
+                                          data-width="25%"
+                                          aria-valuenow="25"
+                                          aria-valuemin="0"
+                                          aria-valuemax="100"
+                                          style="width: 25%;"
+                                        ></div>
+                                      </div>
+                                      <p class="mb-0 text-sm">
+                                        <span class="mr-2">
+                                          <i class="fa fa-arrow-up"></i>
+                                          10%
+                                        </span>
+                                        <span class="text-nowrap">Since last month</span>
+                                      </p>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </section>
+                          <section class="categorysection">
+                            <div class="container">
+                              <div class="row">
+                                <div class="col-12">
+                                  <div class="card">
+                                    <div class="card-body">
+                                      <div class="row">
+                                        <div class="col-md-4">
+                                          <div class="formwrap">
+                                            <div class="form-group">
+                                              <label>
+                                                Main Category:
+                                              </label>
+                
+                                              <select class="form-control" id="worklist">
+                                                <option class="test">test</option>
+                                                <option class="test">test</option>
+                                                <option class="test">test</option>
+                                                <option class="test">test</option>
+                                                <option class="test">test</option>
+                                              </select>
+                                            </div>
+                                          </div>
+                                        </div>
+                                        <div class="col-md-4">
+                                          <div class="formwrap">
+                                            <div class="form-group">
+                                              <label>
+                                                Sub Category:
+                                              </label>
+                
+                                              <select class="form-control" id="worklist">
+                                                <option class="test">test</option>
+                                                <option class="test">test</option>
+                                                <option class="test">test</option>
+                                                <option class="test">test</option>
+                                                <option class="test">test</option>
+                                              </select>
+                                            </div>
+                                          </div>
+                                        </div>
+                                        <div class="col-md-4">
+                                          <div class="formwrap">
+                                            <div class="form-group">
+                                              <input
+                                                type="text"
+                                                class="form-control"
+                                                placeholder="Product Name"
+                                              />
+                                              <!-- <label>
+                                                Product:
+                                              </label>
+                
+                                              <select class="form-control" id="worklist">
+                                                <option class="test">test</option>
+                                                <option class="test">test</option>
+                                                <option class="test">test</option>
+                                                <option class="test">test</option>
+                                                <option class="test">test</option>
+                                              </select> -->
+                                            </div>
+                                          </div>
+                                        </div>
+                                      </div>
+                                      <!-- <div style="float: left;">
+                                        <h4 class="card-title">Users</h4>
+                                        <h6 class="card-subtitle">
+                                          Total Active Internal Users: 15 (3 Users left to
+                                          create)
+                                        </h6>
+                                      </div>
+                                      <button
+                                        type="button"
+                                        style="float: right;"
+                                        class="btn btn-info text-white"
+                                        data-bs-toggle="modal"
+                                        data-bs-target="#exampleModal"
+                                        data-whatever="@fat"
+                                      >
+                                        <i class="mdi mdi-plus"></i>
+                                        Create New
+                                      </button> -->
+                                      <div class="table-responsive">
+                                        <table
+                                          id="myTable"
+                                          class="table table-striped border color-table inverse-table"
+                                        >
+                                          <thead>
+                                            <tr>
+                                              <!-- <th scope="col" class="border">
+                                                <label>
+                                                  <input
+                                                    type="checkbox"
+                                                    data-tablesaw-checkall
+                                                  />
+                                                  <span class="sr-only">
+                                                    Check All
+                                                  </span>
+                                                </label>
+                                              </th> -->
+                                              <th style="width: 15%;">Product Name</th>
+                                              <th style="width: 20%;">Main Category</th>
+                                              <th style="width: 20%;">Sub Category</th>
+                                              <th style="width: 20%;">Stock</th>
+                                              <th style="width: 15%;">Action</th>
+                                            </tr>
+                                          </thead>
+                                          <tbody id="checkall-target">
+                                            <tr>
+                                              <!-- <td>
+                                                <label>
+                                                  <input type="checkbox" />
+                                                  <span class="sr-only">Select Row</span>
+                                                </label>
+                                              </td> -->
+                                              <td>test</td>
+                                              <td>test</td>
+                                              <td>13 Feb 2022 10:11</td>
+                                              <td>100</td>
+                                              <td>
+                                                <i class="mdi mdi-eye"></i>
+                                                <span class="mdi mdi-download"></span>
+                                                <span class="mdi mdi-upload"></span>
+                                                <span
+                                                  class="mdi mdi-plus-circle-outline"
+                                                ></span>
+                                                <span
+                                                  class="mdi mdi-minus-circle-outline"
+                                                ></span>
+                                                <!-- <button
+                                                  type="button"
+                                                  class="btn waves-effect waves-light btn-sm btn-info text-white"
+                                                >
+                                                  <i class="mdi mdi-eye"></i>
+                                                  View
+                                                </button>
+                                                <button
+                                                  type="button"
+                                                  class="btn waves-effect waves-light btn-sm btn-info text-white"
+                                                >
+                                                  <i class="mdi mdi-pencil"></i>
+                                                  Edit
+                                                </button> -->
+                                              </td>
+                                            </tr>
+                                            <tr>
+                                              <td>test</td>
+                                              <td>test</td>
+                                              <td>13 Feb 2022 10:11</td>
+                                              <td>50</td>
+                                              <td>
+                                                <i class="mdi mdi-eye"></i>
+                                                <span class="mdi mdi-download"></span>
+                                                <span class="mdi mdi-upload"></span>
+                                                <span
+                                                  class="mdi mdi-plus-circle-outline"
+                                                ></span>
+                                                <span
+                                                  class="mdi mdi-minus-circle-outline"
+                                                ></span>
+                                              </td>
+                                            </tr>
+                                          </tbody>
+                                        </table>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </section>
+                        </div>
+                        
+                        </div>
+                        <div
+                          class="tab-pane fade"
+                          id="pills-profile"
+                          role="tabpanel"
+                          aria-labelledby="pills-profile-tab"
+                        >
+                          <div class="row">
+                            <div class="col-md-4">
+                              <div class="formwrap">
+                                <div class="form-group">
+                                  <label>
+                                    Main Category:
+                                  </label>
+
+                                  <select class="form-control" id="worklist">
+                                    <option class="test">test</option>
+                                    <option class="test">test</option>
+                                    <option class="test">test</option>
+                                    <option class="test">test</option>
+                                    <option class="test">test</option>
+                                  </select>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="col-md-4">
+                              <div class="formwrap">
+                                <div class="form-group">
+                                  <label>
+                                    Sub Category:
+                                  </label>
+
+                                  <select class="form-control" id="worklist">
+                                    <option class="test">test</option>
+                                    <option class="test">test</option>
+                                    <option class="test">test</option>
+                                    <option class="test">test</option>
+                                    <option class="test">test</option>
+                                  </select>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="col-md-2">
+                              <div class="formwrap">
+                                <div class="form-group">
+                                  <!-- <label>
+                                    Product Name:
+                                  </label> -->
+                                  <input
+                                    type="text"
+                                    class="form-control"
+                                    placeholder="Product Name"
+                                  />
+
+                                  <!-- <select class="form-control" id="worklist">
+                                    <option class="test">test</option>
+                                    <option class="test">test</option>
+                                    <option class="test">test</option>
+                                    <option class="test">test</option>
+                                    <option class="test">test</option>
+                                  </select> -->
+                                </div>
+                              </div>
+                            </div>
+                            <div class="col-md-2">
+                              <button
+                                type="button"
+                                style="float: right;"
+                                class="btn btn-info text-white"
+                                data-bs-toggle="modal"
+                                data-bs-target="#exampleModal"
+                                data-whatever="@fat"
+                              >
+                                <i class="mdi mdi-plus"></i>
+                                Create New
+                              </button>
+                            </div>
+                          </div>
+                          <div class="row">
+                            <div class="col-md-4 pricewrap">
+                              <!-- <div class="cart-plus-minus">
+                                <label>Quantity</label>
+                                <div class="dec qtybutton">
+                                  -
+                                </div>
+                                <input
+                                  type="text"
+                                  name="qtybutton"
+                                  value="0"
+                                  placeholder="0"
+                                  class="cart-plus-minus-box"
+                                />
+                                <div class="inc qtybutton">
+                                  +
+                                </div>
+                              </div> -->
+                              <div>
+                                <label>Quantity:</label>
+                                <input
+                                  type="text"
+                                  value="Min"
+                                  class="form-control price"
+                                />
+                                -&nbsp;&nbsp;
+                                <input
+                                  type="text"
+                                  value="Max"
+                                  class="form-control price"
+                                />
+                              </div>
+                            </div>
+
+                            <div class="col-md-4 pricewrap">
+                              <div>
+                                <label>Price:</label>
+                                <input
+                                  type="text"
+                                  value="Min"
+                                  class="form-control price"
+                                />
+                                -&nbsp;&nbsp;
+                                <input
+                                  type="text"
+                                  value="Max"
+                                  class="form-control price"
+                                />
+                              </div>
+                            </div>
+                            <div class="col-md-4">
+                              <div class="formwrap">
+                                <div class="form-group">
+                                  <label>
+                                    Stock:
+                                  </label>
+
+                                  <select
+                                    class="form-control"
+                                    id="worklist"
+                                    style="width: 100%;"
+                                  >
+                                    <option class="test">Low Stock</option>
+                                    <option class="test">Out of Stock</option>
+                                    <option class="test">Zero Stock</option>
+                                  </select>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="table-responsive">
+                            <table
+                              id="myTable"
+                              class="table table-striped border color-table inverse-table"
+                            >
+                              <thead>
+                                <tr>
+                                  <!-- <th scope="col" class="border">
+                                    <label>
+                                      <input
+                                        type="checkbox"
+                                        data-tablesaw-checkall
+                                      />
+                                      <span class="sr-only">
+                                        Check All
+                                      </span>
+                                    </label>
+                                  </th> -->
+
+                                  <th style="width: 20%;">Main Category</th>
+                                  <th style="width: 20%;">Sub Category</th>
+                                  <th style="width: 15%;">Stock</th>
+                                  <th style="width: 15%;">Product</th>
+                                  <th style="width: 15%;">Action</th>
+                                  <th style="width: 15%;">New Stock</th>
+                                </tr>
+                              </thead>
+                              <tbody id="checkall-target">
+                                <tr>
+                                  <!-- <td>
+                                    <label>
+                                      <input type="checkbox" />
+                                      <span class="sr-only">Select Row</span>
+                                    </label>
+                                  </td> -->
+                                  <td>test</td>
+                                  <td>test</td>
+                                  <td>100</td>
+                                  <td>test</td>
+
+                                  <td>
+                                    <i class="mdi mdi-eye"></i>
+                                    <!-- <span class="mdi mdi-download"></span> -->
+                                    <span class="mdi mdi-upload"></span>
+                                    <!-- <span
+                                      class="mdi mdi-plus-circle-outline"
+                                    ></span>
+                                    <span
+                                      class="mdi mdi-minus-circle-outline"
+                                    ></span> -->
+                                    <!-- <button
+                                      type="button"
+                                      class="btn waves-effect waves-light btn-sm btn-info text-white"
+                                    >
+                                      <i class="mdi mdi-eye"></i>
+                                      View
+                                    </button>
+                                    <button
+                                      type="button"
+                                      class="btn waves-effect waves-light btn-sm btn-info text-white"
+                                    >
+                                      <i class="mdi mdi-pencil"></i>
+                                      Edit
+                                    </button> -->
+                                  </td>
+                                  <td>test</td>
+                                </tr>
+                                <tr>
+                                  <td>test</td>
+                                  <td>test</td>
+                                  <td>50</td>
+                                  <td>test</td>
+
+                                  <td>
+                                    <i class="mdi mdi-eye"></i>
+                                    <!-- <span class="mdi mdi-download"></span> -->
+                                    <span class="mdi mdi-upload"></span>
+                                    <!-- <span
+                                      class="mdi mdi-plus-circle-outline"
+                                    ></span>
+                                    <span
+                                      class="mdi mdi-minus-circle-outline"
+                                    ></span> -->
+                                  </td>
+                                  <td>test</td>
+                                </tr>
+                              </tbody>
+                            </table>
+                          </div>
+                        </div>
+                        <div
+                          class="tab-pane fade"
+                          id="pills-contact"
+                          role="tabpanel"
+                          aria-labelledby="pills-contact-tab"
+                        >
+                        <div class="row">
+                            <div class="col-md-4">
+                              <div class="formwrap">
+                                <div class="form-group">
+                                  <label>
+                                    Main Category:
+                                  </label>
+    
+                                  <select class="form-control" id="worklist">
+                                    <option class="test">test</option>
+                                    <option class="test">test</option>
+                                    <option class="test">test</option>
+                                    <option class="test">test</option>
+                                    <option class="test">test</option>
+                                  </select>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="col-md-4">
+                              <div class="formwrap">
+                                <div class="form-group">
+                                  <label>
+                                    Sub Category:
+                                  </label>
+    
+                                  <select class="form-control" id="worklist">
+                                    <option class="test">test</option>
+                                    <option class="test">test</option>
+                                    <option class="test">test</option>
+                                    <option class="test">test</option>
+                                    <option class="test">test</option>
+                                  </select>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="col-md-2">
+                              <div class="formwrap">
+                                <div class="form-group">
+                                  <!-- <label>
+                                    Product Name:
+                                  </label> -->
+                                  <input
+                                    type="text"
+                                    class="form-control"
+                                    placeholder="Product Name"
+                                  />
+    
+                                  <!-- <select class="form-control" id="worklist">
+                                    <option class="test">test</option>
+                                    <option class="test">test</option>
+                                    <option class="test">test</option>
+                                    <option class="test">test</option>
+                                    <option class="test">test</option>
+                                  </select> -->
+                                </div>
+                              </div>
+                            </div>
+                            <div class="col-md-2">
+                              <button
+                                type="button"
+                                style="float: right;"
+                                class="btn btn-info text-white"
+                                data-bs-toggle="modal"
+                                data-bs-target="#exampleModal"
+                                data-whatever="@fat"
+                              >
+                                <i class="mdi mdi-plus"></i>
+                                Create New
+                              </button>
+                            </div>
+                        </div>
+                          <div class="table-responsive">
+                            <table
+                              id="myTable"
+                              class="table table-striped border color-table inverse-table"
+                            >
+                              <thead>
+                                <tr>
+                                  <!-- <th scope="col" class="border">
+                                    <label>
+                                      <input
+                                        type="checkbox"
+                                        data-tablesaw-checkall
+                                      />
+                                      <span class="sr-only">
+                                        Check All
+                                      </span>
+                                    </label>
+                                  </th> -->
+    
+                                  <th style="width: 15%;">Main Category</th>
+                                  <th style="width: 15%;">Sub Category</th>
+                                  <th style="width: 15%;">Product</th>
+                                  <th style="width: 15%;">Imported on</th>
+                                  <th style="width: 15%;">Old Stock</th>
+                                  <th style="width: 15%;">New Stock</th>
+                                  <th style="width: 10%;">Action</th>
+                                </tr>
+                              </thead>
+                              <tbody id="checkall-target">
+                                <tr>
+                                  <!-- <td>
+                                    <label>
+                                      <input type="checkbox" />
+                                      <span class="sr-only">Select Row</span>
+                                    </label>
+                                  </td> -->
+                                  <td>test</td>
+                                  <td>test</td>
+                                  <td>100</td>
+                                  <td>test</td>
+                                  <td>test</td>
+                                  <td>test</td>
+                                  <td>
+                                    <!-- <span class="mdi mdi-download"></span> -->
+                                    <span class="mdi mdi-upload"></span>
+                                    <span class="mdi mdi-download"></span>
+                                    <!-- <span
+                                      class="mdi mdi-plus-circle-outline"
+                                    ></span>
+                                    <span
+                                      class="mdi mdi-minus-circle-outline"
+                                    ></span> -->
+                                    <!-- <button
+                                      type="button"
+                                      class="btn waves-effect waves-light btn-sm btn-info text-white"
+                                    >
+                                      <i class="mdi mdi-eye"></i>
+                                      View
+                                    </button>
+                                    <button
+                                      type="button"
+                                      class="btn waves-effect waves-light btn-sm btn-info text-white"
+                                    >
+                                      <i class="mdi mdi-pencil"></i>
+                                      Edit
+                                    </button> -->
+                                  </td>
+                                </tr>
+                                <tr>
+                                  <td>test</td>
+                                  <td>test</td>
+                                  <td>100</td>
+                                  <td>test</td>
+                                  <td>test</td>
+                                  <td>test</td>
+    
+                                  <td>
+                                    <!-- <span class="mdi mdi-download"></span> -->
+                                    <span class="mdi mdi-upload"></span>
+                                    <span class="mdi mdi-download"></span>
+                                    <!-- <span
+                                      class="mdi mdi-plus-circle-outline"
+                                    ></span>
+                                    <span
+                                      class="mdi mdi-minus-circle-outline"
+                                    ></span> -->
+                                  </td>
+                                </tr>
+                              </tbody>
+                            </table>
+                          </div>
+                        </div>
+                        <div
+                          class="tab-pane fade"
+                          id="pills-export"
+                          role="tabpanel"
+                          aria-labelledby="pills-export-tab"
+                        >
+                          ...
+                        </div>
+                        <div
+                          class="tab-pane fade"
+                          id="pills-reports"
+                          role="tabpanel"
+                          aria-labelledby="pills-reports-tab"
+                        >
+                          ...
+                        </div>
+                      </div>
+
+                      <!-- <div style="float: left;">
+                        <h4 class="card-title">Users</h4>
+                        <h6 class="card-subtitle">
+                          Total Active Internal Users: 15 (3 Users left to
+                          create)
+                        </h6>
+                      </div>
+                      <button
+                        type="button"
+                        style="float: right;"
+                        class="btn btn-info text-white"
+                        data-bs-toggle="modal"
+                        data-bs-target="#exampleModal"
+                        data-whatever="@fat"
+                      >
+                        <i class="mdi mdi-plus"></i>
+                        Create New
+                      </button> -->
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+          <!-- ============================================================== -->
+          <!-- End PAge Content -->
+          <!-- ============================================================== -->
+        </div>
+        <!-- ============================================================== -->
+        <!-- End Container fluid  -->
+        <!-- ============================================================== -->
+      </div>
+      <!-- ============================================================== -->
+      <!-- End Page wrapper  -->
+      <!-- ============================================================== -->
+    </div>
+    <!-- ============================================================== -->
+    <!-- All Jquery -->
+    <!-- ============================================================== -->
+    <script src="node_modules/jquery/dist/jquery.min.js"></script>
+    <!-- Bootstrap tether Core JavaScript -->
+    <script src="node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <!--Menu sidebar -->
+    <script src="dist/js/sidebarmenu.js"></script>
+    <!--stickey kit -->
+    <script src="node_modules/sticky-kit-master/dist/sticky-kit.min.js"></script>
+    <!--Custom JavaScript -->
+    <script src="dist/js/custom.min.js"></script>
+    <!--This page plugins -->
+    <script src="node_modules/datatables.net/js/jquery.dataTables.min.js"></script>
+    <script src="node_modules/datatables.net-bs4/js/dataTables.responsive.min.js"></script>
+    <script>
+      $(function () {
+        $('#myTable').DataTable()
+        var table = $('#example').DataTable({
+          columnDefs: [
+            {
+              visible: false,
+              targets: 2,
+            },
+          ],
+          order: [[2, 'asc']],
+          displayLength: 25,
+          drawCallback: function (settings) {
+            var api = this.api()
+            var rows = api
+              .rows({
+                page: 'current',
+              })
+              .nodes()
+            var last = null
+            api
+              .column(2, {
+                page: 'current',
+              })
+              .data()
+              .each(function (group, i) {
+                if (last !== group) {
+                  $(rows)
+                    .eq(i)
+                    .before(
+                      '<tr class="group"><td colspan="5">' +
+                        group +
+                        '</td></tr>',
+                    )
+                  last = group
+                }
+              })
+          },
+        })
+      })
+    </script>
+  </body>
+</html>
