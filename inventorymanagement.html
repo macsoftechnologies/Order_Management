@@ -26,6 +26,37 @@
       padding: 0px;
     }
 
+    .Price_Search .form-group {
+      align-items: center;
+    }
+
+    .Price_Search label {
+      margin: 0px;
+    }
+
+    .modal_actions {
+      text-align: center;
+    }
+
+    .qunatity_section {
+      display: flex;
+      align-items: center;
+    }
+
+    .import_inventory {
+      margin: 15px 0px;
+    }
+
+    .import_inventory button {
+      float: right;
+      padding: 10px 30px;
+    }
+
+    .modal_actions button {
+      margin: 0px 10px;
+      letter-spacing: 1px;
+      font-size: 13px;
+    }
 
     ul.nav .nav-item a {
       text-align: center;
@@ -470,17 +501,28 @@
                             </label>
                             <input type="datetime-local" class="form-control" />
                           </div>
+                          <div class="col-md-6 form-group">
+                            <label for="recipient-name" class="form-label">
+                              Upload File:
+                            </label>
+                            <input type="file" class="form-control" />
+                          </div>
+                          <div class="col-md-12 form-group modal_actions">
+                            <button type="button" class="btn btn-primary text-white">Import</button>
+                            <button type="button" class="btn btn-default btn-danger"
+                              data-bs-dismiss="modal">Cancel</button>
+                          </div>
                         </div>
                       </form>
                     </div>
-                    <div class="modal-footer">
+                    <!-- <div class="modal-footer">
                       <button type="button" class="btn btn-primary text-white">
                         Import
                       </button>
                       <button type="button" class="btn btn-default" data-bs-dismiss="modal">
                         Cancel
                       </button>
-                    </div>
+                    </div> -->
                   </div>
                 </div>
               </div>
@@ -506,12 +548,6 @@
                       <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">...</div>
                       <div class="tab-pane fade" id="pills-contact" role="tabpanel" aria-labelledby="pills-contact-tab">...</div>
                     </div> -->
-
-
-
-
-
-
 
 
 
@@ -566,13 +602,13 @@
                                         aria-valuenow="25" aria-valuemin="0" aria-valuemax="100" style="width: 25%;">
                                       </div>
                                     </div>
-                                    <p class="mb-0 text-sm">
+                                    <!-- <p class="mb-0 text-sm">
                                       <span class="mr-2">
                                         <i class="fa fa-arrow-up"></i>
                                         10%
                                       </span>
                                       <span class="text-nowrap">Since last month</span>
-                                    </p>
+                                    </p> -->
                                   </div>
                                 </div>
                               </div>
@@ -588,13 +624,13 @@
                                         aria-valuenow="25" aria-valuemin="0" aria-valuemax="100" style="width: 25%;">
                                       </div>
                                     </div>
-                                    <p class="mb-0 text-sm">
+                                    <!-- <p class="mb-0 text-sm">
                                       <span class="mr-2">
                                         <i class="fa fa-arrow-up"></i>
                                         10%
                                       </span>
                                       <span class="text-nowrap">Since last month</span>
-                                    </p>
+                                    </p> -->
                                   </div>
                                 </div>
                               </div>
@@ -610,13 +646,13 @@
                                         aria-valuenow="25" aria-valuemin="0" aria-valuemax="100" style="width: 25%;">
                                       </div>
                                     </div>
-                                    <p class="mb-0 text-sm">
+                                    <!-- <p class="mb-0 text-sm">
                                       <span class="mr-2">
                                         <i class="fa fa-arrow-up"></i>
                                         10%
                                       </span>
                                       <span class="text-nowrap">Since last month</span>
-                                    </p>
+                                    </p> -->
                                   </div>
                                 </div>
                               </div>
@@ -632,13 +668,13 @@
                                         aria-valuenow="25" aria-valuemin="0" aria-valuemax="100" style="width: 25%;">
                                       </div>
                                     </div>
-                                    <p class="mb-0 text-sm">
+                                    <!-- <p class="mb-0 text-sm">
                                       <span class="mr-2">
                                         <i class="fa fa-arrow-up"></i>
                                         10%
                                       </span>
                                       <span class="text-nowrap">Since last month</span>
-                                    </p>
+                                    </p> -->
                                   </div>
                                 </div>
                               </div>
@@ -651,16 +687,30 @@
                               <div class="col-12">
                                 <div class="card">
                                   <div class="card-body Inventory_card">
-                                    <div class="row">
+                                    <div class="row Price_Search">
                                       <div class="col-md-4">
-                                        <div class="formwrap">
-                                          <div class="form-group">
-                                            <label>
-                                              Main Category:
+                                        <div class="">
+                                          <div class="form-group row">
+                                            <label for="staticEmail" class="col-sm-4 col-form-label">Main Category:
                                             </label>
-
+                                            <div class="col-sm-8">
+                                              <select class="form-control" id="worklist">
+                                                <option class="test">Select</option>
+                                                <option class="test">test</option>
+                                                <option class="test">test</option>
+                                                <option class="test">test</option>
+                                                <option class="test">test</option>
+                                              </select>
+                                            </div>
+                                          </div>
+                                        </div>
+                                      </div>
+                                      <div class="col-md-4">
+                                        <div class="form-group row">
+                                          <label for="staticEmail" class="col-sm-4 col-form-label">Sub Category:</label>
+                                          <div class="col-sm-8">
                                             <select class="form-control" id="worklist">
-                                              <option class="test">test</option>
+                                              <option class="test">Select</option>
                                               <option class="test">test</option>
                                               <option class="test">test</option>
                                               <option class="test">test</option>
@@ -669,60 +719,19 @@
                                           </div>
                                         </div>
                                       </div>
-                                      <div class="col-md-4">
-                                        <div class="formwrap">
-                                          <div class="form-group">
-                                            <label>
-                                              Sub Category:
-                                            </label>
-
-                                            <select class="form-control" id="worklist">
-                                              <option class="test">test</option>
-                                              <option class="test">test</option>
-                                              <option class="test">test</option>
-                                              <option class="test">test</option>
-                                              <option class="test">test</option>
-                                            </select>
-                                          </div>
-                                        </div>
-                                      </div>
-                                      <div class="col-md-4">
+                                      <div class="col-md-3">
                                         <div class="formwrap">
                                           <div class="form-group">
                                             <input type="text" class="form-control" placeholder="Product Name" />
-                                            <!-- <label>
-                                                Product:
-                                              </label>
-                
-                                              <select class="form-control" id="worklist">
-                                                <option class="test">test</option>
-                                                <option class="test">test</option>
-                                                <option class="test">test</option>
-                                                <option class="test">test</option>
-                                                <option class="test">test</option>
-                                              </select> -->
                                           </div>
                                         </div>
                                       </div>
-                                    </div>
-                                    <!-- <div style="float: left;">
-                                        <h4 class="card-title">Users</h4>
-                                        <h6 class="card-subtitle">
-                                          Total Active Internal Users: 15 (3 Users left to
-                                          create)
-                                        </h6>
+                                      <div class="col-md-1">
+                                        <button type="button" style="float: right" class="btn btn-info text-white"
+                                          data-whatever="@fat">
+                                          Search</button>
                                       </div>
-                                      <button
-                                        type="button"
-                                        style="float: right;"
-                                        class="btn btn-info text-white"
-                                        data-bs-toggle="modal"
-                                        data-bs-target="#exampleModal"
-                                        data-whatever="@fat"
-                                      >
-                                        <i class="mdi mdi-plus"></i>
-                                        Create New
-                                      </button> -->
+                                    </div>
                                     <div class="table-responsive">
                                       <table id="myTable" class="table table-striped border color-table inverse-table">
                                         <thead>
@@ -804,117 +813,99 @@
                       </div>
 
                       <!-- Add Stock -->
-                      <div class="tab-pane" id="pills-profile" role="tabpanel"
-                        aria-labelledby="pills-profile-tab">
+                      <div class="tab-pane" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">
                         <div class="row">
                           <div class="col-md-4">
-                            <div class="formwrap">
-                              <div class="form-group">
-                                <label>
-                                  Main Category:
-                                </label>
+                            <div class="">
+                              <div class="form-group row">
+                                <label for="staticEmail" class="col-sm-4 col-form-label">Main Category:</label>
+                                <div class="col-sm-8">
+                                  <div class="form-group">
 
-                                <select class="form-control" id="worklist">
-                                  <option class="test">test</option>
-                                  <option class="test">test</option>
-                                  <option class="test">test</option>
-                                  <option class="test">test</option>
-                                  <option class="test">test</option>
-                                </select>
+                                    <select class="form-control" id="worklist">
+                                      <option class="test">test</option>
+                                      <option class="test">test</option>
+                                      <option class="test">test</option>
+                                      <option class="test">test</option>
+                                      <option class="test">test</option>
+                                    </select>
+                                  </div>
+                                </div>
                               </div>
                             </div>
                           </div>
                           <div class="col-md-4">
-                            <div class="formwrap">
-                              <div class="form-group">
-                                <label>
-                                  Sub Category:
-                                </label>
+                            <div class="form-group row">
+                              <label for="staticEmail" class="col-sm-4 col-form-label">Sub Category:</label>
+                              <div class="col-sm-8">
+                                <div class="form-group">
 
-                                <select class="form-control" id="worklist">
-                                  <option class="test">test</option>
-                                  <option class="test">test</option>
-                                  <option class="test">test</option>
-                                  <option class="test">test</option>
-                                  <option class="test">test</option>
-                                </select>
+                                  <select class="form-control" id="worklist">
+                                    <option class="test">test</option>
+                                    <option class="test">test</option>
+                                    <option class="test">test</option>
+                                    <option class="test">test</option>
+                                    <option class="test">test</option>
+                                  </select>
+                                </div>
                               </div>
                             </div>
                           </div>
-                          <div class="col-md-2">
-                            <div class="formwrap">
+                          <div class="col-md-4">
+                            <div class="">
                               <div class="form-group">
-                                <!-- <label>
-                                      Product Name:
-                                    </label> -->
                                 <input type="text" class="form-control" placeholder="Product Name" />
-
-                                <!-- <select class="form-control" id="worklist">
-                                      <option class="test">test</option>
-                                      <option class="test">test</option>
-                                      <option class="test">test</option>
-                                      <option class="test">test</option>
-                                      <option class="test">test</option>
-                                    </select> -->
                               </div>
                             </div>
                           </div>
-                          <div class="col-md-2">
-                            <button type="button" style="float: right;" class="btn btn-info text-white"
-                              data-bs-toggle="modal" data-bs-target="#exampleModal" data-whatever="@fat">
-                              <i class="mdi mdi-plus"></i>
-                              Create New
-                            </button>
-                          </div>
+
                         </div>
                         <div class="row">
-                          <div class="col-md-4 pricewrap">
-                            <!-- <div class="cart-plus-minus">
-                                  <label>Quantity</label>
-                                  <div class="dec qtybutton">
-                                    -
-                                  </div>
-                                  <input
-                                    type="text"
-                                    name="qtybutton"
-                                    value="0"
-                                    placeholder="0"
-                                    class="cart-plus-minus-box"
-                                  />
-                                  <div class="inc qtybutton">
-                                    +
-                                  </div>
-                                </div> -->
-                            <div>
-                              <label>Quantity:</label>
-                              <input type="text" value="Min" class="form-control price" />
-                              -&nbsp;&nbsp;
-                              <input type="text" value="Max" class="form-control price" />
-                            </div>
-                          </div>
-
-                          <div class="col-md-4 pricewrap">
-                            <div>
-                              <label>Price:</label>
-                              <input type="text" value="Min" class="form-control price" />
-                              -&nbsp;&nbsp;
-                              <input type="text" value="Max" class="form-control price" />
-                            </div>
-                          </div>
                           <div class="col-md-4">
-                            <div class="formwrap">
-                              <div class="form-group">
-                                <label>
-                                  Stock:
-                                </label>
-
-                                <select class="form-control" id="worklist" style="width: 100%;">
-                                  <option class="test">Low Stock</option>
-                                  <option class="test">Out of Stock</option>
-                                  <option class="test">Zero Stock</option>
-                                </select>
+                            <div class="form-group row">
+                              <label for="staticEmail" class="col-sm-4 col-form-label">Quantity:</label>
+                              <div class="col-sm-8">
+                                <div class="qunatity_section">
+                                  <input type="text" value="Min" class="form-control price" />
+                                  &nbsp;&nbsp;-&nbsp;&nbsp;
+                                  <input type="text" value="Max" class="form-control price" />
+                                </div>
                               </div>
                             </div>
+                          </div>
+                          <div class="col-md-3">
+                            <div class="form-group row">
+                              <label for="staticEmail" class="col-sm-4 col-form-label">Quantity:</label>
+                              <div class="col-sm-8">
+                                <div class="qunatity_section">
+                                  <input type="text" value="Min" class="form-control price" />
+                                  &nbsp;&nbsp;-&nbsp;&nbsp;
+                                  <input type="text" value="Max" class="form-control price" />
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+
+                          <div class="col-md-4">
+                            <div class="form-group row">
+                              <label for="staticEmail" class="col-sm-4 col-form-label">Sub Category:</label>
+                              <div class="col-sm-8">
+                                <div class="form-group">
+
+                                  <select class="form-control" id="worklist">
+                                    <option class="test">Low Stock</option>
+                                    <option class="test">Out of Stock</option>
+                                    <option class="test">Zero Stock</option>
+                                  </select>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="col-md-1">
+                            <button type="button" style="float: right;" class="btn btn-info text-white"
+                              data-bs-toggle="modal" data-bs-target="#exampleModal" data-whatever="@fat">
+                              Search
+                            </button>
                           </div>
                         </div>
                         <div class="table-responsive">
@@ -1007,16 +998,30 @@
 
                       <!-- Import -->
                       <div class="tab-pane" id="pills-contact" role="tabpanel" aria-labelledby="pills-contact-tab">
-                        <div class="row">
+                        <div class="row Price_Search">
                           <div class="col-md-4">
-                            <div class="formwrap">
-                              <div class="form-group">
-                                <label>
-                                  Main Category:
+                            <div class="">
+                              <div class="form-group row">
+                                <label for="staticEmail" class="col-sm-4 col-form-label">Main Category:
                                 </label>
-
+                                <div class="col-sm-8">
+                                  <select class="form-control" id="worklist">
+                                    <option class="test">Select</option>
+                                    <option class="test">test</option>
+                                    <option class="test">test</option>
+                                    <option class="test">test</option>
+                                    <option class="test">test</option>
+                                  </select>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="col-md-4">
+                            <div class="form-group row">
+                              <label for="staticEmail" class="col-sm-4 col-form-label">Sub Category:</label>
+                              <div class="col-sm-8">
                                 <select class="form-control" id="worklist">
-                                  <option class="test">test</option>
+                                  <option class="test">Select</option>
                                   <option class="test">test</option>
                                   <option class="test">test</option>
                                   <option class="test">test</option>
@@ -1025,49 +1030,26 @@
                               </div>
                             </div>
                           </div>
-                          <div class="col-md-4">
+                          <div class="col-md-3">
                             <div class="formwrap">
                               <div class="form-group">
-                                <label>
-                                  Sub Category:
-                                </label>
-
-                                <select class="form-control" id="worklist">
-                                  <option class="test">test</option>
-                                  <option class="test">test</option>
-                                  <option class="test">test</option>
-                                  <option class="test">test</option>
-                                  <option class="test">test</option>
-                                </select>
-                              </div>
-                            </div>
-                          </div>
-                          <div class="col-md-2">
-                            <div class="formwrap">
-                              <div class="form-group">
-                                <!-- <label>
-                                      Product Name:
-                                    </label> -->
                                 <input type="text" class="form-control" placeholder="Product Name" />
-
-                                <!-- <select class="form-control" id="worklist">
-                                      <option class="test">test</option>
-                                      <option class="test">test</option>
-                                      <option class="test">test</option>
-                                      <option class="test">test</option>
-                                      <option class="test">test</option>
-                                    </select> -->
                               </div>
                             </div>
                           </div>
-                          <div class="col-md-2">
-                            <button type="button" style="float: right;" class="btn btn-info text-white"
-                              data-bs-toggle="modal" data-bs-target="#exampleImportModal" data-whatever="@fat">
-                              <i class="mdi mdi-plus"></i>
-                              Create New
-                            </button>
+                          <div class="col-md-1">
+                            <button type="button" style="float: right" class="btn btn-info text-white"
+                              data-whatever="@fat">
+                              Search</button>
                           </div>
                         </div>
+
+                        <div class="col-md-12 p-0 import_Inventory">
+                          <button type="button" style="float: right" class="btn btn-info text-white"
+                            data-whatever="@fat"><i class="mdi mdi-view"></i>
+                            Add Inventory</button>
+                        </div>
+
                         <div class="table-responsive">
                           <table id="myTable" class="table table-striped border color-table inverse-table">
                             <thead>
@@ -1160,7 +1142,146 @@
 
                       <!-- Export -->
                       <div class="tab-pane" id="pills-export" role="tabpanel" aria-labelledby="pills-export-tab">
-                        ...
+                        <div class="row Price_Search">
+                          <div class="col-md-4">
+                            <div class="">
+                              <div class="form-group row">
+                                <label for="staticEmail" class="col-sm-4 col-form-label">Main Category:
+                                </label>
+                                <div class="col-sm-8">
+                                  <select class="form-control" id="worklist">
+                                    <option class="test">Select</option>
+                                    <option class="test">test</option>
+                                    <option class="test">test</option>
+                                    <option class="test">test</option>
+                                    <option class="test">test</option>
+                                  </select>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="col-md-4">
+                            <div class="form-group row">
+                              <label for="staticEmail" class="col-sm-4 col-form-label">Sub Category:</label>
+                              <div class="col-sm-8">
+                                <select class="form-control" id="worklist">
+                                  <option class="test">Select</option>
+                                  <option class="test">test</option>
+                                  <option class="test">test</option>
+                                  <option class="test">test</option>
+                                  <option class="test">test</option>
+                                </select>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="col-md-3">
+                            <div class="formwrap">
+                              <div class="form-group">
+                                <input type="text" class="form-control" placeholder="Product Name" />
+                              </div>
+                            </div>
+                          </div>
+                          <div class="col-md-1">
+                            <button type="button" style="float: right" class="btn btn-info text-white"
+                              data-whatever="@fat">
+                              Search</button>
+                          </div>
+                        </div>
+
+                        <div class="col-md-12 p-0 import_Inventory">
+                          <button type="button" style="float: right" class="btn btn-info text-white"
+                            data-whatever="@fat"><i class="mdi mdi-view"></i>
+                            Add Inventory</button>
+                        </div>
+
+                        <div class="table-responsive">
+                          <table id="myTable" class="table table-striped border color-table inverse-table">
+                            <thead>
+                              <tr>
+                                <!-- <th scope="col" class="border">
+                                      <label>
+                                        <input
+                                          type="checkbox"
+                                          data-tablesaw-checkall
+                                        />
+                                        <span class="sr-only">
+                                          Check All
+                                        </span>
+                                      </label>
+                                    </th> -->
+
+                                <th style="width: 15%;">Main Category</th>
+                                <th style="width: 15%;">Sub Category</th>
+                                <th style="width: 15%;">Product</th>
+                                <th style="width: 15%;">Imported on</th>
+                                <th style="width: 15%;">Old Stock</th>
+                                <th style="width: 15%;">New Stock</th>
+                                <th style="width: 10%;">Action</th>
+                              </tr>
+                            </thead>
+                            <tbody id="checkall-target">
+                              <tr>
+                                <!-- <td>
+                                      <label>
+                                        <input type="checkbox" />
+                                        <span class="sr-only">Select Row</span>
+                                      </label>
+                                    </td> -->
+                                <td>test</td>
+                                <td>test</td>
+                                <td>100</td>
+                                <td>test</td>
+                                <td>test</td>
+                                <td>test</td>
+                                <td>
+                                  <!-- <span class="mdi mdi-download"></span> -->
+                                  <span class="mdi mdi-upload"></span>
+                                  <span class="mdi mdi-download"></span>
+                                  <!-- <span
+                                        class="mdi mdi-plus-circle-outline"
+                                      ></span>
+                                      <span
+                                        class="mdi mdi-minus-circle-outline"
+                                      ></span> -->
+                                  <!-- <button
+                                        type="button"
+                                        class="btn waves-effect waves-light btn-sm btn-info text-white"
+                                      >
+                                        <i class="mdi mdi-eye"></i>
+                                        View
+                                      </button>
+                                      <button
+                                        type="button"
+                                        class="btn waves-effect waves-light btn-sm btn-info text-white"
+                                      >
+                                        <i class="mdi mdi-pencil"></i>
+                                        Edit
+                                      </button> -->
+                                </td>
+                              </tr>
+                              <tr>
+                                <td>test</td>
+                                <td>test</td>
+                                <td>100</td>
+                                <td>test</td>
+                                <td>test</td>
+                                <td>test</td>
+
+                                <td>
+                                  <!-- <span class="mdi mdi-download"></span> -->
+                                  <span class="mdi mdi-upload"></span>
+                                  <span class="mdi mdi-download"></span>
+                                  <!-- <span
+                                        class="mdi mdi-plus-circle-outline"
+                                      ></span>
+                                      <span
+                                        class="mdi mdi-minus-circle-outline"
+                                      ></span> -->
+                                </td>
+                              </tr>
+                            </tbody>
+                          </table>
+                        </div>
                       </div>
 
                       <!-- Reports -->
