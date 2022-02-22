@@ -1,0 +1,637 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- Tell the browser to be responsive to screen width -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <!-- Favicon icon -->
+    <link rel="icon" type="image/png" sizes="16x16" href="../assets/images/">
+    <title>OMS - Finance Management</title>
+    <!-- This Page CSS -->
+    <link rel="stylesheet" type="text/css" href="node_modules/datatables.net-bs4/css/dataTables.bootstrap4.css">
+    <link rel="stylesheet" type="text/css" href="node_modules/datatables.net-bs4/css/responsive.dataTables.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Custom CSS -->
+    <link href="dist/css/style.min.css" rel="stylesheet">
+    <style>
+        .btn-toggle {
+            margin: 0 4rem;
+            padding: 0;
+            position: relative;
+            border: none;
+            height: 1.5rem;
+            width: 3rem;
+            border-radius: 1.5rem;
+            color: #6b7381;
+            background: #bdc1c8;
+        }
+
+        .btn-toggle:focus,
+        .btn-toggle:focus.active,
+        .btn-toggle.focus,
+        .btn-toggle.focus.active {
+            outline: none;
+        }
+
+        .btn-toggle:before,
+        .btn-toggle:after {
+            line-height: 1.5rem;
+            width: 4rem;
+            text-align: center;
+            font-weight: 600;
+            font-size: .75rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            position: absolute;
+            bottom: 0;
+            transition: opacity .25s;
+        }
+
+        .btn-toggle:before {
+            left: -4rem;
+        }
+
+        .btn-toggle:after {
+            right: -4rem;
+            opacity: .5;
+        }
+
+        .btn-toggle>.handle {
+            position: absolute;
+            top: 0.1875rem;
+            left: 0.1875rem;
+            width: 1.125rem;
+            height: 1.125rem;
+            border-radius: 1.125rem;
+            background: #fff;
+            transition: left .25s;
+        }
+
+        .btn-toggle.active {
+            transition: background-color .25s;
+        }
+
+        .btn-toggle.active {
+            background-color: #29b5a8;
+        }
+
+        .btn-toggle.active>.handle {
+            left: 1.6875rem;
+            transition: left .25s;
+        }
+
+        .btn-toggle.active:before {
+            opacity: .5;
+        }
+
+        .btn-toggle.active:after {
+            opacity: 1;
+        }
+
+        /* Search Filter */
+        .search_filter {
+            border: 1px solid #ccc;
+            border-radius: 3px;
+            padding: 10px;
+        }
+    </style>
+</head>
+
+<body class="skin-default-dark fixed-layout">
+    <div id="main-wrapper">
+        <header class="topbar">
+            <nav class="navbar top-navbar navbar-expand-md navbar-dark">
+                <!-- ============================================================== -->
+                <!-- Logo -->
+                <!-- ============================================================== -->
+                <div class="navbar-header" style="text-align: center; padding-left: 0px;">
+                    <a class="navbar-brand" href="#">
+                        <!-- Logo icon -->
+                        <b>
+                            <!--You can put here icon as well // <i class="wi wi-sunset"></i> //-->
+                            <!-- Dark Logo icon -->
+                            <img src="dist/images/logo-icon.png" alt="homepage" class="dark-logo" />
+                            <!-- Light Logo icon -->
+                            <img src="dist/images/logo-light-icon.png" alt="homepage" class="light-logo" />
+                        </b>
+                        <!--End Logo icon -->
+                        <!-- Logo text -->
+                        <span>
+                            <!-- dark Logo text -->
+                            <img src="dist/images/images/logo-text.png" alt="homepage" class="dark-logo" />
+                            <!-- Light Logo text -->
+                            <img src="dist/images/logo-light-text.png" class="light-logo" alt="homepage" />
+                        </span>
+                    </a>
+                </div>
+                <!-- ============================================================== -->
+                <!-- End Logo -->
+                <!-- ============================================================== -->
+                <div class="navbar-collapse">
+                    <!-- ============================================================== -->
+                    <!-- toggle and nav items -->
+                    <!-- ============================================================== -->
+                    <ul class="navbar-nav me-auto">
+                        <!-- This is  -->
+                        <li class="nav-item">
+                            <a class="nav-link nav-toggler d-block d-md-none waves-effect waves-dark"
+                                href="javascript:void(0)">
+                                <i class="ti-menu"></i>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link sidebartoggler d-none d-lg-block d-md-block waves-effect waves-dark"
+                                href="javascript:void(0)">
+                                <i class="icon-menu"></i>
+                            </a>
+                        </li>
+                        <!-- ============================================================== -->
+                        <!-- Search -->
+                        <!-- ============================================================== -->
+                        <li class="nav-item">
+                            <form class="app-search d-none d-md-block d-lg-block">
+                                <input type="text" class="form-control" placeholder="Search & enter">
+                            </form>
+                        </li>
+                    </ul>
+                    <!-- ============================================================== -->
+                    <!-- User profile and search -->
+                    <!-- ============================================================== -->
+                    <ul class="navbar-nav my-lg-0">
+                        <!-- ============================================================== -->
+                        <!-- Comment -->
+                        <!-- ============================================================== -->
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle waves-effect waves-dark" href="#"
+                                data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <i class="ti-email"></i>
+                                <div class="notify">
+                                    <span class="heartbit"></span>
+                                    <span class="point"></span>
+                                </div>
+                            </a>
+                            <div class="dropdown-menu dropdown-menu-end mailbox animated bounceInDown">
+                                <ul>
+                                    <li>
+                                        <div class="drop-title">Notifications</div>
+                                    </li>
+                                    <li>
+                                        <div class="message-center">
+                                            <!-- Message -->
+                                            <a href="javascript:void(0)">
+                                                <div class="btn btn-danger btn-circle text-white">
+                                                    <i class="ti-calendar"></i>
+                                                </div>
+                                                <div class="mail-contnet">
+                                                    <h5>Event today</h5>
+                                                    <span class="mail-desc">Just see the my new admin!</span>
+                                                    <span class="time">9:30 AM</span>
+                                                </div>
+                                            </a>
+                                            <!-- Message -->
+                                            <a href="javascript:void(0)">
+                                                <div class="btn btn-success btn-circle text-white">
+                                                    <i class="ti-calendar"></i>
+                                                </div>
+                                                <div class="mail-contnet">
+                                                    <h5>Event today</h5>
+                                                    <span class="mail-desc">Just a reminder that you have event</span>
+                                                    <span class="time">9:10 AM</span>
+                                                </div>
+                                            </a>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <a class="nav-link text-center link" href="javascript:void(0);">
+                                            <strong>Check all notifications</strong>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </li>
+                        <!-- ============================================================== -->
+                        <!-- End Comment -->
+                    </ul>
+                </div>
+            </nav>
+        </header>
+        <!-- ============================================================== -->
+        <!-- End Topbar header -->
+        <!-- ============================================================== -->
+        <!-- ============================================================== -->
+        <!-- Left Sidebar - style you can find in sidebar.scss  -->
+        <!-- ============================================================== -->
+        <aside class="left-sidebar">
+            <!-- Sidebar scroll-->
+            <div class="scroll-sidebar">
+                <!-- User Profile-->
+                <div class="user-profile">
+                    <div class="user-pro-body">
+                        <div>
+                            <img src="dist/images/users/2.jpg" alt="user-img" class="img-circle">
+                        </div>
+                        <div class="dropdown">
+                            <a href="javascript:void(0)" class="dropdown-toggle u-dropdown link hide-menu"
+                                data-bs-toggle="dropdown" role="button" aria-haspopup="true"
+                                aria-expanded="false">Steave
+                                Gection
+                                <span class="caret"></span>
+                            </a>
+                            <div class="dropdown-menu animated flipInY">
+                                <!-- text-->
+                                <a href="javascript:void(0)" class="dropdown-item">
+                                    <i class="ti-user"></i> My Profile</a>
+                                <!-- text-->
+                                <a href="#" class="dropdown-item">
+                                    <i class="mdi mdi-logout-variant"></i> Logout</a>
+                                <!-- text-->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Sidebar navigation-->
+                <nav class="sidebar-nav">
+                    <ul id="sidebarnav">
+                        <li class="nav-small-cap">--- PERSONAL</li>
+                        <li>
+                            <a class="waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false">
+                                <i class="icon-speedometer"></i>
+                                <span class="hide-menu">Dashboard</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a class="waves-effect waves-dark" href="users.html" aria-expanded="false">
+                                <i class="ti-layout-grid2"></i>
+                                <span class="hide-menu">User Management</span>
+                            </a>
+                        </li>
+
+                        <li>
+                            <a class="waves-effect waves-dark" href="inventorymanagement.html" aria-expanded="false">
+                                <i class="ti-layout-grid2"></i>
+                                <span class="hide-menu">InventoryManagement</span>
+                            </a>
+                        </li>
+
+                        <li>
+                            <a class="waves-effect waves-dark" href="ProductManagement.html" aria-expanded="false">
+                                <i class="ti-layout-grid2"></i>
+                                <span class="hide-menu">Product Management</span>
+                            </a>
+                        </li>
+                        <!-- <li class="active">
+                            <a class="has-arrow waves-effect waves-dark active" href="javascript:void(0)"
+                                aria-expanded="false">
+                                <i class="ti-email"></i>
+                                <span class="hide-menu">Internal</span>
+                            </a>
+                            <ul aria-expanded="false" class="collapse in">
+                                <li>
+                                    <a href="users.html">Users</a>
+                                </li>
+                                <li>
+                                    <a class="active" href="permission.html">Permissions</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a class="has-arrow waves-effect waves-dark" href="javascript:void(0)"
+                                aria-expanded="false">
+                                <i class="ti-palette"></i>
+                                <span class="hide-menu">External</span>
+                            </a>
+                            <ul aria-expanded="false" class="collapse">
+                                <li>
+                                    <a href="#">Users</a>
+                                </li>
+                                <li>
+                                    <a href="#">Permissions</a>
+                                </li>
+                            </ul>
+                        </li> -->
+                        <li>
+                            <a class="waves-effect waves-dark" href="price.html" aria-expanded="false">
+                                <i class="ti-layout-grid2"></i>
+                                <span class="hide-menu">Price Management</span>
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+                <!-- End Sidebar navigation -->
+            </div>
+            <!-- End Sidebar scroll-->
+        </aside>
+        <!-- ============================================================== -->
+        <!-- End Left Sidebar - style you can find in sidebar.scss  -->
+        <!-- ============================================================== -->
+        <!-- ============================================================== -->
+        <!-- Page wrapper  -->
+        <!-- ============================================================== -->
+        <div class="page-wrapper">
+            <!-- ============================================================== -->
+            <!-- Container fluid  -->
+            <!-- ============================================================== -->
+            <div class="container-fluid">
+                <!-- ============================================================== -->
+                <!-- Bread crumb and right sidebar toggle -->
+                <!-- ============================================================== -->
+                <div class="row page-titles">
+                    <div class="col-md-5 align-self-center">
+                        <h4 class="text-themecolor">Product Management</h4>
+                    </div>
+                    <div class="col-md-7 align-self-center text-end">
+                        <div class="d-flex justify-content-end align-items-center">
+                            <ol class="breadcrumb justify-content-end">
+                                <li class="breadcrumb-item">
+                                    <a href="javascript:void(0)">Home</a>
+                                </li>
+                                <li class="breadcrumb-item active">Product/li>
+                            </ol>
+                        </div>
+                    </div>
+                </div>
+                <!-- ============================================================== -->
+                <!-- End Bread crumb and right sidebar toggle -->
+                <!-- ============================================================== -->
+                <!-- ============================================================== -->
+                <!-- Start Page Content -->
+                <!-- ============================================================== -->
+                <div class="row">
+                    <!-- /.modal -->
+                    <div class="col-12">
+                        <div class="card">
+                            <div class="card-body">
+                                <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
+                                    <li class="nav-item">
+                                        <a class="nav-link active" id="pills-dashboard-tab" data-toggle="pill"
+                                            href="#pills-dashboard" role="tab" aria-controls="pills-dashboard"
+                                            aria-selected="true">Dashboard</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" id="pills-product-tab" data-toggle="pill"
+                                            href="#pills-product" role="tab" aria-controls="pills-product"
+                                            aria-selected="false">Products</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" id="pills-import-tab" data-toggle="pill"
+                                            href="#pills-import" role="tab" aria-controls="pills-import"
+                                            aria-selected="false">Import</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" id="pills-export-tab" data-toggle="pill"
+                                            href="#pills-export" role="tab" aria-controls="pills-export"
+                                            aria-selected="false">Export</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" id="pills-assets-tab" data-toggle="pill"
+                                            href="#pills-assets" role="tab" aria-controls="pills-assets"
+                                            aria-selected="false">Assets</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" id="pills-entity-tab" data-toggle="pill"
+                                            href="#pills-entity" role="tab" aria-controls="pills-entity"
+                                            aria-selected="false">Entity</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" id="pills-settings-tab" data-toggle="pill"
+                                            href="#pills-settings" role="tab" aria-controls="pills-settings"
+                                            aria-selected="false">Settings</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" id="pills-system-tab" data-toggle="pill"
+                                            href="#pills-system" role="tab" aria-controls="pills-system"
+                                            aria-selected="false">System</a>
+                                    </li>
+                                </ul>
+                                <div class="tab-content" id="pills-tabContent">
+                                    <div class="tab-pane fade show active" id="pills-dashboard" role="tabpanel"
+                                        aria-labelledby="pills-dashboard-tab">...</div>
+
+                                    <div class="tab-pane fade" id="pills-product" role="tabpanel"
+                                        aria-labelledby="pills-product-tab">
+
+                                        <div class="col-md-12">
+                                            <div class="row">
+                                                <div class="col-md-2">
+
+                                                </div>
+
+                                                <div class="col-md-10">
+                                                    <div class="product_search">
+                                                        <div class="row">
+                                                            <div class="col-md-10">
+                                                                <input type="text" class="form-control"
+                                                                    placeholder="Search Here..">
+                                                            </div>
+
+                                                            <div class="col-md-2">
+                                                                <button type="button" style="float: right"
+                                                                    class="btn btn-info text-white"
+                                                                    data-whatever="@fat">
+                                                                    <i class="mdi mdi-plus"></i>
+                                                                    Create Product</button>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="col-md-2">
+                                                    <div class="search_filter">
+                                                        <div>
+                                                            <h6>Filter By</h6>
+                                                        </div>
+
+                                                    </div>
+                                                </div>
+
+                                                <div class="col-md-10">
+                                                    <div class="product_data">
+                                                        <div class="product_search_filter">
+                                                            <div class="row">
+                                                                <div class="col-md-10">
+                                                                    <div class="row">
+                                                                        <div class="col-md-2">
+                                                                            <select class="form-select"
+                                                                                id="inlineFormCustomSelect">
+                                                                                <option selected="Locale"></option>
+                                                                                <option value="1">One</option>
+                                                                                <option value="2">Two</option>
+                                                                                <option value="3">Three</option>
+                                                                            </select>
+                                                                        </div>
+
+                                                                        <div class="col-md-2">
+                                                                            <select class="form-select"
+                                                                                id="inlineFormCustomSelect">
+                                                                                <option selected="Channel"></option>
+                                                                                <option value="1">One</option>
+                                                                                <option value="2">Two</option>
+                                                                                <option value="3">Three</option>
+                                                                            </select>
+                                                                        </div>
+
+                                                                        <div class="col-md-3">
+                                                                            <select class="form-select"
+                                                                                id="inlineFormCustomSelect">
+                                                                                <option selected="Main-Categories">
+                                                                                </option>
+                                                                                <option value="1">One</option>
+                                                                                <option value="2">Two</option>
+                                                                                <option value="3">Three</option>
+                                                                            </select>
+                                                                        </div>
+
+                                                                        <div class="col-md-3">
+                                                                            <select class="form-select"
+                                                                                id="inlineFormCustomSelect">
+                                                                                <option selected="sub-Category">
+                                                                                </option>
+                                                                                <option value="1">One</option>
+                                                                                <option value="2">Two</option>
+                                                                                <option value="3">Three</option>
+                                                                            </select>
+                                                                        </div>
+
+                                                                        <div class="col-md-2">
+                                                                            <button type="button"
+                                                                                class="btn btn-info text-white"
+                                                                                data-bs-toggle="modal"
+                                                                                data-bs-target="#exampleModal"
+                                                                                data-whatever="@fat">
+                                                                                Search
+                                                                            </button>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+
+                                                                <div class="col-md-2">
+                                                                    <div class="Alter_column_section">
+                                                                        <p>Alter Table Coulmns</p>
+                                                                        <div class="table_columns">
+                                                                            <select class="form-select"
+                                                                                id="inlineFormCustomSelect">
+                                                                                <option selected="sub-Category">Sort
+                                                                                </option>
+                                                                                <option value="1">Ascending</option>
+                                                                                <option value="2">Descenind</option>
+                                                                            </select>
+
+                                                                            <select class="form-select"
+                                                                                id="inlineFormCustomSelect">
+                                                                                <option selected="sub-Category">View
+                                                                                </option>
+                                                                                <option value="2">List</option>
+                                                                                <option value="3">Grid</option>
+                                                                            </select>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <!-- <div class="col-sm-5">
+                                            <button type="button" class="btn btn-toggle active" data-toggle="button"
+                                                aria-pressed="true" autocomplete="off">
+                                                <div class="handle"></div>
+                                            </button>
+                                        </div> -->
+
+                                    </div>
+
+                                    <div class="tab-pane fade" id="pills-import" role="tabpanel"
+                                        aria-labelledby="pills-import-tab">...</div>
+
+                                    <div class="tab-pane fade" id="pills-export" role="tabpanel"
+                                        aria-labelledby="pills-export-tab">...</div>
+
+                                    <div class="tab-pane fade" id="pills-assets" role="tabpanel"
+                                        aria-labelledby="pills-assets-tab">...</div>
+
+                                    <div class="tab-pane fade" id="pills-entity" role="tabpanel"
+                                        aria-labelledby="pills-entity-tab">...</div>
+
+                                    <div class="tab-pane fade" id="pills-settings" role="tabpanel"
+                                        aria-labelledby="pills-settings-tab">...</div>
+
+                                    <div class="tab-pane fade" id="pills-system" role="tabpanel"
+                                        aria-labelledby="pills-system-tab">...</div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- ============================================================== -->
+                <!-- End PAge Content -->
+                <!-- ============================================================== -->
+            </div>
+            <!-- ============================================================== -->
+            <!-- End Container fluid  -->
+            <!-- ============================================================== -->
+        </div>
+        <!-- ============================================================== -->
+        <!-- End Page wrapper  -->
+        <!-- ============================================================== -->
+    </div>
+    <!-- ============================================================== -->
+    <!-- All Jquery -->
+    <!-- ============================================================== -->
+    <script src="node_modules/jquery/dist/jquery.min.js"></script>
+    <!-- Bootstrap tether Core JavaScript -->
+    <script src="node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <!--Menu sidebar -->
+    <script src="dist/js/sidebarmenu.js"></script>
+    <!--stickey kit -->
+    <script src="node_modules/sticky-kit-master/dist/sticky-kit.min.js"></script>
+    <!--Custom JavaScript -->
+    <script src="dist/js/custom.min.js"></script>
+    <!--This page plugins -->
+    <script src="node_modules/datatables.net/js/jquery.dataTables.min.js"></script>
+    <script src="node_modules/datatables.net-bs4/js/dataTables.responsive.min.js"></script>
+    <script>
+        $(function () {
+            $('#myTable').DataTable();
+            var table = $('#example').DataTable({
+                "columnDefs": [{
+                    "visible": false,
+                    "targets": 2
+                }],
+                "order": [
+                    [2, 'asc']
+                ],
+                "displayLength": 25,
+                "drawCallback": function (settings) {
+                    var api = this.api();
+                    var rows = api.rows({
+                        page: 'current'
+                    }).nodes();
+                    var last = null;
+                    api.column(2, {
+                        page: 'current'
+                    }).data().each(function (group, i) {
+                        if (last !== group) {
+                            $(rows).eq(i).before('<tr class="group"><td colspan="5">' + group + '</td></tr>');
+                            last = group;
+                        }
+                    });
+                }
+            });
+        });
+
+    </script>
+</body>
+
+
+</html>

@@ -436,12 +436,12 @@
         <section class="categorysection">
           <div class="container">
             <div class="row">
-              <div class="modal" id="exampleImportModal" tabindex="-1" role="dialog"
-                aria-labelledby="exampleImportModalLabel1">
+              <div class="modal" id="exampleModal" tabindex="-1" role="dialog"
+                aria-labelledby="exampleModalLabel1">
                 <div class="modal-dialog" role="document">
                   <div class="modal-content">
                     <div class="modal-header">
-                      <h4 class="modal-title" id="exampleImportModalLabel1">
+                      <h4 class="modal-title" id="exampleModalLabel1">
                         Import
                       </h4>
                       <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
@@ -1189,8 +1189,10 @@
                         </div>
 
                         <div class="col-md-12 p-0 import_Inventory">
-                          <button type="button" style="float: right" class="btn btn-info text-white"
-                            data-whatever="@fat"><i class="mdi mdi-view"></i>
+                          <button  data-bs-toggle="modal"
+                          data-bs-target="#exampleModal" type="button" style="float: right" class="btn btn-info text-white"
+                            data-whatever="@fat"><i class="mdi mdi-view" data-bs-toggle="modal"
+                            data-bs-target="#exampleModal"></i>
                             Add Inventory</button>
                         </div>
 
