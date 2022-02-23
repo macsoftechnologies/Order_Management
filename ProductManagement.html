@@ -1,293 +1,731 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <!-- Tell the browser to be responsive to screen width -->
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="">
-    <meta name="author" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
     <!-- Favicon icon -->
-    <link rel="icon" type="image/png" sizes="16x16" href="../assets/images/">
+    <link rel="icon" type="image/png" sizes="16x16" href="../assets/images/" />
     <title>OMS - Finance Management</title>
     <!-- This Page CSS -->
-    <link rel="stylesheet" type="text/css" href="node_modules/datatables.net-bs4/css/dataTables.bootstrap4.css">
-    <link rel="stylesheet" type="text/css" href="node_modules/datatables.net-bs4/css/responsive.dataTables.min.css">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="node_modules/datatables.net-bs4/css/dataTables.bootstrap4.css"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="node_modules/datatables.net-bs4/css/responsive.dataTables.min.css"
+    />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css"
+    />
+    <!-- <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.1.0/css/v4-shims.min.css"
+    /> -->
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>
     <!-- Custom CSS -->
-    <link href="dist/css/style.min.css" rel="stylesheet">
+    <link href="dist/css/style.min.css" rel="stylesheet" />
     <style>
-        .btn-toggle {
-            margin: 0 4rem;
-            padding: 0;
-            position: relative;
-            border: none;
-            height: 1.5rem;
-            width: 3rem;
-            border-radius: 1.5rem;
-            color: #6b7381;
-            background: #bdc1c8;
-        }
+      .btn-toggle {
+        margin: 0 4rem;
+        padding: 0;
+        position: relative;
+        border: none;
+        height: 1.5rem;
+        width: 3rem;
+        border-radius: 1.5rem;
+        color: #6b7381;
+        background: #bdc1c8;
+      }
 
-        .btn-toggle:focus,
-        .btn-toggle:focus.active,
-        .btn-toggle.focus,
-        .btn-toggle.focus.active {
-            outline: none;
-        }
+      .btn-toggle:focus,
+      .btn-toggle:focus.active,
+      .btn-toggle.focus,
+      .btn-toggle.focus.active {
+        outline: none;
+      }
 
-        .btn-toggle:before,
-        .btn-toggle:after {
-            line-height: 1.5rem;
-            width: 4rem;
-            text-align: center;
-            font-weight: 600;
-            font-size: .75rem;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            position: absolute;
-            bottom: 0;
-            transition: opacity .25s;
-        }
+      .btn-toggle:before,
+      .btn-toggle:after {
+        line-height: 1.5rem;
+        width: 4rem;
+        text-align: center;
+        font-weight: 600;
+        font-size: 0.75rem;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        position: absolute;
+        bottom: 0;
+        transition: opacity 0.25s;
+      }
 
-        .btn-toggle:before {
-            left: -4rem;
-        }
+      .btn-toggle:before {
+        left: -4rem;
+      }
 
-        .btn-toggle:after {
-            right: -4rem;
-            opacity: .5;
-        }
+      .btn-toggle:after {
+        right: -4rem;
+        opacity: 0.5;
+      }
 
-        .btn-toggle>.handle {
-            position: absolute;
-            top: 0.1875rem;
-            left: 0.1875rem;
-            width: 1.125rem;
-            height: 1.125rem;
-            border-radius: 1.125rem;
-            background: #fff;
-            transition: left .25s;
-        }
+      .btn-toggle > .handle {
+        position: absolute;
+        top: 0.1875rem;
+        left: 0.1875rem;
+        width: 1.125rem;
+        height: 1.125rem;
+        border-radius: 1.125rem;
+        background: #fff;
+        transition: left 0.25s;
+      }
 
-        .btn-toggle.active {
-            transition: background-color .25s;
-        }
+      .btn-toggle.active {
+        transition: background-color 0.25s;
+      }
 
-        .btn-toggle.active {
-            background-color: #29b5a8;
-        }
+      .btn-toggle.active {
+        background-color: #29b5a8;
+      }
 
-        .btn-toggle.active>.handle {
-            left: 1.6875rem;
-            transition: left .25s;
-        }
+      .btn-toggle.active > .handle {
+        left: 1.6875rem;
+        transition: left 0.25s;
+      }
 
-        .btn-toggle.active:before {
-            opacity: .5;
-        }
+      .btn-toggle.active:before {
+        opacity: 0.5;
+      }
 
-        .btn-toggle.active:after {
-            opacity: 1;
-        }
+      .btn-toggle.active:after {
+        opacity: 1;
+      }
 
-        /* Search Filter */
-        .search_filter {
-            border: 1px solid #ccc;
-            border-radius: 3px;
-            padding: 10px;
+      /* Search Filter */
+      .search_filter {
+        border: 1px solid #ccc;
+        border-radius: 3px;
+        padding: 10px;
+      }
+      .countrytable table thead tr th {
+        font-weight: 600;
+      }
+        input.form-control{
+          margin-bottom: 20px;
+          box-shadow: none;
         }
+      select.form-control{appearance: auto;
+    box-shadow: none;}
+      .addnew .flag img{
+        height: 100px;
+    width: 100%;
+    margin-bottom: 10px;
+    
+      }
+      .addnew .flag p{
+          text-align: center;
+      }
+      .default {
+        display: flex;
+    align-items: center;
+    height: 100%;
+    margin-top: 25px;
+    font-size: 16px;
+    text-align: center;
+      }
+      .default input.makedefault{
+          margin-right: 10px;
+      }
+      button.btn-primary{
+        width: 100px;
+    height: 35px;
+    /* margin-right: 20px; */
+      }
+      .panel-title > a::after {
+    float: left ;
+    font-family: FontAwesome;
+    content:"\f068";
+    padding-right: 5px;
+}
+.panel-title > a.collapsed::after {
+    float: left ;
+    content:"\f067";
+}
+.panel-title > a:hover, 
+.panel-title > a:active, 
+.panel-title > a:focus  {
+    text-decoration:none;
+}
+.panel-default>.panel-heading {
+    color: #555555;
+    background-color: #f5f5f5;
+    border-color: #dddddd;
+}
+.panel {
+    background-color: #ffffff;
+    border: 1px solid transparent;
+    box-shadow: 0 1px 1px rgb(0 0 0 / 5%);
+}
+.panel-group .panel {
+    margin-bottom: 0;
+    border-radius: 4px;
+}
+.panel-default {
+    border-color: #dddddd;
+}
+.panel-title {
+    margin-top: 0;
+    margin-bottom: 0;
+    font-size: 16px;
+    color: inherit;
+}
+.panel-heading h4 a{
+    text-align: center !important;
+    margin: 0 20px;
+}
+.panel-heading h4  i{
+    margin-right: 15px;
+    float: right !important;
+}
+.panel-heading {
+    padding: 10px 15px;
+    border-bottom: 1px solid transparent;
+    border-top-right-radius: 3px;
+    border-top-left-radius: 3px;
+}
+.panel-body {
+    padding: 15px;
+}
+.panel-body .list ul{ }
+.panel-body .list ul li{
+    list-style-type: none;
+    margin-bottom: 10px;
+}
+.panel-body .list ul li i{float: right;
+    margin-right: 42px;
+    font-size: 16px;}
+
+    button.btn-primary.newsub {
+        height: 35px;
+    width: 150px;
+    margin-right: 5px;
+    padding: 0px;
+}
+span.newsubbtn{
+    display: flex;
+}
+.attributes{
+    margin-bottom: 20px;
+}
+.addcountry1 span{display: flex;}
+.addcountry1 span input.form-control{ width: 70%;}
+.addcountry1 span  a{display: flex;
+    align-items: center;
+    margin: 0 10px;
+    text-decoration: underline !important;
+
+}
+.addcountry1 span select.form-control{ width: 70%;}
+.addcountry1 span  a small{
+    font-size: 10px;
+}
+.addcountry1 span  a small i{
+    font-size: 18px;
+}
+.define{
+    margin-bottom: 20px;
+}
+.define ul{
+    padding-left: 0px;
+}
+.define ul li{
+    list-style-type: none;
+    line-height: 30px;
+}
+.alertcolumns ol{
+  padding-left: 15px;
+}
+/* Styles for wrapping the search box */
+.searchcard{
+  background-color: #fff;
+    background-clip: border-box;
+    border: 1px solid rgba(0,0,0,.125);
+    border-radius: 0.25rem;
+    /* height: 350px; */
+    min-height: 350px;
+}
+.main {
+  width: 100%;
+    
+}
+
+/* Bootstrap 4 text input with search icon */
+
+.has-search .form-control {
+    padding-left: 2.375rem;
+    border-radius: 25px;
+    border: 1px solid #0e0e0e6b;
+    margin-bottom: 0px;
+}
+
+.has-search .form-control-feedback {
+    position: absolute;
+    z-index: 2;
+    display: block;
+    width: 2.375rem;
+    height: 2.375rem;
+    line-height: 2.375rem;
+    text-align: center;
+    pointer-events: none;
+    color: #aaa;margin-bottom: 0px;
+}
+.statusid ul{
+  padding-left: 0px;
+}
+.statusid ul li{
+  list-style-type: none;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 25px;
+}
+.close ul{
+  padding-left: 0px;
+}
+.close ul li{
+  list-style-type: none;
+}
+.close ul li i{
+  font-size: 14px;
+
+}
+.maincategory{
+  margin-bottom: 0px;
+}
+.maincategory h6{
+  font-weight: 600;
+}
+.maincategory-header{padding: 0;
+    margin-bottom: 0;
+    background-color: transparent;
+    border-bottom: 0 solid transparent;
+    color: black;
+  }
+
+  .maincategory .btn{
+  padding: 5px 0;
+  box-shadow: none;
+    border: none;
+} 
+.maincategory-header .btn{
+  color: black;
+  width: 100%;
+  text-align: left;
+}
+.maincategory-header h5 i{
+  float: right !important;
+    margin-top: 4px;
+    font-size: 14px;
+}
+.maincategory .categorybody{
+  padding: 10px 0;
+}
+.maincategory .collapsebody2{
+  padding: 10px 0px 10px 10px;
+}
+/*Product styles*/
+.table_columns{
+  display: flex;
+}
+.Alter_column_section{
+  float: right;
+}
+.Alter_column_section p{
+  margin-bottom: 5px;
+}
+.table_columns select.form-select{
+  border: 0px;
+  box-shadow: none;
+  outline: none;
+
+}
+.table_columns select#inlineFormCustomSelect{
+  border: 0;
+    width: 60px;
+    margin-right: 10px;
+}
+.filters{
+  border: 1px solid #00000020;
+}
+.filter-header {
+    display: flex;
+    padding: 12px 20px;
+    justify-content: space-between;
+    align-items: center;
+    border: none;
+    border-bottom: 1px solid #00000020;
+}
+.filter-header h4 {
+    margin-bottom: 0;
+    font-size: 16px;
+    color: #323c8d;
+}
+.filter-body .card {
+    border: none;
+    border-bottom: 1px solid #00000020;
+    border-radius: 0;
+    margin-bottom: 0px;
+}
+.filter-body .card-header {
+    background-color: transparent;
+    border: none;
+    /* border-bottom: 1px solid #00000020; */
+}
+.filter-body .card-header a {
+    color: #000;
+    display: flex;
+    justify-content: space-between;
+}
+.filter-list {
+    list-style-type: none;
+    margin-bottom: 0;
+    max-height: 250px;
+    overflow-y: scroll;
+    padding: 0 20px;
+}
+.filter-list li {
+    padding: 10px 0;
+    display: flex;
+    font-size: 14px;
+}
+.filter-list li input {
+    display: block;
+    margin-top: 5px;
+    margin-right: 5px;
+}
+.slidecontainer {
+  width: 100%;
+  padding: 0 10px;
+}
+  .slidecontainer input{ width: 100%; height: 5px;}
+.slider {
+  -webkit-appearance: none;
+  width: 100%;
+  height: 25px;
+  background: #d3d3d3;
+  outline: none;
+  opacity: 0.7;
+  -webkit-transition: .2s;
+  transition: opacity .2s;
+}
+
+.slider:hover {
+  opacity: 1;
+}
+
+.slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 25px;
+  height: 25px;
+  background: #04AA6D;
+  cursor: pointer;
+}
+
+.slider::-moz-range-thumb {
+  width: 25px;
+  height: 25px;
+  background: #04AA6D;
+  cursor: pointer;
+}
+.slidecontainer span{
+  display: flex;
+    justify-content: space-between;
+}
+.slidecontainer span p{
+  font-weight: 600;
+}
+.product_data{
+  margin-bottom: 20px;
+}
+#myTable_wrapper {
+    padding: 0px;
+}
+.dumimage {
+  border: 1px solid black;
+    height: 120px;
+    width: 120px;
+    margin: 15px 5px;
+}
+.CreateProductdialog{
+  width: 750px;
+}
     </style>
-</head>
+  </head>
 
-<body class="skin-default-dark fixed-layout">
+  <body class="skin-default-dark fixed-layout">
     <div id="main-wrapper">
-        <header class="topbar">
-            <nav class="navbar top-navbar navbar-expand-md navbar-dark">
-                <!-- ============================================================== -->
-                <!-- Logo -->
-                <!-- ============================================================== -->
-                <div class="navbar-header" style="text-align: center; padding-left: 0px;">
-                    <a class="navbar-brand" href="#">
-                        <!-- Logo icon -->
-                        <b>
-                            <!--You can put here icon as well // <i class="wi wi-sunset"></i> //-->
-                            <!-- Dark Logo icon -->
-                            <img src="dist/images/logo-icon.png" alt="homepage" class="dark-logo" />
-                            <!-- Light Logo icon -->
-                            <img src="dist/images/logo-light-icon.png" alt="homepage" class="light-logo" />
-                        </b>
-                        <!--End Logo icon -->
-                        <!-- Logo text -->
-                        <span>
-                            <!-- dark Logo text -->
-                            <img src="dist/images/images/logo-text.png" alt="homepage" class="dark-logo" />
-                            <!-- Light Logo text -->
-                            <img src="dist/images/logo-light-text.png" class="light-logo" alt="homepage" />
-                        </span>
-                    </a>
+      <header class="topbar">
+        <nav class="navbar top-navbar navbar-expand-md navbar-dark">
+          <!-- ============================================================== -->
+          <!-- Logo -->
+          <!-- ============================================================== -->
+          <div
+            class="navbar-header"
+            style="text-align: center; padding-left: 0px;"
+          >
+            <a class="navbar-brand" href="#">
+              <!-- Logo icon -->
+              <b>
+                <!--You can put here icon as well // <i class="wi wi-sunset"></i> //-->
+                <!-- Dark Logo icon -->
+                <img
+                  src="dist/images/logo-icon.png"
+                  alt="homepage"
+                  class="dark-logo"
+                />
+                <!-- Light Logo icon -->
+                <img
+                  src="dist/images/logo-light-icon.png"
+                  alt="homepage"
+                  class="light-logo"
+                />
+              </b>
+              <!--End Logo icon -->
+              <!-- Logo text -->
+              <span>
+                <!-- dark Logo text -->
+                <img
+                  src="dist/images/images/logo-text.png"
+                  alt="homepage"
+                  class="dark-logo"
+                />
+                <!-- Light Logo text -->
+                <img
+                  src="dist/images/logo-light-text.png"
+                  class="light-logo"
+                  alt="homepage"
+                />
+              </span>
+            </a>
+          </div>
+          <!-- ============================================================== -->
+          <!-- End Logo -->
+          <!-- ============================================================== -->
+          <div class="navbar-collapse">
+            <!-- ============================================================== -->
+            <!-- toggle and nav items -->
+            <!-- ============================================================== -->
+            <ul class="navbar-nav me-auto">
+              <!-- This is  -->
+              <li class="nav-item">
+                <a
+                  class="nav-link nav-toggler d-block d-md-none waves-effect waves-dark"
+                  href="javascript:void(0)"
+                >
+                  <i class="ti-menu"></i>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a
+                  class="nav-link sidebartoggler d-none d-lg-block d-md-block waves-effect waves-dark"
+                  href="javascript:void(0)"
+                >
+                  <i class="icon-menu"></i>
+                </a>
+              </li>
+              <!-- ============================================================== -->
+              <!-- Search -->
+              <!-- ============================================================== -->
+              <li class="nav-item">
+                <form class="app-search d-none d-md-block d-lg-block">
+                  <input
+                    type="text"
+                    class="form-control"
+                    placeholder="Search & enter"
+                  />
+                </form>
+              </li>
+            </ul>
+            <!-- ============================================================== -->
+            <!-- User profile and search -->
+            <!-- ============================================================== -->
+            <ul class="navbar-nav my-lg-0">
+              <!-- ============================================================== -->
+              <!-- Comment -->
+              <!-- ============================================================== -->
+              <li class="nav-item dropdown">
+                <a
+                  class="nav-link dropdown-toggle waves-effect waves-dark"
+                  href="#"
+                  data-bs-toggle="dropdown"
+                  aria-haspopup="true"
+                  aria-expanded="false"
+                >
+                  <i class="ti-email"></i>
+                  <div class="notify">
+                    <span class="heartbit"></span>
+                    <span class="point"></span>
+                  </div>
+                </a>
+                <div
+                  class="dropdown-menu dropdown-menu-end mailbox animated bounceInDown"
+                >
+                  <ul>
+                    <li>
+                      <div class="drop-title">Notifications</div>
+                    </li>
+                    <li>
+                      <div class="message-center">
+                        <!-- Message -->
+                        <a href="javascript:void(0)">
+                          <div class="btn btn-danger btn-circle text-white">
+                            <i class="ti-calendar"></i>
+                          </div>
+                          <div class="mail-contnet">
+                            <h5>Event today</h5>
+                            <span class="mail-desc">
+                              Just see the my new admin!
+                            </span>
+                            <span class="time">9:30 AM</span>
+                          </div>
+                        </a>
+                        <!-- Message -->
+                        <a href="javascript:void(0)">
+                          <div class="btn btn-success btn-circle text-white">
+                            <i class="ti-calendar"></i>
+                          </div>
+                          <div class="mail-contnet">
+                            <h5>Event today</h5>
+                            <span class="mail-desc">
+                              Just a reminder that you have event
+                            </span>
+                            <span class="time">9:10 AM</span>
+                          </div>
+                        </a>
+                      </div>
+                    </li>
+                    <li>
+                      <a
+                        class="nav-link text-center link"
+                        href="javascript:void(0);"
+                      >
+                        <strong>Check all notifications</strong>
+                      </a>
+                    </li>
+                  </ul>
                 </div>
-                <!-- ============================================================== -->
-                <!-- End Logo -->
-                <!-- ============================================================== -->
-                <div class="navbar-collapse">
-                    <!-- ============================================================== -->
-                    <!-- toggle and nav items -->
-                    <!-- ============================================================== -->
-                    <ul class="navbar-nav me-auto">
-                        <!-- This is  -->
-                        <li class="nav-item">
-                            <a class="nav-link nav-toggler d-block d-md-none waves-effect waves-dark"
-                                href="javascript:void(0)">
-                                <i class="ti-menu"></i>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link sidebartoggler d-none d-lg-block d-md-block waves-effect waves-dark"
-                                href="javascript:void(0)">
-                                <i class="icon-menu"></i>
-                            </a>
-                        </li>
-                        <!-- ============================================================== -->
-                        <!-- Search -->
-                        <!-- ============================================================== -->
-                        <li class="nav-item">
-                            <form class="app-search d-none d-md-block d-lg-block">
-                                <input type="text" class="form-control" placeholder="Search & enter">
-                            </form>
-                        </li>
-                    </ul>
-                    <!-- ============================================================== -->
-                    <!-- User profile and search -->
-                    <!-- ============================================================== -->
-                    <ul class="navbar-nav my-lg-0">
-                        <!-- ============================================================== -->
-                        <!-- Comment -->
-                        <!-- ============================================================== -->
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle waves-effect waves-dark" href="#"
-                                data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <i class="ti-email"></i>
-                                <div class="notify">
-                                    <span class="heartbit"></span>
-                                    <span class="point"></span>
-                                </div>
-                            </a>
-                            <div class="dropdown-menu dropdown-menu-end mailbox animated bounceInDown">
-                                <ul>
-                                    <li>
-                                        <div class="drop-title">Notifications</div>
-                                    </li>
-                                    <li>
-                                        <div class="message-center">
-                                            <!-- Message -->
-                                            <a href="javascript:void(0)">
-                                                <div class="btn btn-danger btn-circle text-white">
-                                                    <i class="ti-calendar"></i>
-                                                </div>
-                                                <div class="mail-contnet">
-                                                    <h5>Event today</h5>
-                                                    <span class="mail-desc">Just see the my new admin!</span>
-                                                    <span class="time">9:30 AM</span>
-                                                </div>
-                                            </a>
-                                            <!-- Message -->
-                                            <a href="javascript:void(0)">
-                                                <div class="btn btn-success btn-circle text-white">
-                                                    <i class="ti-calendar"></i>
-                                                </div>
-                                                <div class="mail-contnet">
-                                                    <h5>Event today</h5>
-                                                    <span class="mail-desc">Just a reminder that you have event</span>
-                                                    <span class="time">9:10 AM</span>
-                                                </div>
-                                            </a>
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <a class="nav-link text-center link" href="javascript:void(0);">
-                                            <strong>Check all notifications</strong>
-                                        </a>
-                                    </li>
-                                </ul>
-                            </div>
-                        </li>
-                        <!-- ============================================================== -->
-                        <!-- End Comment -->
-                    </ul>
+              </li>
+              <!-- ============================================================== -->
+              <!-- End Comment -->
+            </ul>
+          </div>
+        </nav>
+      </header>
+      <!-- ============================================================== -->
+      <!-- End Topbar header -->
+      <!-- ============================================================== -->
+      <!-- ============================================================== -->
+      <!-- Left Sidebar - style you can find in sidebar.scss  -->
+      <!-- ============================================================== -->
+      <aside class="left-sidebar">
+        <!-- Sidebar scroll-->
+        <div class="scroll-sidebar">
+          <!-- User Profile-->
+          <div class="user-profile">
+            <div class="user-pro-body">
+              <div>
+                <img
+                  src="dist/images/users/2.jpg"
+                  alt="user-img"
+                  class="img-circle"
+                />
+              </div>
+              <div class="dropdown">
+                <a
+                  href="javascript:void(0)"
+                  class="dropdown-toggle u-dropdown link hide-menu"
+                  data-bs-toggle="dropdown"
+                  role="button"
+                  aria-haspopup="true"
+                  aria-expanded="false"
+                >
+                  Steave Gection
+                  <span class="caret"></span>
+                </a>
+                <div class="dropdown-menu animated flipInY">
+                  <!-- text-->
+                  <a href="javascript:void(0)" class="dropdown-item">
+                    <i class="ti-user"></i>
+                    My Profile
+                  </a>
+                  <!-- text-->
+                  <a href="#" class="dropdown-item">
+                    <i class="mdi mdi-logout-variant"></i>
+                    Logout
+                  </a>
+                  <!-- text-->
                 </div>
-            </nav>
-        </header>
-        <!-- ============================================================== -->
-        <!-- End Topbar header -->
-        <!-- ============================================================== -->
-        <!-- ============================================================== -->
-        <!-- Left Sidebar - style you can find in sidebar.scss  -->
-        <!-- ============================================================== -->
-        <aside class="left-sidebar">
-            <!-- Sidebar scroll-->
-            <div class="scroll-sidebar">
-                <!-- User Profile-->
-                <div class="user-profile">
-                    <div class="user-pro-body">
-                        <div>
-                            <img src="dist/images/users/2.jpg" alt="user-img" class="img-circle">
-                        </div>
-                        <div class="dropdown">
-                            <a href="javascript:void(0)" class="dropdown-toggle u-dropdown link hide-menu"
-                                data-bs-toggle="dropdown" role="button" aria-haspopup="true"
-                                aria-expanded="false">Steave
-                                Gection
-                                <span class="caret"></span>
-                            </a>
-                            <div class="dropdown-menu animated flipInY">
-                                <!-- text-->
-                                <a href="javascript:void(0)" class="dropdown-item">
-                                    <i class="ti-user"></i> My Profile</a>
-                                <!-- text-->
-                                <a href="#" class="dropdown-item">
-                                    <i class="mdi mdi-logout-variant"></i> Logout</a>
-                                <!-- text-->
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- Sidebar navigation-->
-                <nav class="sidebar-nav">
-                    <ul id="sidebarnav">
-                        <li class="nav-small-cap">--- PERSONAL</li>
-                        <li>
-                            <a class="waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false">
-                                <i class="icon-speedometer"></i>
-                                <span class="hide-menu">Dashboard</span>
-                            </a>
-                        </li>
-                        <li>
-                            <a class="waves-effect waves-dark" href="users.html" aria-expanded="false">
-                                <i class="ti-layout-grid2"></i>
-                                <span class="hide-menu">User Management</span>
-                            </a>
-                        </li>
+              </div>
+            </div>
+          </div>
+          <!-- Sidebar navigation-->
+          <nav class="sidebar-nav">
+            <ul id="sidebarnav">
+              <li class="nav-small-cap">--- PERSONAL</li>
+              <li>
+                <a
+                  class="waves-effect waves-dark"
+                  href="javascript:void(0)"
+                  aria-expanded="false"
+                >
+                  <i class="icon-speedometer"></i>
+                  <span class="hide-menu">Dashboard</span>
+                </a>
+              </li>
+              <li>
+                <a
+                  class="waves-effect waves-dark"
+                  href="users.html"
+                  aria-expanded="false"
+                >
+                  <i class="ti-layout-grid2"></i>
+                  <span class="hide-menu">User Management</span>
+                </a>
+              </li>
 
-                        <li>
-                            <a class="waves-effect waves-dark" href="inventorymanagement.html" aria-expanded="false">
-                                <i class="ti-layout-grid2"></i>
-                                <span class="hide-menu">InventoryManagement</span>
-                            </a>
-                        </li>
+              <li>
+                <a
+                  class="waves-effect waves-dark"
+                  href="inventorymanagement.html"
+                  aria-expanded="false"
+                >
+                  <i class="ti-layout-grid2"></i>
+                  <span class="hide-menu">InventoryManagement</span>
+                </a>
+              </li>
 
-                        <li>
-                            <a class="waves-effect waves-dark" href="ProductManagement.html" aria-expanded="false">
-                                <i class="ti-layout-grid2"></i>
-                                <span class="hide-menu">Product Management</span>
-                            </a>
-                        </li>
-                        <!-- <li class="active">
+              <li>
+                <a
+                  class="waves-effect waves-dark"
+                  href="ProductManagement.html"
+                  aria-expanded="false"
+                >
+                  <i class="ti-layout-grid2"></i>
+                  <span class="hide-menu">Product Management</span>
+                </a>
+              </li>
+              <!-- <li class="active">
                             <a class="has-arrow waves-effect waves-dark active" href="javascript:void(0)"
                                 aria-expanded="false">
                                 <i class="ti-email"></i>
@@ -317,273 +755,1778 @@
                                 </li>
                             </ul>
                         </li> -->
-                        <li>
-                            <a class="waves-effect waves-dark" href="price.html" aria-expanded="false">
-                                <i class="ti-layout-grid2"></i>
-                                <span class="hide-menu">Price Management</span>
-                            </a>
-                        </li>
-                    </ul>
-                </nav>
-                <!-- End Sidebar navigation -->
+              <li>
+                <a
+                  class="waves-effect waves-dark"
+                  href="price.html"
+                  aria-expanded="false"
+                >
+                  <i class="ti-layout-grid2"></i>
+                  <span class="hide-menu">Price Management</span>
+                </a>
+              </li>
+            </ul>
+          </nav>
+          <!-- End Sidebar navigation -->
+        </div>
+        <!-- End Sidebar scroll-->
+      </aside>
+      <!-- ============================================================== -->
+      <!-- End Left Sidebar - style you can find in sidebar.scss  -->
+      <!-- ============================================================== -->
+      <!-- ============================================================== -->
+      <!-- Page wrapper  -->
+      <!-- ============================================================== -->
+      <div class="page-wrapper">
+        <!-- ============================================================== -->
+        <!-- Container fluid  -->
+        <!-- ============================================================== -->
+        <div class="container-fluid">
+          <!-- ============================================================== -->
+          <!-- Bread crumb and right sidebar toggle -->
+          <!-- ============================================================== -->
+          <div class="row page-titles">
+            <div class="col-md-5 align-self-center">
+              <h4 class="text-themecolor">Product Management</h4>
             </div>
-            <!-- End Sidebar scroll-->
-        </aside>
-        <!-- ============================================================== -->
-        <!-- End Left Sidebar - style you can find in sidebar.scss  -->
-        <!-- ============================================================== -->
-        <!-- ============================================================== -->
-        <!-- Page wrapper  -->
-        <!-- ============================================================== -->
-        <div class="page-wrapper">
-            <!-- ============================================================== -->
-            <!-- Container fluid  -->
-            <!-- ============================================================== -->
-            <div class="container-fluid">
-                <!-- ============================================================== -->
-                <!-- Bread crumb and right sidebar toggle -->
-                <!-- ============================================================== -->
-                <div class="row page-titles">
-                    <div class="col-md-5 align-self-center">
-                        <h4 class="text-themecolor">Product Management</h4>
+            <div class="col-md-7 align-self-center text-end">
+              <div class="d-flex justify-content-end align-items-center">
+                <ol class="breadcrumb justify-content-end">
+                  <li class="breadcrumb-item">
+                    <a href="javascript:void(0)">Home</a>
+                  </li>
+                  <li class="breadcrumb-item active">Product</li>
+                </ol>
+              </div>
+            </div>
+          </div>
+          <!-- ============================================================== -->
+          <!-- End Bread crumb and right sidebar toggle -->
+          <!-- ============================================================== -->
+          <!-- ============================================================== -->
+          <!-- Start Page Content -->
+          <!-- ============================================================== -->
+          <div class="row">
+            <!-- /.modal -->
+            <div class="col-12">
+              <div class="card">
+                <div class="card-body">
+                  <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
+                    <li class="nav-item">
+                      <a
+                        class="nav-link active"
+                        id="pills-dashboard-tab"
+                        data-toggle="pill"
+                        href="#pills-dashboard"
+                        role="tab"
+                        aria-controls="pills-dashboard"
+                        aria-selected="true"
+                      >
+                        Dashboard
+                      </a>
+                    </li>
+                    <li class="nav-item">
+                      <a
+                        class="nav-link"
+                        id="pills-product-tab"
+                        data-toggle="pill"
+                        href="#pills-product"
+                        role="tab"
+                        aria-controls="pills-product"
+                        aria-selected="false"
+                      >
+                        Products
+                      </a>
+                    </li>
+                    <li class="nav-item">
+                      <a
+                        class="nav-link"
+                        id="pills-import-tab"
+                        data-toggle="pill"
+                        href="#pills-import"
+                        role="tab"
+                        aria-controls="pills-import"
+                        aria-selected="false"
+                      >
+                        Import
+                      </a>
+                    </li>
+                    <li class="nav-item">
+                      <a
+                        class="nav-link"
+                        id="pills-export-tab"
+                        data-toggle="pill"
+                        href="#pills-export"
+                        role="tab"
+                        aria-controls="pills-export"
+                        aria-selected="false"
+                      >
+                        Export
+                      </a>
+                    </li>
+                    <li class="nav-item">
+                      <a
+                        class="nav-link"
+                        id="pills-assets-tab"
+                        data-toggle="pill"
+                        href="#pills-assets"
+                        role="tab"
+                        aria-controls="pills-assets"
+                        aria-selected="false"
+                      >
+                        Assets
+                      </a>
+                    </li>
+                    <li class="nav-item">
+                      <a
+                        class="nav-link"
+                        id="pills-entity-tab"
+                        data-toggle="pill"
+                        href="#pills-entity"
+                        role="tab"
+                        aria-controls="pills-entity"
+                        aria-selected="false"
+                      >
+                        Entity
+                      </a>
+                    </li>
+                    <li class="nav-item">
+                      <a
+                        class="nav-link"
+                        id="pills-settings-tab"
+                        data-toggle="pill"
+                        href="#pills-settings"
+                        role="tab"
+                        aria-controls="pills-settings"
+                        aria-selected="false"
+                      >
+                        Settings
+                      </a>
+                    </li>
+                    <li class="nav-item">
+                      <a
+                        class="nav-link"
+                        id="pills-system-tab"
+                        data-toggle="pill"
+                        href="#pills-system"
+                        role="tab"
+                        aria-controls="pills-system"
+                        aria-selected="false"
+                      >
+                        System
+                      </a>
+                    </li>
+                  </ul>
+                  <div class="tab-content" id="pills-tabContent">
+                    <div
+                      class="tab-pane fade show active"
+                      id="pills-dashboard"
+                      role="tabpanel"
+                      aria-labelledby="pills-dashboard-tab"
+                    >
+                      ...
                     </div>
-                    <div class="col-md-7 align-self-center text-end">
-                        <div class="d-flex justify-content-end align-items-center">
-                            <ol class="breadcrumb justify-content-end">
-                                <li class="breadcrumb-item">
-                                    <a href="javascript:void(0)">Home</a>
-                                </li>
-                                <li class="breadcrumb-item active">Product/li>
-                            </ol>
-                        </div>
-                    </div>
-                </div>
-                <!-- ============================================================== -->
-                <!-- End Bread crumb and right sidebar toggle -->
-                <!-- ============================================================== -->
-                <!-- ============================================================== -->
-                <!-- Start Page Content -->
-                <!-- ============================================================== -->
-                <div class="row">
-                    <!-- /.modal -->
-                    <div class="col-12">
-                        <div class="card">
-                            <div class="card-body">
-                                <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
-                                    <li class="nav-item">
-                                        <a class="nav-link active" id="pills-dashboard-tab" data-toggle="pill"
-                                            href="#pills-dashboard" role="tab" aria-controls="pills-dashboard"
-                                            aria-selected="true">Dashboard</a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a class="nav-link" id="pills-product-tab" data-toggle="pill"
-                                            href="#pills-product" role="tab" aria-controls="pills-product"
-                                            aria-selected="false">Products</a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a class="nav-link" id="pills-import-tab" data-toggle="pill"
-                                            href="#pills-import" role="tab" aria-controls="pills-import"
-                                            aria-selected="false">Import</a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a class="nav-link" id="pills-export-tab" data-toggle="pill"
-                                            href="#pills-export" role="tab" aria-controls="pills-export"
-                                            aria-selected="false">Export</a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a class="nav-link" id="pills-assets-tab" data-toggle="pill"
-                                            href="#pills-assets" role="tab" aria-controls="pills-assets"
-                                            aria-selected="false">Assets</a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a class="nav-link" id="pills-entity-tab" data-toggle="pill"
-                                            href="#pills-entity" role="tab" aria-controls="pills-entity"
-                                            aria-selected="false">Entity</a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a class="nav-link" id="pills-settings-tab" data-toggle="pill"
-                                            href="#pills-settings" role="tab" aria-controls="pills-settings"
-                                            aria-selected="false">Settings</a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a class="nav-link" id="pills-system-tab" data-toggle="pill"
-                                            href="#pills-system" role="tab" aria-controls="pills-system"
-                                            aria-selected="false">System</a>
-                                    </li>
-                                </ul>
-                                <div class="tab-content" id="pills-tabContent">
-                                    <div class="tab-pane fade show active" id="pills-dashboard" role="tabpanel"
-                                        aria-labelledby="pills-dashboard-tab">...</div>
 
-                                    <div class="tab-pane fade" id="pills-product" role="tabpanel"
-                                        aria-labelledby="pills-product-tab">
+                    <div
+                      class="tab-pane fade"
+                      id="pills-product"
+                      role="tabpanel"
+                      aria-labelledby="pills-product-tab"
+                    >
+                      <div class="col-md-12">
+                        <div class="row">
+                          <div class="col-md-3"> 
+                            <div class="filters">
+                            <div class="filter-header">
+                              <div class="filter-title">
+                                <h4>Filter By</h4>
+                              </div>
+                              <!-- <div class="filter-clear">
+                                <h6 >Clear all</h6>
+                              </div> -->
+                            </div>
+                            <div class="filter-body">
+                              <div id="accordion">
+                                <div class="card">
+                                  <div class="card-header">
+                                    <a class="card-link" data-toggle="collapse" href="#collapseOne">
+                                      <span>Status</span>
+                                      <span><i class="fa fa-chevron-down"></i></span>
+                                    </a>
+                                  </div>
+                                  <div id="collapseOne" class="collapse show">
+                                    <ul class="filter-list">
+                                      <li >
+                                        <input type="checkbox" value="0-50000" id="1" name="name" />
+                                        Active
+                                      </li>
+                                      <li >
+                                        <input
+                                          type="checkbox"
+                                          value="50000-100000"
+                                          id="2"
+                                          name="name"
+                                        />
+                                        InActive
+                                      </li>
+                                     
+                                    </ul>
+                                  </div>
+                                </div>
+                                <div class="card">
+                                  <div class="card-header">
+                                    <a class="card-link" data-toggle="collapse" href="#two">
+                                      <span>Main Category</span>
+                                      <span><i class="fa fa-chevron-down"></i></span>
+                                    </a>
+                                  </div>
+                                  <div id="two" class="collapse show">
+                                    <ul class="filter-list">
+                                      <li >
+                                        <input type="checkbox" />
+                                      Baby Care
+                                      </li>
+                                      <li >
+                                        <input type="checkbox" />
+                                      Hair Care
+                                      </li>
+                                      <li >
+                                        <input type="checkbox" />
+                                      Health Care
+                                      </li>
+                                      <li >
+                                        <input type="checkbox" />
+                                      Oral Care
+                                      </li>
+                                      
+                                    </ul>
+                                  </div>
+                                </div>
+                                <div class="card">
+                                  <div class="card-header">
+                                    <a class="card-link" data-toggle="collapse" href="#three">
+                                      <span>Sub Category</span>
+                                      <span><i class="fa fa-chevron-down"></i></span>
+                                    </a>
+                                  </div>
+                                  <div id="three" class="collapse ">
+                                    <ul class="filter-list">
+                                      <li >
+                                        <input type="checkbox" />
+                                     Oils
+                                      </li>
+                                      <li >
+                                        <input type="checkbox" />
+                                      Shampoos
+                                      </li>
+                                      <li >
+                                        <input type="checkbox" />
+                                     Masks
+                                      </li>
+                                      <li >
+                                        <input type="checkbox" />
+                                     Serums
+                                      </li>
+                                      
+                                    </ul>
+                                  </div>
+                                </div>
+                                <div class="card">
+                                  <div class="card-header">
+                                    <a class="card-link" data-toggle="collapse " href="#four">
+                                      <span>Price</span>
+                                      <span><i class="fa fa-chevron-down"></i></span>
+                                    </a>
+                                  </div>
+                                  <div id="four" class="collapse show ">
+                                    <div class="slidecontainer">
+                                     
+                                      <input type="range" min="1" max="100" value="20">
+                                      <span>
+                                      <p>0</p>
+                                      <p>1000</p></span>
+                                     
+                                    </div>
+                                  </div>
+                                </div>
+                                <div class="card">
+                                  <div class="card-header">
+                                    <a class="card-link" data-toggle="collapse" href="#five">
+                                      <span>Stock</span>
+                                      <span><i class="fa fa-chevron-down"></i></span>
+                                    </a>
+                                  </div>
+                                  <div id="five" class="collapse show">
+                                    <ul class="filter-list">
+                                      <li >
+                                        <input type="checkbox" />
+                                        In Stock
+                                      </li>
+                                      <li >
+                                        <input type="checkbox" />
+                                        Low Stock
+                                      </li>
+                                      <li >
+                                        <input type="checkbox" />
+                                        Out of Stock
+                                      </li>
+                                      
+                                      
+                                    </ul>
+                                  </div>
+                                </div>
+                                <div class="card">
+                                  <div class="card-header">
+                                    <a class="card-link" data-toggle="collapse" href="#two">
+                                      <span>Locale</span>
+                                      <span><i class="fa fa-chevron-down"></i></span>
+                                    </a>
+                                  </div>
+                                  <div id="two" class="collapse ">
+                                    <ul class="filter-list">
+                                     
+                                        <input type="checkbox" />
+                                      Oral Care
+                                      </li>
+                                      
+                                    </ul>
+                                  </div>
+                                </div>
+                                <div class="card">
+                                  <div class="card-header">
+                                    <a class="card-link" data-toggle="collapse" href="#two">
+                                      <span>Channel</span>
+                                      <span><i class="fa fa-chevron-down"></i></span>
+                                    </a>
+                                  </div>
+                                  <div id="two" class="collapse ">
+                                    <ul class="filter-list">
+                                      <li >
+                                        <input type="checkbox" />
+                                      Baby Care
+                                      </li>
+                                     
+                                      
+                                    </ul>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div></div>
 
-                                        <div class="col-md-12">
-                                            <div class="row">
-                                                <div class="col-md-2">
+                          <div class="col-md-9">
+                            <div class="product_search">
+                              <div class="row">
+                                <div class="col-md-9">
+                                  <input
+                                    type="text"
+                                    class="form-control"
+                                    placeholder="Search Here.."
+                                  />
+                                </div>
 
-                                                </div>
-
-                                                <div class="col-md-10">
-                                                    <div class="product_search">
-                                                        <div class="row">
-                                                            <div class="col-md-10">
-                                                                <input type="text" class="form-control"
-                                                                    placeholder="Search Here..">
-                                                            </div>
-
-                                                            <div class="col-md-2">
-                                                                <button type="button" style="float: right"
-                                                                    class="btn btn-info text-white"
-                                                                    data-whatever="@fat">
-                                                                    <i class="mdi mdi-plus"></i>
-                                                                    Create Product</button>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-
-                                                <div class="col-md-2">
-                                                    <div class="search_filter">
-                                                        <div>
-                                                            <h6>Filter By</h6>
-                                                        </div>
-
-                                                    </div>
-                                                </div>
-
-                                                <div class="col-md-10">
-                                                    <div class="product_data">
-                                                        <div class="product_search_filter">
-                                                            <div class="row">
-                                                                <div class="col-md-10">
-                                                                    <div class="row">
-                                                                        <div class="col-md-2">
-                                                                            <select class="form-select"
-                                                                                id="inlineFormCustomSelect">
-                                                                                <option selected="Locale"></option>
-                                                                                <option value="1">One</option>
-                                                                                <option value="2">Two</option>
-                                                                                <option value="3">Three</option>
-                                                                            </select>
-                                                                        </div>
-
-                                                                        <div class="col-md-2">
-                                                                            <select class="form-select"
-                                                                                id="inlineFormCustomSelect">
-                                                                                <option selected="Channel"></option>
-                                                                                <option value="1">One</option>
-                                                                                <option value="2">Two</option>
-                                                                                <option value="3">Three</option>
-                                                                            </select>
-                                                                        </div>
-
-                                                                        <div class="col-md-3">
-                                                                            <select class="form-select"
-                                                                                id="inlineFormCustomSelect">
-                                                                                <option selected="Main-Categories">
-                                                                                </option>
-                                                                                <option value="1">One</option>
-                                                                                <option value="2">Two</option>
-                                                                                <option value="3">Three</option>
-                                                                            </select>
-                                                                        </div>
-
-                                                                        <div class="col-md-3">
-                                                                            <select class="form-select"
-                                                                                id="inlineFormCustomSelect">
-                                                                                <option selected="sub-Category">
-                                                                                </option>
-                                                                                <option value="1">One</option>
-                                                                                <option value="2">Two</option>
-                                                                                <option value="3">Three</option>
-                                                                            </select>
-                                                                        </div>
-
-                                                                        <div class="col-md-2">
-                                                                            <button type="button"
-                                                                                class="btn btn-info text-white"
-                                                                                data-bs-toggle="modal"
-                                                                                data-bs-target="#exampleModal"
-                                                                                data-whatever="@fat">
-                                                                                Search
-                                                                            </button>
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-
-                                                                <div class="col-md-2">
-                                                                    <div class="Alter_column_section">
-                                                                        <p>Alter Table Coulmns</p>
-                                                                        <div class="table_columns">
-                                                                            <select class="form-select"
-                                                                                id="inlineFormCustomSelect">
-                                                                                <option selected="sub-Category">Sort
-                                                                                </option>
-                                                                                <option value="1">Ascending</option>
-                                                                                <option value="2">Descenind</option>
-                                                                            </select>
-
-                                                                            <select class="form-select"
-                                                                                id="inlineFormCustomSelect">
-                                                                                <option selected="sub-Category">View
-                                                                                </option>
-                                                                                <option value="2">List</option>
-                                                                                <option value="3">Grid</option>
-                                                                            </select>
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
+                                <div class="col-md-3">
+                                  <button
+                                    type="button"
+                                   style="float: right;"
+                                    class="btn btn-info text-white"
+                                    data-whatever="@fat"
+                                    data-toggle="modal" data-target="#CreateProduct"
+                                  >
+                                    <i class="mdi mdi-plus"></i>
+                                    Create Product
+                                  </button>
+                                  <div class="modal fade" id="CreateProduct" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                    <div class="modal-dialog CreateProductdialog" role="document" >
+                                      <div class="modal-content">
+                                        <div class="modal-header">
+                                          <h5 class="modal-title" id="exampleModalLabel">Adding new product
+                                          </h5>
+                                          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                            <span aria-hidden="true">&times;</span>
+                                          </button>
                                         </div>
+                                        <div class="modal-body">
+                                          <div class="row attributes">
+                                            <div class="col-md-2">
+                                              <select class="form-select" id="inlineFormCustomSelect">
+                                                <option selected="Locale">Locale*</option>
+                                                <option value="1">One</option>
+                                                <option value="2">Two</option>
+                                                <option value="3">Three</option>
+                                              </select>
+                                            </div>
+          
+                                            <div class="col-md-2">
+                                              <select class="form-select" id="inlineFormCustomSelect">
+                                                <option selected="Channel">Channel*</option>
+                                                <option value="1">One</option>
+                                                <option value="2">Two</option>
+                                                <option value="3">Three</option>
+                                              </select>
+                                            </div>
+          
+                                            <div class="col-md-3">
+                                              <select class="form-select" id="inlineFormCustomSelect">
+                                                <option selected="Main-Categories">Main-Categories*</option>
+                                                <option value="1">One</option>
+                                                <option value="2">Two</option>
+                                                <option value="3">Three</option>
+                                              </select>
+                                            </div>
+          
+                                            <div class="col-md-3">
+                                              <select class="form-select" id="inlineFormCustomSelect">
+                                                <option selected="sub-Category">Sub-Category*</option>
+                                                <option value="1">One</option>
+                                                <option value="2">Two</option>
+                                                <option value="3">Three</option>
+                                              </select>
+                                            </div>
+          
+                                            <div class="col-md-2">
+                                              <button type="button" class="btn btn-info text-white" data-bs-toggle="modal" data-bs-target="#exampleModal" data-whatever="@fat">
+                                                Search
+                                              </button>
+                                            </div>
+                                          </div>
+                                          <h5>Common Attributes</h5>
+                                          <div class="row">
+                                            <div class="col-md-4"> <div class="dumimage">
 
-                                        <!-- <div class="col-sm-5">
+                                            </div></div>
+                                            <div class="col-md-6">
+                                              <div class="form-group">
+                                              <div class="addcountry1">
+                                                <input type="text" placeholder="Name" class="form-control">
+                                                <input type="text" placeholder="" class="form-control">
+                                                <p><small>(Prompt the attributes defned for this category)
+                                                </small></p>
+                                              </div>
+                                              
+                                            </div>
+                                            <div class="col-md-2"></div>
+                                          </div>
+                                          <h5>Special Attributes</h5>
+                                          <div class="row">
+                                            <div class="col-md-4">
+                                             
+                                            </div>
+                                            <div class="col-md-6">
+                                              <div class="form-group">
+                                              <div class="addcountry1">
+                                                <input type="text" placeholder="Name" class="form-control">
+                                                <input type="text" placeholder="" class="form-control">
+                                                
+                                              </div>
+                                              
+                                            </div>
+                                            <div class="col-md-2"></div>
+                                          </div>
+
+                                          </div>
+                                        </div>
+                                        <div class="modal-footer">
+                                          <button type="button" class="btn btn-primary">Add </button>
+                                          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                          
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="row">
+                              <div class="col-md-12">
+                                <div class="product_data">
+                                  <div class="product_search_filter">
+                                    <div class="row">
+                                      <div class="col-md-9">
+                                        <div class="row">
+                                          <div class="col-md-2">
+                                            <select
+                                              class="form-select"
+                                              id="inlineFormCustomSelect"
+                                            >
+                                              <option selected="Locale"></option>
+                                              <option value="1">One</option>
+                                              <option value="2">Two</option>
+                                              <option value="3">Three</option>
+                                            </select>
+                                          </div>
+    
+                                          <div class="col-md-2">
+                                            <select
+                                              class="form-select"
+                                              id="inlineFormCustomSelect"
+                                            >
+                                              <option selected="Channel"></option>
+                                              <option value="1">One</option>
+                                              <option value="2">Two</option>
+                                              <option value="3">Three</option>
+                                            </select>
+                                          </div>
+    
+                                          <div class="col-md-3">
+                                            <select
+                                              class="form-select"
+                                              id="inlineFormCustomSelect"
+                                            >
+                                              <option
+                                                selected="Main-Categories"
+                                              ></option>
+                                              <option value="1">One</option>
+                                              <option value="2">Two</option>
+                                              <option value="3">Three</option>
+                                            </select>
+                                          </div>
+    
+                                          <div class="col-md-3">
+                                            <select
+                                              class="form-select"
+                                              id="inlineFormCustomSelect"
+                                            >
+                                              <option
+                                                selected="sub-Category"
+                                              ></option>
+                                              <option value="1">One</option>
+                                              <option value="2">Two</option>
+                                              <option value="3">Three</option>
+                                            </select>
+                                          </div>
+    
+                                          <div class="col-md-2">
+                                            <button
+                                              type="button"
+                                              class="btn btn-info text-white"
+                                              data-bs-toggle="modal"
+                                              data-bs-target="#exampleModal"
+                                              data-whatever="@fat"
+                                            >
+                                              Search
+                                            </button>
+                                          </div>
+                                        </div>
+                                      </div>
+    
+                                      <div class="col-md-3">
+                                        <div class="Alter_column_section">
+                                          <p>Alter Table Columns</p>
+                                          <div class="table_columns">
+                                            <select
+                                              class=""
+                                              id="inlineFormCustomSelect"
+                                            >
+                                              <option selected="sub-Category">
+                                                Sort
+                                              </option>
+                                              <option value="1">Ascending</option>
+                                              <option value="2">Descenind</option>
+                                            </select>
+    
+                                            <select
+                                              class=""
+                                              id="inlineFormCustomSelect"
+                                            >
+                                              <option selected="sub-Category">
+                                                View
+                                              </option>
+                                              <option value="2">List</option>
+                                              <option value="3">Grid</option>
+                                            </select>
+                                          </div>
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="col-md-12">
+                                <div class="table-responsive">
+                                  <table id="myTable" class="table table-striped border color-table inverse-table" >
+                                    <thead>
+                                      <tr>
+                                        
+                                        <th style="width: 15%;">ID</th>
+                                        <th style="width: 15%;">Status</th>
+                                        <th style="width: 15%;"> Category</th>
+                                        <th style="width: 15%;"> Name</th>
+                                        <th style="width: 10%;">Price</th>
+                                        <th style="width: 10%;">Stock</th>
+                                        <th style="width: 20%;">Action</th>
+                                      </tr>
+                                      
+                                     
+                                    </thead>
+                                    <tbody id="checkall-target">
+                                     
+                                      <tr>
+                                        
+                                          <td>0001</td>
+                                        <td>test</td>
+                                        <td>test</td>
+                                        <td>test</td>
+                                        <td>1653</td>
+                                        <td>test</td>
+                                        <td><i class="fa fa-pencil-square" aria-hidden="true"></i>
+                                          
+                                          <i class="fa fa-trash-o" aria-hidden="true"></i>
+                                        </td>
+                                      </tr>
+                                      <tr>
+                                        
+                                        <td>0001</td>
+                                      <td>test</td>
+                                      <td>test</td>
+                                      <td>test</td>
+                                      <td>1653</td>
+                                      <td>test</td>
+                                      <td><i class="fa fa-pencil-square" aria-hidden="true"></i>
+                                        
+                                        <i class="fa fa-trash-o" aria-hidden="true"></i>
+                                      </td>
+                                    </tr>
+                                    
+                                    </tbody>
+                                  </table>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+
+                          <!-- <div class="col-md-2">
+                            <div class="search_filter">
+                              <div>
+                                <h6>Filter By</h6>
+                              </div>
+                            </div>
+                          </div> -->
+
+                         
+                        </div>
+                      </div>
+
+                      <!-- <div class="col-sm-5">
                                             <button type="button" class="btn btn-toggle active" data-toggle="button"
                                                 aria-pressed="true" autocomplete="off">
                                                 <div class="handle"></div>
                                             </button>
                                         </div> -->
+                    </div>
+                    </div>
 
+                    <div
+                      class="tab-pane fade"
+                      id="pills-import"
+                      role="tabpanel"
+                      aria-labelledby="pills-import-tab"
+                    >
+                      ...
+                    </div>
+
+                    <div
+                      class="tab-pane fade"
+                      id="pills-export"
+                      role="tabpanel"
+                      aria-labelledby="pills-export-tab"
+                    >
+                      ...
+                    </div>
+
+                    <div
+                      class="tab-pane fade"
+                      id="pills-assets"
+                      role="tabpanel"
+                      aria-labelledby="pills-assets-tab"
+                    >
+                      ...
+                    </div>
+
+                    <div
+                      class="tab-pane fade"
+                      id="pills-entity"
+                      role="tabpanel"
+                      aria-labelledby="pills-entity-tab"
+                    >
+                      ...
+                    </div>
+
+                    <div
+                      class="tab-pane fade"
+                      id="pills-settings"
+                      role="tabpanel"
+                      aria-labelledby="pills-settings-tab"
+                    >
+                      <h5 style="margin-bottom: 30px;">
+                        <strong>Content Management System</strong>
+                      </h5>
+                      <div class="row">
+                        <div class="col-md-2">
+                          <div
+                            class="nav flex-column nav-pills"
+                            id="v-pills-tab"
+                            role="tablist"
+                            aria-orientation="vertical"
+                          >
+                            <a
+                              class="nav-link active"
+                              id="v-pills-home-tab"
+                              data-toggle="pill"
+                              href="#v-pills-home"
+                              role="tab"
+                              aria-controls="v-pills-home"
+                              aria-selected="true"
+                            >
+                              Country
+                            </a>
+                            <a
+                              class="nav-link"
+                              id="v-pills-profile-tab"
+                              data-toggle="pill"
+                              href="#v-pills-profile"
+                              role="tab"
+                              aria-controls="v-pills-profile"
+                              aria-selected="false"
+                            >
+                              Channel
+                            </a>
+                            <a
+                              class="nav-link"
+                              id="v-pills-messages-tab"
+                              data-toggle="pill"
+                              href="#v-pills-messages"
+                              role="tab"
+                              aria-controls="v-pills-messages"
+                              aria-selected="false"
+                            >
+                              Category
+                            </a>
+                            <a
+                              class="nav-link"
+                              id="v-pills-settings-tab"
+                              data-toggle="pill"
+                              href="#v-pills-settings"
+                              role="tab"
+                              aria-controls="v-pills-settings"
+                              aria-selected="false"
+                            >
+                              Attributes
+                            </a>
+                            <a
+                              class="nav-link"
+                              id="v-pills-columns-tab"
+                              data-toggle="pill"
+                              href="#v-pills-columns"
+                              role="tab"
+                              aria-controls="v-pills-columns"
+                              aria-selected="false"
+                            >
+                              Columns
+                            </a>
+                          </div>
+                        </div>
+                        <div class="col-md-10">
+                          <div
+                            class="tab-content countrytable"
+                            id="v-pills-tabContent"
+                          >
+                            <div
+                              class="tab-pane fade show active"
+                              id="v-pills-home"
+                              role="tabpanel"
+                              aria-labelledby="v-pills-home-tab"
+                            >
+                              <h5><strong>Country List</strong></h5>
+                              <div class="row">
+                                <div class="col-md-6"></div>
+                                <div class="col-md-6">
+                                  <div class="row">
+                                    <div class="col-md-4"></div>
+                                    <div class="col-md-3"></div>
+                                    <div class="col-md-5">
+                                      <a
+                                        href="#"
+                                        data-toggle="modal"
+                                        data-target="#exampleModalCenter"
+                                        style="
+                                          margin-right: 15px;
+                                          text-decoration: underline;
+                                        "
+                                      >
+                                        Add New
+                                      </a>
+                                      <a
+                                        href="#"
+                                        style="
+                                          margin-right: 15px;
+                                          text-decoration: underline;
+                                        "
+                                      >
+                                        Import
+                                      </a>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                              <table
+                                class="table"
+                                style="border: 2px solid #dee2e6;"
+                              >
+                                <thead>
+                                  <tr>
+                                    <th scope="col">Flag</th>
+                                    <th scope="col">Name</th>
+                                    <th scope="col">Currency</th>
+                                    <th scope="col">Notation</th>
+                                    <th scope="col">Language</th>
+                                    <th scope="col">Action</th>
+                                  </tr>
+                                </thead>
+                                <tbody>
+                                  <tr>
+                                    <th scope="row">
+                                      <i
+                                        class="fa fa-flag"
+                                        aria-hidden="true"
+                                      ></i>
+                                    </th>
+                                    <td>Japan</td>
+                                    <td>Yen</td>
+                                    <td>@mdo</td>
+                                    <td>Japanese</td>
+                                    <td>
+                                      <i
+                                        class="fa fa-pencil-square"
+                                        aria-hidden="true"
+                                      ></i>
+                                      <i
+                                        class="fa fa-trash-o"
+                                        aria-hidden="true"
+                                      ></i>
+                                    </td>
+                                  </tr>
+                                  <tr>
+                                    <th scope="row">
+                                      <i
+                                        class="fa fa-flag"
+                                        aria-hidden="true"
+                                      ></i>
+                                    </th>
+                                    <td>India</td>
+                                    <td>Rupee</td>
+                                    <td>@mdo</td>
+                                    <td>Hindi, Tamil</td>
+                                    <td>
+                                      <i
+                                        class="fa fa-pencil-square"
+                                        aria-hidden="true"
+                                      ></i>
+                                      <i
+                                        class="fa fa-trash-o"
+                                        aria-hidden="true"
+                                      ></i>
+                                    </td>
+                                  </tr>
+                                  <tr>
+                                    <th scope="row">
+                                      <i
+                                        class="fa fa-flag"
+                                        aria-hidden="true"
+                                      ></i>
+                                    </th>
+                                    <td>US</td>
+                                    <td>Dollar</td>
+                                    <td>@mdo</td>
+                                    <td>English</td>
+                                    <td>
+                                      <i
+                                        class="fa fa-pencil-square"
+                                        aria-hidden="true"
+                                      ></i>
+                                      <i
+                                        class="fa fa-trash-o"
+                                        aria-hidden="true"
+                                      ></i>
+                                    </td>
+                                  </tr>
+                                </tbody>
+                              </table>
+
+                              <!-- Button trigger modal -->
+
+                              <!-- Modal -->
+                              <div
+                                class="modal fade"
+                                id="exampleModalCenter"
+                                tabindex="-1"
+                                role="dialog"
+                                aria-labelledby="exampleModalCenterTitle"
+                                aria-hidden="true"
+                              >
+                                <div
+                                  class="modal-dialog modal-dialog-centered"
+                                  role="document"
+                                >
+                                  <div class="modal-content">
+                                    <div class="modal-header">
+                                      <h5
+                                        class="modal-title"
+                                        id="exampleModalLongTitle"
+                                      >
+                                      Adding New Country
+                                      </h5>
+                                      <button
+                                        type="button"
+                                        class="close"
+                                        data-dismiss="modal"
+                                        aria-label="Close"
+                                      >
+                                        <span aria-hidden="true">&times;</span>
+                                      </button>
+                                    </div>
+                                    <div class="modal-body">
+                                      
+                                        <div class="addnew">
+                                          <div class="row">
+                                            <div class="col-md-6"> 
+                                                <div class="form-group">
+                                              <div class="addcountry1">
+                                                <input
+                                                  type="text"
+                                                  placeholder="Country Full Name"
+                                                  class="form-control"
+                                                />
+                                                <input
+                                                type="text"
+                                                placeholder="Country Short Name"
+                                                class="form-control"
+                                              />
+                                              </div>
+                                              <div class="row">
+                                                  <div class="col-md-4">
+                                                      <div class="flag">
+                                                          <img src="assests/flag.jpg">
+                                                          <p>Country Flag</p>
+                                                      </div>
+                                                  </div>
+                                                  <div class="col-md-8">
+                                                      <div class="default">
+                                                          <input type="checkbox" class="makedefault "> Make as Default
+                                                      </div>
+                                                  </div>
+                                              </div>
+                                            </div>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <div class="form-group">
+                                              <div class="addcountry2">
+                                                   <input
+                                                type="text"
+                                                placeholder="Currency Full Name"
+                                                class="form-control"
+                                              />
+                                              <input
+                                              type="text"
+                                              placeholder="Currency Short Name/ Code"
+                                              class="form-control"
+                                            />
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-4">
+                                                <div class="flag">
+                                                    <img src="assests/flag.jpg">
+                                                    <p>Currency Notation </p>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-8">
+                                               
+                                            </div>
+                                        </div>
+                                    </div>
+                                            </div>
+                                           
+                                          </div>
+                                          <div class="row">
+                                            <div class="col-md-6">
+                                                <div class="form-group">
+                                                    <div class="addcountry1">
+                                                      <input
+                                                        type="text"
+                                                        placeholder="Language 1"
+                                                        class="form-control"
+                                                      />
+                                                      <input
+                                                      type="text"
+                                                      placeholder="Language 2"
+                                                      class="form-control"
+                                                    />
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-2">
+                                                <select class="form-control">
+                                                    <option type="English">English</option>
+                                                    <option type="test">test</option>
+                                                    <option type="test">test</option>
+                                                </select>
+                                                
+                                            </div>
+                                            <div class="col-md-4">
+                                                
+                                            </div>
+                                          </div>
+                                        </div>
+                                      </h5>
+                                    </div>
+                                    <div class="modal-footer">
+                                      <button
+                                        type="button"
+                                        class="btn btn-secondary"
+                                        data-dismiss="modal"
+                                      >
+                                        Close
+                                      </button>
+                                      <button
+                                        type="button"
+                                        class="btn btn-primary"
+                                      >
+                                        Save changes
+                                      </button>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                            <div
+                              class="tab-pane fade"
+                              id="v-pills-profile"
+                              role="tabpanel"
+                              aria-labelledby="v-pills-profile-tab"
+                            >
+                            <h5 style="margin-bottom: 15px;"><strong>Channel List</strong></h5>
+                            <div class="row">
+                                <div class="col-md-6"> <p style="margin-bottom: 10px;">Below are the list of channels created...</p>
+                                    <table
+                                class="table"
+                                style="border: 2px solid #dee2e6;"
+                              >
+                               
+                                <tbody>
+                                  <tr>
+                                   
+                                    <td>Retail</td>
+                                   
+                                    
+                                    <td>
+                                      <i
+                                        class="fa fa-pencil-square"
+                                        aria-hidden="true"
+                                      ></i>
+                                      <i
+                                        class="fa fa-trash-o"
+                                        aria-hidden="true"
+                                      ></i>
+                                    </td>
+                                  </tr>
+                                  <tr>
+                                    
+                                    <td>Ecommerce</td>
+                                    
+                                    <td>
+                                      <i
+                                        class="fa fa-pencil-square"
+                                        aria-hidden="true"
+                                      ></i>
+                                      <i
+                                        class="fa fa-trash-o"
+                                        aria-hidden="true"
+                                      ></i>
+                                    </td>
+                                  </tr>
+                                  <tr>
+                                    
+                                    <td>Market Place</td>
+                                    
+                                    <td>
+                                      <i
+                                        class="fa fa-pencil-square"
+                                        aria-hidden="true"
+                                      ></i>
+                                      <i
+                                        class="fa fa-trash-o"
+                                        aria-hidden="true"
+                                      ></i>
+                                    </td>
+                                  </tr>
+                                </tbody>
+                              </table>
+                              <button type="button" class="btn-primary addnew">Add New</button>
+                              <button type="button" class="btn-primary add">Add </button>
+                                   
+                                    
+                                </div>
+                                <div class="col-md-6"></div>
+                            </div>
+                            </div>
+                            <div
+                              class="tab-pane fade"
+                              id="v-pills-messages"
+                              role="tabpanel"
+                              aria-labelledby="v-pills-messages-tab"
+                            >
+                            <h5  style="margin-bottom: 20px;"><strong>Category - Main & Sub</strong></h5>
+                            <div class="row">
+                                <div class="col-md-4"> <select class="form-control" style="margin-bottom: 15px;">
+                                    <option type="Country">Country</option>
+                                    <option type="test">test</option>
+                                    <option type="test">test</option>
+                                </select>
+                                <p style="margin-bottom: 10px;">Below are the list of channels created...</p>
+                               
+                                    <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+                                        <div class="panel panel-default">
+                                            <div class="panel-heading" role="tab" id="headingOne">
+                                                 <h4 class="panel-title">
+                                            <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                                Baby Care(4) 
+
+                                            </a> <i
+                                            class="fa fa-pencil-square"
+                                            aria-hidden="true"
+                                          ></i>
+                                          <i
+                                            class="fa fa-trash-o"
+                                            aria-hidden="true"
+                                          ></i>
+                                          </h4>
+                                    
+                                            </div>
+                                            <div id="collapseOne" class="panel-collapse collapse show" role="tabpanel" aria-labelledby="headingOne">
+                                                <div class="panel-body"><div class="list">
+                                                    <ul>
+                                                        <li>Hair Care<i class="fa fa-times" aria-hidden="true"></i></li>
+                                                        <li>Oral Care<i class="fa fa-times" aria-hidden="true"></i></li>
+                                                        <li>Diapers<i class="fa fa-times" aria-hidden="true"></i></li>
+                                                        <li>Personal<i class="fa fa-times" aria-hidden="true"></i></li>
+                                                        
+                                                    </ul>
+                                                    <span class="newsubbtn">
+                                                    <button type="button" class="btn-primary newsub">New Sub-category</button>
+                                                    <button type="button" class="btn-primary add">Add </button>
+                                                </span>
+                                                </div></div>
+                                            </div>
+                                        </div>
+                                        <div class="panel panel-default">
+                                            <div class="panel-heading" role="tab" id="headingTwo">
+                                                 <h4 class="panel-title">
+                                            <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                                Cosmetics
+                                            </a><i
+                                            class="fa fa-pencil-square"
+                                            aria-hidden="true"
+                                          ></i>
+                                          <i
+                                            class="fa fa-trash-o"
+                                            aria-hidden="true"
+                                          ></i>
+                                          </h4>
+                                    
+                                            </div>
+                                            <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
+                                                <div class="panel-body"><div class="list">
+                                                    <ul>
+                                                        <li>Hair Care</li>
+                                                        <li>Oral Care</li>
+                                                        <li>Diapers</li>
+                                                        <li>Personal</li>
+                                                        
+                                                    </ul>
+                                                </div></div>
+                                            </div>
+                                        </div>
+                                        <div class="panel panel-default">
+                                            <div class="panel-heading" role="tab" id="headingThree">
+                                                 <h4 class="panel-title">
+                                            <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                                                Hair Care
+                                            </a><i
+                                            class="fa fa-pencil-square"
+                                            aria-hidden="true"
+                                          ></i>
+                                          <i
+                                            class="fa fa-trash-o"
+                                            aria-hidden="true"
+                                          ></i>
+                                          </h4>
+                                    
+                                            </div>
+                                            <div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
+                                                <div class="panel-body">
+                                                    <div class="list">
+                                                        <ul>
+                                                            <li>Hair Care<i class="fa fa-times" aria-hidden="true"></i></li>
+                                                            <li>Oral Care<i class="fa fa-times" aria-hidden="true"></i></li>
+                                                            <li>Diapers<i class="fa fa-times" aria-hidden="true"></i></li>
+                                                            <li>Personal<i class="fa fa-times" aria-hidden="true"></i></li>
+                                                            
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="panel panel-default">
+                                            <div class="panel-heading" role="tab" id="headingFour">
+                                                 <h4 class="panel-title">
+                                            <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                                               
+                                                    
+                                                    <button type="button" class="btn-primary add" style="font-size: 14px;">Add New</button>
+                                               
+                                            </a>
+                                          </h4>
+                                    
+                                            </div>
+                                            <div id="collapseFour" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingFour">
+                                                <div class="panel-body">
+                                                    <div class="list">
+                                                        
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        
+                                    </div>
+                                    
+                            </div>
+                                <div class="col-md-4"> <button type="button" class="btn-primary addnew">Search</button></div>
+                                <div class="col-md-4"></div>
+                            </div>
+                            
+                           
+                            </div>
+                            <div
+                              class="tab-pane fade"
+                              id="v-pills-settings"
+                              role="tabpanel"
+                              aria-labelledby="v-pills-settings-tab"
+                            >
+                            <h5 style="margin-bottom: 15px;"><strong>Product Attributes
+                            </strong></h5>
+                            <h5>Search:</h5>
+                            <div class="row attributes">
+                                <div class="col-md-12">
+                                  <div class="row attributes">
+                                    <div class="col-md-2">
+                                      <select class="form-select" id="inlineFormCustomSelect">
+                                        <option selected="Locale">Locale*</option>
+                                        <option value="1">One</option>
+                                        <option value="2">Two</option>
+                                        <option value="3">Three</option>
+                                      </select>
                                     </div>
 
-                                    <div class="tab-pane fade" id="pills-import" role="tabpanel"
-                                        aria-labelledby="pills-import-tab">...</div>
+                                    <div class="col-md-2">
+                                      <select class="form-select" id="inlineFormCustomSelect">
+                                        <option selected="Channel">Channel*</option>
+                                        <option value="1">One</option>
+                                        <option value="2">Two</option>
+                                        <option value="3">Three</option>
+                                      </select>
+                                    </div>
 
-                                    <div class="tab-pane fade" id="pills-export" role="tabpanel"
-                                        aria-labelledby="pills-export-tab">...</div>
+                                    <div class="col-md-3">
+                                      <select class="form-select" id="inlineFormCustomSelect">
+                                        <option selected="Main-Categories">Main-Categories*</option>
+                                        <option value="1">One</option>
+                                        <option value="2">Two</option>
+                                        <option value="3">Three</option>
+                                      </select>
+                                    </div>
 
-                                    <div class="tab-pane fade" id="pills-assets" role="tabpanel"
-                                        aria-labelledby="pills-assets-tab">...</div>
+                                    <div class="col-md-3">
+                                      <select class="form-select" id="inlineFormCustomSelect">
+                                        <option selected="sub-Category">Sub-Category*</option>
+                                        <option value="1">One</option>
+                                        <option value="2">Two</option>
+                                        <option value="3">Three</option>
+                                      </select>
+                                    </div>
 
-                                    <div class="tab-pane fade" id="pills-entity" role="tabpanel"
-                                        aria-labelledby="pills-entity-tab">...</div>
-
-                                    <div class="tab-pane fade" id="pills-settings" role="tabpanel"
-                                        aria-labelledby="pills-settings-tab">...</div>
-
-                                    <div class="tab-pane fade" id="pills-system" role="tabpanel"
-                                        aria-labelledby="pills-system-tab">...</div>
-
+                                    <div class="col-md-2">
+                                      <button type="button" class="btn btn-info text-white" data-bs-toggle="modal" data-bs-target="#exampleModal" data-whatever="@fat">
+                                        Search
+                                      </button>
+                                    </div>
+                                  </div>
                                 </div>
-                            </div>
-                        </div>
-                    </div>
+                                
+                                <div class="col-md-12">
+                                    <div class="row attributes">
+                                    <div class="col-md-10">
+                                        <p>Below are the list of attributes created for Locale>Channel>Main Category>Sub-category
+                                        </p>
+                                    </div>
+                                    <div class="col-md-2"> <button type="button" class="btn-primary addnew" data-toggle="modal" data-target="#attributemodal">Add New</button></div>
+                                </div>
+                               
+                                
+
+                                <div class="col-md-12">
+                                    <table class="table table-bordered">
+                                        <thead>
+                                          <tr>
+                                            <th scope="col">S.No</th>
+                                            <th scope="col">Name</th>
+                                            <th scope="col">Code</th>
+                                            <th scope="col">Type</th>
+                                            <th scope="col">Family_Group</th>
+                                            <th scope="col">Action</th>
+                                          </tr>
+                                        </thead>
+                                        <tbody>
+                                          <tr>
+                                            <th scope="row">1</th>
+                                            <td>Height</td>
+                                            <td>test</td>
+                                            <td>Float</td>
+                                            <td>Test</td>
+                                            <td> <i
+                                                class="fa fa-pencil-square"
+                                                aria-hidden="true"
+                                              ></i>
+                                              <i
+                                                class="fa fa-trash-o"
+                                                aria-hidden="true"
+                                              ></i></td>
+                                          </tr>
+                                          
+                                          
+                                        </tbody>
+                                      </table>
+                                  </div>
+                              </div>
+                               <!-- Button trigger modal -->
+
+  
+  <!-- Modal -->
+  <div class="modal fade" id="attributemodal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document" style="width: 700px;">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLongTitle">New Attribute:
+          </h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <p style="margin-bottom: 20px;">Creating new attribute for Locale>Channel>Main Category>Sub-category
+          </p>
+            <div class="row">
+                <div class="col-md-8"> 
+                    <div class="form-group">
+                  <div class="addcountry1">
+                      <span>
+
+                    <input type="text" placeholder="Attribute Family
+                    " class="form-control"><a>Add New</a></span>
+                    <span> <input type="text" placeholder="Attribute Group
+                        " class="form-control"><a>Add New</a></span>
+                    
+                    <span><input type="text" placeholder="Attribute Name" class="form-control"><a>Add New</a></span>
+                    <span><select class="form-control" style="margin-bottom: 15px;">
+                        <option type="Type">Type</option>
+                        <option type="test">test</option>
+                        <option type="test">test</option>
+                    </select></span>
+                    <span><input type="text" placeholder="Value" class="form-control"><a><small><i class="fa fa-plus-circle" aria-hidden="true"></i> (add multiple values)</small></a></span>
+                  </div>
+                
                 </div>
-                <!-- ============================================================== -->
-                <!-- End PAge Content -->
-                <!-- ============================================================== -->
+                </div>
+                <div class="col-md-4">
+                    <div class="define">
+                        <p>Define as*</p>
+                        <ul>
+                            <li><input type="radio">&nbsp;&nbsp;Common
+                            </li>
+                            <li><input type="radio">&nbsp;&nbsp;Special</li>
+                        </ul>
+                    </div>
+                    
+                </div>
+                
+               
+              </div>
+        </div>
+        <div class="modal-footer"><button type="button" class="btn btn-primary">Add</button>
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+          
+        </div>
+      </div>
+    </div>
+  </div>
+                                </div>
+                             
+                            </div>
+                            <div
+                              class="tab-pane fade"
+                              id="v-pills-columns"
+                              role="tabpanel"
+                              aria-labelledby="v-pills-columns-tab"
+                            >
+                             <div class="row attributes">
+                              <div class="col-md-12">
+                                <div class="row attributes">
+                                  <div class="col-md-2">
+                                    <select class="form-select" id="inlineFormCustomSelect">
+                                      <option selected="Locale">Locale*</option>
+                                      <option value="1">One</option>
+                                      <option value="2">Two</option>
+                                      <option value="3">Three</option>
+                                    </select>
+                                  </div>
+
+                                  <div class="col-md-2">
+                                    <select class="form-select" id="inlineFormCustomSelect">
+                                      <option selected="Channel">Channel*</option>
+                                      <option value="1">One</option>
+                                      <option value="2">Two</option>
+                                      <option value="3">Three</option>
+                                    </select>
+                                  </div>
+
+                                  <div class="col-md-3">
+                                    <select class="form-select" id="inlineFormCustomSelect">
+                                      <option selected="Main-Categories">Main-Categories*</option>
+                                      <option value="1">One</option>
+                                      <option value="2">Two</option>
+                                      <option value="3">Three</option>
+                                    </select>
+                                  </div>
+
+                                  <div class="col-md-3">
+                                    <select class="form-select" id="inlineFormCustomSelect">
+                                      <option selected="sub-Category">Sub-Category*</option>
+                                      <option value="1">One</option>
+                                      <option value="2">Two</option>
+                                      <option value="3">Three</option>
+                                    </select>
+                                  </div>
+
+                                  <div class="col-md-2">
+                                    <button type="button" class="btn btn-info text-white" data-bs-toggle="modal" data-bs-target="#exampleModal" data-whatever="@fat">
+                                      Search
+                                    </button>
+                                  </div>
+                                </div>
+                                <p><small>Below are the list of attributes...</small>
+
+                                </p>
+                                <!-- <h5 style="font-weight: 400;"><strong >Alert Columns</strong>
+                                </h5>
+                                <div class="alertcolumns">
+                                <ol>
+                                  <li>Can change the column orders by drag & drop to required position</li>
+                                  <li>Add new column title (multi select) by drag & drop drop from the columns list
+                                  </li>
+                                  <li>Create new using + icon</li>
+                                </ol>
+                              </div> -->
+                              </div>
+                              <div class="col-md-12">
+                                <div class="row">
+                                  <div class="col-md-4">
+                                    <div class="card searchcard" style="width: 18rem;">
+                                    
+                                    <div class="card-body">
+                                      <div class="main">
+  
+                                      <!-- Actual search box -->
+                                      <div class="form-group has-search">
+                                        <span class="fa fa-search form-control-feedback"></span>
+                                        <input type="text" class="form-control" placeholder="Search">
+                                      </div>
+                                      </div>
+                                      <div class="row">
+                                        <div class="col-md-6">
+                                          <div class="statusid">
+                                            <ul>
+                                              <li>ID</li>
+                                              <li> Status</li>
+                                              <li> Category</li>
+                                              <li>  Name</li>
+                                              <li>  Price</li>
+                                              <li style="color: #c2c2d1;">Column 6</li>
+                                              <li style="color: #c2c2d1;">Column 7</li>
+                                              <li style="color: #c2c2d1;"> Column 8</li>
+                                              <li style="color: #c2c2d1;"><i class="fa fa-arrows" aria-hidden="true"></i></li>
+                                            </ul>
+                                          </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                          <div class="close">
+                                            <ul>
+                                              <li><i class="fa fa-times" aria-hidden="true"></i></li>
+                                              <li><i class="fa fa-times" aria-hidden="true"></i></li>
+                                              <li><i class="fa fa-times" aria-hidden="true"></i></li>
+                                              <li><i class="fa fa-times" aria-hidden="true"></i></li>
+                                              <li><i class="fa fa-times" aria-hidden="true"></i></li>
+                                            </ul>
+                                            
+                                          </div>
+                                        </div>
+                                      </div>
+                                     
+                                     
+                                    </div>
+                                  </div>
+                                </div>
+                                  <div class="col-md-4">
+                                    <div class="card searchcard" style="width: 18rem;">
+                                    
+                                    <div class="card-body">
+                                      <div class="main">
+  
+                                      <!-- Actual search box -->
+                                      <div class="form-group has-search">
+                                        <span class="fa fa-search form-control-feedback"></span>
+                                        <input type="text" class="form-control" placeholder="Search">
+                                      </div>
+                                      </div>
+                                      <div class="row">
+                                        <div class="col-md-12">
+                                          <div id="accordion">
+                                            <div class="card maincategory">
+                                              <h6>Main Category (10)</h6>
+                                              <div class="card-header maincategory-header" id="headingOne">
+                                                <h5 class="mb-0">
+                                                  <button class="btn btn-link" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                                    Baby Care (6) <i class="fa fa-chevron-right" aria-hidden="true"></i>
+                                                   
+                                                  </button> 
+                                                </h5>
+                                              </div>
+                                          
+                                              <div id="collapseOne" class="collapse " aria-labelledby="headingOne" data-parent="#accordion">
+                                                <div class="card-body categorybody">
+                                                  Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 
+                                                </div>
+                                              </div>
+                                            </div>
+                                            <div class="card maincategory">
+                                              <div class="card-header maincategory-header" id="headingTwo">
+                                                <h5 class="mb-0">
+                                                  <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                                    Hair Care (5) <i class="fa fa-chevron-right" aria-hidden="true" ></i>
+                                                  </button>
+                                                </h5>
+                                              </div>
+                                              <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
+                                                <div class="card-body collapsebody2">
+                                                  <div id="accordion">
+                                                    <div class="card maincategory">
+                                                      <h6>Sub-Category
+                                                      </h6>
+                                                      <div class="card-header maincategory-header" id="headingSix">
+                                                        <h5 class="mb-0">
+                                                          <button class="btn btn-link" data-toggle="collapse" data-target="#collapseSix" aria-expanded="true" aria-controls="collapseSix">
+                                                            Oils  <i class="fa fa-chevron-right" aria-hidden="true"></i>
+                                                           
+                                                          </button> 
+                                                        </h5>
+                                                      </div>
+                                                  
+                                                      <div id="collapseSix" class="collapse " aria-labelledby="headingSix" data-parent="#accordion">
+                                                        <div class="card-body collapsebody2">
+                                                          test 
+                                                        </div>
+                                                      </div>
+                                                    </div>
+                                                    <div class="card maincategory">
+                                                      <div class="card-header maincategory-header" id="headingSeven">
+                                                        <h5 class="mb-0">
+                                                          <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseSeven" aria-expanded="false" aria-controls="collapseSeven">
+                                                            Shampoo  <i class="fa fa-chevron-right" aria-hidden="true" ></i>
+                                                          </button>
+                                                        </h5>
+                                                      </div>
+                                                      <div id="collapseSeven" class="collapse" aria-labelledby="headingSeven" data-parent="#accordion">
+                                                        <div class="card-body collapsebody2">
+                                                         test
+                                                        </div>
+                                                      </div>
+                                                    </div>
+                                                    <div class="card maincategory">
+                                                      <div class="card-header maincategory-header" id="headingEight">
+                                                        <h5 class="mb-0">
+                                                          <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseEight" aria-expanded="false" aria-controls="collapseEight">
+                                                            Serums<i class="fa fa-chevron-right" aria-hidden="true"></i>
+                                                          </button>
+                                                        </h5>
+                                                      </div>
+                                                      <div id="collapseEight" class="collapse" aria-labelledby="headingEight" data-parent="#accordion">
+                                                        <div class="card-body collapsebody2">
+                                                          test 
+                                                        </div>
+                                                      </div>
+                                                    </div>
+                                                    <div class="card maincategory">
+                                                      <div class="card-header maincategory-header" id="headingNine">
+                                                        <h5 class="mb-0">
+                                                          <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseNine" aria-expanded="false" aria-controls="collapseNine">
+                                                            Hair Color <i class="fa fa-chevron-right" aria-hidden="true"></i>
+                                                          </button>
+                                                        </h5>
+                                                      </div>
+                                                      <div id="collapseNine" class="collapse" aria-labelledby="headingNine" data-parent="#accordion">
+                                                        <div class="card-body collapsebody2">
+                                                          test
+                                                        </div>
+                                                      </div>
+                                                    </div>
+                                                    <div class="card maincategory">
+                                                      <div class="card-header maincategory-header" id="headingTen">
+                                                        <h5 class="mb-0">
+                                                          <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseTen" aria-expanded="false" aria-controls="collapseTen">
+                                                            Masks <i class="fa fa-chevron-right" aria-hidden="true"></i>
+                                                          </button>
+                                                        </h5>
+                                                      </div>
+                                                      <div id="collapseTen" class="collapse" aria-labelledby="headingTen" data-parent="#accordion">
+                                                        <div class="card-body collapsebody2">
+                                                          test
+                                                        </div>
+                                                      </div>
+                                                    </div>
+                                                  </div>
+                                                </div>
+                                              </div>
+                                            </div>
+                                            <div class="card maincategory">
+                                              <div class="card-header maincategory-header" id="headingThree">
+                                                <h5 class="mb-0">
+                                                  <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                                                    Health Care (10)<i class="fa fa-chevron-right" aria-hidden="true"></i>
+                                                  </button>
+                                                </h5>
+                                              </div>
+                                              <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordion">
+                                                <div class="card-body categorybody">
+                                                  Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 
+                                                </div>
+                                              </div>
+                                            </div>
+                                            <div class="card maincategory">
+                                              <div class="card-header maincategory-header" id="headingFour">
+                                                <h5 class="mb-0">
+                                                  <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                                                    Oral Care (4)<i class="fa fa-chevron-right" aria-hidden="true"></i>
+                                                  </button>
+                                                </h5>
+                                              </div>
+                                              <div id="collapseFour" class="collapse" aria-labelledby="headingFour" data-parent="#accordion">
+                                                <div class="card-body categorybody">
+                                                  Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid.
+                                                </div>
+                                              </div>
+                                            </div>
+                                            <div class="card maincategory">
+                                              <div class="card-header maincategory-header" id="headingFive">
+                                                <h5 class="mb-0">
+                                                  <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+                                                    Personal Care (9) <i class="fa fa-chevron-right" aria-hidden="true"></i>
+                                                  </button>
+                                                </h5>
+                                              </div>
+                                              <div id="collapseFive" class="collapse" aria-labelledby="headingFive" data-parent="#accordion">
+                                                <div class="card-body categorybody">
+                                                  Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid.
+                                                </div>
+                                              </div>
+                                            </div>
+                                          </div>
+                                        </div>
+                                        
+                                      </div>
+                                     
+                                     
+                                    </div>
+                                  </div>
+                                </div>
+                                  <div class="col-md-4">
+                                    <div class="card searchcard" style="width: 18rem;">
+                                    
+                                    <div class="card-body">
+                                      <div class="main">
+  
+                                      <!-- Actual search box -->
+                                      <div class="form-group has-search">
+                                        <span class="fa fa-search form-control-feedback"></span>
+                                        <input type="text" class="form-control" placeholder="Search">
+                                      </div>
+                                      </div>
+                                      <div class="row">
+                                        <div class="col-md-6">
+                                          <div class="statusid">
+                                            <ul>
+                                              <li>ID</li>
+                                              <li> Status</li>
+                                              <li> Category</li>
+                                              <li>  Name</li>
+                                              <li>  Price</li>
+                                              <li  style="color: #c2c2d1;">Column 6
+                                                
+                                               
+                                                </li>
+                                              <li style="color: #c2c2d1;">Column 7</li>
+                                              <li style="color: #c2c2d1;"> Column 8</li>
+                                              <li style="color: #c2c2d1;"><i class="fa fa-arrows" aria-hidden="true"></i></li>
+                                            </ul>
+                                          </div>
+                                        </div>
+                                        <div class="col-md-6"></div>
+                                      </div>
+                                     
+                                     
+                                    </div>
+                                  </div>
+                                </div>
+                                </div>
+                              </div>
+                             </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div
+                      class="tab-pane fade"
+                      id="pills-system"
+                      role="tabpanel"
+                      aria-labelledby="pills-system-tab"
+                    >
+                      ...
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
-            <!-- ============================================================== -->
-            <!-- End Container fluid  -->
-            <!-- ============================================================== -->
+          </div>
+          <!-- ============================================================== -->
+          <!-- End PAge Content -->
+          <!-- ============================================================== -->
         </div>
         <!-- ============================================================== -->
-        <!-- End Page wrapper  -->
+        <!-- End Container fluid  -->
         <!-- ============================================================== -->
+      </div>
+      <!-- ============================================================== -->
+      <!-- End Page wrapper  -->
+      <!-- ============================================================== -->
     </div>
     <!-- ============================================================== -->
     <!-- All Jquery -->
@@ -601,37 +2544,45 @@
     <script src="node_modules/datatables.net/js/jquery.dataTables.min.js"></script>
     <script src="node_modules/datatables.net-bs4/js/dataTables.responsive.min.js"></script>
     <script>
-        $(function () {
-            $('#myTable').DataTable();
-            var table = $('#example').DataTable({
-                "columnDefs": [{
-                    "visible": false,
-                    "targets": 2
-                }],
-                "order": [
-                    [2, 'asc']
-                ],
-                "displayLength": 25,
-                "drawCallback": function (settings) {
-                    var api = this.api();
-                    var rows = api.rows({
-                        page: 'current'
-                    }).nodes();
-                    var last = null;
-                    api.column(2, {
-                        page: 'current'
-                    }).data().each(function (group, i) {
-                        if (last !== group) {
-                            $(rows).eq(i).before('<tr class="group"><td colspan="5">' + group + '</td></tr>');
-                            last = group;
-                        }
-                    });
+      $(function () {
+        $('#myTable').DataTable()
+        var table = $('#example').DataTable({
+          columnDefs: [
+            {
+              visible: false,
+              targets: 2,
+            },
+          ],
+          order: [[2, 'asc']],
+          displayLength: 25,
+          drawCallback: function (settings) {
+            var api = this.api()
+            var rows = api
+              .rows({
+                page: 'current',
+              })
+              .nodes()
+            var last = null
+            api
+              .column(2, {
+                page: 'current',
+              })
+              .data()
+              .each(function (group, i) {
+                if (last !== group) {
+                  $(rows)
+                    .eq(i)
+                    .before(
+                      '<tr class="group"><td colspan="5">' +
+                        group +
+                        '</td></tr>',
+                    )
+                  last = group
                 }
-            });
-        });
-
+              })
+          },
+        })
+      })
     </script>
-</body>
-
-
+  </body>
 </html>
