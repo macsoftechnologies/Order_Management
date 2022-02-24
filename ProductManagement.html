@@ -109,7 +109,7 @@
         font-weight: 600;
       }
         input.form-control{
-          margin-bottom: 20px;
+          /* margin-bottom: 20px; */
           box-shadow: none;
         }
       select.form-control{appearance: auto;
@@ -134,7 +134,7 @@
       .default input.makedefault{
           margin-right: 10px;
       }
-      button.btn-primary{
+      button.btn-primary, .btn-info{
         width: 100px;
     height: 35px;
     /* margin-right: 20px; */
@@ -144,10 +144,14 @@
     font-family: FontAwesome;
     content:"\f068";
     padding-right: 5px;
+    margin-top: 3px;
+    font-size: 12px;
 }
 .panel-title > a.collapsed::after {
     float: left ;
     content:"\f067";
+    margin-top: 3px;
+    font-size: 12px;
 }
 .panel-title > a:hover, 
 .panel-title > a:active, 
@@ -322,7 +326,7 @@ span.newsubbtn{
 .maincategory-header h5 i{
   float: right !important;
     margin-top: 4px;
-    font-size: 14px;
+    font-size: 12px;
 }
 .maincategory .categorybody{
   padding: 10px 0;
@@ -457,6 +461,75 @@ span.newsubbtn{
 .CreateProductdialog{
   width: 750px;
 }
+.nav-pills .nav-link.active,
+.nav-pills .show > .nav-link {
+  color: #fff;
+  background-color: #fb9678 !important;
+}
+table tbody tr td i{
+  margin-right: 10px;
+    font-size: 20px;
+}
+a.colorfont{
+  color: black;
+}
+.btn-primary, .btn-info{ background-color: #fb9678 !important;
+border-color: #fb9678 !important;}
+/* .btn-info{
+width: 150px;
+} */
+.maincategory{
+  border: 0px;
+}
+.spacewrap{
+  margin-bottom: 20px;
+}
+.panel-heading h4 a{
+  color: black;
+}
+.localewrap{
+  margin-bottom: 20px;
+}
+span.entitywrap {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+#pills-entity span.entitywrap a {
+  margin-right: 0px;
+}
+input.url{
+  margin-bottom: 20px;
+  font-size: 14px;
+  box-shadow: none;
+  outline: none;
+}
+.entitylogo img{
+  width: 150px;
+  height: 150px;
+}
+textarea.form-control{
+  font-size: 14px;
+  box-shadow: none;
+  outline: none;
+}
+.spacewrapline{
+  border-bottom: 1px solid #8080804a;
+  margin-bottom: 15px;
+}
+.formatwrap{
+  margin-bottom: 15px;
+}
+.dateformat-data{
+  margin-bottom: 10px;
+}
+.dateformat-data input{
+  margin-bottom: 15px;
+}
+.format h6{
+  margin-top: 10px;
+}
+
     </style>
   </head>
 
@@ -1103,8 +1176,8 @@ span.newsubbtn{
 
                           <div class="col-md-9">
                             <div class="product_search">
-                              <div class="row">
-                                <div class="col-md-9">
+                              <div class="row spacewrap">
+                                <div class="col-md-10">
                                   <input
                                     type="text"
                                     class="form-control"
@@ -1112,7 +1185,7 @@ span.newsubbtn{
                                   />
                                 </div>
 
-                                <div class="col-md-3">
+                                <div class="col-md-2">
                                   <button
                                     type="button"
                                    style="float: right;"
@@ -1409,8 +1482,199 @@ span.newsubbtn{
                       role="tabpanel"
                       aria-labelledby="pills-import-tab"
                     >
-                      ...
+                    <div class="col-md-12">
+                      <div class="row">
+                        
+
+                        <div class="col-md-12">
+                          <div class="product_search">
+                            <div class="row spacewrap">
+                              <div class="col-md-10">
+                                <input
+                                  type="text"
+                                  class="form-control"
+                                  placeholder="Search Here.."
+                                />
+                              </div>
+
+                              <div class="col-md-2">
+                                <button
+                                  type="button"
+                                
+                                  class="btn btn-info text-white"
+                                  data-whatever="@fat"
+                                  data-toggle="modal" data-target="#Import"
+                                >
+                                  <i class="mdi mdi-plus"></i>
+                                  Import
+                                </button>
+                                <div class="modal fade" id="Import" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                  <div class="modal-dialog CreateProductdialog" role="document" >
+                                    <div class="modal-content">
+                                      <div class="modal-header">
+                                        <h5 class="modal-title" id="exampleModalLabel">Import New
+                                        </h5>
+                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                          <span aria-hidden="true">&times;</span>
+                                        </button>
+                                      </div>
+                                      <div class="modal-body">
+                                        <div class="row attributes">
+                                          <div class="col-md-6">
+                                            <select class="form-select localewrap" id="inlineFormCustomSelect">
+                                              <option selected="Locale">Locale*</option>
+                                              <option value="1">One</option>
+                                              <option value="2">Two</option>
+                                              <option value="3">Three</option>
+                                            </select>
+                                            <select class="form-select localewrap" id="inlineFormCustomSelect">
+                                              <option selected="Channel">Channel*</option>
+                                              <option value="1">One</option>
+                                              <option value="2">Two</option>
+                                              <option value="3">Three</option>
+                                            </select>
+                                            <select class="form-select localewrap" id="inlineFormCustomSelect">
+                                              <option selected="Main-Categories">Main-Categories*</option>
+                                              <option value="1">One</option>
+                                              <option value="2">Two</option>
+                                              <option value="3">Three</option>
+                                            </select>
+                                            <select class="form-select localewrap" id="inlineFormCustomSelect">
+                                              <option selected="sub-Category">Sub-Category*</option>
+                                              <option value="1">One</option>
+                                              <option value="2">Two</option>
+                                              <option value="3">Three</option>
+                                            </select>
+                                          </div>
+        
+                                          
+        
+                                          <div class="col-md-6">
+                                            <textarea class="form-cotrol" placeholder="Description" style="height: 150px; width: 100%; resize: none;"></textarea>
+                                          </div>
+                                        </div>
+                                       
+                                      </div>
+                                      <div class="modal-footer">
+                                        <button type="button" class="btn btn-primary">Import </button>
+                                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                        
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="row">
+                            <div class="col-md-12">
+                              <div class="product_data">
+                                <div class="product_search_filter">
+                                  <div class="row">
+                                    <div class="col-md-9">
+                                      <div class="row">
+                                        <div class="col-md-4">
+                                          <select
+                                            class="form-select"
+                                            id="inlineFormCustomSelect"
+                                          >
+                                            <option selected="Locale">Locale</option>
+                                            <option value="1">One</option>
+                                            <option value="2">Two</option>
+                                            <option value="3">Three</option>
+                                          </select>
+                                        </div>
+  
+                                        <div class="col-md-4">
+                                          <select
+                                            class="form-select"
+                                            id="inlineFormCustomSelect"
+                                          >
+                                            <option selected="Channel">Channel</option>
+                                            <option value="1">One</option>
+                                            <option value="2">Two</option>
+                                            <option value="3">Three</option>
+                                          </select>
+                                        </div>
+  
+                                        
+  
+                                        
+  
+                                        <div class="col-md-4">
+                                          <input type="datetime-local" class="form-control">
+                                          
+                                        </div>
+                                      </div>
+                                    </div>
+  
+                                   
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="col-md-12">
+                              <div class="table-responsive">
+                                <table id="myTable" class="table table-striped border color-table inverse-table" >
+                                  <thead>
+                                    <tr>
+                                      
+                                      <th style="width: 15%;">ID</th>
+                                     
+                                      <th style="width: 15%;"> Category</th>
+                                      <th style="width: 15%;">Product</th>
+                                      <th style="width: 20%;"> File Name</th>
+                                      <th style="width: 20%;">Imported On</th>
+                                     
+                                      <th style="width: 15%;">Action</th>
+                                    </tr>
+                                    
+                                   
+                                  </thead>
+                                  <tbody id="checkall-target">
+                                   
+                                    <tr>
+                                      
+                                        <td>0001</td>
+                                      <td>test</td>
+                                      <td>test</td>
+                                      <td>bc_name_14012022</td>
+                                      <td>test</td>
+                                     
+                                      <td><i class="fa fa-upload" aria-hidden="true"></i><i class="fa fa-pencil-square" aria-hidden="true"></i>
+                                        
+                                        <i class="fa fa-trash-o" aria-hidden="true"></i>
+                                      </td>
+                                    </tr>
+                                  
+                                  
+                                  </tbody>
+                                </table>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+
+                        <!-- <div class="col-md-2">
+                          <div class="search_filter">
+                            <div>
+                              <h6>Filter By</h6>
+                            </div>
+                          </div>
+                        </div> -->
+
+                       
+                      </div>
                     </div>
+
+                    <!-- <div class="col-sm-5">
+                                          <button type="button" class="btn btn-toggle active" data-toggle="button"
+                                              aria-pressed="true" autocomplete="off">
+                                              <div class="handle"></div>
+                                          </button>
+                                      </div> -->
+                  </div>
+                    
 
                     <div
                       class="tab-pane fade"
@@ -1418,7 +1682,186 @@ span.newsubbtn{
                       role="tabpanel"
                       aria-labelledby="pills-export-tab"
                     >
-                      ...
+                    <div class="col-md-12">
+                      <div class="row">
+                        
+
+                        <div class="col-md-12">
+                          <div class="product_search">
+                            <div class="row spacewrap">
+                              <div class="col-md-10">
+                                <input
+                                  type="text"
+                                  class="form-control"
+                                  placeholder="Search Here.."
+                                />
+                              </div>
+
+                              <div class="col-md-2">
+                                <!-- <button
+                                  type="button"
+                                
+                                  class="btn btn-info text-white"
+                                  data-whatever="@fat"
+                                  data-toggle="modal" data-target="#Export"
+                                >
+                                  <i class="mdi mdi-plus"></i>
+                                  Export
+                                </button> -->
+                                <div class="modal fade" id="Export" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                  <div class="modal-dialog CreateProductdialog" role="document" >
+                                    <div class="modal-content">
+                                      <div class="modal-header">
+                                        <h6 class="modal-title" id="exampleModalLabel">Export New
+                                        </h6>
+                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                          <span aria-hidden="true">&times;</span>
+                                        </button>
+                                      </div>
+                                      <div class="modal-body">
+                                        <div class="row attributes">
+                                          <div class="col-md-6">
+                                            <select class="form-select localewrap" id="inlineFormCustomSelect">
+                                              <option selected="Locale">Locale*</option>
+                                              <option value="1">One</option>
+                                              <option value="2">Two</option>
+                                              <option value="3">Three</option>
+                                            </select>
+                                            <select class="form-select localewrap" id="inlineFormCustomSelect">
+                                              <option selected="Channel">Channel*</option>
+                                              <option value="1">One</option>
+                                              <option value="2">Two</option>
+                                              <option value="3">Three</option>
+                                            </select>
+                                            <select class="form-select localewrap" id="inlineFormCustomSelect">
+                                              <option selected="Main-Categories">Main-Categories*</option>
+                                              <option value="1">One</option>
+                                              <option value="2">Two</option>
+                                              <option value="3">Three</option>
+                                            </select>
+                                            <select class="form-select localewrap" id="inlineFormCustomSelect">
+                                              <option selected="sub-Category">Sub-Category*</option>
+                                              <option value="1">One</option>
+                                              <option value="2">Two</option>
+                                              <option value="3">Three</option>
+                                            </select>
+                                          </div>
+        
+                                          
+        
+                                          <div class="col-md-6">
+                                            <textarea class="form-cotrol" placeholder="Description" style="height: 150px; width: 100%; resize: none;"></textarea>
+                                          </div>
+                                        </div>
+                                       
+                                      </div>
+                                      <div class="modal-footer">
+                                        <button type="button" class="btn btn-primary">Import </button>
+                                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                        
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="row">
+                            <div class="col-md-12">
+                              <div class="product_data">
+                                <div class="product_search_filter">
+                                  <div class="row">
+                                    <div class="col-md-9">
+                                      <div class="row">
+                                        <div class="col-md-4">
+                                          <select
+                                            class="form-select"
+                                            id="inlineFormCustomSelect"
+                                          >
+                                            <option selected="Locale">Locale</option>
+                                            <option value="1">One</option>
+                                            <option value="2">Two</option>
+                                            <option value="3">Three</option>
+                                          </select>
+                                        </div>
+  
+                                        <div class="col-md-4">
+                                          <select
+                                            class="form-select"
+                                            id="inlineFormCustomSelect"
+                                          >
+                                            <option selected="Channel">Channel</option>
+                                            <option value="1">One</option>
+                                            <option value="2">Two</option>
+                                            <option value="3">Three</option>
+                                          </select>
+                                        </div>
+  
+                                        
+  
+                                        
+  
+                                        <div class="col-md-4">
+                                          <input type="datetime-local" class="form-control">
+                                          
+                                        </div>
+                                      </div>
+                                    </div>
+  
+                                   
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="col-md-12">
+                              <div class="table-responsive">
+                                <table id="myTable" class="table table-striped border color-table inverse-table" >
+                                  <thead>
+                                    <tr>
+                                      
+                                      <th style="width: 10%;">S.No</th>
+                                     
+                                      <th style="width: 15%;"> Module</th>
+                                      <th style="width: 10%;">Product</th>
+                                      <th style="width: 15%;">Exported By</th>
+                                      <th style="width: 15%;"> File Name</th>
+                                      <th style="width: 15%;">Exported On</th>
+                                     
+                                      <th style="width: 20%;">Action</th>
+                                    </tr>
+                                    
+                                   
+                                  </thead>
+                                  <tbody id="checkall-target">
+                                   
+                                    <tr>
+                                      
+                                        <td>0001</td>
+                                      <td>test</td>
+                                      <td>test</td>
+                                      <td>test</td>
+                                      <td>test</td>
+                                      <td>test</td>
+                                     
+                                      <td><i class="fa fa-download" aria-hidden="true"></i>
+                                        
+                                        <i class="fa fa-eye" aria-hidden="true"></i>
+                                      </td>
+                                    </tr>
+                                  
+                                  
+                                  </tbody>
+                                </table>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+
+                        
+
+                       
+                      </div>
+                    </div>
                     </div>
 
                     <div
@@ -1435,8 +1878,231 @@ span.newsubbtn{
                       id="pills-entity"
                       role="tabpanel"
                       aria-labelledby="pills-entity-tab"
-                    >
-                      ...
+                    ><span class="entitywrap">
+                    <h6>Search:</h6>
+                    <a href="#" data-toggle="modal" data-target="#Entity" style="
+                                          
+                                          text-decoration: underline;
+
+                                        " class="colorfont">
+                                        Add Entity
+                    </a>
+                    </span>
+                    <div class="modal fade" id="Entity" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                      <div class="modal-dialog CreateProductdialog" role="document" >
+                        <div class="modal-content">
+                          <div class="modal-header">
+                            <h6 class="modal-title" id="exampleModalLabel">New Entity
+                            </h6>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                              <span aria-hidden="true">&times;</span>
+                            </button>
+                          </div>
+                          <div class="modal-body">
+                            <div class="row attributes">
+                              <div class="col-md-6">
+                                <select class="form-select localewrap" id="inlineFormCustomSelect">
+                                  <option selected="Locale">Locale*</option>
+                                  <option value="1">One</option>
+                                  <option value="2">Two</option>
+                                  <option value="3">Three</option>
+                                </select>
+                                <select class="form-select localewrap" id="inlineFormCustomSelect">
+                                  <option selected="Channel">Channel*</option>
+                                  <option value="1">One</option>
+                                  <option value="2">Two</option>
+                                  <option value="3">Three</option>
+                                </select>
+                                <select class="form-select localewrap" id="inlineFormCustomSelect">
+                                  <option selected="Category">Category*</option>
+                                  <option value="1">One</option>
+                                  <option value="2">Two</option>
+                                  <option value="3">Three</option>
+                                </select>
+                                <select class="form-select localewrap" id="inlineFormCustomSelect">
+                                  <option selected="Product">Product*</option>
+                                  <option value="1">One</option>
+                                  <option value="2">Two</option>
+                                  <option value="3">Three</option>
+                                </select>
+                                <input type="text" class="url form-control" placeholder="URL">
+                                <textarea type="text" class="form-control" placeholder="Address" style="width: 100%; height: 150px;"></textarea>
+                              </div>
+
+                              
+
+                              <div class="col-md-6">
+                                <div class="entitylogo">
+                                <img src="assests/logo.jpg">
+                               </div>
+                              </div>
+                            </div>
+                           
+                          </div>
+                          <div class="modal-footer">
+                            <button type="button" class="btn btn-primary">Import </button>
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                            
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="row attributes">
+                        <div class="col-md-12">
+                          <div class="row attributes">
+                            <div class="col-md-2">
+                              <select class="form-select" id="inlineFormCustomSelect">
+                                <option selected="Locale">Locale*</option>
+                                <option value="1">One</option>
+                                <option value="2">Two</option>
+                                <option value="3">Three</option>
+                              </select>
+                            </div>
+
+                            <div class="col-md-2">
+                              <select class="form-select" id="inlineFormCustomSelect">
+                                <option selected="Channel">Channel*</option>
+                                <option value="1">One</option>
+                                <option value="2">Two</option>
+                                <option value="3">Three</option>
+                              </select>
+                            </div>
+
+                            <div class="col-md-3">
+                              <select class="form-select" id="inlineFormCustomSelect">
+                                <option selected="Category">Category*</option>
+                                <option value="1">One</option>
+                                <option value="2">Two</option>
+                                <option value="3">Three</option>
+                              </select>
+                            </div>
+
+                            <div class="col-md-3">
+                              <select class="form-select" id="inlineFormCustomSelect">
+                                <option selected="Product">Product*</option>
+                                <option value="1">One</option>
+                                <option value="2">Two</option>
+                                <option value="3">Three</option>
+                              </select>
+                            </div>
+
+                            <div class="col-md-2">
+                              <button type="button" class="btn btn-info text-white" data-bs-toggle="modal" data-bs-target="#exampleModal" data-whatever="@fat" style="width: 100%;">
+                                Search
+                              </button>
+                            </div>
+                          </div>
+                        </div>
+                        
+                        <div class="col-md-12">
+                            <div class="row attributes">
+                            <div class="col-md-10">
+                                <p><small>Showing entity list of Country/Channel/Category...</small>
+                                </p>
+                            </div>
+                            <div class="col-md-2"> 
+                              <!-- <button type="button" class="btn-primary addnew" data-toggle="modal" data-target="#attributemodal">Add New</button> -->
+                              </div>
+                        </div>
+                       
+                        
+
+                        <div class="col-md-12">
+                            <table class="table table-bordered">
+                                <thead>
+                                  <tr>
+                                    <th scope="col">S.No</th>
+                                    <th scope="col">Name</th>
+                                    <th scope="col">Code</th>
+                                    <th scope="col">Type</th>
+                                    <th scope="col">Family_Group</th>
+                                    <th scope="col">Action</th>
+                                  </tr>
+                                </thead>
+                                <tbody>
+                                  <tr>
+                                    <th scope="row">1</th>
+                                    <td>Height</td>
+                                    <td>test</td>
+                                    <td>Float</td>
+                                    <td>Test</td>
+                                    <td> <i
+                                        class="fa fa-pencil-square"
+                                        aria-hidden="true"
+                                      ></i>
+                                      <i
+                                        class="fa fa-trash-o"
+                                        aria-hidden="true"
+                                      ></i></td>
+                                  </tr>
+                                  
+                                  
+                                </tbody>
+                              </table>
+                          </div>
+                      </div>
+                       <!-- Button trigger modal -->
+
+
+<!-- Modal -->
+<div class="modal fade" id="attributemodal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+<div class="modal-dialog modal-dialog-centered" role="document" style="width: 700px;">
+<div class="modal-content">
+<div class="modal-header">
+  <h5 class="modal-title" id="exampleModalLongTitle">New Attribute:
+  </h5>
+  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+    <span aria-hidden="true">&times;</span>
+  </button>
+</div>
+<div class="modal-body">
+  <p style="margin-bottom: 20px;">Creating new attribute for Locale>Channel>Main Category>Sub-category
+  </p>
+    <div class="row">
+        <div class="col-md-8"> 
+            <div class="form-group">
+          <div class="addcountry1">
+              <span>
+
+            <input type="text" placeholder="Attribute Family
+            " class="form-control"><a>Add New</a></span>
+            <span> <input type="text" placeholder="Attribute Group
+                " class="form-control"><a>Add New</a></span>
+            
+            <span><input type="text" placeholder="Attribute Name" class="form-control"><a>Add New</a></span>
+            <span><select class="form-control" style="margin-bottom: 15px;">
+                <option type="Type">Type</option>
+                <option type="test">test</option>
+                <option type="test">test</option>
+            </select></span>
+            <span><input type="text" placeholder="Value" class="form-control"><a><small><i class="fa fa-plus-circle" aria-hidden="true"></i> (add multiple values)</small></a></span>
+          </div>
+        
+        </div>
+        </div>
+        <div class="col-md-4">
+            <div class="define">
+                <p>Define as*</p>
+                <ul>
+                    <li><input type="radio">&nbsp;&nbsp;Common
+                    </li>
+                    <li><input type="radio">&nbsp;&nbsp;Special</li>
+                </ul>
+            </div>
+            
+        </div>
+        
+       
+      </div>
+</div>
+<div class="modal-footer"><button type="button" class="btn btn-primary">Add</button>
+  <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+  
+</div>
+</div>
+</div>
+</div>
+                        </div>
                     </div>
 
                     <div
@@ -1445,9 +2111,9 @@ span.newsubbtn{
                       role="tabpanel"
                       aria-labelledby="pills-settings-tab"
                     >
-                      <h5 style="margin-bottom: 30px;">
+                      <h6 style="margin-bottom: 30px;">
                         <strong>Content Management System</strong>
-                      </h5>
+                      </h6>
                       <div class="row">
                         <div class="col-md-2">
                           <div
@@ -1524,8 +2190,8 @@ span.newsubbtn{
                               role="tabpanel"
                               aria-labelledby="v-pills-home-tab"
                             >
-                              <h5><strong>Country List</strong></h5>
-                              <div class="row">
+                              <h6><strong>Country List</strong></h6>
+                              <div class="row" style="margin-bottom: 5px;">
                                 <div class="col-md-6"></div>
                                 <div class="col-md-6">
                                   <div class="row">
@@ -1540,6 +2206,7 @@ span.newsubbtn{
                                           margin-right: 15px;
                                           text-decoration: underline;
                                         "
+                                        class="colorfont"
                                       >
                                         Add New
                                       </a>
@@ -1549,6 +2216,7 @@ span.newsubbtn{
                                           margin-right: 15px;
                                           text-decoration: underline;
                                         "
+                                        class="colorfont"
                                       >
                                         Import
                                       </a>
@@ -1657,12 +2325,12 @@ span.newsubbtn{
                                 >
                                   <div class="modal-content">
                                     <div class="modal-header">
-                                      <h5
+                                      <h6
                                         class="modal-title"
                                         id="exampleModalLongTitle"
                                       >
                                       Adding New Country
-                                      </h5>
+                                      </h6>
                                       <button
                                         type="button"
                                         class="close"
@@ -1791,7 +2459,7 @@ span.newsubbtn{
                               role="tabpanel"
                               aria-labelledby="v-pills-profile-tab"
                             >
-                            <h5 style="margin-bottom: 15px;"><strong>Channel List</strong></h5>
+                            <h6 style="margin-bottom: 15px;"><strong>Channel List</strong></h6>
                             <div class="row">
                                 <div class="col-md-6"> <p style="margin-bottom: 10px;">Below are the list of channels created...</p>
                                     <table
@@ -1862,7 +2530,7 @@ span.newsubbtn{
                               role="tabpanel"
                               aria-labelledby="v-pills-messages-tab"
                             >
-                            <h5  style="margin-bottom: 20px;"><strong>Category - Main & Sub</strong></h5>
+                            <h6 style="margin-bottom: 20px;"><strong>Category - Main & Sub</strong></h6>
                             <div class="row">
                                 <div class="col-md-4"> <select class="form-control" style="margin-bottom: 15px;">
                                     <option type="Country">Country</option>
@@ -1875,7 +2543,7 @@ span.newsubbtn{
                                         <div class="panel panel-default">
                                             <div class="panel-heading" role="tab" id="headingOne">
                                                  <h4 class="panel-title">
-                                            <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                            <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne" >
                                                 Baby Care(4) 
 
                                             </a> <i
@@ -1999,9 +2667,9 @@ span.newsubbtn{
                               role="tabpanel"
                               aria-labelledby="v-pills-settings-tab"
                             >
-                            <h5 style="margin-bottom: 15px;"><strong>Product Attributes
-                            </strong></h5>
-                            <h5>Search:</h5>
+                            <h6 style="margin-bottom: 15px;"><strong>Product Attributes
+                            </strong></h6>
+                            <h6>Search:</h6>
                             <div class="row attributes">
                                 <div class="col-md-12">
                                   <div class="row attributes">
@@ -2496,7 +3164,145 @@ span.newsubbtn{
                       role="tabpanel"
                       aria-labelledby="pills-system-tab"
                     >
-                      ...
+                    <div class="col-md-12">
+                    <div class="row ">
+                      <div class="col-md-6 spacewrapline">
+                        <div class="row">
+                          <div class="col-md-4">
+                            <div class="format">
+                              <h6>Date Format</h6>  
+                                                     
+                              </div>
+                          </div>
+                          <div class="col-md-6">
+                            <div class="formatwrap">
+                            
+                            <div class="dateformat-data">
+                              <input type="radio" class="">
+                              DD-MM-YYYY
+                            </div>
+                            <div class="dateformat-data">
+                              <input type="radio" class="">
+                              MM-DD-YYYY
+                            </div>
+                            <div class="dateformat-data">
+                              <input type="radio" class="">
+                              DD-MMM-YYYY
+                              
+                            </div>
+                          </div>
+                          </div>
+                          <div class="col-md-2"></div>
+                        </div>
+                      </div>
+                      <div class="col-md-6"></div>
+                    </div>
+                    <div class="row ">
+                      <div class="col-md-6 spacewrapline">
+                        <div class="row">
+                          <div class="col-md-4">
+                            <div class="format">
+                              <h6>Time Format</h6>  
+                                                     
+                              </div>
+                          </div>
+                          <div class="col-md-6">
+                            <div class="formatwrap">
+                            
+                            <div class="dateformat-data">
+                              <input type="radio" class="">
+                              12 hours (HH:MM:SS AM/PM)
+                            </div>
+                            <div class="dateformat-data">
+                              <input type="radio" class="">
+                              24 hours (HH:MM:SS)
+                              <select class="form-control" style="margin-bottom: 15px;">
+                                <option type="Type">Time Zone</option>
+                                <option type="test">test</option>
+                                <option type="test">test</option>
+                            </select>
+                            </div>
+                            
+                          </div>
+                          </div>
+                          <div class="col-md-2"></div>
+                        </div>
+                      </div>
+                      <div class="col-md-6"></div>
+                    </div>
+                    <div class="row ">
+                      <div class="col-md-6 ">
+                        <div class="row">
+                          <div class="col-md-4">
+                            <div class="format">
+                              <h6>Default Country </h6>  
+                                                     
+                              </div>
+                          </div>
+                          <div class="col-md-6">
+                            <div class="formatwrap">
+                            
+                              <div class="dateformat-data">
+                             
+                                <select class="form-control" style="margin-bottom: 15px;">
+                                  <option type="Type">Country</option>
+                                  <option type="test">test</option>
+                                  <option type="test">test</option>
+                              </select>
+                              </div>
+                            <!-- <div class="dateformat-data">
+                             
+                              <select class="form-control" style="margin-bottom: 15px;">
+                                <option type="Type">Channel</option>
+                                <option type="test">test</option>
+                                <option type="test">test</option>
+                            </select>
+                            </div> -->
+                            
+                          </div>
+                          </div>
+                          <div class="col-md-2"></div>
+                        </div>
+                      </div>
+                      <div class="col-md-6"></div>
+                    </div>
+                    <div class="row ">
+                      <div class="col-md-6 ">
+                        <div class="row">
+                          <div class="col-md-4">
+                            <div class="format">
+                              <h6>Default Channel </h6>  
+                                                     
+                              </div>
+                          </div>
+                          <div class="col-md-6">
+                            <div class="formatwrap">
+                            
+                              <div class="dateformat-data">
+                             
+                                <select class="form-control" style="margin-bottom: 15px;">
+                                  <option type="Type">Channel</option>
+                                  <option type="test">test</option>
+                                  <option type="test">test</option>
+                              </select>
+                              </div>
+                            <!-- <div class="dateformat-data">
+                             
+                              <select class="form-control" style="margin-bottom: 15px;">
+                                <option type="Type">Channel</option>
+                                <option type="test">test</option>
+                                <option type="test">test</option>
+                            </select>
+                            </div> -->
+                            
+                          </div>
+                          </div>
+                          <div class="col-md-2"></div>
+                        </div>
+                      </div>
+                      <div class="col-md-6"></div>
+                    </div>
+                  </div>
                     </div>
                   </div>
                 </div>
