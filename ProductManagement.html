@@ -529,6 +529,34 @@ textarea.form-control{
 .format h6{
   margin-top: 10px;
 }
+.radiolist ul{
+  padding-left: 0px;
+}
+.radiolist ul li{
+  list-style-type: none;
+  float: left;
+  padding-right: 10px;
+}
+.radiolist ul li input.radiospace{
+  margin-right: 5px;
+}
+p.asseststext{
+  margin-bottom: 0px;
+}
+.sortby{
+  text-align: right;
+    margin: 8px 0px;
+}
+.uploadnew{
+  float: right;
+}
+.btn.uploadnew{
+  width: 150px;
+}
+.imgupload img{
+  height: 100%;
+    width: 150px;
+}
 
     </style>
   </head>
@@ -1870,15 +1898,275 @@ textarea.form-control{
                       role="tabpanel"
                       aria-labelledby="pills-assets-tab"
                     >
-                      ...
+                       <span class="entitywrap">
+                    <h6>Search:</h6>
+                    
+                    </span>
+                   
+                    <div class="row attributes">
+                        <div class="col-md-12">
+                          <div class="row attributes">
+                            <div class="col-md-2">
+                              <select class="form-select" id="inlineFormCustomSelect">
+                                <option selected="Locale">Locale*</option>
+                                <option value="1">One</option>
+                                <option value="2">Two</option>
+                                <option value="3">Three</option>
+                              </select>
+                            </div>
+
+                            <div class="col-md-2">
+                              <select class="form-select" id="inlineFormCustomSelect">
+                                <option selected="Channel">Channel*</option>
+                                <option value="1">One</option>
+                                <option value="2">Two</option>
+                                <option value="3">Three</option>
+                              </select>
+                            </div>
+
+                            <div class="col-md-3">
+                              <select class="form-select" id="inlineFormCustomSelect">
+                                <option selected="Category">Category*</option>
+                                <option value="1">One</option>
+                                <option value="2">Two</option>
+                                <option value="3">Three</option>
+                              </select>
+                            </div>
+
+                            <div class="col-md-3">
+                              <select class="form-select" id="inlineFormCustomSelect">
+                                <option selected="Product">Product*</option>
+                                <option value="1">One</option>
+                                <option value="2">Two</option>
+                                <option value="3">Three</option>
+                              </select>
+                            </div>
+
+                            <div class="col-md-2">
+                              <button type="button" class="btn btn-info text-white" data-bs-toggle="modal" data-bs-target="#exampleModal" data-whatever="@fat" style="width: 100%;">
+                                Search
+                              </button>
+                            </div>
+                          </div>
+                        </div>
+                        
+                        <div class="col-md-12 attributes">
+                            <div class="row ">
+                            <div class="col-md-10">
+                                <p class="asseststext"><small>Showing 15 assets of Country/Channel/Category/Product...</small>
+                                </p>
+                            </div>
+                            <div class="col-md-2"> 
+                              <!-- <button type="button" class="btn-primary addnew" data-toggle="modal" data-target="#attributemodal">Add New</button> -->
+                              </div>
+                        
+                       
+                        
+
+                        <div class="col-md-12">
+                          <div class="radiolist">
+                            <ul>
+                              <li><input type="radio" class="radiospace">All(15)</li>
+                              <li><input type="radio" class="radiospace">Image Gallery(10)</li>
+                              <li><input type="radio" class="radiospace">Videos(5)</li>
+                              <li><input type="radio" class="radiospace">Documents(5)
+                              </li>
+                             
+                            </ul>
+                          </div>
+                            
+                        </div>
+                      </div>
+                        
+                        
+                      </div>
+                       <!-- Button trigger modal -->
+
+
+
+
+<div class="col-md-12 attributes">
+  <div class="product_search">
+    <div class="row ">
+      <div class="col-md-8">
+        <input type="text" class="form-control" placeholder="Search Here..">
+      </div>
+
+      <div class="col-md-4">
+        <div class="row">
+          <div class="col-md-4"> <div class="sortby">
+            Sort By 
+          </div></div>
+          <div class="col-md-8">
+            <div class="sortbyinput">
+              <input type="datetime-local" class="form-control">
+            </div>
+          </div>
+        </div>
+       
+       
+      </div>
+    </div>
+  </div>
+</div>
+<div class="col-md-12 attributes">
+  <div class="row attributes">
+    <div class="col-md-6">
+      <div class="imagegallery">
+        <h6>Image Gallery (10)</h6>
+      </div>
+    </div>
+    <div class="col-md-6">
+      <div class="uploadnew">
+      <button type="button" class="btn btn-info text-white uploadnew" data-whatever="@fat" data-toggle="modal" data-target="#Import">
+        <i class="mdi mdi-plus"></i>
+        Upload New
+
+      </button>
+    </div>
+    </div>
+  </div>
+  <div class="row attributes">
+    <div class="col-md-2">
+      <div class="imgupload">
+        <img src="assests/logo.jpg">
+      </div>
+    </div>
+    <div class="col-md-2"><div class="imgupload">
+      <img src="assests/logo.jpg">
+    </div></div>
+    <div class="col-md-2"><div class="imgupload">
+      <img src="assests/logo.jpg">
+    </div></div>
+    <div class="col-md-2"><div class="imgupload">
+      <img src="assests/logo.jpg">
+    </div></div>
+    <div class="col-md-2"><div class="imgupload">
+      <img src="assests/logo.jpg">
+    </div></div>
+    <div class="col-md-2"><div class="imgupload">
+      <img src="assests/logo.jpg">
+    </div></div>
+  </div>
+  <div class="row">
+    <div class="col-md-2">
+      <div class="imgupload">
+        <img src="assests/logo.jpg">
+      </div>
+    </div>
+    <div class="col-md-2"><div class="imgupload">
+      <img src="assests/logo.jpg">
+    </div></div>
+    <div class="col-md-2"><div class="imgupload">
+      <img src="assests/logo.jpg">
+    </div></div>
+    <div class="col-md-2"><div class="imgupload">
+      <img src="assests/logo.jpg">
+    </div></div>
+    <div class="col-md-2"><div class="imgupload">
+      <img src="assests/logo.jpg">
+    </div></div>
+    <div class="col-md-2"><div class="imgupload">
+      <img src="assests/logo.jpg">
+    </div></div>
+  </div>
+</div>
+<div class="col-md-12 attributes">
+  <div class="row attributes">
+    <div class="col-md-6">
+      <div class="imagegallery">
+        <h6>Videos (5)</h6>
+      </div>
+    </div>
+    <div class="col-md-6">
+      <div class="uploadnew">
+      <button type="button" class="btn btn-info text-white uploadnew" data-whatever="@fat" data-toggle="modal" data-target="#Import">
+        <i class="mdi mdi-plus"></i>
+        Upload New
+
+      </button>
+    </div>
+    </div>
+  </div>
+  <div class="row attributes">
+    <div class="col-md-2">
+      <div class="imgupload">
+        <img src="assests/video.jpg">
+      </div>
+    </div>
+    <div class="col-md-2"><div class="imgupload">
+      <img src="assests/video.jpg">
+    </div></div>
+    <div class="col-md-2"><div class="imgupload">
+      <img src="assests/video.jpg">
+    </div></div>
+    <div class="col-md-2"><div class="imgupload">
+      <img src="assests/video.jpg">
+    </div></div>
+    <div class="col-md-2"><div class="imgupload">
+      <img src="assests/video.jpg">
+    </div></div>
+    <div class="col-md-2"><div class="imgupload">
+      <img src="assests/video.jpg">
+    </div></div>
+  </div>
+ 
+  
+</div>
+<div class="col-md-12 attributes">
+  <div class="row attributes">
+    <div class="col-md-6">
+      <div class="imagegallery">
+        <h6>Documents (5) </h6>
+      </div>
+    </div>
+    <div class="col-md-6">
+      <div class="uploadnew">
+      <button type="button" class="btn btn-info text-white uploadnew" data-whatever="@fat" data-toggle="modal" data-target="#Import">
+        <i class="mdi mdi-plus"></i>
+        Upload New
+
+      </button>
+    </div>
+    </div>
+  </div>
+  <div class="row attributes">
+    <div class="col-md-2">
+      <div class="imgupload">
+        <img src="assests/document.jpg">
+      </div>
+    </div>
+    <div class="col-md-2"><div class="imgupload">
+      <img src="assests/document.jpg">
+    </div></div>
+    <div class="col-md-2"><div class="imgupload">
+      <img src="assests/document.jpg">
+    </div></div>
+    <div class="col-md-2"><div class="imgupload">
+      <img src="assests/document.jpg">
+    </div></div>
+    <div class="col-md-2"><div class="imgupload">
+      <img src="assests/document.jpg">
+    </div></div>
+    <div class="col-md-2"><div class="imgupload">
+      <img src="assests/document.jpg">
+    </div></div>
+  </div>
+ 
+  
+</div>
+
+                        </div>
                     </div>
+                   
 
                     <div
                       class="tab-pane fade"
                       id="pills-entity"
                       role="tabpanel"
                       aria-labelledby="pills-entity-tab"
-                    ><span class="entitywrap">
+                    >
+                    <span class="entitywrap">
                     <h6>Search:</h6>
                     <a href="#" data-toggle="modal" data-target="#Entity" style="
                                           
