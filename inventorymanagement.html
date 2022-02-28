@@ -162,6 +162,9 @@
       margin-right: 10px;
       font-weight: 500;
     }
+    select.form-control{
+  appearance: auto !important;
+}
 
     .navbar-collapse ul li {
       display: flex;
@@ -446,13 +449,13 @@
         <section class="categorysection">
           <div class="container">
             <div class="row">
-              <div class="modal" id="exampleModal" tabindex="-1" role="dialog"
+              <div class="modal" id="newexport" tabindex="-1" role="dialog"
                 aria-labelledby="exampleModalLabel1">
                 <div class="modal-dialog" role="document">
                   <div class="modal-content">
                     <div class="modal-header">
                       <h4 class="modal-title" id="exampleModalLabel1">
-                        Import
+                        Export
                       </h4>
                       <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true"></span>
@@ -499,18 +502,8 @@
                               <option value="3">Three</option>
                             </select>
                           </div>
-                          <div class="col-md-6 form-group">
-                            <label for="recipient-name" class="form-label">
-                              Current Stock:
-                            </label>
-                            <input type="datetime-local" class="form-control" />
-                          </div>
-                          <div class="col-md-6 form-group">
-                            <label for="recipient-name" class="form-label">
-                              New Stock:
-                            </label>
-                            <input type="datetime-local" class="form-control" />
-                          </div>
+                          
+                          
                           <div class="col-md-6 form-group">
                             <label for="recipient-name" class="form-label">
                               Upload File:
@@ -518,7 +511,7 @@
                             <input type="file" class="form-control" />
                           </div>
                           <div class="col-md-12 form-group modal_actions">
-                            <button type="button" class="btn btn-primary text-white">Import</button>
+                            <button type="button" class="btn btn-primary text-white">Export</button>
                             <button type="button" class="btn btn-default btn-danger"
                               data-bs-dismiss="modal">Cancel</button>
                           </div>
@@ -536,6 +529,96 @@
                   </div>
                 </div>
               </div>
+              <div class="modal" id="newimport" tabindex="-1" role="dialog"
+              aria-labelledby="exampleModalLabel1">
+              <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h4 class="modal-title" id="exampleModalLabel1">
+                      Import
+                    </h4>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
+                      <span aria-hidden="true"></span>
+                    </button>
+                  </div>
+                  <div class="modal-body">
+                    <form>
+                      <div class="row">
+                        <div class="col-md-12 form-group">
+                          <!-- <label for="recipient-name" class="form-label">
+                              <strong>Main Category:</strong>
+                            </label> -->
+                        </div>
+                        <div class="col-md-6 form-group">
+                          <label for="recipient-name" class="form-label">
+                            Main Category:
+                          </label>
+                          <select class="form-select col-12" id="inlineFormCustomSelect">
+                            <option selected=""></option>
+                            <option value="1">One</option>
+                            <option value="2">Two</option>
+                            <option value="3">Three</option>
+                          </select>
+                        </div>
+                        <div class="col-md-6 form-group">
+                          <label for="recipient-name" class="form-label">
+                            Sub Category:
+                          </label>
+                          <select class="form-select col-12" id="inlineFormCustomSelect">
+                            <option selected=""></option>
+                            <option value="1">One</option>
+                            <option value="2">Two</option>
+                            <option value="3">Three</option>
+                          </select>
+                        </div>
+                        <div class="col-md-6 form-group">
+                          <label for="recipient-name" class="form-label">
+                            Product:
+                          </label>
+                          <select class="form-select col-12" id="inlineFormCustomSelect">
+                            <option selected=""></option>
+                            <option value="1">One</option>
+                            <option value="2">Two</option>
+                            <option value="3">Three</option>
+                          </select>
+                        </div>
+                        <div class="col-md-6 form-group">
+                          <label for="recipient-name" class="form-label">
+                            Current Stock:
+                          </label>
+                          <input type="datetime-local" class="form-control" />
+                        </div>
+                        <div class="col-md-6 form-group">
+                          <label for="recipient-name" class="form-label">
+                            New Stock:
+                          </label>
+                          <input type="datetime-local" class="form-control" />
+                        </div>
+                        <div class="col-md-6 form-group">
+                          <label for="recipient-name" class="form-label">
+                            Upload File:
+                          </label>
+                          <input type="file" class="form-control" />
+                        </div>
+                        <div class="col-md-12 form-group modal_actions">
+                          <button type="button" class="btn btn-primary text-white">Import</button>
+                          <button type="button" class="btn btn-default btn-danger"
+                            data-bs-dismiss="modal">Cancel</button>
+                        </div>
+                      </div>
+                    </form>
+                  </div>
+                  <!-- <div class="modal-footer">
+                    <button type="button" class="btn btn-primary text-white">
+                      Import
+                    </button>
+                    <button type="button" class="btn btn-default" data-bs-dismiss="modal">
+                      Cancel
+                    </button>
+                  </div> -->
+                </div>
+              </div>
+            </div>
 
               <div class="col-12">
                 <div class="card">
@@ -672,7 +755,7 @@
                                 <div class="card-statistic-3">
                                   <div class="card-content">
                                     <h4 class="card-title">Required Products</h4>
-                                    <span>$2,658</span>
+                                    <span>2,658</span>
                                     <div class="progress mt-1 mb-1" data-height="8" style="height: 8px;">
                                       <div class="progress-bar l-bg-green" role="progressbar" data-width="25%"
                                         aria-valuenow="25" aria-valuemin="0" aria-valuemax="100" style="width: 25%;">
@@ -824,186 +907,174 @@
 
                       <!-- Add Stock -->
                       <div class="tab-pane" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">
-                        <div class="row">
-                          <div class="col-md-4">
-                            <div class="">
-                              <div class="form-group row">
-                                <label for="staticEmail" class="col-sm-4 col-form-label">Main Category:</label>
-                                <div class="col-sm-8">
-                                  <div class="form-group">
+                        <section class="categorysection">
+                          <div class="">
+                            <div class="row">
+                              <div class="col-12">
+                                <div class="card">
+                                  <div class="card-body Inventory_card">
+                                    <div class="row Price_Search">
+                                      <div class="col-md-4">
+                                        <div class="">
+                                          <div class="form-group row">
+                                            <label for="staticEmail" class="col-sm-4 col-form-label">Main Category:
+                                            </label>
+                                            <div class="col-sm-8">
+                                              <select class="form-control" id="worklist">
+                                                <option class="test">Select</option>
+                                                <option class="test">test</option>
+                                                <option class="test">test</option>
+                                                <option class="test">test</option>
+                                                <option class="test">test</option>
+                                              </select>
+                                            </div>
+                                          </div>
+                                        </div>
+                                      </div>
+                                      <div class="col-md-4">
+                                        <div class="form-group row">
+                                          <label for="staticEmail" class="col-sm-4 col-form-label">Sub Category:</label>
+                                          <div class="col-sm-8">
+                                            <select class="form-control" id="worklist">
+                                              <option class="test">Select</option>
+                                              <option class="test">test</option>
+                                              <option class="test">test</option>
+                                              <option class="test">test</option>
+                                              <option class="test">test</option>
+                                            </select>
+                                          </div>
+                                        </div>
+                                      </div>
+                                      <div class="col-md-3">
+                                        <div class="formwrap">
+                                          <div class="form-group">
+                                            <input type="text" class="form-control" placeholder="Product Name">
+                                          </div>
+                                        </div>
+                                      </div>
+                                      <div class="col-md-1">
+                                        <button type="button" style="float: right" class="btn btn-info text-white" data-whatever="@fat">
+                                          Search</button>
+                                      </div>
+                                    </div>
+                                    <div class="row">
+                                      <div class="col-md-4">
+                                        <div class=" row">
+                                          <label for="staticEmail" class="col-sm-4 col-form-label">Quantity:</label>
+                                          <div class="col-sm-8">
+                                            <div class="qunatity_section">
+                                              <input type="text" value="Min" class="form-control price" />
+                                              &nbsp;&nbsp;-&nbsp;&nbsp;
+                                              <input type="text" value="Max" class="form-control price" />
+                                            </div>
+                                          </div>
+                                        </div>
+                                      </div>
+                                      <div class="col-md-3">
+                                        <div class=" row">
+                                          <label for="staticEmail" class="col-sm-4 col-form-label">Quantity:</label>
+                                          <div class="col-sm-8">
+                                            <div class="qunatity_section">
+                                              <input type="text" value="Min" class="form-control price" />
+                                              &nbsp;&nbsp;-&nbsp;&nbsp;
+                                              <input type="text" value="Max" class="form-control price" />
+                                            </div>
+                                          </div>
+                                        </div>
+                                      </div>
+            
+                                      <div class="col-md-4">
+                                        <div class=" row">
+                                          <label for="staticEmail" class="col-sm-4 col-form-label">Sub Category:</label>
+                                          <div class="col-sm-8">
+                                            <div class="form-group">
+            
+                                              <select class="form-control" id="worklist">
+                                                <option class="test">Low Stock</option>
+                                                <option class="test">Out of Stock</option>
+                                                <option class="test">Zero Stock</option>
+                                              </select>
+                                            </div>
+                                          </div>
+                                        </div>
+                                      </div>
+                                      <div class="col-md-1">
+                                        <button type="button" style="float: right;" class="btn btn-info text-white"
+                                          data-bs-toggle="modal" data-bs-target="#exampleModal" data-whatever="@fat">
+                                          Search
+                                        </button>
+                                      </div>
+                                    </div>
+                                    <div class="table-responsive">
+                                      <div id="myTable_wrapper" class="dataTables_wrapper container-fluid dt-bootstrap4 no-footer"><div class="row"><div class="col-sm-12 col-md-6"><div class="dataTables_length" id="myTable_length"><label>Show <select name="myTable_length" aria-controls="myTable" class="form-control form-control-sm"><option value="10">10</option><option value="25">25</option><option value="50">50</option><option value="100">100</option></select> entries</label></div></div><div class="col-sm-12 col-md-6"><div id="myTable_filter" class="dataTables_filter"><label>Search:<input type="search" class="form-control form-control-sm" placeholder="" aria-controls="myTable"></label></div></div></div><div class="row"><div class="col-sm-12"><table id="myTable" class="table table-striped border color-table inverse-table dataTable no-footer" role="grid" aria-describedby="myTable_info">
+                                        <thead>
+                                          <tr role="row">
+                                            
+                                            <th style="width: 179.984px;" class="sorting" tabindex="0" aria-controls="myTable" rowspan="1" colspan="1" aria-label="Main Category: activate to sort column ascending">Main Category</th>
+                                            <th style="width: 179.984px;" class="sorting" tabindex="0" aria-controls="myTable" rowspan="1" colspan="1" aria-label="Sub Category: activate to sort column ascending">Sub Category</th>
+                                            <th style="width: 179.984px;" class="sorting" tabindex="0" aria-controls="myTable" rowspan="1" colspan="1" aria-label="Stock: activate to sort column ascending">Stock</th>
+                                            <th style="width: 123.5px;" class="sorting_asc" tabindex="0" aria-controls="myTable" rowspan="1" colspan="1" aria-sort="ascending" aria-label="Product Name: activate to sort column descending">Product Name</th>
+                                            <th style="width: 123.547px;" class="sorting" tabindex="0" aria-controls="myTable" rowspan="1" colspan="1" aria-label="Action: activate to sort column ascending">Action</th>
+                                            <th style="width: 179.984px;" class="sorting" tabindex="0" aria-controls="myTable" rowspan="1" colspan="1" aria-label="Stock: activate to sort column ascending">New Stock</th>
+                                          </tr>
+                                        </thead>
+                                        <tbody id="checkall-target">
+                                          
+                                          
+                                        <tr role="row" class="odd">
+                                            <!-- <td>
+                                                <label>
+                                                  <input type="checkbox" />
+                                                  <span class="sr-only">Select Row</span>
+                                                </label>
+                                              </td> -->
+                                            <td class="sorting_1">test</td>
+                                            <td>test</td>
+                                            <td>test</td>
+                                            <td>test</td>
+                                           
+                                            <td>
+                                              <i class="mdi mdi-eye"></i>
+                                             
+                                              <span class="mdi mdi-upload"></span>
+                                              
+                                              <!-- <button
+                                                  type="button"
+                                                  class="btn waves-effect waves-light btn-sm btn-info text-white"
+                                                >
+                                                  <i class="mdi mdi-eye"></i>
+                                                  View
+                                                </button>
+                                                <button
+                                                  type="button"
+                                                  class="btn waves-effect waves-light btn-sm btn-info text-white"
+                                                >
+                                                  <i class="mdi mdi-pencil"></i>
+                                                  Edit
+                                                </button> -->
+                                            </td>
+                                            <td>test</td>
 
-                                    <select class="form-control" id="worklist">
-                                      <option class="test">test</option>
-                                      <option class="test">test</option>
-                                      <option class="test">test</option>
-                                      <option class="test">test</option>
-                                      <option class="test">test</option>
-                                    </select>
+                                          </tr>
+                                          
+                                        </tbody>
+                                      </table>
+                                    </div>
+                                  </div>
+                                  <div class="row">
+                                    <div class="col-sm-12 col-md-5">
+                                      <div class="dataTables_info" id="myTable_info" role="status" aria-live="polite">Showing 1 to 2 of 2 entries</div></div><div class="col-sm-12 col-md-7"><div class="dataTables_paginate paging_simple_numbers" id="myTable_paginate"><ul class="pagination"><li class="paginate_button page-item previous disabled" id="myTable_previous"><a href="#" aria-controls="myTable" data-dt-idx="0" tabindex="0" class="page-link">Previous</a></li><li class="paginate_button page-item active"><a href="#" aria-controls="myTable" data-dt-idx="1" tabindex="0" class="page-link">1</a></li><li class="paginate_button page-item next disabled" id="myTable_next"><a href="#" aria-controls="myTable" data-dt-idx="2" tabindex="0" class="page-link">Next</a></li></ul></div></div></div></div>
+                                    </div>
                                   </div>
                                 </div>
                               </div>
                             </div>
                           </div>
-                          <div class="col-md-4">
-                            <div class="form-group row">
-                              <label for="staticEmail" class="col-sm-4 col-form-label">Sub Category:</label>
-                              <div class="col-sm-8">
-                                <div class="form-group">
-
-                                  <select class="form-control" id="worklist">
-                                    <option class="test">test</option>
-                                    <option class="test">test</option>
-                                    <option class="test">test</option>
-                                    <option class="test">test</option>
-                                    <option class="test">test</option>
-                                  </select>
-                                </div>
-                              </div>
-                            </div>
-                          </div>
-                          <div class="col-md-4">
-                            <div class="">
-                              <div class="form-group">
-                                <input type="text" class="form-control" placeholder="Product Name" />
-                              </div>
-                            </div>
-                          </div>
-
-                        </div>
-                        <div class="row">
-                          <div class="col-md-4">
-                            <div class="form-group row">
-                              <label for="staticEmail" class="col-sm-4 col-form-label">Quantity:</label>
-                              <div class="col-sm-8">
-                                <div class="qunatity_section">
-                                  <input type="text" value="Min" class="form-control price" />
-                                  &nbsp;&nbsp;-&nbsp;&nbsp;
-                                  <input type="text" value="Max" class="form-control price" />
-                                </div>
-                              </div>
-                            </div>
-                          </div>
-                          <div class="col-md-3">
-                            <div class="form-group row">
-                              <label for="staticEmail" class="col-sm-4 col-form-label">Quantity:</label>
-                              <div class="col-sm-8">
-                                <div class="qunatity_section">
-                                  <input type="text" value="Min" class="form-control price" />
-                                  &nbsp;&nbsp;-&nbsp;&nbsp;
-                                  <input type="text" value="Max" class="form-control price" />
-                                </div>
-                              </div>
-                            </div>
-                          </div>
-
-                          <div class="col-md-4">
-                            <div class="form-group row">
-                              <label for="staticEmail" class="col-sm-4 col-form-label">Sub Category:</label>
-                              <div class="col-sm-8">
-                                <div class="form-group">
-
-                                  <select class="form-control" id="worklist">
-                                    <option class="test">Low Stock</option>
-                                    <option class="test">Out of Stock</option>
-                                    <option class="test">Zero Stock</option>
-                                  </select>
-                                </div>
-                              </div>
-                            </div>
-                          </div>
-                          <div class="col-md-1">
-                            <button type="button" style="float: right;" class="btn btn-info text-white"
-                              data-bs-toggle="modal" data-bs-target="#exampleModal" data-whatever="@fat">
-                              Search
-                            </button>
-                          </div>
-                        </div>
-                        <div class="table-responsive">
-                          <table id="myTable" class="table table-striped border color-table inverse-table">
-                            <thead>
-                              <tr>
-                                <!-- <th scope="col" class="border">
-                                      <label>
-                                        <input
-                                          type="checkbox"
-                                          data-tablesaw-checkall
-                                        />
-                                        <span class="sr-only">
-                                          Check All
-                                        </span>
-                                      </label>
-                                    </th> -->
-
-                                <th style="width: 20%;">Main Category</th>
-                                <th style="width: 20%;">Sub Category</th>
-                                <th style="width: 15%;">Stock</th>
-                                <th style="width: 15%;">Product</th>
-                                <th style="width: 15%;">Action</th>
-                                <th style="width: 15%;">New Stock</th>
-                              </tr>
-                            </thead>
-                            <tbody id="checkall-target">
-                              <tr>
-                                <!-- <td>
-                                      <label>
-                                        <input type="checkbox" />
-                                        <span class="sr-only">Select Row</span>
-                                      </label>
-                                    </td> -->
-                                <td>test</td>
-                                <td>test</td>
-                                <td>100</td>
-                                <td>test</td>
-
-                                <td>
-                                  <i class="mdi mdi-eye"></i>
-                                  <!-- <span class="mdi mdi-download"></span> -->
-                                  <span class="mdi mdi-upload"></span>
-                                  <!-- <span
-                                        class="mdi mdi-plus-circle-outline"
-                                      ></span>
-                                      <span
-                                        class="mdi mdi-minus-circle-outline"
-                                      ></span> -->
-                                  <!-- <button
-                                        type="button"
-                                        class="btn waves-effect waves-light btn-sm btn-info text-white"
-                                      >
-                                        <i class="mdi mdi-eye"></i>
-                                        View
-                                      </button>
-                                      <button
-                                        type="button"
-                                        class="btn waves-effect waves-light btn-sm btn-info text-white"
-                                      >
-                                        <i class="mdi mdi-pencil"></i>
-                                        Edit
-                                      </button> -->
-                                </td>
-                                <td>test</td>
-                              </tr>
-                              <tr>
-                                <td>test</td>
-                                <td>test</td>
-                                <td>50</td>
-                                <td>test</td>
-
-                                <td>
-                                  <i class="mdi mdi-eye"></i>
-                                  <!-- <span class="mdi mdi-download"></span> -->
-                                  <span class="mdi mdi-upload"></span>
-                                  <!-- <span
-                                        class="mdi mdi-plus-circle-outline"
-                                      ></span>
-                                      <span
-                                        class="mdi mdi-minus-circle-outline"
-                                      ></span> -->
-                                </td>
-                                <td>test</td>
-                              </tr>
-                            </tbody>
-                          </table>
-                        </div>
+                        </section>
+                        
+                        
+                       
+                       
                       </div>
 
                       <!-- Import -->
@@ -1055,99 +1126,80 @@
                         </div>
 
                         <div class="col-md-12 p-0 import_Inventory">
-                          <button type="button" style="float: right" class="btn btn-info text-white"
-                            data-whatever="@fat"><i class="mdi mdi-view"></i>
-                            Add Inventory</button>
+                          <button  data-bs-toggle="modal"
+                          data-bs-target="#newimport" type="button" style="float: right" class="btn btn-info text-white"
+                            data-whatever="@fat"><i class="mdi mdi-view" data-bs-toggle="modal"
+                            data-bs-target="#newimport"></i>
+                            New Import</button>
                         </div>
-
                         <div class="table-responsive">
-                          <table id="myTable" class="table table-striped border color-table inverse-table">
+                          <div id="myTable_wrapper" class="dataTables_wrapper container-fluid dt-bootstrap4 no-footer"><div class="row"><div class="col-sm-12 col-md-6"><div class="dataTables_length" id="myTable_length"><label>Show <select name="myTable_length" aria-controls="myTable" class="form-control form-control-sm"><option value="10">10</option><option value="25">25</option><option value="50">50</option><option value="100">100</option></select> entries</label></div></div><div class="col-sm-12 col-md-6"><div id="myTable_filter" class="dataTables_filter"><label>Search:<input type="search" class="form-control form-control-sm" placeholder="" aria-controls="myTable"></label></div></div></div><div class="row"><div class="col-sm-12"><table id="myTable" class="table table-striped border color-table inverse-table dataTable no-footer" role="grid" aria-describedby="myTable_info">
                             <thead>
-                              <tr>
-                                <!-- <th scope="col" class="border">
-                                      <label>
-                                        <input
-                                          type="checkbox"
-                                          data-tablesaw-checkall
-                                        />
-                                        <span class="sr-only">
-                                          Check All
-                                        </span>
-                                      </label>
-                                    </th> -->
-
-                                <th style="width: 15%;">Main Category</th>
-                                <th style="width: 15%;">Sub Category</th>
-                                <th style="width: 15%;">Product</th>
-                                <th style="width: 15%;">Imported on</th>
-                                <th style="width: 15%;">Old Stock</th>
-                                <th style="width: 15%;">New Stock</th>
-                                <th style="width: 10%;">Action</th>
+                              <tr role="row">
+                                
+                                <th style="width:15%;" class="sorting" tabindex="0" aria-controls="myTable" rowspan="1" colspan="1" aria-label="Main Category: activate to sort column ascending">Main Category</th>
+                                <th style="width:15%;" class="sorting" tabindex="0" aria-controls="myTable" rowspan="1" colspan="1" aria-label="Sub Category: activate to sort column ascending">Sub Category</th>
+                                
+                                <th style="width:15%;" class="sorting_asc" tabindex="0" aria-controls="myTable" rowspan="1" colspan="1" aria-sort="ascending" aria-label="Product Name: activate to sort column descending">Product Name</th>
+                                
+                                <th style="width:15%;" class="sorting" tabindex="0" aria-controls="myTable" rowspan="1" colspan="1" aria-label="Stock: activate to sort column ascending">Imported On</th>
+                                <th style="width:15%;" class="sorting" tabindex="0" aria-controls="myTable" rowspan="1" colspan="1" aria-label="Stock: activate to sort column ascending">Old Stock</th>
+                                <th style="width:15%;" class="sorting" tabindex="0" aria-controls="myTable" rowspan="1" colspan="1" aria-label="Stock: activate to sort column ascending">New Stock</th>
+                                <th style="width:10%;" class="sorting" tabindex="0" aria-controls="myTable" rowspan="1" colspan="1" aria-label="Action: activate to sort column ascending">Action</th>
+                                
                               </tr>
                             </thead>
                             <tbody id="checkall-target">
-                              <tr>
+                              
+                              
+                            <tr role="row" class="odd">
                                 <!-- <td>
-                                      <label>
-                                        <input type="checkbox" />
-                                        <span class="sr-only">Select Row</span>
-                                      </label>
-                                    </td> -->
-                                <td>test</td>
+                                    <label>
+                                      <input type="checkbox" />
+                                      <span class="sr-only">Select Row</span>
+                                    </label>
+                                  </td> -->
+                                <td class="sorting_1">test</td>
                                 <td>test</td>
                                 <td>100</td>
                                 <td>test</td>
                                 <td>test</td>
                                 <td>test</td>
                                 <td>
-                                  <!-- <span class="mdi mdi-download"></span> -->
+                                  
+                                 
                                   <span class="mdi mdi-upload"></span>
                                   <span class="mdi mdi-download"></span>
-                                  <!-- <span
-                                        class="mdi mdi-plus-circle-outline"
-                                      ></span>
-                                      <span
-                                        class="mdi mdi-minus-circle-outline"
-                                      ></span> -->
+                                  
                                   <!-- <button
-                                        type="button"
-                                        class="btn waves-effect waves-light btn-sm btn-info text-white"
-                                      >
-                                        <i class="mdi mdi-eye"></i>
-                                        View
-                                      </button>
-                                      <button
-                                        type="button"
-                                        class="btn waves-effect waves-light btn-sm btn-info text-white"
-                                      >
-                                        <i class="mdi mdi-pencil"></i>
-                                        Edit
-                                      </button> -->
+                                      type="button"
+                                      class="btn waves-effect waves-light btn-sm btn-info text-white"
+                                    >
+                                      <i class="mdi mdi-eye"></i>
+                                      View
+                                    </button>
+                                    <button
+                                      type="button"
+                                      class="btn waves-effect waves-light btn-sm btn-info text-white"
+                                    >
+                                      <i class="mdi mdi-pencil"></i>
+                                      Edit
+                                    </button> -->
                                 </td>
-                              </tr>
-                              <tr>
-                                <td>test</td>
-                                <td>test</td>
-                                <td>100</td>
-                                <td>test</td>
-                                <td>test</td>
-                                <td>test</td>
+                                
 
-                                <td>
-                                  <!-- <span class="mdi mdi-download"></span> -->
-                                  <span class="mdi mdi-upload"></span>
-                                  <span class="mdi mdi-download"></span>
-                                  <!-- <span
-                                        class="mdi mdi-plus-circle-outline"
-                                      ></span>
-                                      <span
-                                        class="mdi mdi-minus-circle-outline"
-                                      ></span> -->
-                                </td>
                               </tr>
+                              
                             </tbody>
                           </table>
                         </div>
+                      </div>
+                      <div class="row">
+                        <div class="col-sm-12 col-md-5">
+                          <div class="dataTables_info" id="myTable_info" role="status" aria-live="polite">Showing 1 to 2 of 2 entries</div></div><div class="col-sm-12 col-md-7"><div class="dataTables_paginate paging_simple_numbers" id="myTable_paginate"><ul class="pagination"><li class="paginate_button page-item previous disabled" id="myTable_previous"><a href="#" aria-controls="myTable" data-dt-idx="0" tabindex="0" class="page-link">Previous</a></li><li class="paginate_button page-item active"><a href="#" aria-controls="myTable" data-dt-idx="1" tabindex="0" class="page-link">1</a></li><li class="paginate_button page-item next disabled" id="myTable_next"><a href="#" aria-controls="myTable" data-dt-idx="2" tabindex="0" class="page-link">Next</a></li></ul></div></div></div></div>
+                        </div>
+
+                       
                       </div>
 
                       <!-- Export -->
@@ -1200,100 +1252,79 @@
 
                         <div class="col-md-12 p-0 import_Inventory">
                           <button  data-bs-toggle="modal"
-                          data-bs-target="#exampleModal" type="button" style="float: right" class="btn btn-info text-white"
+                          data-bs-target="#newexport" type="button" style="float: right" class="btn btn-info text-white"
                             data-whatever="@fat"><i class="mdi mdi-view" data-bs-toggle="modal"
-                            data-bs-target="#exampleModal"></i>
-                            Add Inventory</button>
+                            data-bs-target="#newexport"></i>
+                            New Export</button>
                         </div>
-
                         <div class="table-responsive">
-                          <table id="myTable" class="table table-striped border color-table inverse-table">
+                          <div id="myTable_wrapper" class="dataTables_wrapper container-fluid dt-bootstrap4 no-footer"><div class="row"><div class="col-sm-12 col-md-6"><div class="dataTables_length" id="myTable_length"><label>Show <select name="myTable_length" aria-controls="myTable" class="form-control form-control-sm"><option value="10">10</option><option value="25">25</option><option value="50">50</option><option value="100">100</option></select> entries</label></div></div><div class="col-sm-12 col-md-6"><div id="myTable_filter" class="dataTables_filter"><label>Search:<input type="search" class="form-control form-control-sm" placeholder="" aria-controls="myTable"></label></div></div></div><div class="row"><div class="col-sm-12"><table id="myTable" class="table table-striped border color-table inverse-table dataTable no-footer" role="grid" aria-describedby="myTable_info">
                             <thead>
-                              <tr>
-                                <!-- <th scope="col" class="border">
-                                      <label>
-                                        <input
-                                          type="checkbox"
-                                          data-tablesaw-checkall
-                                        />
-                                        <span class="sr-only">
-                                          Check All
-                                        </span>
-                                      </label>
-                                    </th> -->
-
-                                <th style="width: 15%;">Main Category</th>
-                                <th style="width: 15%;">Sub Category</th>
-                                <th style="width: 15%;">Product</th>
-                                <th style="width: 15%;">Imported on</th>
-                                <th style="width: 15%;">Old Stock</th>
-                                <th style="width: 15%;">New Stock</th>
-                                <th style="width: 10%;">Action</th>
+                              <tr role="row">
+                                
+                                <th style="width:15%;" class="sorting" tabindex="0" aria-controls="myTable" rowspan="1" colspan="1" aria-label="Main Category: activate to sort column ascending">Main Category</th>
+                                <th style="width:15%;" class="sorting" tabindex="0" aria-controls="myTable" rowspan="1" colspan="1" aria-label="Sub Category: activate to sort column ascending">Sub Category</th>
+                                
+                                <th style="width:15%;" class="sorting_asc" tabindex="0" aria-controls="myTable" rowspan="1" colspan="1" aria-sort="ascending" aria-label="Product Name: activate to sort column descending">Product Name</th>
+                                
+                                <th style="width:15%;" class="sorting" tabindex="0" aria-controls="myTable" rowspan="1" colspan="1" aria-label="Stock: activate to sort column ascending">Exported On</th>
+                                <th style="width:15%;" class="sorting" tabindex="0" aria-controls="myTable" rowspan="1" colspan="1" aria-label="Stock: activate to sort column ascending">By File</th>
+                                
+                                <th style="width:10%;" class="sorting" tabindex="0" aria-controls="myTable" rowspan="1" colspan="1" aria-label="Action: activate to sort column ascending">Action</th>
+                                
                               </tr>
                             </thead>
                             <tbody id="checkall-target">
-                              <tr>
+                              
+                              
+                            <tr role="row" class="odd">
                                 <!-- <td>
-                                      <label>
-                                        <input type="checkbox" />
-                                        <span class="sr-only">Select Row</span>
-                                      </label>
-                                    </td> -->
-                                <td>test</td>
+                                    <label>
+                                      <input type="checkbox" />
+                                      <span class="sr-only">Select Row</span>
+                                    </label>
+                                  </td> -->
+                                <td class="sorting_1">test</td>
                                 <td>test</td>
                                 <td>100</td>
                                 <td>test</td>
-                                <td>test</td>
+                                
                                 <td>test</td>
                                 <td>
-                                  <!-- <span class="mdi mdi-download"></span> -->
-                                  <span class="mdi mdi-upload"></span>
+                                  
+                                 
+                                  <!-- <span class="mdi mdi-upload"></span> -->
                                   <span class="mdi mdi-download"></span>
-                                  <!-- <span
-                                        class="mdi mdi-plus-circle-outline"
-                                      ></span>
-                                      <span
-                                        class="mdi mdi-minus-circle-outline"
-                                      ></span> -->
+                                  
                                   <!-- <button
-                                        type="button"
-                                        class="btn waves-effect waves-light btn-sm btn-info text-white"
-                                      >
-                                        <i class="mdi mdi-eye"></i>
-                                        View
-                                      </button>
-                                      <button
-                                        type="button"
-                                        class="btn waves-effect waves-light btn-sm btn-info text-white"
-                                      >
-                                        <i class="mdi mdi-pencil"></i>
-                                        Edit
-                                      </button> -->
+                                      type="button"
+                                      class="btn waves-effect waves-light btn-sm btn-info text-white"
+                                    >
+                                      <i class="mdi mdi-eye"></i>
+                                      View
+                                    </button>
+                                    <button
+                                      type="button"
+                                      class="btn waves-effect waves-light btn-sm btn-info text-white"
+                                    >
+                                      <i class="mdi mdi-pencil"></i>
+                                      Edit
+                                    </button> -->
                                 </td>
-                              </tr>
-                              <tr>
-                                <td>test</td>
-                                <td>test</td>
-                                <td>100</td>
-                                <td>test</td>
-                                <td>test</td>
-                                <td>test</td>
+                                
 
-                                <td>
-                                  <!-- <span class="mdi mdi-download"></span> -->
-                                  <span class="mdi mdi-upload"></span>
-                                  <span class="mdi mdi-download"></span>
-                                  <!-- <span
-                                        class="mdi mdi-plus-circle-outline"
-                                      ></span>
-                                      <span
-                                        class="mdi mdi-minus-circle-outline"
-                                      ></span> -->
-                                </td>
                               </tr>
+                              
                             </tbody>
                           </table>
                         </div>
+                      </div>
+                      <div class="row">
+                        <div class="col-sm-12 col-md-5">
+                          <div class="dataTables_info" id="myTable_info" role="status" aria-live="polite">Showing 1 to 2 of 2 entries</div></div><div class="col-sm-12 col-md-7"><div class="dataTables_paginate paging_simple_numbers" id="myTable_paginate"><ul class="pagination"><li class="paginate_button page-item previous disabled" id="myTable_previous"><a href="#" aria-controls="myTable" data-dt-idx="0" tabindex="0" class="page-link">Previous</a></li><li class="paginate_button page-item active"><a href="#" aria-controls="myTable" data-dt-idx="1" tabindex="0" class="page-link">1</a></li><li class="paginate_button page-item next disabled" id="myTable_next"><a href="#" aria-controls="myTable" data-dt-idx="2" tabindex="0" class="page-link">Next</a></li></ul></div></div></div></div>
+                        </div>
+
+                        
                       </div>
 
                       <!-- Reports -->

@@ -110,10 +110,11 @@
       }
         input.form-control{
           /* margin-bottom: 20px; */
-          box-shadow: none;
+         
+          box-shadow: none !important;
         }
       select.form-control{appearance: auto;
-    box-shadow: none;}
+    box-shadow: none !important;}
       .addnew .flag img{
         height: 100px;
     width: 100%;
@@ -122,6 +123,7 @@
       }
       .addnew .flag p{
           text-align: center;
+          font-size: 13px;
       }
       .default {
         display: flex;
@@ -147,6 +149,7 @@
     margin-top: 3px;
     font-size: 12px;
 }
+
 .panel-title > a.collapsed::after {
     float: left ;
     content:"\f067";
@@ -254,7 +257,7 @@ span.newsubbtn{
     border: 1px solid rgba(0,0,0,.125);
     border-radius: 0.25rem;
     /* height: 350px; */
-    min-height: 350px;
+    min-height: 420px;
 }
 .main {
   width: 100%;
@@ -305,6 +308,7 @@ span.newsubbtn{
 }
 .maincategory h6{
   font-weight: 600;
+  font-size: 14px;
 }
 .maincategory-header{padding: 0;
     margin-bottom: 0;
@@ -322,6 +326,7 @@ span.newsubbtn{
   color: black;
   width: 100%;
   text-align: left;
+  font-size: 14px;
 }
 .maincategory-header h5 i{
   float: right !important;
@@ -512,16 +517,29 @@ textarea.form-control{
   font-size: 14px;
   box-shadow: none;
   outline: none;
+  padding: 8px;
+}
+select.form-select{
+  box-shadow: none !important;
+}
+select.form-control{
+  appearance: auto !important;
+}
+textarea.desc{
+  height: 150px;
+   width: 100%;
+    resize: none;
+    padding: 8px;
 }
 .spacewrapline{
   border-bottom: 1px solid #8080804a;
   margin-bottom: 15px;
 }
 .formatwrap{
-  margin-bottom: 15px;
+  /* margin-bottom: 15px; */
 }
 .dateformat-data{
-  margin-bottom: 10px;
+  /* margin-bottom: 10px; */
 }
 .dateformat-data input{
   margin-bottom: 15px;
@@ -535,7 +553,8 @@ textarea.form-control{
 .radiolist ul li{
   list-style-type: none;
   float: left;
-  padding-right: 10px;
+  padding-right: 20px;
+    font-size: 14px;
 }
 .radiolist ul li input.radiospace{
   margin-right: 5px;
@@ -556,6 +575,17 @@ p.asseststext{
 .imgupload img{
   height: 100%;
     width: 150px;
+    margin-bottom: 20px;
+}
+input.form-control.modalcountry {
+    margin-bottom: 20px;
+}
+.statusid ul li input{
+  margin-right: 10px;
+}
+ul.nav .nav-item a {
+    text-align: center;
+    width: 120px;
 }
 
     </style>
@@ -1578,7 +1608,7 @@ p.asseststext{
                                           
         
                                           <div class="col-md-6">
-                                            <textarea class="form-cotrol" placeholder="Description" style="height: 150px; width: 100%; resize: none;"></textarea>
+                                            <textarea class="form-control desc" placeholder="Description" ></textarea>
                                           </div>
                                         </div>
                                        
@@ -1989,7 +2019,7 @@ p.asseststext{
   <div class="product_search">
     <div class="row ">
       <div class="col-md-8">
-        <input type="text" class="form-control" placeholder="Search Here..">
+        <input type="text" class="form-control" placeholder="search">
       </div>
 
       <div class="col-md-4">
@@ -2030,22 +2060,34 @@ p.asseststext{
     <div class="col-md-2">
       <div class="imgupload">
         <img src="assests/logo.jpg">
+        <h6><a>Name</a></h6>
+        <h6>Date</h6>
       </div>
     </div>
     <div class="col-md-2"><div class="imgupload">
       <img src="assests/logo.jpg">
+      <h6><a>Name</a></h6>
+      <h6>Date</h6>
     </div></div>
     <div class="col-md-2"><div class="imgupload">
       <img src="assests/logo.jpg">
+      <h6><a>Name</a></h6>
+      <h6>Date</h6>
     </div></div>
     <div class="col-md-2"><div class="imgupload">
       <img src="assests/logo.jpg">
+      <h6><a>Name</a></h6>
+      <h6>Date</h6>
     </div></div>
     <div class="col-md-2"><div class="imgupload">
       <img src="assests/logo.jpg">
+      <h6><a>Name</a></h6>
+      <h6>Date</h6>
     </div></div>
     <div class="col-md-2"><div class="imgupload">
       <img src="assests/logo.jpg">
+      <h6><a>Name</a></h6>
+      <h6>Date</h6>
     </div></div>
   </div>
   <div class="row">
@@ -2056,18 +2098,28 @@ p.asseststext{
     </div>
     <div class="col-md-2"><div class="imgupload">
       <img src="assests/logo.jpg">
+      <h6><a>Name</a></h6>
+      <h6>Date</h6>
     </div></div>
     <div class="col-md-2"><div class="imgupload">
       <img src="assests/logo.jpg">
+      <h6><a>Name</a></h6>
+      <h6>Date</h6>
     </div></div>
     <div class="col-md-2"><div class="imgupload">
       <img src="assests/logo.jpg">
+      <h6><a>Name</a></h6>
+      <h6>Date</h6>
     </div></div>
     <div class="col-md-2"><div class="imgupload">
       <img src="assests/logo.jpg">
+      <h6><a>Name</a></h6>
+      <h6>Date</h6>
     </div></div>
     <div class="col-md-2"><div class="imgupload">
       <img src="assests/logo.jpg">
+      <h6><a>Name</a></h6>
+      <h6>Date</h6>
     </div></div>
   </div>
 </div>
@@ -2092,22 +2144,34 @@ p.asseststext{
     <div class="col-md-2">
       <div class="imgupload">
         <img src="assests/video.jpg">
+        <h6><a>Name</a></h6>
+        <h6>Date</h6>
       </div>
     </div>
     <div class="col-md-2"><div class="imgupload">
       <img src="assests/video.jpg">
+      <h6><a>Name</a></h6>
+      <h6>Date</h6>
     </div></div>
     <div class="col-md-2"><div class="imgupload">
       <img src="assests/video.jpg">
+      <h6><a>Name</a></h6>
+      <h6>Date</h6>
     </div></div>
     <div class="col-md-2"><div class="imgupload">
       <img src="assests/video.jpg">
+      <h6><a>Name</a></h6>
+      <h6>Date</h6>
     </div></div>
     <div class="col-md-2"><div class="imgupload">
       <img src="assests/video.jpg">
+      <h6><a>Name</a></h6>
+      <h6>Date</h6>
     </div></div>
     <div class="col-md-2"><div class="imgupload">
       <img src="assests/video.jpg">
+      <h6><a>Name</a></h6>
+      <h6>Date</h6>
     </div></div>
   </div>
  
@@ -2134,22 +2198,35 @@ p.asseststext{
     <div class="col-md-2">
       <div class="imgupload">
         <img src="assests/document.jpg">
+        <h6><a>Name</a></h6>
+        <h6>Date</h6>
       </div>
     </div>
     <div class="col-md-2"><div class="imgupload">
+      
       <img src="assests/document.jpg">
+      <h6><a>Name</a></h6>
+      <h6>Date</h6>
     </div></div>
     <div class="col-md-2"><div class="imgupload">
       <img src="assests/document.jpg">
+      <h6><a>Name</a></h6>
+      <h6>Date</h6>
     </div></div>
     <div class="col-md-2"><div class="imgupload">
       <img src="assests/document.jpg">
+      <h6><a>Name</a></h6>
+      <h6>Date</h6>
     </div></div>
     <div class="col-md-2"><div class="imgupload">
       <img src="assests/document.jpg">
+      <h6><a>Name</a></h6>
+      <h6>Date</h6>
     </div></div>
     <div class="col-md-2"><div class="imgupload">
       <img src="assests/document.jpg">
+      <h6><a>Name</a></h6>
+      <h6>Date</h6>
     </div></div>
   </div>
  
@@ -2173,7 +2250,7 @@ p.asseststext{
                                           text-decoration: underline;
 
                                         " class="colorfont">
-                                        Add Entity
+                                        New Entity
                     </a>
                     </span>
                     <div class="modal fade" id="Entity" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -2296,37 +2373,72 @@ p.asseststext{
                         
 
                         <div class="col-md-12">
-                            <table class="table table-bordered">
-                                <thead>
-                                  <tr>
-                                    <th scope="col">S.No</th>
-                                    <th scope="col">Name</th>
-                                    <th scope="col">Code</th>
-                                    <th scope="col">Type</th>
-                                    <th scope="col">Family_Group</th>
-                                    <th scope="col">Action</th>
-                                  </tr>
-                                </thead>
-                                <tbody>
-                                  <tr>
-                                    <th scope="row">1</th>
-                                    <td>Height</td>
-                                    <td>test</td>
-                                    <td>Float</td>
-                                    <td>Test</td>
-                                    <td> <i
-                                        class="fa fa-pencil-square"
-                                        aria-hidden="true"
-                                      ></i>
-                                      <i
-                                        class="fa fa-trash-o"
-                                        aria-hidden="true"
-                                      ></i></td>
-                                  </tr>
+                          <div class="table-responsive">
+                            <div id="myTable_wrapper" class="dataTables_wrapper container-fluid dt-bootstrap4 no-footer">
+                              <div class="row">
+                                <div class="col-sm-12 col-md-6">
+                                  <div class="dataTables_length" id="myTable_length"><label>Show <select name="myTable_length" aria-controls="myTable" class="form-control form-control-sm"><option value="10">10</option><option value="25">25</option><option value="50">50</option><option value="100">100</option></select> entries</label></div></div><div class="col-sm-12 col-md-6"><div id="myTable_filter" class="dataTables_filter"><label>Search:<input type="search" class="form-control form-control-sm" placeholder="" aria-controls="myTable"></label></div></div></div><div class="row"><div class="col-sm-12"><table id="myTable" class="table table-striped border color-table inverse-table dataTable no-footer" role="grid" aria-describedby="myTable_info">
+                              <thead>
+                                <tr role="row">
+                                  <th scope="col">S.No</th>
+                                  <th scope="col">Product</th>
+                                  <th scope="col">URL</th>
+                                  <th scope="col"> Logo</th>
+                                  <th scope="col">Address</th>
+                                  <th scope="col">Action</th></tr>
+                                
+                               
+                              </thead>
+                              <tbody id="checkall-target">
+                             
+                              <tr role="row" class="odd">
                                   
-                                  
-                                </tbody>
-                              </table>
+                                <td>1</td>
+                                <td>test</td>
+                                <td>test</td>
+                                <td>test</td>
+                                <td>test</td>
+                                <td>
+                                  <i
+                                    class="fa fa-pencil-square"
+                                    aria-hidden="true"
+                                  ></i>
+                                  <i
+                                    class="fa fa-trash-o"
+                                    aria-hidden="true"
+                                  ></i>
+                                </td>
+                                </tr>
+                               
+                                
+                          </tbody>
+                            </table>
+                          </div>
+                        </div>
+                        <div class="row">
+                          <div class="col-sm-12 col-md-5">
+                            <div class="dataTables_info" id="myTable_info" role="status" aria-live="polite">Showing 1 to 2 of 2 entries
+
+                            </div>
+                          </div>
+                          <div class="col-sm-12 col-md-7">
+                            <div class="dataTables_paginate paging_simple_numbers" id="myTable_paginate">
+                              <ul class="pagination">
+                                <li class="paginate_button page-item previous disabled" id="myTable_previous">
+                                  <a href="#" aria-controls="myTable" data-dt-idx="0" tabindex="0" class="page-link">Previous</a>
+                                </li>
+                                <li class="paginate_button page-item active"><a href="#" aria-controls="myTable" data-dt-idx="1" tabindex="0" class="page-link">1</a>
+                                </li>
+                                <li class="paginate_button page-item next disabled" id="myTable_next">
+                                  <a href="#" aria-controls="myTable" data-dt-idx="2" tabindex="0" class="page-link">Next</a>
+                                </li>
+                              </ul>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                          </div>
+                            
                           </div>
                       </div>
                        <!-- Button trigger modal -->
@@ -2512,31 +2624,34 @@ p.asseststext{
                                   </div>
                                 </div>
                               </div>
-                              <table
-                                class="table"
-                                style="border: 2px solid #dee2e6;"
-                              >
-                                <thead>
-                                  <tr>
-                                    <th scope="col">Flag</th>
-                                    <th scope="col">Name</th>
-                                    <th scope="col">Currency</th>
-                                    <th scope="col">Notation</th>
-                                    <th scope="col">Language</th>
-                                    <th scope="col">Action</th>
-                                  </tr>
-                                </thead>
-                                <tbody>
-                                  <tr>
-                                    <th scope="row">
-                                      <i
-                                        class="fa fa-flag"
-                                        aria-hidden="true"
-                                      ></i>
-                                    </th>
+                             
+                              <div class="table-responsive">
+                                <div id="myTable_wrapper" class="dataTables_wrapper container-fluid dt-bootstrap4 no-footer">
+                                  <div class="row">
+                                    <div class="col-sm-12 col-md-6">
+                                      <div class="dataTables_length" id="myTable_length"><label>Show <select name="myTable_length" aria-controls="myTable" class="form-control form-control-sm"><option value="10">10</option><option value="25">25</option><option value="50">50</option><option value="100">100</option></select> entries</label></div></div><div class="col-sm-12 col-md-6"><div id="myTable_filter" class="dataTables_filter"><label>Search:<input type="search" class="form-control form-control-sm" placeholder="" aria-controls="myTable"></label></div></div></div><div class="row"><div class="col-sm-12"><table id="myTable" class="table table-striped border color-table inverse-table dataTable no-footer" role="grid" aria-describedby="myTable_info">
+                                  <thead>
+                                    <tr role="row">
+                                      <th scope="col">Flag</th>
+                                      <th scope="col">Name</th>
+                                      <th scope="col">Currency</th>
+                                      <th scope="col"> Notation</th>
+                                      <th scope="col">Language</th>
+                                      <th scope="col">Action</th></tr>
+                                    
+                                   
+                                  </thead>
+                                  <tbody id="checkall-target">
+                                 
+                                  <tr role="row" class="odd">
+                                      
+                                    <td><i
+                                      class="fa fa-flag"
+                                      aria-hidden="true"
+                                    ></i></td>
                                     <td>Japan</td>
                                     <td>Yen</td>
-                                    <td>@mdo</td>
+                                    <td><i class="fa fa-jpy" aria-hidden="true"></i></td>
                                     <td>Japanese</td>
                                     <td>
                                       <i
@@ -2548,53 +2663,50 @@ p.asseststext{
                                         aria-hidden="true"
                                       ></i>
                                     </td>
-                                  </tr>
-                                  <tr>
-                                    <th scope="row">
-                                      <i
+                                    </tr>
+                                    <tr role="row" class="even">
+                                      
+                                      <td><i
                                         class="fa fa-flag"
                                         aria-hidden="true"
-                                      ></i>
-                                    </th>
-                                    <td>India</td>
-                                    <td>Rupee</td>
-                                    <td>@mdo</td>
-                                    <td>Hindi, Tamil</td>
-                                    <td>
-                                      <i
-                                        class="fa fa-pencil-square"
-                                        aria-hidden="true"
-                                      ></i>
-                                      <i
-                                        class="fa fa-trash-o"
-                                        aria-hidden="true"
-                                      ></i>
-                                    </td>
+                                      ></i></td>
+                                      <td>India</td>
+                                      <td>Rupee</td>
+                                      <td><i class="fa fa-inr" aria-hidden="true"></i></td>
+                                      <td>Hindi, Tamil</td>
+                                      <td>
+                                        <i
+                                          class="fa fa-pencil-square"
+                                          aria-hidden="true"
+                                        ></i>
+                                        <i
+                                          class="fa fa-trash-o"
+                                          aria-hidden="true"
+                                        ></i>
+                                      </td>
                                   </tr>
-                                  <tr>
-                                    <th scope="row">
-                                      <i
-                                        class="fa fa-flag"
-                                        aria-hidden="true"
-                                      ></i>
-                                    </th>
-                                    <td>US</td>
-                                    <td>Dollar</td>
-                                    <td>@mdo</td>
-                                    <td>English</td>
-                                    <td>
-                                      <i
-                                        class="fa fa-pencil-square"
-                                        aria-hidden="true"
-                                      ></i>
-                                      <i
-                                        class="fa fa-trash-o"
-                                        aria-hidden="true"
-                                      ></i>
-                                    </td>
-                                  </tr>
-                                </tbody>
-                              </table>
+                                <tr role="row" class="even">
+                                  <td><i
+                                    class="fa fa-flag"
+                                    aria-hidden="true"
+                                  ></i></td>
+                                  <td>US</td>
+                                  <td>Dollar</td>
+                                  <td><i class="fa fa-usd" aria-hidden="true"></i></td>
+                                  <td>English</td>
+                                  <td>
+                                    <i
+                                      class="fa fa-pencil-square"
+                                      aria-hidden="true"
+                                    ></i>
+                                    <i
+                                      class="fa fa-trash-o"
+                                      aria-hidden="true"
+                                    ></i>
+                                  </td>
+                                </tr></tbody>
+                                </table></div></div><div class="row"><div class="col-sm-12 col-md-5"><div class="dataTables_info" id="myTable_info" role="status" aria-live="polite">Showing 1 to 2 of 2 entries</div></div><div class="col-sm-12 col-md-7"><div class="dataTables_paginate paging_simple_numbers" id="myTable_paginate"><ul class="pagination"><li class="paginate_button page-item previous disabled" id="myTable_previous"><a href="#" aria-controls="myTable" data-dt-idx="0" tabindex="0" class="page-link">Previous</a></li><li class="paginate_button page-item active"><a href="#" aria-controls="myTable" data-dt-idx="1" tabindex="0" class="page-link">1</a></li><li class="paginate_button page-item next disabled" id="myTable_next"><a href="#" aria-controls="myTable" data-dt-idx="2" tabindex="0" class="page-link">Next</a></li></ul></div></div></div></div>
+                              </div>
 
                               <!-- Button trigger modal -->
 
@@ -2638,12 +2750,12 @@ p.asseststext{
                                                 <input
                                                   type="text"
                                                   placeholder="Country Full Name"
-                                                  class="form-control"
+                                                  class="form-control modalcountry"
                                                 />
                                                 <input
                                                 type="text"
                                                 placeholder="Country Short Name"
-                                                class="form-control"
+                                                class="form-control modalcountry"
                                               />
                                               </div>
                                               <div class="row">
@@ -2667,12 +2779,12 @@ p.asseststext{
                                                    <input
                                                 type="text"
                                                 placeholder="Currency Full Name"
-                                                class="form-control"
+                                                class="form-control modalcountry"
                                               />
                                               <input
                                               type="text"
                                               placeholder="Currency Short Name/ Code"
-                                              class="form-control"
+                                              class="form-control modalcountry"
                                             />
                                         </div>
                                         <div class="row">
@@ -2697,12 +2809,12 @@ p.asseststext{
                                                       <input
                                                         type="text"
                                                         placeholder="Language 1"
-                                                        class="form-control"
+                                                        class="form-control modalcountry"
                                                       />
                                                       <input
                                                       type="text"
                                                       placeholder="Language 2"
-                                                      class="form-control"
+                                                      class="form-control modalcountry"
                                                     />
                                                     </div>
                                                 </div>
@@ -2831,7 +2943,7 @@ p.asseststext{
                                         <div class="panel panel-default">
                                             <div class="panel-heading" role="tab" id="headingOne">
                                                  <h4 class="panel-title">
-                                            <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne" >
+                                            <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne" >
                                                 Baby Care(4) 
 
                                             </a> <i
@@ -2845,7 +2957,7 @@ p.asseststext{
                                           </h4>
                                     
                                             </div>
-                                            <div id="collapseOne" class="panel-collapse collapse show" role="tabpanel" aria-labelledby="headingOne">
+                                            <div id="collapseOne" class="panel-collapse collapse " role="tabpanel" aria-labelledby="headingOne">
                                                 <div class="panel-body"><div class="list">
                                                     <ul>
                                                         <li>Hair Care<i class="fa fa-times" aria-hidden="true"></i></li>
@@ -3011,106 +3123,157 @@ p.asseststext{
                                         <p>Below are the list of attributes created for Locale>Channel>Main Category>Sub-category
                                         </p>
                                     </div>
-                                    <div class="col-md-2"> <button type="button" class="btn-primary addnew" data-toggle="modal" data-target="#attributemodal">Add New</button></div>
+                                    <div class="col-md-2"> 
+                                      <button type="button" class="btn-primary addnew" data-toggle="modal" data-target="#attributemodal1">Add New</button>
+                                    </div>
                                 </div>
-                               
-                                
-
                                 <div class="col-md-12">
-                                    <table class="table table-bordered">
-                                        <thead>
-                                          <tr>
-                                            <th scope="col">S.No</th>
-                                            <th scope="col">Name</th>
-                                            <th scope="col">Code</th>
-                                            <th scope="col">Type</th>
-                                            <th scope="col">Family_Group</th>
-                                            <th scope="col">Action</th>
-                                          </tr>
-                                        </thead>
-                                        <tbody>
-                                          <tr>
-                                            <th scope="row">1</th>
+                                    
+                                      <div class="table-responsive">
+                                        <div id="myTable_wrapper" class="dataTables_wrapper container-fluid dt-bootstrap4 no-footer">
+                                          <div class="row">
+                                            <div class="col-sm-12 col-md-6">
+                                              <div class="dataTables_length" id="myTable_length"><label>Show <select name="myTable_length" aria-controls="myTable" class="form-control form-control-sm"><option value="10">10</option><option value="25">25</option><option value="50">50</option><option value="100">100</option></select> entries</label></div></div><div class="col-sm-12 col-md-6"><div id="myTable_filter" class="dataTables_filter"><label>Search:<input type="search" class="form-control form-control-sm" placeholder="" aria-controls="myTable"></label></div></div></div><div class="row"><div class="col-sm-12"><table id="myTable" class="table table-striped border color-table inverse-table dataTable no-footer" role="grid" aria-describedby="myTable_info">
+                                          <thead>
+                                            <tr role="row">
+                                              <th scope="col">S.No</th>
+                                              <th scope="col">Name</th>
+                                              <th scope="col">Code</th>
+                                              <th scope="col"> Type</th>
+                                              <th scope="col">Family_Group</th>
+                                              <th scope="col">Action</th></tr>
+                                            
+                                           
+                                          </thead>
+                                          <tbody id="checkall-target">
+                                         
+                                          <tr role="row" class="odd">
+                                              
+                                            <td>1</td>
                                             <td>Height</td>
                                             <td>test</td>
                                             <td>Float</td>
-                                            <td>Test</td>
-                                            <td> <i
+                                            <td>test</td>
+                                            <td>
+                                              <i
                                                 class="fa fa-pencil-square"
                                                 aria-hidden="true"
                                               ></i>
                                               <i
                                                 class="fa fa-trash-o"
                                                 aria-hidden="true"
-                                              ></i></td>
-                                          </tr>
-                                          
-                                          
-                                        </tbody>
-                                      </table>
+                                              ></i>
+                                            </td>
+                                            </tr>
+                                            <tr role="row" class="odd">
+                                              
+                                              <td>2</td>
+                                              <td>Height</td>
+                                              <td>test</td>
+                                              <td>Float</td>
+                                              <td>test</td>
+                                              <td>
+                                                <i
+                                                  class="fa fa-pencil-square"
+                                                  aria-hidden="true"
+                                                ></i>
+                                                <i
+                                                  class="fa fa-trash-o"
+                                                  aria-hidden="true"
+                                                ></i>
+                                              </td>
+                                              </tr>
+                                            
+                                      </tbody>
+                                        </table>
+                                      </div>
+                                    </div>
+                                    <div class="row">
+                                      <div class="col-sm-12 col-md-5">
+                                        <div class="dataTables_info" id="myTable_info" role="status" aria-live="polite">Showing 1 to 2 of 2 entries
+
+                                        </div>
+                                      </div>
+                                      <div class="col-sm-12 col-md-7">
+                                        <div class="dataTables_paginate paging_simple_numbers" id="myTable_paginate">
+                                          <ul class="pagination">
+                                            <li class="paginate_button page-item previous disabled" id="myTable_previous">
+                                              <a href="#" aria-controls="myTable" data-dt-idx="0" tabindex="0" class="page-link">Previous</a>
+                                            </li>
+                                            <li class="paginate_button page-item active"><a href="#" aria-controls="myTable" data-dt-idx="1" tabindex="0" class="page-link">1</a>
+                                            </li>
+                                            <li class="paginate_button page-item next disabled" id="myTable_next">
+                                              <a href="#" aria-controls="myTable" data-dt-idx="2" tabindex="0" class="page-link">Next</a>
+                                            </li>
+                                          </ul>
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </div>
+                                      </div>
                                   </div>
                               </div>
                                <!-- Button trigger modal -->
+ <!-- Modal -->
+ <div class="modal fade" id="attributemodal1" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document" style="width: 700px;">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLongTitle">New Attribute:
+        </h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <p style="margin-bottom: 20px;">Creating new attribute for Locale>Channel>Main Category>Sub-category
+        </p>
+          <div class="row">
+              <div class="col-md-8"> 
+                  <div class="form-group">
+                <div class="addcountry1">
+                    <span>
 
-  
-  <!-- Modal -->
-  <div class="modal fade" id="attributemodal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered" role="document" style="width: 700px;">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLongTitle">New Attribute:
-          </h5>
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-          </button>
-        </div>
-        <div class="modal-body">
-          <p style="margin-bottom: 20px;">Creating new attribute for Locale>Channel>Main Category>Sub-category
-          </p>
-            <div class="row">
-                <div class="col-md-8"> 
-                    <div class="form-group">
-                  <div class="addcountry1">
-                      <span>
-
-                    <input type="text" placeholder="Attribute Family
-                    " class="form-control"><a>Add New</a></span>
-                    <span> <input type="text" placeholder="Attribute Group
-                        " class="form-control"><a>Add New</a></span>
-                    
-                    <span><input type="text" placeholder="Attribute Name" class="form-control"><a>Add New</a></span>
-                    <span><select class="form-control" style="margin-bottom: 15px;">
-                        <option type="Type">Type</option>
-                        <option type="test">test</option>
-                        <option type="test">test</option>
-                    </select></span>
-                    <span><input type="text" placeholder="Value" class="form-control"><a><small><i class="fa fa-plus-circle" aria-hidden="true"></i> (add multiple values)</small></a></span>
-                  </div>
-                
+                  <input type="text" placeholder="Attribute Family
+                  " class="form-control modalcountry"><a>Add New</a></span>
+                  <span> <input type="text" placeholder="Attribute Group
+                      " class="form-control modalcountry"><a>Add New</a></span>
+                  
+                  <span><input type="text" placeholder="Attribute Name" class="form-control modalcountry"><a>Add New</a></span>
+                  <span><select class="form-control" style="margin-bottom: 15px;">
+                      <option type="Type">Type</option>
+                      <option type="test">test</option>
+                      <option type="test">test</option>
+                  </select></span>
+                  <span><input type="text" placeholder="Value" class="form-control modalcountry"><a><small><i class="fa fa-plus-circle" aria-hidden="true"></i> (add multiple values)</small></a></span>
                 </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="define">
-                        <p>Define as*</p>
-                        <ul>
-                            <li><input type="radio">&nbsp;&nbsp;Common
-                            </li>
-                            <li><input type="radio">&nbsp;&nbsp;Special</li>
-                        </ul>
-                    </div>
-                    
-                </div>
-                
-               
+              
               </div>
-        </div>
-        <div class="modal-footer"><button type="button" class="btn btn-primary">Add</button>
-          <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
-          
-        </div>
+              </div>
+              <div class="col-md-4">
+                  <div class="define">
+                      <p>Define as*</p>
+                      <ul>
+                          <li><input type="radio">&nbsp;&nbsp;Common
+                          </li>
+                          <li><input type="radio">&nbsp;&nbsp;Special</li>
+                      </ul>
+                  </div>
+                  
+              </div>
+              
+             
+            </div>
+      </div>
+      <div class="modal-footer"><button type="button" class="btn btn-primary">Add</button>
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+        
       </div>
     </div>
   </div>
+</div>
+  
+ 
                                 </div>
                              
                             </div>
@@ -3412,21 +3575,20 @@ p.asseststext{
                                       </div>
                                       </div>
                                       <div class="row">
-                                        <div class="col-md-6">
+                                        <div class="col-md-12">
                                           <div class="statusid">
+                                            <h6>Column Title (10)</h6>
                                             <ul>
-                                              <li>ID</li>
-                                              <li> Status</li>
-                                              <li> Category</li>
-                                              <li>  Name</li>
-                                              <li>  Price</li>
-                                              <li  style="color: #c2c2d1;">Column 6
-                                                
-                                               
-                                                </li>
-                                              <li style="color: #c2c2d1;">Column 7</li>
-                                              <li style="color: #c2c2d1;"> Column 8</li>
-                                              <li style="color: #c2c2d1;"><i class="fa fa-arrows" aria-hidden="true"></i></li>
+                                              <li><input type="checkbox" disabled="disabled" checked="checked">ID</li>
+                                              <li><input type="checkbox">Description</li>
+                                              <li><input type="checkbox">Weight</li>
+                                              <li> <input type="checkbox">Expiry Date</li>
+                                              <li><input type="checkbox">Age Limit</li>
+                                              <li><input type="checkbox">QR code</li>
+                                              <li><input type="checkbox"  disabled="disabled" checked="checked">Status</li>
+                                              <li> <input type="checkbox"  disabled="disabled" checked="checked">Category</li>
+                                              <li><input type="checkbox"  disabled="disabled" checked="checked">Name</li>
+                                              <li><input type="checkbox"  disabled="disabled" checked="checked">Price</li>
                                             </ul>
                                           </div>
                                         </div>
