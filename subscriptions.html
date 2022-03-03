@@ -1,0 +1,1423 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <!-- Tell the browser to be responsive to screen width -->
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+    <!-- Favicon icon -->
+    <link rel="icon" type="image/png" sizes="16x16" href="../assets/images/" />
+    <title>OMS - User Management</title>
+    <!-- This Page CSS -->
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="node_modules/datatables.net-bs4/css/dataTables.bootstrap4.css"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="node_modules/datatables.net-bs4/css/responsive.dataTables.min.css"
+    />
+    <!-- Custom CSS -->
+    <link href="dist/css/style.min.css" rel="stylesheet" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
+    <style>
+      .btn-toggle {
+        margin: 0 4rem;
+        padding: 0;
+        position: relative;
+        border: none;
+        height: 1.5rem;
+        width: 3rem;
+        border-radius: 1.5rem;
+        color: #6b7381;
+        background: #bdc1c8;
+      }
+
+      .btn-toggle:focus,
+      .btn-toggle:focus.active,
+      .btn-toggle.focus,
+      .btn-toggle.focus.active {
+        outline: none;
+      }
+
+      .btn-toggle:before,
+      .btn-toggle:after {
+        line-height: 1.5rem;
+        width: 4rem;
+        text-align: center;
+        font-weight: 600;
+        font-size: 0.75rem;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        position: absolute;
+        bottom: 0;
+        transition: opacity 0.25s;
+      }
+
+      .btn-toggle:before {
+        left: -4rem;
+      }
+
+      .btn-toggle:after {
+        right: -4rem;
+        opacity: 0.5;
+      }
+
+      .btn-toggle > .handle {
+        position: absolute;
+        top: 0.1875rem;
+        left: 0.1875rem;
+        width: 1.125rem;
+        height: 1.125rem;
+        border-radius: 1.125rem;
+        background: #fff;
+        transition: left 0.25s;
+      }
+
+      .btn-toggle.active {
+        transition: background-color 0.25s;
+      }
+
+      .btn-toggle.active {
+        background-color: #29b5a8;
+      }
+
+      .btn-toggle.active > .handle {
+        left: 1.6875rem;
+        transition: left 0.25s;
+      }
+
+      .btn-toggle.active:before {
+        opacity: 0.5;
+      }
+
+      .btn-toggle.active:after {
+        opacity: 1;
+      }
+
+      /* Search Filter */
+      .search_filter {
+        border: 1px solid #ccc;
+        border-radius: 3px;
+        padding: 10px;
+      }
+      .countrytable table thead tr th {
+        font-weight: 600;
+      }
+      input.form-control {
+        /* margin-bottom: 20px; */
+
+        box-shadow: none !important;
+      }
+      select.form-control {
+        appearance: auto;
+        box-shadow: none !important;
+      }
+      .addnew .flag img {
+        height: 100px;
+        width: 100%;
+        margin-bottom: 10px;
+      }
+      .addnew .flag p {
+        text-align: center;
+        font-size: 13px;
+      }
+      .default {
+        display: flex;
+        align-items: center;
+        height: 100%;
+        margin-top: 25px;
+        font-size: 16px;
+        text-align: center;
+      }
+      .default input.makedefault {
+        margin-right: 10px;
+      }
+      button.btn-primary,
+      .btn-info {
+        /* width: 100px; */
+        height: 35px;
+        /* margin-right: 20px; */
+      }
+      .panel-title > a::after {
+        float: left;
+        font-family: FontAwesome;
+        content: '\f068';
+        padding-right: 5px;
+        margin-top: 3px;
+        font-size: 12px;
+      }
+
+      .panel-title > a.collapsed::after {
+        float: left;
+        content: '\f067';
+        margin-top: 3px;
+        font-size: 12px;
+      }
+      .panel-title > a:hover,
+      .panel-title > a:active,
+      .panel-title > a:focus {
+        text-decoration: none;
+      }
+      .panel-default > .panel-heading {
+        color: #555555;
+        background-color: #f5f5f5;
+        border-color: #dddddd;
+      }
+      .panel {
+        background-color: #ffffff;
+        border: 1px solid transparent;
+        box-shadow: 0 1px 1px rgb(0 0 0 / 5%);
+      }
+      .panel-group .panel {
+        margin-bottom: 0;
+        border-radius: 4px;
+      }
+      .panel-default {
+        border-color: #dddddd;
+      }
+      .panel-title {
+        margin-top: 0;
+        margin-bottom: 0;
+        font-size: 16px;
+        color: inherit;
+      }
+      .panel-heading h4 a {
+        text-align: center !important;
+        margin: 0 20px;
+      }
+      .panel-heading h4 i {
+        margin-right: 15px;
+        float: right !important;
+      }
+      .panel-heading {
+        padding: 10px 15px;
+        border-bottom: 1px solid transparent;
+        border-top-right-radius: 3px;
+        border-top-left-radius: 3px;
+      }
+      .panel-body {
+        padding: 15px;
+      }
+      .panel-body .list ul li {
+        list-style-type: none;
+        margin-bottom: 10px;
+      }
+      .panel-body .list ul li i {
+        float: right;
+        margin-right: 42px;
+        font-size: 16px;
+      }
+
+      button.btn-primary.newsub {
+        height: 35px;
+        width: 150px;
+        margin-right: 5px;
+        padding: 0px;
+      }
+      span.newsubbtn {
+        display: flex;
+      }
+      .attributes {
+        margin-bottom: 20px;
+      }
+      .addcountry1 span {
+        display: flex;
+      }
+      .addcountry1 span input.form-control {
+        width: 70%;
+      }
+      .addcountry1 span a {
+        display: flex;
+        align-items: center;
+        margin: 0 10px;
+        text-decoration: underline !important;
+      }
+      .addcountry1 span select.form-control {
+        width: 70%;
+      }
+      .addcountry1 span a small {
+        font-size: 10px;
+      }
+      .addcountry1 span a small i {
+        font-size: 18px;
+      }
+      .define {
+        margin-bottom: 20px;
+      }
+      .define ul {
+        padding-left: 0px;
+      }
+      .define ul li {
+        list-style-type: none;
+        line-height: 30px;
+      }
+      .alertcolumns ol {
+        padding-left: 15px;
+      }
+      /* Styles for wrapping the search box */
+      .searchcard {
+        background-color: #fff;
+        background-clip: border-box;
+        border: 1px solid rgba(0, 0, 0, 0.125);
+        border-radius: 0.25rem;
+        /* height: 350px; */
+        min-height: 420px;
+      }
+      .main {
+        width: 100%;
+      }
+
+      /* Bootstrap 4 text input with search icon */
+
+      .has-search .form-control {
+        padding-left: 2.375rem;
+        border-radius: 25px;
+        border: 1px solid #0e0e0e6b;
+        margin-bottom: 0px;
+      }
+
+      .has-search .form-control-feedback {
+        position: absolute;
+        z-index: 2;
+        display: block;
+        width: 2.375rem;
+        height: 2.375rem;
+        line-height: 2.375rem;
+        text-align: center;
+        pointer-events: none;
+        color: #aaa;
+        margin-bottom: 0px;
+      }
+      .statusid ul {
+        padding-left: 0px;
+      }
+      .statusid ul li {
+        list-style-type: none;
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 25px;
+      }
+      .close ul {
+        padding-left: 0px;
+      }
+      .close ul li {
+        list-style-type: none;
+      }
+      .close ul li i {
+        font-size: 14px;
+      }
+      .maincategory {
+        margin-bottom: 0px;
+      }
+      .maincategory h6 {
+        font-weight: 600;
+        font-size: 14px;
+      }
+      .maincategory-header {
+        padding: 0;
+        margin-bottom: 0;
+        background-color: transparent;
+        border-bottom: 0 solid transparent;
+        color: black;
+      }
+
+      .maincategory .btn {
+        padding: 5px 0;
+        box-shadow: none;
+        border: none;
+      }
+      .maincategory-header .btn {
+        color: black;
+        width: 100%;
+        text-align: left;
+        font-size: 14px;
+      }
+      .maincategory-header h5 i {
+        float: right !important;
+        margin-top: 4px;
+        font-size: 12px;
+      }
+      .maincategory .categorybody {
+        padding: 10px 0;
+      }
+      .maincategory .collapsebody2 {
+        padding: 10px 0px 10px 10px;
+      }
+      /*Product styles*/
+      .table_columns {
+        display: flex;
+      }
+      .Alter_column_section {
+        float: right;
+      }
+      .Alter_column_section p {
+        margin-bottom: 5px;
+      }
+      .table_columns select.form-select {
+        border: 0px;
+        box-shadow: none;
+        outline: none;
+      }
+      .table_columns select#inlineFormCustomSelect {
+        border: 0;
+        width: 60px;
+        margin-right: 10px;
+      }
+      .filters {
+        border: 1px solid #00000020;
+      }
+      .filter-header {
+        display: flex;
+        padding: 12px 20px;
+        justify-content: space-between;
+        align-items: center;
+        border: none;
+        border-bottom: 1px solid #00000020;
+      }
+      .filter-header h4 {
+        margin-bottom: 0;
+        font-size: 16px;
+        color: #323c8d;
+      }
+      .filter-body .card {
+        border: none;
+        border-bottom: 1px solid #00000020;
+        border-radius: 0;
+        margin-bottom: 0px;
+      }
+      .filter-body .card-header {
+        background-color: transparent;
+        border: none;
+        /* border-bottom: 1px solid #00000020; */
+      }
+      .filter-body .card-header a {
+        color: #000;
+        display: flex;
+        justify-content: space-between;
+      }
+      .filter-list {
+        list-style-type: none;
+        margin-bottom: 0;
+        max-height: 250px;
+        overflow-y: scroll;
+        padding: 0 20px;
+      }
+      .filter-list li {
+        padding: 10px 0;
+        display: flex;
+        font-size: 14px;
+      }
+      .filter-list li input {
+        display: block;
+        margin-top: 5px;
+        margin-right: 5px;
+      }
+      .slidecontainer {
+        width: 100%;
+        padding: 0 10px;
+      }
+      .slidecontainer input {
+        width: 100%;
+        height: 5px;
+      }
+      .slider {
+        -webkit-appearance: none;
+        width: 100%;
+        height: 25px;
+        background: #d3d3d3;
+        outline: none;
+        opacity: 0.7;
+        -webkit-transition: 0.2s;
+        transition: opacity 0.2s;
+      }
+
+      .slider:hover {
+        opacity: 1;
+      }
+
+      .slider::-webkit-slider-thumb {
+        -webkit-appearance: none;
+        appearance: none;
+        width: 25px;
+        height: 25px;
+        background: #04aa6d;
+        cursor: pointer;
+      }
+
+      .slider::-moz-range-thumb {
+        width: 25px;
+        height: 25px;
+        background: #04aa6d;
+        cursor: pointer;
+      }
+      .slidecontainer span {
+        display: flex;
+        justify-content: space-between;
+      }
+      .slidecontainer span p {
+        font-weight: 600;
+      }
+      .product_data {
+        margin-bottom: 20px;
+      }
+      #myTable_wrapper {
+        padding: 0px;
+      }
+      .dumimage {
+        border: 1px solid black;
+        height: 120px;
+        width: 120px;
+        margin: 15px 5px;
+      }
+      .CreateProductdialog {
+        width: 750px;
+      }
+      .nav-pills .nav-link.active,
+      .nav-pills .show > .nav-link {
+        color: #fff;
+        background-color: #fb9678 !important;
+      }
+      table tbody tr td i {
+        /* margin-right: 10px; */
+        font-size: 20px;
+      }
+      a.colorfont {
+        color: black;
+      }
+      .btn-primary,
+      .btn-info {
+        background-color: #fb9678 !important;
+        border-color: #fb9678 !important;
+      }
+      /* .btn-info{
+width: 150px;
+} */
+      .maincategory {
+        border: 0px;
+      }
+      .spacewrap {
+        margin-bottom: 20px;
+      }
+      .panel-heading h4 a {
+        color: black;
+      }
+      .localewrap {
+        margin-bottom: 20px;
+      }
+      span.entitywrap {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 10px;
+      }
+      #pills-entity span.entitywrap a {
+        margin-right: 0px;
+      }
+      input.url {
+        margin-bottom: 20px;
+        font-size: 14px;
+        box-shadow: none;
+        outline: none;
+      }
+      .entitylogo img {
+        width: 150px;
+        height: 150px;
+      }
+      textarea.form-control {
+        font-size: 14px;
+        box-shadow: none;
+        outline: none;
+        padding: 8px;
+      }
+      select.form-select {
+        box-shadow: none !important;
+      }
+      select.form-control {
+        appearance: auto !important;
+      }
+      textarea.desc {
+        height: 150px;
+        width: 100%;
+        resize: none;
+        padding: 8px;
+      }
+      .spacewrapline {
+        border-bottom: 1px solid #8080804a;
+        margin-bottom: 15px;
+      }
+      .formatwrap {
+        /* margin-bottom: 15px; */
+      }
+      .dateformat-data {
+        /* margin-bottom: 10px; */
+      }
+      .dateformat-data input {
+        margin-bottom: 15px;
+      }
+      .format h6 {
+        margin-top: 10px;
+      }
+      .radiolist ul {
+        padding-left: 0px;
+      }
+      .radiolist ul li {
+        list-style-type: none;
+        float: left;
+        padding-right: 20px;
+        font-size: 14px;
+      }
+      .radiolist ul li input.radiospace {
+        margin-right: 5px;
+      }
+      p.asseststext {
+        margin-bottom: 0px;
+      }
+      .sortby {
+        text-align: right;
+        margin: 8px 0px;
+      }
+      .uploadnew {
+        float: right;
+      }
+      .btn.uploadnew {
+        width: 150px;
+      }
+      .imgupload img {
+        height: 100%;
+        width: 150px;
+        margin-bottom: 20px;
+      }
+      input.form-control.modalcountry {
+        margin-bottom: 20px;
+      }
+      .statusid ul li input {
+        margin-right: 10px;
+      }
+      ul.nav .nav-item a {
+        text-align: center;
+        width: 200px;
+      }
+    </style>
+  </head>
+
+  <body class="skin-default-dark fixed-layout">
+    <div id="main-wrapper">
+      <header class="topbar">
+        <nav class="navbar top-navbar navbar-expand-md navbar-dark">
+          <!-- ============================================================== -->
+          <!-- Logo -->
+          <!-- ============================================================== -->
+          <div
+            class="navbar-header"
+            style="text-align: center; padding-left: 0px;"
+          >
+            <a class="navbar-brand" href="#">
+              <!-- Logo icon -->
+              <b>
+                <!--You can put here icon as well // <i class="wi wi-sunset"></i> //-->
+                <!-- Dark Logo icon -->
+                <img
+                  src="dist/images/logo-icon.png"
+                  alt="homepage"
+                  class="dark-logo"
+                />
+                <!-- Light Logo icon -->
+                <img
+                  src="dist/images/logo-light-icon.png"
+                  alt="homepage"
+                  class="light-logo"
+                />
+              </b>
+              <!--End Logo icon -->
+              <!-- Logo text -->
+              <span>
+                <!-- dark Logo text -->
+                <img
+                  src="dist/images/images/logo-text.png"
+                  alt="homepage"
+                  class="dark-logo"
+                />
+                <!-- Light Logo text -->
+                <img
+                  src="dist/images/logo-light-text.png"
+                  class="light-logo"
+                  alt="homepage"
+                />
+              </span>
+            </a>
+          </div>
+          <!-- ============================================================== -->
+          <!-- End Logo -->
+          <!-- ============================================================== -->
+          <div class="navbar-collapse">
+            <!-- ============================================================== -->
+            <!-- toggle and nav items -->
+            <!-- ============================================================== -->
+            <ul class="navbar-nav me-auto">
+              <!-- This is  -->
+              <li class="nav-item">
+                <a
+                  class="nav-link nav-toggler d-block d-md-none waves-effect waves-dark"
+                  href="javascript:void(0)"
+                >
+                  <i class="ti-menu"></i>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a
+                  class="nav-link sidebartoggler d-none d-lg-block d-md-block waves-effect waves-dark"
+                  href="javascript:void(0)"
+                >
+                  <i class="icon-menu"></i>
+                </a>
+              </li>
+              <!-- ============================================================== -->
+              <!-- Search -->
+              <!-- ============================================================== -->
+              <li class="nav-item">
+                <form class="app-search d-none d-md-block d-lg-block">
+                  <input
+                    type="text"
+                    class="form-control"
+                    placeholder="Search & enter"
+                  />
+                </form>
+              </li>
+            </ul>
+            <!-- ============================================================== -->
+            <!-- User profile and search -->
+            <!-- ============================================================== -->
+            <ul class="navbar-nav my-lg-0">
+              <!-- ============================================================== -->
+              <!-- Comment -->
+              <!-- ============================================================== -->
+              <li class="nav-item dropdown">
+                <a
+                  class="nav-link dropdown-toggle waves-effect waves-dark"
+                  href="#"
+                  data-bs-toggle="dropdown"
+                  aria-haspopup="true"
+                  aria-expanded="false"
+                >
+                  <i class="ti-email"></i>
+                  <div class="notify">
+                    <span class="heartbit"></span>
+                    <span class="point"></span>
+                  </div>
+                </a>
+                <div
+                  class="dropdown-menu dropdown-menu-end mailbox animated bounceInDown"
+                >
+                  <ul>
+                    <li>
+                      <div class="drop-title">Notifications</div>
+                    </li>
+                    <li>
+                      <div class="message-center">
+                        <!-- Message -->
+                        <a href="javascript:void(0)">
+                          <div class="btn btn-danger btn-circle text-white">
+                            <i class="ti-calendar"></i>
+                          </div>
+                          <div class="mail-contnet">
+                            <h5>Event today</h5>
+                            <span class="mail-desc">
+                              Just see the my new admin!
+                            </span>
+                            <span class="time">9:30 AM</span>
+                          </div>
+                        </a>
+                        <!-- Message -->
+                        <a href="javascript:void(0)">
+                          <div class="btn btn-success btn-circle text-white">
+                            <i class="ti-calendar"></i>
+                          </div>
+                          <div class="mail-contnet">
+                            <h5>Event today</h5>
+                            <span class="mail-desc">
+                              Just a reminder that you have event
+                            </span>
+                            <span class="time">9:10 AM</span>
+                          </div>
+                        </a>
+                      </div>
+                    </li>
+                    <li>
+                      <a
+                        class="nav-link text-center link"
+                        href="javascript:void(0);"
+                      >
+                        <strong>Check all notifications</strong>
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+              </li>
+              <!-- ============================================================== -->
+              <!-- End Comment -->
+            </ul>
+          </div>
+        </nav>
+      </header>
+      <!-- ============================================================== -->
+      <!-- End Topbar header -->
+      <!-- ============================================================== -->
+      <!-- ============================================================== -->
+      <!-- Left Sidebar - style you can find in sidebar.scss  -->
+      <!-- ============================================================== -->
+      <aside class="left-sidebar">
+        <!-- Sidebar scroll-->
+        <div class="scroll-sidebar">
+          <!-- User Profile-->
+          <div class="user-profile">
+            <div class="user-pro-body">
+              <div>
+                <img
+                  src="dist/images/users/2.jpg"
+                  alt="user-img"
+                  class="img-circle"
+                />
+              </div>
+              <div class="dropdown">
+                <a
+                  href="javascript:void(0)"
+                  class="dropdown-toggle u-dropdown link hide-menu"
+                  data-bs-toggle="dropdown"
+                  role="button"
+                  aria-haspopup="true"
+                  aria-expanded="false"
+                >
+                  Steave Gection
+                  <span class="caret"></span>
+                </a>
+                <div class="dropdown-menu animated flipInY">
+                  <!-- text-->
+                  <a href="javascript:void(0)" class="dropdown-item">
+                    <i class="ti-user"></i>
+                    My Profile
+                  </a>
+                  <!-- text-->
+                  <a href="#" class="dropdown-item">
+                    <i class="mdi mdi-logout-variant"></i>
+                    Logout
+                  </a>
+                  <!-- text-->
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Sidebar navigation-->
+          <nav class="sidebar-nav">
+            <ul id="sidebarnav">
+              <li class="nav-small-cap">--- PERSONAL</li>
+              <li>
+                <a
+                  class="waves-effect waves-dark"
+                  href="javascript:void(0)"
+                  aria-expanded="false"
+                >
+                  <i class="icon-speedometer"></i>
+                  <span class="hide-menu">Dashboard</span>
+                </a>
+              </li>
+              <li>
+                <a
+                  class="waves-effect waves-dark"
+                  href="users.html"
+                  aria-expanded="false"
+                >
+                  <i class="ti-layout-grid2"></i>
+                  <span class="hide-menu">User Management</span>
+                </a>
+              </li>
+
+              <li>
+                <a
+                  class="waves-effect waves-dark"
+                  href="inventorymanagement.html"
+                  aria-expanded="false"
+                >
+                  <i class="ti-layout-grid2"></i>
+                  <span class="hide-menu">InventoryManagement</span>
+                </a>
+              </li>
+              <li>
+                <a
+                  class="waves-effect waves-dark"
+                  href="ordermanagement.html"
+                  aria-expanded="false"
+                >
+                  <i class="ti-layout-grid2"></i>
+                  <span class="hide-menu">Order Management</span>
+                </a>
+              </li>
+              <!-- <li class="active">
+                            <a class="has-arrow waves-effect waves-dark active" href="javascript:void(0)"
+                                aria-expanded="false">
+                                <i class="ti-email"></i>
+                                <span class="hide-menu">Internal</span>
+                            </a>
+                            <ul aria-expanded="false" class="collapse in">
+                                <li>
+                                    <a href="users.html">Users</a>
+                                </li>
+                                <li>
+                                    <a class="active" href="permission.html">Permissions</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a class="has-arrow waves-effect waves-dark" href="javascript:void(0)"
+                                aria-expanded="false">
+                                <i class="ti-palette"></i>
+                                <span class="hide-menu">External</span>
+                            </a>
+                            <ul aria-expanded="false" class="collapse">
+                                <li>
+                                    <a href="#">Users</a>
+                                </li>
+                                <li>
+                                    <a href="#">Permissions</a>
+                                </li>
+                            </ul>
+                        </li> -->
+              <li>
+                <a
+                  class="waves-effect waves-dark"
+                  href="price.html"
+                  aria-expanded="false"
+                >
+                  <i class="ti-layout-grid2"></i>
+                  <span class="hide-menu">Price Management</span>
+                </a>
+              </li>
+              <li>
+                <a
+                  class="waves-effect waves-dark"
+                  href="ProductManagement.html"
+                  aria-expanded="false"
+                >
+                  <i class="ti-layout-grid2"></i>
+                  <span class="hide-menu">Product Management</span>
+                </a>
+              </li>
+              <li>
+                <a
+                  class="waves-effect waves-dark"
+                  href="invoicemanagement.html"
+                  aria-expanded="false"
+                >
+                  <i class="ti-layout-grid2"></i>
+                  <span class="hide-menu">Invoice Management</span>
+                </a>
+              </li>
+              <li>
+                <a
+                  class="waves-effect waves-dark"
+                  href="feedback.html"
+                  aria-expanded="false"
+                >
+                  <i class="ti-layout-grid2"></i>
+                  <span class="hide-menu">Feedback</span>
+                </a>
+              </li>
+              <li>
+                <a
+                  class="waves-effect waves-dark"
+                  href="chat.html"
+                  aria-expanded="false"
+                >
+                  <i class="ti-layout-grid2"></i>
+                  <span class="hide-menu">Chat</span>
+                </a>
+              </li>
+              <li class="active">
+                <a
+                  class="waves-effect waves-dark"
+                  href="subscriptions.html"
+                  aria-expanded="false"
+                >
+                  <i class="ti-layout-grid2"></i>
+                  <span class="hide-menu">Subscriptions</span>
+                </a>
+              </li>
+            </ul>
+          </nav>
+          <!-- End Sidebar navigation -->
+        </div>
+        <!-- End Sidebar scroll-->
+      </aside>
+      <!-- ============================================================== -->
+      <!-- End Left Sidebar - style you can find in sidebar.scss  -->
+      <!-- ============================================================== -->
+      <!-- ============================================================== -->
+      <!-- Page wrapper  -->
+      <!-- ============================================================== -->
+      <div class="page-wrapper">
+        <!-- ============================================================== -->
+        <!-- Container fluid  -->
+        <!-- ============================================================== -->
+        <div class="container-fluid">
+          <!-- ============================================================== -->
+          <!-- Bread crumb and right sidebar toggle -->
+          <!-- ============================================================== -->
+          <div class="row page-titles">
+            <div class="col-md-5 align-self-center">
+              <h4 class="text-themecolor">Subscriptions</h4>
+            </div>
+            <div class="col-md-7 align-self-center text-end">
+              <div class="d-flex justify-content-end align-items-center">
+                <ol class="breadcrumb justify-content-end">
+                  <li class="breadcrumb-item">
+                    <a href="javascript:void(0)">Home</a>
+                  </li>
+                  <li class="breadcrumb-item active">Subscriptions</li>
+                </ol>
+              </div>
+            </div>
+          </div>
+          <!-- ============================================================== -->
+          <!-- End Bread crumb and right sidebar toggle -->
+          <!-- ============================================================== -->
+          <!-- ============================================================== -->
+          <!-- Start Page Content -->
+          <!-- ============================================================== -->
+          <div class="row">
+            <!-- /.modal -->
+            <div class="col-12">
+              <div class="card">
+                <div class="card-body">
+                  <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
+                    <li class="nav-item">
+                      <a
+                        class="nav-link active"
+                        id="pills-B2BSubscribed-tab"
+                        data-toggle="pill"
+                        href="#pills-B2BSubscribed"
+                        role="tab"
+                        aria-controls="pills-B2BSubscribed"
+                        aria-selected="true"
+                      >
+                        B2B Subscribed
+                      </a>
+                    </li>
+                    <li class="nav-item">
+                      <a
+                        class="nav-link"
+                        id="pills-product-tab"
+                        data-toggle="pill"
+                        href="#pills-product"
+                        role="tab"
+                        aria-controls="pills-product"
+                        aria-selected="false"
+                      >
+                        B2B Subscriptions
+                      </a>
+                    </li>
+                    <li class="nav-item">
+                      <a
+                        class="nav-link"
+                        id="pills-import-tab"
+                        data-toggle="pill"
+                        href="#pills-import"
+                        role="tab"
+                        aria-controls="pills-import"
+                        aria-selected="false"
+                      >
+                        B2C Subscribed
+                      </a>
+                    </li>
+                    <li class="nav-item">
+                      <a
+                        class="nav-link"
+                        id="pills-export-tab"
+                        data-toggle="pill"
+                        href="#pills-export"
+                        role="tab"
+                        aria-controls="pills-export"
+                        aria-selected="false"
+                      >
+                        B2C Subscriptions
+                      </a>
+                    </li>
+                  </ul>
+                  <div class="tab-content" id="pills-tabContent">
+                    <div
+                      class="tab-pane fade show active"
+                      id="pills-B2BSubscribed"
+                      role="tabpanel"
+                      aria-labelledby="pills-B2BSubscribed-tab"
+                    >
+                      <div class="B2Bsubscribed-section">
+                        <div class="container">
+                          <div class="row">
+                            <div class="col-md-6">
+                              <div class="b2btotal">
+                                <label><h6>Total Subscribed Users:</h6></label>
+                              </div>
+                              <div class="b2btotal">
+                                <label><h6>Active Users:</h6></label>
+                              </div>
+                              <div class="b2btotal">
+                                <label><h6>Expired Users:</h6></label>
+                              </div>
+                              <div class="b2btotal">
+                                <label>
+                                  <h6>Levelwise Subscribed Users:</h6>
+                                </label>
+                              </div>
+                              <div class="row">
+                                <div class="col-md-3">
+                                  <div class="l1tab">
+                                    <label><h6>L1:</h6></label>
+                                  </div>
+                                </div>
+                                <div class="col-md-3">
+                                  <div class="l1tab">
+                                    <label><h6>L2:</h6></label>
+                                  </div>
+                                </div>
+                                <div class="col-md-3">
+                                  <div class="l1tab">
+                                    <label><h6>L3:</h6></label>
+                                  </div>
+                                </div>
+                                <div class="col-md-3">
+                                  <div class="l1tab">
+                                    <label><h6>L4:</h6></label>
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="b2btotal">
+                                <label>
+                                  <h6>Planwise Subscribed Users:</h6>
+                                </label>
+                              </div>
+                            </div>
+                            <div class="col-md-6">
+                              <canvas
+                                id="myChart"
+                                style="width: 100%; max-width: 600px;"
+                              ></canvas>
+                            </div>
+                          </div>
+                          <div class="row">
+                            <div class="col-12">
+                              <div>
+                                <form>
+                                  <div class="row">
+                                    <div class="col-md-3 form-group">
+                                      <select
+                                        class="form-select col-12"
+                                        id="inlineFormCustomSelect"
+                                      >
+                                        <option selected="">Level</option>
+                                        <option value="1">One</option>
+                                        <option value="2">Two</option>
+                                        <option value="3">Three</option>
+                                      </select>
+                                    </div>
+                                    <div class="col-md-2 form-group">
+                                      <select
+                                        class="form-select col-12"
+                                        id="inlineFormCustomSelect"
+                                      >
+                                        <option selected="">Plan</option>
+                                        <option value="1">One</option>
+                                        <option value="2">Two</option>
+                                        <option value="3">Three</option>
+                                      </select>
+                                    </div>
+                                    <div class="col-md-2 form-group">
+                                      <input
+                                        type="text"
+                                        class="form-select"
+                                        id="recipient-name1"
+                                        placeholder="Name"
+                                      />
+                                    </div>
+                                    <div class="col-md-2 form-group">
+                                      <input
+                                        type="text"
+                                        class="form-select"
+                                        id="recipient-name1"
+                                        placeholder="From"
+                                      />
+                                    </div>
+                                    <div class="col-md-2 form-group">
+                                      <input
+                                        type="text"
+                                        class="form-select"
+                                        id="recipient-name1"
+                                        placeholder="To"
+                                      />
+                                    </div>
+
+                                    <div class="col-md-1 form-group">
+                                      <button type="submit">
+                                        <i class="fa fa-search"></i>
+                                      </button>
+                                    </div>
+                                  </div>
+                                </form>
+                              </div>
+
+                              <div class="table-responsive">
+                                <table
+                                  id="myTable"
+                                  class="table table-striped border color-table inverse-table"
+                                >
+                                  <thead>
+                                    <tr>
+                                      <!-- <th scope="col" class="border"><label><input type="checkbox"
+                                                                                          data-tablesaw-checkall><span class="sr-only">
+                                                                                          Check
+                                                                                          All</span></label></th> -->
+
+                                      <!-- <th>Invoice#</th>
+                                              <th>Status</th>
+                                              <th>Order#</th> -->
+                                      <th style="width: 15%;">UserName</th>
+                                      <th style="width: 10%;">Plan</th>
+                                      <th style="width: 10%;">Level</th>
+                                      <th style="width: 10%;">Name</th>
+                                      <th style="width: 15%;">Start Date</th>
+                                      <th style="width: 15%;">End Date</th>
+                                      <th style="width: 10%;">Status</th>
+
+                                      <th style="width: 15%;">Action</th>
+                                    </tr>
+
+                                    <!-- <tr>
+                                                                              <th>
+                                                                                   <div class="form-group has-search has-searchs">
+                                                                                       <span class="fa fa-search form-control-feedback"></span>
+                                                                                       <input type="text" class="form-control" placeholder="Search">
+                                                                                     </div>
+                                                                               </th>
+                                                                               <th></th>
+                                                                               <th></th>
+                                                                               <th>
+                                                                                   <div class="form-group has-search has-searchs">
+                                                                                       <input type="date" class="form-control" placeholder="Search">
+                                                                                     </div>
+                                                                               </th>
+                                                                               <th>                                                                    <div class="form-group has-search has-searchs">
+                                                                                   <input type="date" class="form-control" placeholder="Search">
+                                                                                 </div></th>
+                                                                               <th>
+                                                                                   <div class="form-group has-search has-searchs">
+                                                                                       <span class="fa fa-search form-control-feedback"></span>
+                                                                                       <input type="text" class="form-control" placeholder="Search">
+                                                                                     </div>
+                                                                               </th>
+                                                                               <th></th>
+                                                                               <th></th>
+                                                                               <th></th>
+                                      
+                                                                           </tr>
+                                                                        -->
+                                  </thead>
+                                  <tbody id="checkall-target">
+                                    <tr>
+                                      <!-- <td><label><input type="checkbox"><span class="sr-only"> Select
+                                                                                          Row</span></label></td> -->
+                                      <td>1</td>
+                                      <td>test</td>
+                                      <td>test</td>
+
+                                      <td>test</td>
+                                      <td>test</td>
+
+                                      <td>test</td>
+                                      <td>test</td>
+
+                                      <td>
+                                        <i class="mdi mdi-eye"></i>
+                                        <i class="mdi mdi-pencil"></i>
+                                        <i
+                                          class="fa fa-download"
+                                          aria-hidden="true"
+                                        ></i>
+                                        <i
+                                          class="fa fa-share-alt"
+                                          aria-hidden="true"
+                                        ></i>
+                                      </td>
+                                    </tr>
+                                  </tbody>
+                                </table>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div
+                      class="tab-pane fade"
+                      id="pills-product"
+                      role="tabpanel"
+                      aria-labelledby="pills-product-tab"
+                    ></div>
+
+                    <div
+                      class="tab-pane fade"
+                      id="pills-import"
+                      role="tabpanel"
+                      aria-labelledby="pills-import-tab"
+                    ></div>
+
+                    <div
+                      class="tab-pane fade"
+                      id="pills-export"
+                      role="tabpanel"
+                      aria-labelledby="pills-export-tab"
+                    ></div>
+
+                    <div
+                      class="tab-pane fade"
+                      id="pills-assets"
+                      role="tabpanel"
+                      aria-labelledby="pills-assets-tab"
+                    ></div>
+
+                    <div
+                      class="tab-pane fade"
+                      id="pills-entity"
+                      role="tabpanel"
+                      aria-labelledby="pills-entity-tab"
+                    ></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- ============================================================== -->
+          <!-- End PAge Content -->
+          <!-- ============================================================== -->
+        </div>
+        <!-- ============================================================== -->
+        <!-- End Container fluid  -->
+        <!-- ============================================================== -->
+      </div>
+      <!-- ============================================================== -->
+      <!-- End Page wrapper  -->
+      <!-- ============================================================== -->
+    </div>
+    <!-- ============================================================== -->
+    <!-- All Jquery -->
+    <!-- ============================================================== -->
+    <script src="node_modules/jquery/dist/jquery.min.js"></script>
+    <!-- Bootstrap tether Core JavaScript -->
+    <script src="node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <!--Menu sidebar -->
+    <script src="dist/js/sidebarmenu.js"></script>
+    <!--stickey kit -->
+    <script src="node_modules/sticky-kit-master/dist/sticky-kit.min.js"></script>
+    <!--Custom JavaScript -->
+    <script src="dist/js/custom.min.js"></script>
+    <!--This page plugins -->
+    <script src="node_modules/datatables.net/js/jquery.dataTables.min.js"></script>
+    <script src="node_modules/datatables.net-bs4/js/dataTables.responsive.min.js"></script>
+    <script>
+      $(function () {
+        $('#myTable').DataTable()
+        var table = $('#example').DataTable({
+          columnDefs: [
+            {
+              visible: false,
+              targets: 2,
+            },
+          ],
+          order: [[2, 'asc']],
+          displayLength: 25,
+          drawCallback: function (settings) {
+            var api = this.api()
+            var rows = api
+              .rows({
+                page: 'current',
+              })
+              .nodes()
+            var last = null
+            api
+              .column(2, {
+                page: 'current',
+              })
+              .data()
+              .each(function (group, i) {
+                if (last !== group) {
+                  $(rows)
+                    .eq(i)
+                    .before(
+                      '<tr class="group"><td colspan="5">' +
+                        group +
+                        '</td></tr>',
+                    )
+                  last = group
+                }
+              })
+          },
+        })
+      })
+    </script>
+    <script>
+      var xValues = [100, 200, 300, 400, 500, 600, 700, 800, 900, 1000]
+
+      new Chart('myChart', {
+        type: 'line',
+        data: {
+          labels: xValues,
+          datasets: [
+            {
+              data: [860, 1140, 1060, 1060, 1070, 1110, 1330, 2210, 7830, 2478],
+              borderColor: 'red',
+              fill: false,
+            },
+            {
+              data: [
+                1600,
+                1700,
+                1700,
+                1900,
+                2000,
+                2700,
+                4000,
+                5000,
+                6000,
+                7000,
+              ],
+              borderColor: 'green',
+              fill: false,
+            },
+            {
+              data: [300, 700, 2000, 5000, 6000, 4000, 2000, 1000, 200, 100],
+              borderColor: 'blue',
+              fill: false,
+            },
+          ],
+        },
+        options: {
+          legend: { display: false },
+        },
+      })
+    </script>
+  </body>
+</html>
