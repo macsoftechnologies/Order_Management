@@ -1,10 +1,5 @@
 @import url(
-  https://fonts.googleapis.com/css?family=Poppins:300,
-  400,
-  500,
-  600,
-  700
-); /*!
+  https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700); /*!
  * Font Awesome Free 5.11.2 by @fontawesome - https://fontawesome.com
  * License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License)
  */
@@ -35762,7 +35757,7 @@ a.list-group-item {
 }
 .left-sidebar {
   position: absolute;
-  width: 220px;
+  width: 250px;
   height: 100%;
   top: 0;
   z-index: 20;
@@ -38237,12 +38232,12 @@ html body .navbar-dark .mailbox .message-center a .mail-contnet .time {
 @media (min-width: 1024px) {
   .footer,
   .page-wrapper {
-    margin-left: 220px;
+    margin-left: 250px;
   }
 }
 @media (max-width: 1023px) {
   .inbox-center a {
-    width: 200px;
+    width: 250px;
   }
   .d-flex {
     display: block !important;
@@ -38253,7 +38248,7 @@ html body .navbar-dark .mailbox .message-center a .mail-contnet .time {
 }
 @media (min-width: 768px) {
   .navbar-header {
-    width: 220px;
+    width: 250px;
     flex-shrink: 0;
   }
   .navbar-header .navbar-brand {
