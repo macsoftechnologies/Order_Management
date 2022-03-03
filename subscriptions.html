@@ -549,8 +549,12 @@ width: 150px;
       select.form-select {
         box-shadow: none !important;
       }
+      input.form-select {
+        box-shadow: none !important;
+      }
       select.form-control {
         appearance: auto !important;
+        box-shadow: none !important;
       }
       textarea.desc {
         height: 150px;
@@ -613,6 +617,29 @@ width: 150px;
       ul.nav .nav-item a {
         text-align: center;
         width: 200px;
+      }
+      label.selectform {
+        width: 100%;
+        display: flex;
+      }
+      label.selectform p {
+        margin-bottom: 5px;
+        /* margin-right: 10px; */
+        width: 140px;
+      }
+      label select.form-control {
+        width: 50%;
+      }
+      label input.form-control {
+        width: 50%;
+      }
+      label.selectform p.Renewal {
+        width: 250px;
+      }
+      label.selectform a .btn {
+        box-shadow: none;
+        border: none;
+        text-decoration: underline;
       }
     </style>
   </head>
@@ -828,79 +855,127 @@ width: 150px;
             <ul id="sidebarnav">
               <li class="nav-small-cap">--- PERSONAL</li>
               <li>
-                  <a class="waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false">
-                      <i class="icon-speedometer"></i>
-                      <span class="hide-menu">Dashboard</span>
-                  </a>
+                <a
+                  class="waves-effect waves-dark"
+                  href="javascript:void(0)"
+                  aria-expanded="false"
+                >
+                  <i class="icon-speedometer"></i>
+                  <span class="hide-menu">Dashboard</span>
+                </a>
               </li>
               <li>
-                  <a class="waves-effect waves-dark" href="users.html" aria-expanded="false">
-                      <i class="ti-layout-grid2"></i>
-                      <span class="hide-menu">User Management</span>
-                  </a>
-              </li>
-
-              <li>
-                  <a class="waves-effect waves-dark" href="inventorymanagement.html" aria-expanded="false">
-                      <i class="ti-layout-grid2"></i>
-                      <span class="hide-menu">InventoryManagement</span>
-                  </a>
-              </li>
-              <li>
-                  <a class="waves-effect waves-dark" href="ordermanagement.html" aria-expanded="false">
-                      <i class="ti-layout-grid2"></i>
-                      <span class="hide-menu">Order Management</span>
-                  </a>
-              </li>
-              <li>
-                  <a class="waves-effect waves-dark" href="price.html" aria-expanded="false">
-                      <i class="ti-layout-grid2"></i>
-                      <span class="hide-menu">Price Management</span>
-                  </a>
-              </li>
-              <li>
-                  <a class="waves-effect waves-dark" href="ProductManagement.html" aria-expanded="false">
-                      <i class="ti-layout-grid2"></i>
-                      <span class="hide-menu">Product Management</span>
-                  </a>
-              </li>
-              <li>
-                  <a class="waves-effect waves-dark" href="invoicemanagement.html" aria-expanded="false">
-                      <i class="ti-layout-grid2"></i>
-                      <span class="hide-menu">Invoice Management</span>
-                  </a>
-              </li>
-              <li>
-                  <a class="waves-effect waves-dark" href="subscriptions.html" aria-expanded="false">
-                      <i class="ti-layout-grid2"></i>
-                      <span class="hide-menu">Subscription Management</span>
-                  </a>
+                <a
+                  class="waves-effect waves-dark"
+                  href="users.html"
+                  aria-expanded="false"
+                >
+                  <i class="ti-layout-grid2"></i>
+                  <span class="hide-menu">User Management</span>
+                </a>
               </li>
 
               <li>
-                  <a class="waves-effect waves-dark" href="offermanagement.html" aria-expanded="false">
-                      <i class="ti-layout-grid2"></i>
-                      <span class="hide-menu">Offer Management</span>
-                  </a>
+                <a
+                  class="waves-effect waves-dark"
+                  href="inventorymanagement.html"
+                  aria-expanded="false"
+                >
+                  <i class="ti-layout-grid2"></i>
+                  <span class="hide-menu">InventoryManagement</span>
+                </a>
+              </li>
+              <li>
+                <a
+                  class="waves-effect waves-dark"
+                  href="ordermanagement.html"
+                  aria-expanded="false"
+                >
+                  <i class="ti-layout-grid2"></i>
+                  <span class="hide-menu">Order Management</span>
+                </a>
+              </li>
+              <li>
+                <a
+                  class="waves-effect waves-dark"
+                  href="price.html"
+                  aria-expanded="false"
+                >
+                  <i class="ti-layout-grid2"></i>
+                  <span class="hide-menu">Price Management</span>
+                </a>
+              </li>
+              <li>
+                <a
+                  class="waves-effect waves-dark"
+                  href="ProductManagement.html"
+                  aria-expanded="false"
+                >
+                  <i class="ti-layout-grid2"></i>
+                  <span class="hide-menu">Product Management</span>
+                </a>
+              </li>
+              <li>
+                <a
+                  class="waves-effect waves-dark"
+                  href="invoicemanagement.html"
+                  aria-expanded="false"
+                >
+                  <i class="ti-layout-grid2"></i>
+                  <span class="hide-menu">Invoice Management</span>
+                </a>
+              </li>
+              <li>
+                <a
+                  class="waves-effect waves-dark"
+                  href="subscriptions.html"
+                  aria-expanded="false"
+                >
+                  <i class="ti-layout-grid2"></i>
+                  <span class="hide-menu">Subscription Management</span>
+                </a>
               </li>
 
               <li>
-                  <a class="waves-effect waves-dark" href="Escalations.html" aria-expanded="false">
-                      <i class="ti-layout-grid2"></i>
-                      <span class="hide-menu">Escalations Management</span>
-                  </a>
+                <a
+                  class="waves-effect waves-dark"
+                  href="offermanagement.html"
+                  aria-expanded="false"
+                >
+                  <i class="ti-layout-grid2"></i>
+                  <span class="hide-menu">Offer Management</span>
+                </a>
+              </li>
+
+              <li>
+                <a
+                  class="waves-effect waves-dark"
+                  href="Escalations.html"
+                  aria-expanded="false"
+                >
+                  <i class="ti-layout-grid2"></i>
+                  <span class="hide-menu">Escalations Management</span>
+                </a>
               </li>
               <li>
-                  <a class="waves-effect waves-dark" href="feedback.html" aria-expanded="false">
-                      <i class="ti-layout-grid2"></i>
-                      <span class="hide-menu">Feedback</span>
-                  </a>
+                <a
+                  class="waves-effect waves-dark"
+                  href="feedback.html"
+                  aria-expanded="false"
+                >
+                  <i class="ti-layout-grid2"></i>
+                  <span class="hide-menu">Feedback</span>
+                </a>
               </li>
               <li>
-                  <a class="waves-effect waves-dark" href="chat.html" aria-expanded="false">
-                      <i class="ti-layout-grid2"></i>
-                      <span class="hide-menu">Chat</span>
-                  </a>
+                <a
+                  class="waves-effect waves-dark"
+                  href="chat.html"
+                  aria-expanded="false"
+                >
+                  <i class="ti-layout-grid2"></i>
+                  <span class="hide-menu">Chat</span>
+                </a>
               </li>
               <!-- <li class="active">
                   <a class="has-arrow waves-effect waves-dark active" href="javascript:void(0)"
@@ -932,8 +1007,7 @@ width: 150px;
                       </li>
                   </ul>
               </li> -->
-
-          </ul>
+            </ul>
           </nav>
           <!-- End Sidebar navigation -->
         </div>
@@ -1130,7 +1204,7 @@ width: 150px;
                                     </div>
                                     <div class="col-md-2 form-group">
                                       <input
-                                        type="text"
+                                        type="date"
                                         class="form-select"
                                         id="recipient-name1"
                                         placeholder="From"
@@ -1138,7 +1212,7 @@ width: 150px;
                                     </div>
                                     <div class="col-md-2 form-group">
                                       <input
-                                        type="text"
+                                        type="date"
                                         class="form-select"
                                         id="recipient-name1"
                                         placeholder="To"
@@ -1251,21 +1325,821 @@ width: 150px;
                       id="pills-product"
                       role="tabpanel"
                       aria-labelledby="pills-product-tab"
-                    ></div>
+                    >
+                      <div class="B2Bsubscribed-section">
+                        <div class="container">
+                          <div class="row attributes">
+                            <div class="col-md-8">
+                              <div class="b2btotal">
+                                <label><h6>Total Subscribed Users:</h6></label>
+                              </div>
+                            </div>
+                            <div class="col-md-4">
+                              <div class="b2btotal">
+                                <button
+                                  type="button"
+                                  class="btn btn-info text-white"
+                                  data-whatever="@fat"
+                                  data-toggle="modal"
+                                  data-target="#NewPlan"
+                                >
+                                  <i class="mdi mdi-plus"></i>
+                                  New Plan
+                                </button>
+                              </div>
+                              <div
+                                class="modal fade"
+                                id="NewPlan"
+                                tabindex="-1"
+                                role="dialog"
+                                aria-labelledby="exampleModalLabel"
+                                aria-hidden="true"
+                              >
+                                <div
+                                  class="modal-dialog CreateProductdialog"
+                                  role="document"
+                                >
+                                  <div class="modal-content">
+                                    <div class="modal-header">
+                                      <h5
+                                        class="modal-title"
+                                        id="exampleModalLabel"
+                                      >
+                                        Subscriptions New Plan
+                                      </h5>
+                                      <button
+                                        type="button"
+                                        class="close"
+                                        data-dismiss="modal"
+                                        aria-label="Close"
+                                      >
+                                        <span aria-hidden="true">
+                                          &times;
+                                        </span>
+                                      </button>
+                                    </div>
+                                    <div class="modal-body">
+                                      <div class="row attributes">
+                                        <div class="col-md-12">
+                                          <label class="selectform">
+                                            <p>Level:</p>
+                                            <select
+                                              class="form-control localewrap"
+                                              id="inlineFormCustomSelect"
+                                            >
+                                              <option selected="Locale">
+                                                test
+                                              </option>
+                                              <option value="1">One</option>
+                                              <option value="2">Two</option>
+                                              <option value="3">Three</option>
+                                            </select>
+                                          </label>
+                                          <label class="selectform">
+                                            <p>Plan:</p>
+                                            <input
+                                              type="text"
+                                              class="form-control localewrap"
+                                            />
+                                          </label>
+                                          <label class="selectform">
+                                            <p>Starts On:</p>
+                                            <input
+                                              type="date"
+                                              class="form-control localewrap"
+                                            />
+                                          </label>
+                                          <label class="selectform">
+                                            <p>Ends On:</p>
+                                            <input
+                                              type="date"
+                                              class="form-control localewrap"
+                                            />
+                                          </label>
+                                          <label class="selectform">
+                                            <p>Amount:</p>
+                                            <select
+                                              class="form-control localewrap"
+                                              id="inlineFormCustomSelect"
+                                            >
+                                              <option selected="Channel">
+                                                Yearly*
+                                              </option>
+                                              <option value="1">One</option>
+                                              <option value="2">Two</option>
+                                              <option value="3">Three</option>
+                                            </select>
+                                          </label>
+                                          <label class="selectform">
+                                            <p>Benefits On:</p>
+
+                                            1.&nbsp;
+                                            <input
+                                              type="text"
+                                              class="form-control localewrap"
+                                              id="inlineFormCustomSelect"
+                                            />
+                                            <a>
+                                              <button type="button" class="btn">
+                                                New
+                                              </button>
+                                            </a>
+                                          </label>
+                                          <label class="selectform">
+                                            <p class="Renewal">
+                                              Renewal Subscription End Date:
+                                            </p>
+                                            <input
+                                              type="date"
+                                              class="form-control localewrap"
+                                            />
+                                          </label>
+                                        </div>
+                                      </div>
+                                    </div>
+                                    <div class="modal-footer">
+                                      <button
+                                        type="button"
+                                        class="btn btn-primary"
+                                      >
+                                        Create
+                                      </button>
+                                      <button
+                                        type="button"
+                                        class="btn btn-secondary"
+                                        data-dismiss="modal"
+                                      >
+                                        Cancel
+                                      </button>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="row attributes">
+                            <div class="col-md-4">
+                              <div class="b2btotal">
+                                <label><h6>Billing Information:</h6></label>
+                              </div>
+                            </div>
+                            <div class="col-md-4">
+                              <div class="b2btotal">
+                                <label>
+                                  <h6>
+                                    Bill Total:&nbsp;
+                                    <strong>
+                                      12345
+                                      <i
+                                        class="fa fa-inr"
+                                        aria-hidden="true"
+                                      ></i>
+                                    </strong>
+                                  </h6>
+                                </label>
+                              </div>
+                            </div>
+                            <div class="col-md-4">
+                              <div class="b2btotal">
+                                <label>
+                                  <h6>
+                                    Bill expire this month:&nbsp;
+                                    <strong>10 Users</strong>
+                                  </h6>
+                                </label>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="row">
+                            <div class="col-12">
+                              <div>
+                                <form>
+                                  <div class="row">
+                                    <div class="col-md-3 form-group">
+                                      <select
+                                        class="form-select col-12"
+                                        id="inlineFormCustomSelect"
+                                      >
+                                        <option selected="">Level</option>
+                                        <option value="1">One</option>
+                                        <option value="2">Two</option>
+                                        <option value="3">Three</option>
+                                      </select>
+                                    </div>
+                                    <div class="col-md-2 form-group">
+                                      <select
+                                        class="form-select col-12"
+                                        id="inlineFormCustomSelect"
+                                      >
+                                        <option selected="">Plan</option>
+                                        <option value="1">One</option>
+                                        <option value="2">Two</option>
+                                        <option value="3">Three</option>
+                                      </select>
+                                    </div>
+                                    <div class="col-md-2 form-group">
+                                      <input
+                                        type="text"
+                                        class="form-select"
+                                        id="recipient-name1"
+                                        placeholder="Name"
+                                      />
+                                    </div>
+                                    <div class="col-md-2 form-group">
+                                      <input
+                                        type="text"
+                                        class="form-select"
+                                        id="recipient-name1"
+                                        placeholder="Start Date"
+                                      />
+                                    </div>
+                                    <div class="col-md-2 form-group">
+                                      <input
+                                        type="text"
+                                        class="form-select"
+                                        id="recipient-name1"
+                                        placeholder="End Date"
+                                      />
+                                    </div>
+
+                                    <div class="col-md-1 form-group">
+                                      <button type="submit">
+                                        <i class="fa fa-search"></i>
+                                      </button>
+                                    </div>
+                                  </div>
+                                </form>
+                              </div>
+
+                              <div class="table-responsive">
+                                <table
+                                  id="myTable"
+                                  class="table table-striped border color-table inverse-table"
+                                >
+                                  <thead>
+                                    <tr>
+                                      <th style="width: 10%;">Plan</th>
+                                      <th style="width: 10%;">Level</th>
+                                      <th style="width: 15%;">Status</th>
+                                      <th style="width: 15%;">Start Date</th>
+                                      <th style="width: 15%;">End Date</th>
+                                      <th style="width: 15%;">Users</th>
+                                      <th style="width: 20%;">Action</th>
+                                    </tr>
+                                  </thead>
+                                  <tbody id="checkall-target">
+                                    <tr>
+                                      <!-- <td><label><input type="checkbox"><span class="sr-only"> Select
+                                                                                          Row</span></label></td> -->
+                                      <td>Plan A</td>
+                                      <td>test</td>
+                                      <td>test</td>
+
+                                      <td>test</td>
+
+                                      <td>test</td>
+                                      <td>test</td>
+
+                                      <td>
+                                        <i class="mdi mdi-eye"></i>
+                                        <i class="mdi mdi-pencil"></i>
+                                        <!-- <i
+                                          class="fa fa-download"
+                                          aria-hidden="true"
+                                        ></i>
+                                        <i
+                                          class="fa fa-share-alt"
+                                          aria-hidden="true"
+                                        ></i> -->
+                                      </td>
+                                    </tr>
+                                  </tbody>
+                                </table>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
 
                     <div
                       class="tab-pane fade"
                       id="pills-import"
                       role="tabpanel"
                       aria-labelledby="pills-import-tab"
-                    ></div>
+                    >
+                      <div class="B2Bsubscribed-section">
+                        <div class="container">
+                          <div class="row">
+                            <div class="col-md-6">
+                              <div class="b2btotal">
+                                <label>
+                                  <h6>Total Subscribed Customers:</h6>
+                                </label>
+                              </div>
+                              <div class="b2btotal">
+                                <label><h6>Active Customers:</h6></label>
+                              </div>
+                              <div class="b2btotal">
+                                <label><h6>Expired Customers:</h6></label>
+                              </div>
+                              <div class="b2btotal">
+                                <label>
+                                  <h6>Locationwise Subscribed Customers:</h6>
+                                </label>
+                              </div>
+                              <div class="row">
+                                <div class="col-md-3">
+                                  <div class="l1tab">
+                                    <label><h6>L1:</h6></label>
+                                  </div>
+                                </div>
+                                <div class="col-md-3">
+                                  <div class="l1tab">
+                                    <label><h6>L2:</h6></label>
+                                  </div>
+                                </div>
+                                <div class="col-md-3">
+                                  <div class="l1tab">
+                                    <label><h6>L3:</h6></label>
+                                  </div>
+                                </div>
+                                <div class="col-md-3">
+                                  <div class="l1tab">
+                                    <label><h6>L4:</h6></label>
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="b2btotal">
+                                <label>
+                                  <h6>Planwise Subscribed Customers:</h6>
+                                </label>
+                              </div>
+                            </div>
+                            <div class="col-md-6">
+                              <canvas
+                                id="myChart1"
+                                style="
+                                  width: 100%;
+                                  max-width: 600px;
+                                  height: 200px !important;
+                                "
+                              ></canvas>
+                            </div>
+                          </div>
+                          <div class="row">
+                            <div class="col-12">
+                              <div>
+                                <form>
+                                  <div class="row">
+                                    <div class="col-md-3 form-group">
+                                      <select
+                                        class="form-select col-12"
+                                        id="inlineFormCustomSelect"
+                                      >
+                                        <option selected="">Location</option>
+                                        <option value="1">One</option>
+                                        <option value="2">Two</option>
+                                        <option value="3">Three</option>
+                                      </select>
+                                    </div>
+                                    <div class="col-md-2 form-group">
+                                      <select
+                                        class="form-select col-12"
+                                        id="inlineFormCustomSelect"
+                                      >
+                                        <option selected="">Plan</option>
+                                        <option value="1">One</option>
+                                        <option value="2">Two</option>
+                                        <option value="3">Three</option>
+                                      </select>
+                                    </div>
+                                    <div class="col-md-2 form-group">
+                                      <input
+                                        type="text"
+                                        class="form-select"
+                                        id="recipient-name1"
+                                        placeholder="Name"
+                                      />
+                                    </div>
+                                    <div class="col-md-2 form-group">
+                                      <input
+                                        type="date"
+                                        class="form-select"
+                                        id="recipient-name1"
+                                        placeholder="From"
+                                      />
+                                    </div>
+                                    <div class="col-md-2 form-group">
+                                      <input
+                                        type="date"
+                                        class="form-select"
+                                        id="recipient-name1"
+                                        placeholder="To"
+                                      />
+                                    </div>
+
+                                    <div class="col-md-1 form-group">
+                                      <button type="submit">
+                                        <i class="fa fa-search"></i>
+                                      </button>
+                                    </div>
+                                  </div>
+                                </form>
+                              </div>
+
+                              <div class="table-responsive">
+                                <table
+                                  id="myTable"
+                                  class="table table-striped border color-table inverse-table"
+                                >
+                                  <thead>
+                                    <tr>
+                                      <!-- <th scope="col" class="border"><label><input type="checkbox"
+                                                                                        data-tablesaw-checkall><span class="sr-only">
+                                                                                        Check
+                                                                                        All</span></label></th> -->
+
+                                      <!-- <th>Invoice#</th>
+                                            <th>Status</th>
+                                            <th>Order#</th> -->
+                                      <th style="width: 15%;">CustomerName</th>
+                                      <th style="width: 10%;">Plan</th>
+                                      <th style="width: 10%;">Location</th>
+                                      <th style="width: 10%;">Name</th>
+                                      <th style="width: 15%;">Start Date</th>
+                                      <th style="width: 15%;">End Date</th>
+                                      <th style="width: 10%;">Status</th>
+                                      <th style="width: 15%;">Action</th>
+                                    </tr>
+
+                                    <!-- <tr>
+                                                                            <th>
+                                                                                 <div class="form-group has-search has-searchs">
+                                                                                     <span class="fa fa-search form-control-feedback"></span>
+                                                                                     <input type="text" class="form-control" placeholder="Search">
+                                                                                   </div>
+                                                                             </th>
+                                                                             <th></th>
+                                                                             <th></th>
+                                                                             <th>
+                                                                                 <div class="form-group has-search has-searchs">
+                                                                                     <input type="date" class="form-control" placeholder="Search">
+                                                                                   </div>
+                                                                             </th>
+                                                                             <th>                                                                    <div class="form-group has-search has-searchs">
+                                                                                 <input type="date" class="form-control" placeholder="Search">
+                                                                               </div></th>
+                                                                             <th>
+                                                                                 <div class="form-group has-search has-searchs">
+                                                                                     <span class="fa fa-search form-control-feedback"></span>
+                                                                                     <input type="text" class="form-control" placeholder="Search">
+                                                                                   </div>
+                                                                             </th>
+                                                                             <th></th>
+                                                                             <th></th>
+                                                                             <th></th>
+                                    
+                                                                         </tr>
+                                                                      -->
+                                  </thead>
+                                  <tbody id="checkall-target">
+                                    <tr>
+                                      <!-- <td><label><input type="checkbox"><span class="sr-only"> Select
+                                                                                        Row</span></label></td> -->
+                                      <td>1</td>
+                                      <td>test</td>
+                                      <td>test</td>
+                                      <td>test</td>
+                                      <td>test</td>
+                                      <td>test</td>
+                                      <td>test</td>
+
+                                      <td>
+                                        <i class="mdi mdi-eye"></i>
+                                        <i class="mdi mdi-pencil"></i>
+                                        <i
+                                          class="fa fa-download"
+                                          aria-hidden="true"
+                                        ></i>
+                                        <i
+                                          class="fa fa-share-alt"
+                                          aria-hidden="true"
+                                        ></i>
+                                      </td>
+                                    </tr>
+                                  </tbody>
+                                </table>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
 
                     <div
                       class="tab-pane fade"
                       id="pills-export"
                       role="tabpanel"
                       aria-labelledby="pills-export-tab"
-                    ></div>
+                    >
+                      <div class="B2Bsubscribed-section">
+                        <div class="container">
+                          <div class="row attributes">
+                            <div class="col-md-8">
+                              <div class="b2btotal">
+                                <label>
+                                  <h6>Total Subscribed Customers:</h6>
+                                </label>
+                              </div>
+                            </div>
+                            <div class="col-md-4">
+                              <div class="b2btotal">
+                                <button
+                                  type="button"
+                                  class="btn btn-info text-white"
+                                  data-whatever="@fat"
+                                  data-toggle="modal"
+                                  data-target="#NewPlan"
+                                >
+                                  <i class="mdi mdi-plus"></i>
+                                  New Plan
+                                </button>
+                              </div>
+                              <div
+                                class="modal fade"
+                                id="NewPlan"
+                                tabindex="-1"
+                                role="dialog"
+                                aria-labelledby="exampleModalLabel"
+                                aria-hidden="true"
+                              >
+                                <div
+                                  class="modal-dialog CreateProductdialog"
+                                  role="document"
+                                >
+                                  <div class="modal-content">
+                                    <div class="modal-header">
+                                      <h5
+                                        class="modal-title"
+                                        id="exampleModalLabel"
+                                      >
+                                        Subscriptions New Plan
+                                      </h5>
+                                      <button
+                                        type="button"
+                                        class="close"
+                                        data-dismiss="modal"
+                                        aria-label="Close"
+                                      >
+                                        <span aria-hidden="true">
+                                          &times;
+                                        </span>
+                                      </button>
+                                    </div>
+                                    <div class="modal-body">
+                                      <div class="row attributes">
+                                        <div class="col-md-12">
+                                          <label class="selectform">
+                                            <p>Level:</p>
+                                            <select
+                                              class="form-control localewrap"
+                                              id="inlineFormCustomSelect"
+                                            >
+                                              <option selected="Locale">
+                                                test
+                                              </option>
+                                              <option value="1">One</option>
+                                              <option value="2">Two</option>
+                                              <option value="3">Three</option>
+                                            </select>
+                                          </label>
+                                          <label class="selectform">
+                                            <p>Plan:</p>
+                                            <input
+                                              type="text"
+                                              class="form-control localewrap"
+                                            />
+                                          </label>
+                                          <label class="selectform">
+                                            <p>Starts On:</p>
+                                            <input
+                                              type="date"
+                                              class="form-control localewrap"
+                                            />
+                                          </label>
+                                          <label class="selectform">
+                                            <p>Ends On:</p>
+                                            <input
+                                              type="date"
+                                              class="form-control localewrap"
+                                            />
+                                          </label>
+                                          <label class="selectform">
+                                            <p>Amount:</p>
+                                            <select
+                                              class="form-control localewrap"
+                                              id="inlineFormCustomSelect"
+                                            >
+                                              <option selected="Channel">
+                                                Yearly*
+                                              </option>
+                                              <option value="1">One</option>
+                                              <option value="2">Two</option>
+                                              <option value="3">Three</option>
+                                            </select>
+                                          </label>
+                                          <label class="selectform">
+                                            <p>Benefits On:</p>
+
+                                            1.&nbsp;
+                                            <input
+                                              type="text"
+                                              class="form-control localewrap"
+                                              id="inlineFormCustomSelect"
+                                            />
+                                            <a>
+                                              <button type="button" class="btn">
+                                                New
+                                              </button>
+                                            </a>
+                                          </label>
+                                          <label class="selectform">
+                                            <p class="Renewal">
+                                              Renewal Subscription End Date:
+                                            </p>
+                                            <input
+                                              type="date"
+                                              class="form-control localewrap"
+                                            />
+                                          </label>
+                                        </div>
+                                      </div>
+                                    </div>
+                                    <div class="modal-footer">
+                                      <button
+                                        type="button"
+                                        class="btn btn-primary"
+                                      >
+                                        Create
+                                      </button>
+                                      <button
+                                        type="button"
+                                        class="btn btn-secondary"
+                                        data-dismiss="modal"
+                                      >
+                                        Cancel
+                                      </button>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="row attributes">
+                            <div class="col-md-4">
+                              <div class="b2btotal">
+                                <label><h6>Billing Information:</h6></label>
+                              </div>
+                            </div>
+                            <div class="col-md-4">
+                              <div class="b2btotal">
+                                <label>
+                                  <h6>
+                                    Bill Total:&nbsp;
+                                    <strong>
+                                      12345
+                                      <i
+                                        class="fa fa-inr"
+                                        aria-hidden="true"
+                                      ></i>
+                                    </strong>
+                                  </h6>
+                                </label>
+                              </div>
+                            </div>
+                            <div class="col-md-4">
+                              <div class="b2btotal">
+                                <label>
+                                  <h6>
+                                    Bill expire this month:&nbsp;
+                                    <strong>10 Customers</strong>
+                                  </h6>
+                                </label>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="row">
+                            <div class="col-12">
+                              <div>
+                                <form>
+                                  <div class="row">
+                                    <div class="col-md-3 form-group">
+                                      <select
+                                        class="form-select col-12"
+                                        id="inlineFormCustomSelect"
+                                      >
+                                        <option selected="">Location</option>
+                                        <option value="1">One</option>
+                                        <option value="2">Two</option>
+                                        <option value="3">Three</option>
+                                      </select>
+                                    </div>
+                                    <div class="col-md-2 form-group">
+                                      <select
+                                        class="form-select col-12"
+                                        id="inlineFormCustomSelect"
+                                      >
+                                        <option selected="">Plan</option>
+                                        <option value="1">One</option>
+                                        <option value="2">Two</option>
+                                        <option value="3">Three</option>
+                                      </select>
+                                    </div>
+                                    <div class="col-md-2 form-group">
+                                      <input
+                                        type="text"
+                                        class="form-select"
+                                        id="recipient-name1"
+                                        placeholder="Name"
+                                      />
+                                    </div>
+                                    <div class="col-md-2 form-group">
+                                      <input
+                                        type="text"
+                                        class="form-select"
+                                        id="recipient-name1"
+                                        placeholder="Start Date"
+                                      />
+                                    </div>
+                                    <div class="col-md-2 form-group">
+                                      <input
+                                        type="text"
+                                        class="form-select"
+                                        id="recipient-name1"
+                                        placeholder="End Date"
+                                      />
+                                    </div>
+
+                                    <div class="col-md-1 form-group">
+                                      <button type="submit">
+                                        <i class="fa fa-search"></i>
+                                      </button>
+                                    </div>
+                                  </div>
+                                </form>
+                              </div>
+
+                              <div class="table-responsive">
+                                <table
+                                  id="myTable"
+                                  class="table table-striped border color-table inverse-table"
+                                >
+                                  <thead>
+                                    <tr>
+                                      <th style="width: 10%;">Plan</th>
+                                      <th style="width: 10%;">Location</th>
+                                      <th style="width: 15%;">Status</th>
+                                      <th style="width: 15%;">Start Date</th>
+                                      <th style="width: 15%;">End Date</th>
+                                      <th style="width: 15%;">Customers</th>
+                                      <th style="width: 20%;">Action</th>
+                                    </tr>
+                                  </thead>
+                                  <tbody id="checkall-target">
+                                    <tr>
+                                      <!-- <td><label><input type="checkbox"><span class="sr-only"> Select
+                                                                                        Row</span></label></td> -->
+                                      <td>Plan A</td>
+                                      <td>test</td>
+                                      <td>test</td>
+
+                                      <td>test</td>
+
+                                      <td>test</td>
+                                      <td>test</td>
+
+                                      <td>
+                                        <i class="mdi mdi-eye"></i>
+                                        <i class="mdi mdi-pencil"></i>
+                                        <!-- <i
+                                        class="fa fa-download"
+                                        aria-hidden="true"
+                                      ></i>
+                                      <i
+                                        class="fa fa-share-alt"
+                                        aria-hidden="true"
+                                      ></i> -->
+                                      </td>
+                                    </tr>
+                                  </tbody>
+                                </table>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
 
                     <div
                       class="tab-pane fade"
@@ -1357,6 +2231,47 @@ width: 150px;
       var xValues = [100, 200, 300, 400, 500, 600, 700, 800, 900, 1000]
 
       new Chart('myChart', {
+        type: 'line',
+        data: {
+          labels: xValues,
+          datasets: [
+            {
+              data: [860, 1140, 1060, 1060, 1070, 1110, 1330, 2210, 7830, 2478],
+              borderColor: 'red',
+              fill: false,
+            },
+            {
+              data: [
+                1600,
+                1700,
+                1700,
+                1900,
+                2000,
+                2700,
+                4000,
+                5000,
+                6000,
+                7000,
+              ],
+              borderColor: 'green',
+              fill: false,
+            },
+            {
+              data: [300, 700, 2000, 5000, 6000, 4000, 2000, 1000, 200, 100],
+              borderColor: 'blue',
+              fill: false,
+            },
+          ],
+        },
+        options: {
+          legend: { display: false },
+        },
+      })
+    </script>
+    <script>
+      var xValues = [100, 200, 300, 400, 500, 600, 700, 800, 900, 1000]
+
+      new Chart('myChart1', {
         type: 'line',
         data: {
           labels: xValues,
