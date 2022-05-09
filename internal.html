@@ -78,7 +78,7 @@
           <!-- ============================================================== -->
           <div
             class="navbar-header"
-            style="text-align: center; padding-left: 0px"
+            style="text-align: center; padding-left: 0px;"
           >
             <a class="navbar-brand" href="#">
               <!-- Logo icon -->
@@ -459,7 +459,7 @@
           <!-- ============================================================== -->
           <div class="row page-titles">
             <div class="col-md-5 align-self-center">
-              <h4 class="text-themecolor">Offers Management</h4>
+              <h4 class="text-themecolor">Internal Users</h4>
             </div>
             <div class="col-md-7 align-self-center text-end">
               <div class="d-flex justify-content-end align-items-center">
@@ -467,7 +467,7 @@
                   <li class="breadcrumb-item">
                     <a href="javascript:void(0)">Home</a>
                   </li>
-                  <li class="breadcrumb-item active">Offers Management</li>
+                  <li class="breadcrumb-item active">Internal Users</li>
                 </ol>
               </div>
             </div>
@@ -505,86 +505,311 @@
                   <div class="modal-body">
                     <form>
                       <div class="row">
-                        <div class="col-md-4 form-group">
+                        <div class="col-md-6 form-group">
+                          <label for="recipient-name" class="form-label">
+                            Name:
+                          </label>
+                          <input
+                            type="text"
+                            class="form-control"
+                            id="recipient-name1"
+                          />
+                        </div>
+                        <div class="col-md-6 form-group">
+                          <label for="recipient-name" class="form-label">
+                            Role:
+                          </label>
                           <select
                             class="form-select col-12"
                             id="inlineFormCustomSelect"
                           >
-                            <option selected="">Level</option>
+                            <option selected="">Delivery User</option>
                             <option value="1">One</option>
                             <option value="2">Two</option>
                             <option value="3">Three</option>
                           </select>
                         </div>
-                        <div class="col-md-4 form-group">
-                            <select
-                              class="form-select col-12"
-                              id="inlineFormCustomSelect"
-                            >
-                              <option selected="">Main-Category</option>
-                              <option value="1">One</option>
-                              <option value="2">Two</option>
-                              <option value="3">Three</option>
-                            </select>
-                          </div>
-                          <div class="col-md-4 form-group">
-                            <select
-                              class="form-select col-12"
-                              id="inlineFormCustomSelect"
-                            >
-                              <option selected="">Sub-Category</option>
-                              <option value="1">One</option>
-                              <option value="2">Two</option>
-                              <option value="3">Three</option>
-                            </select>
-                          </div>
-                        <div class="col-md-4 form-group">
+                        <div class="col-md-6 form-group">
+                          <label for="recipient-name" class="form-label">
+                            Created On:
+                          </label>
                           <input
                             type="text"
                             class="form-control"
                             id="recipient-name1"
-                            placeholder="Offer Name"
                           />
                         </div>
-                        <div class="col-md-4 form-group">
+                        <div class="col-md-6 form-group">
+                          <label for="recipient-name" class="form-label">
+                            Inactive On:
+                          </label>
                           <input
-                            type="date"
+                            type="text"
                             class="form-control"
                             id="recipient-name1"
-                            placeholder="Start Date"
                           />
                         </div>
-                        <div class="col-md-4 form-group">
+                        <div class="col-md-6 form-group">
+                          <label for="recipient-name" class="form-label">
+                            E-Mail:
+                          </label>
+                          <input
+                            type="text"
+                            class="form-control"
+                            id="recipient-name1"
+                          />
+                        </div>
+                        <div class="col-md-6 form-group">
+                          <label for="recipient-name" class="form-label">
+                            Phone No:
+                          </label>
+                          <input
+                            type="text"
+                            class="form-control"
+                            id="recipient-name1"
+                          />
+                        </div>
+
+                        <div class="col-md-6 form-group">
+                          <label for="recipient-name" class="form-label">
+                            Address:
+                          </label>
+                          <input
+                            type="text"
+                            class="form-control"
+                            id="recipient-name1"
+                          />
+                        </div>
+
+                        <div class="row">
+                          <h4>Total Order</h4>
+                          <div class="col-md-6 form-group">
+                            <label for="recipient-name" class="form-label">
+                              Order Assigned:
+                            </label>
                             <input
-                              type="date"
+                              type="text"
                               class="form-control"
                               id="recipient-name1"
-                              placeholder="End Date"
                             />
                           </div>
-                        <div class="col-md-4 form-group" style="display: flex;">
-                          <input
-                            type="text"
-                            class="form-control"
-                            id="recipient-name1"
-                          />
-                          <p style="margin-left: 5px;"><i class="fa fa-inr" aria-hidden="true"></i></p>
-                          <p style="margin-left: 5px;">(OR)</p>
+                          <div class="col-md-6 form-group">
+                            <label for="recipient-name" class="form-label">
+                              Order Delivered:
+                            </label>
+                            <input
+                              type="text"
+                              class="form-control"
+                              id="recipient-name1"
+                            />
+                          </div>
+                          <div class="col-md-6 form-group">
+                            <label for="recipient-name" class="form-label">
+                              Order Cancelled:
+                            </label>
+                            <input
+                              type="text"
+                              class="form-control"
+                              id="recipient-name1"
+                            />
+                          </div>
+                          <div class="col-md-6 form-group">
+                            <label for="recipient-name" class="form-label">
+                              Order Returned:
+                            </label>
+                            <input
+                              type="text"
+                              class="form-control"
+                              id="recipient-name1"
+                            />
+                          </div>
                         </div>
-                        <div class="col-md-4 form-group" style="display: flex;">
-                      
-                          <input
-                            type="text"
-                            class="form-control"
-                            id="recipient-name1"
-                          />
-                          <p style="margin-left: 5px;">%</p>
-
+                        <div
+                          class="col-md-12 form-group"
+                          style="display: inline-flex;"
+                        >
+                          <label for="recipient-name" class="form-label">
+                            Permissions:
+                          </label>
+                          <table
+                            style="width: 100%; margin-left: 20px;"
+                            class="table table-striped border"
+                          >
+                            <thead>
+                              <tr style="text-align: center;">
+                                <th></th>
+                                <th>Edit</th>
+                                <th>View</th>
+                                <th>Delete</th>
+                                <th>Create</th>
+                              </tr>
+                            </thead>
+                            <tbody>
+                              <tr style="text-align: center;">
+                                <td style="text-align: left;">Orders</td>
+                                <td>
+                                  <label>
+                                    <input type="checkbox" />
+                                    <span class="sr-only"></span>
+                                  </label>
+                                </td>
+                                <td>
+                                  <label>
+                                    <input type="checkbox" />
+                                    <span class="sr-only"></span>
+                                  </label>
+                                </td>
+                                <td>
+                                  <label>
+                                    <input type="checkbox" />
+                                    <span class="sr-only"></span>
+                                  </label>
+                                </td>
+                                <td>
+                                  <label>
+                                    <input type="checkbox" />
+                                    <span class="sr-only"></span>
+                                  </label>
+                                </td>
+                              </tr>
+                              <tr style="text-align: center;">
+                                <td style="text-align: left;">Packing</td>
+                                <td>
+                                  <label>
+                                    <input type="checkbox" />
+                                    <span class="sr-only"></span>
+                                  </label>
+                                </td>
+                                <td>
+                                  <label>
+                                    <input type="checkbox" />
+                                    <span class="sr-only"></span>
+                                  </label>
+                                </td>
+                                <td>
+                                  <label>
+                                    <input type="checkbox" />
+                                    <span class="sr-only"></span>
+                                  </label>
+                                </td>
+                                <td>
+                                  <label>
+                                    <input type="checkbox" />
+                                    <span class="sr-only"></span>
+                                  </label>
+                                </td>
+                              </tr>
+                              <tr style="text-align: center;">
+                                <td style="text-align: left;">New Orders</td>
+                                <td>
+                                  <label>
+                                    <input type="checkbox" />
+                                    <span class="sr-only"></span>
+                                  </label>
+                                </td>
+                                <td>
+                                  <label>
+                                    <input type="checkbox" />
+                                    <span class="sr-only"></span>
+                                  </label>
+                                </td>
+                                <td>
+                                  <label>
+                                    <input type="checkbox" />
+                                    <span class="sr-only"></span>
+                                  </label>
+                                </td>
+                                <td>
+                                  <label>
+                                    <input type="checkbox" />
+                                    <span class="sr-only"></span>
+                                  </label>
+                                </td>
+                              </tr>
+                              <tr style="text-align: center;">
+                                <td style="text-align: left;">Assigning</td>
+                                <td>
+                                  <label>
+                                    <input type="checkbox" />
+                                    <span class="sr-only"></span>
+                                  </label>
+                                </td>
+                                <td>
+                                  <label>
+                                    <input type="checkbox" />
+                                    <span class="sr-only"></span>
+                                  </label>
+                                </td>
+                                <td>
+                                  <label>
+                                    <input type="checkbox" />
+                                    <span class="sr-only"></span>
+                                  </label>
+                                </td>
+                                <td>
+                                  <label>
+                                    <input type="checkbox" />
+                                    <span class="sr-only"></span>
+                                  </label>
+                                </td>
+                              </tr>
+                              <tr style="text-align: center;">
+                                <td style="text-align: left;">Payments</td>
+                                <td>
+                                  <label>
+                                    <input type="checkbox" />
+                                    <span class="sr-only"></span>
+                                  </label>
+                                </td>
+                                <td>
+                                  <label>
+                                    <input type="checkbox" />
+                                    <span class="sr-only"></span>
+                                  </label>
+                                </td>
+                                <td>
+                                  <label>
+                                    <input type="checkbox" />
+                                    <span class="sr-only"></span>
+                                  </label>
+                                </td>
+                                <td>
+                                  <label>
+                                    <input type="checkbox" />
+                                    <span class="sr-only"></span>
+                                  </label>
+                                </td>
+                              </tr>
+                              <tr style="text-align: center;">
+                                <td style="text-align: left;">User Creation</td>
+                                <td>
+                                  <label>
+                                    <input type="checkbox" />
+                                    <span class="sr-only"></span>
+                                  </label>
+                                </td>
+                                <td>
+                                  <label>
+                                    <input type="checkbox" />
+                                    <span class="sr-only"></span>
+                                  </label>
+                                </td>
+                                <td>
+                                  <label>
+                                    <input type="checkbox" />
+                                    <span class="sr-only"></span>
+                                  </label>
+                                </td>
+                                <td>
+                                  <label>
+                                    <input type="checkbox" />
+                                    <span class="sr-only"></span>
+                                  </label>
+                                </td>
+                              </tr>
+                            </tbody>
+                          </table>
                         </div>
-                        <div class="col-md-4"></div>
-<div class="col-md-12">
-    <p>Upload a file : @ Abc.png <i class="fa fa-times-circle-o" aria-hidden="true"></i> </p>
-</div>
                       </div>
                     </form>
                   </div>
@@ -597,7 +822,7 @@
                       Cancel
                     </button>
                     <button type="button" class="btn btn-primary text-white">
-                      Add
+                      Create
                     </button>
                   </div>
                 </div>
@@ -655,17 +880,17 @@
                         </div>
                         <div
                           class="col-md-12 form-group"
-                          style="display: inline-flex"
+                          style="display: inline-flex;"
                         >
                           <label for="recipient-name" class="form-label">
                             Permissions:
                           </label>
                           <table
-                            style="width: 100%; margin-left: 20px"
+                            style="width: 100%; margin-left: 20px;"
                             class="table table-striped border"
                           >
                             <thead>
-                              <tr style="text-align: center">
+                              <tr style="text-align: center;">
                                 <th></th>
                                 <th>Edit</th>
                                 <th>View</th>
@@ -674,8 +899,8 @@
                               </tr>
                             </thead>
                             <tbody>
-                              <tr style="text-align: center">
-                                <td style="text-align: left">Orders</td>
+                              <tr style="text-align: center;">
+                                <td style="text-align: left;">Orders</td>
                                 <td>
                                   <label>
                                     <input type="checkbox" />
@@ -701,8 +926,8 @@
                                   </label>
                                 </td>
                               </tr>
-                              <tr style="text-align: center">
-                                <td style="text-align: left">Packing</td>
+                              <tr style="text-align: center;">
+                                <td style="text-align: left;">Packing</td>
                                 <td>
                                   <label>
                                     <input type="checkbox" />
@@ -728,8 +953,8 @@
                                   </label>
                                 </td>
                               </tr>
-                              <tr style="text-align: center">
-                                <td style="text-align: left">New Orders</td>
+                              <tr style="text-align: center;">
+                                <td style="text-align: left;">New Orders</td>
                                 <td>
                                   <label>
                                     <input type="checkbox" />
@@ -784,7 +1009,7 @@
               role="dialog"
               aria-labelledby="exampleModalLabel1"
             >
-            <div class="modal-dialog" role="document">
+              <div class="modal-dialog" role="document">
                 <div class="modal-content">
                   <div class="modal-header">
                     <h4 class="modal-title" id="exampleModalLabel1">
@@ -802,86 +1027,279 @@
                   <div class="modal-body">
                     <form>
                       <div class="row">
-                        <div class="col-md-4 form-group">
-                          <select
-                            class="form-select col-12"
-                            id="inlineFormCustomSelect"
-                          >
-                            <option selected="">Customer</option>
-                            <option value="1">One</option>
-                            <option value="2">Two</option>
-                            <option value="3">Three</option>
-                          </select>
-                        </div>
-                        <div class="col-md-4 form-group">
-                            <select
-                              class="form-select col-12"
-                              id="inlineFormCustomSelect"
-                            >
-                              <option selected="">Main-Category</option>
-                              <option value="1">One</option>
-                              <option value="2">Two</option>
-                              <option value="3">Three</option>
-                            </select>
-                          </div>
-                          <div class="col-md-4 form-group">
-                            <select
-                              class="form-select col-12"
-                              id="inlineFormCustomSelect"
-                            >
-                              <option selected="">Sub-Category</option>
-                              <option value="1">One</option>
-                              <option value="2">Two</option>
-                              <option value="3">Three</option>
-                            </select>
-                          </div>
-                        <div class="col-md-4 form-group">
+                        <div class="col-md-6 form-group Label-margin">
+                          <label for="recipient-name" class="form-label">
+                            Name:
+                          </label>
                           <input
                             type="text"
                             class="form-control"
                             id="recipient-name1"
-                            placeholder="Offer Name"
                           />
-                        </div>
-                        <div class="col-md-4 form-group">
+
+                          <label for="recipient-name" class="form-label">
+                            Address:
+                          </label>
+                          <input
+                            type="text"
+                            class="form-control"
+                            id="recipient-name1"
+                            placeholder="Billing Shipping"
+                          />
+
+                          <label for="recipient-name" class="form-label">
+                            Level:
+                          </label>
+                          <input
+                            type="text"
+                            class="form-control"
+                            id="recipient-name1"
+                          />
+
+                          <label for="recipient-name" class="form-label">
+                            Active Size:
+                          </label>
                           <input
                             type="date"
                             class="form-control"
                             id="recipient-name1"
-                            placeholder="Start Date"
                           />
-                        </div>
-                        <div class="col-md-4 form-group">
-                            <input
-                              type="date"
-                              class="form-control"
-                              id="recipient-name1"
-                              placeholder="End Date"
-                            />
-                          </div>
-                        <div class="col-md-4 form-group" style="display: flex;">
-                          <input
-                            type="text"
-                            class="form-control"
-                            id="recipient-name1"
-                          />
-                          <p style="margin-left: 5px;"><i class="fa fa-inr" aria-hidden="true"></i></p>
-                          <p style="margin-left: 5px;">(OR)</p>
-                        </div>
-                        <div class="col-md-4 form-group" style="display: flex;">
-                      
-                          <input
-                            type="text"
-                            class="form-control"
-                            id="recipient-name1"
-                          />
-                          <p style="margin-left: 5px;">%</p>
 
+                          <label for="recipient-name" class="form-label">
+                            Subscription:
+                          </label>
+                          <input
+                            type="text"
+                            class="form-control"
+                            id="recipient-name1"
+                          />
+
+                          <label for="recipient-name" class="form-label">
+                            Role:
+                          </label>
+                          <select
+                            class="form-select col-12"
+                            id="inlineFormCustomSelect"
+                          >
+                            <option selected="">Choose...</option>
+                            <option value="1">One</option>
+                            <option value="2">Two</option>
+                            <option value="3">Three</option>
+                          </select>
+
+                          <label for="recipient-name" class="form-label">
+                            Email Id:
+                          </label>
+                          <input
+                            type="text"
+                            class="form-control"
+                            id="recipient-name1"
+                          />
+
+                          <label for="recipient-name" class="form-label">
+                            Phone No:
+                          </label>
+                          <input
+                            type="text"
+                            class="form-control"
+                            id="recipient-name1"
+                          />
                         </div>
-                        <div class="col-md-4"></div>
-<div class="col-md-12">
-    <p>Upload a file : @ Abc.png <i class="fa fa-times-circle-o" aria-hidden="true"></i> </p>
-</div>
+                        <div class="col-md-6">
+                          <div class="notifybutton">
+                            <button
+                              type="button"
+                              class="btn btn-primary text-white"
+                            >
+                              Notify
+                            </button>
+
+                            <button
+                              type="button"
+                              class="btn btn-primary text-white"
+                            >
+                              Call
+                            </button>
+
+                            <button
+                              type="button"
+                              class="btn btn-primary text-white"
+                            >
+                              Chat
+                            </button>
+                          </div>
+
+                          <div
+                            class="salesreport"
+                            style="
+                              border: 1px solid #ccc;
+                              padding: 10px;
+                              margin-top: 10px;
+                            "
+                          >
+                            <h3>Sales Report</h3>
+                            <p>Total Order :</p>
+                            <p>Order Delivered :</p>
+                            <p>Order Cancelled :</p>
+                            <p>Order Returned :</p>
+                            <p>Order Refunded :</p>
+                          </div>
+
+                          <div
+                            class="revenuereport"
+                            style="
+                              border: 1px solid #ccc;
+                              padding: 10px;
+                              margin-top: 10px;
+                            "
+                          >
+                            <h3>Revenue Report</h3>
+                            <p>Total Revenue:</p>
+                            <p>Refund Amount :</p>
+                          </div>
+
+                          <div
+                            class="bankreport"
+                            style="
+                              border: 1px solid #ccc;
+                              padding: 10px;
+                              margin-top: 10px;
+                            "
+                          >
+                            <h3>Bank Account Details</h3>
+                          </div>
+                        </div>
+                        <div class="col-md-12 form-group">
+                          <label for="recipient-name" class="form-label">
+                            <strong>Identity:</strong>
+                          </label>
+                        </div>
+                        <div class="col-md-6 form-group">
+                          <label for="recipient-name" class="form-label">
+                            Id Card:
+                          </label>
+                          <input
+                            type="file"
+                            class="form-control"
+                            id="recipient-name1"
+                          />
+                        </div>
+                        <div class="col-md-6 form-group">
+                          <label for="recipient-name" class="form-label">
+                            Passport :
+                          </label>
+                          <input
+                            type="file"
+                            class="form-control"
+                            id="recipient-name1"
+                          />
+                        </div>
+
+                        <div
+                          class="col-md-12 form-group"
+                          style="display: inline-flex;"
+                        >
+                          <label for="recipient-name" class="form-label">
+                            Permissions:
+                          </label>
+                          <table
+                            style="width: 100%; margin-left: 20px;"
+                            class="table table-striped border"
+                          >
+                            <thead>
+                              <tr style="text-align: center;">
+                                <th></th>
+                                <th>Edit</th>
+                                <th>View</th>
+                                <th>Delete</th>
+                                <th>Create</th>
+                              </tr>
+                            </thead>
+                            <tbody>
+                              <tr style="text-align: center;">
+                                <td style="text-align: left;">Name1</td>
+                                <td>
+                                  <label>
+                                    <input type="checkbox" />
+                                    <span class="sr-only"></span>
+                                  </label>
+                                </td>
+                                <td>
+                                  <label>
+                                    <input type="checkbox" />
+                                    <span class="sr-only"></span>
+                                  </label>
+                                </td>
+                                <td>
+                                  <label>
+                                    <input type="checkbox" />
+                                    <span class="sr-only"></span>
+                                  </label>
+                                </td>
+                                <td>
+                                  <label>
+                                    <input type="checkbox" />
+                                    <span class="sr-only"></span>
+                                  </label>
+                                </td>
+                              </tr>
+                              <tr style="text-align: center;">
+                                <td style="text-align: left;">Name2</td>
+                                <td>
+                                  <label>
+                                    <input type="checkbox" />
+                                    <span class="sr-only"></span>
+                                  </label>
+                                </td>
+                                <td>
+                                  <label>
+                                    <input type="checkbox" />
+                                    <span class="sr-only"></span>
+                                  </label>
+                                </td>
+                                <td>
+                                  <label>
+                                    <input type="checkbox" />
+                                    <span class="sr-only"></span>
+                                  </label>
+                                </td>
+                                <td>
+                                  <label>
+                                    <input type="checkbox" />
+                                    <span class="sr-only"></span>
+                                  </label>
+                                </td>
+                              </tr>
+                              <tr style="text-align: center;">
+                                <td style="text-align: left;">Name3</td>
+                                <td>
+                                  <label>
+                                    <input type="checkbox" />
+                                    <span class="sr-only"></span>
+                                  </label>
+                                </td>
+                                <td>
+                                  <label>
+                                    <input type="checkbox" />
+                                    <span class="sr-only"></span>
+                                  </label>
+                                </td>
+                                <td>
+                                  <label>
+                                    <input type="checkbox" />
+                                    <span class="sr-only"></span>
+                                  </label>
+                                </td>
+                                <td>
+                                  <label>
+                                    <input type="checkbox" />
+                                    <span class="sr-only"></span>
+                                  </label>
+                                </td>
+                              </tr>
+                            </tbody>
+                          </table>
+                        </div>
                       </div>
                     </form>
                   </div>
@@ -894,7 +1312,7 @@
                       Cancel
                     </button>
                     <button type="button" class="btn btn-primary text-white">
-                      Add
+                      Save
                     </button>
                   </div>
                 </div>
@@ -1022,17 +1440,17 @@
                         </div>
                         <div
                           class="col-md-12 form-group"
-                          style="display: inline-flex"
+                          style="display: inline-flex;"
                         >
                           <label for="recipient-name" class="form-label">
                             Permissions:
                           </label>
                           <table
-                            style="width: 100%; margin-left: 20px"
+                            style="width: 100%; margin-left: 20px;"
                             class="table table-striped border"
                           >
                             <thead>
-                              <tr style="text-align: center">
+                              <tr style="text-align: center;">
                                 <th></th>
                                 <th>Edit</th>
                                 <th>View</th>
@@ -1041,8 +1459,8 @@
                               </tr>
                             </thead>
                             <tbody>
-                              <tr style="text-align: center">
-                                <td style="text-align: left">Orders</td>
+                              <tr style="text-align: center;">
+                                <td style="text-align: left;">Orders</td>
                                 <td>
                                   <label>
                                     <input type="checkbox" />
@@ -1068,8 +1486,8 @@
                                   </label>
                                 </td>
                               </tr>
-                              <tr style="text-align: center">
-                                <td style="text-align: left">Packing</td>
+                              <tr style="text-align: center;">
+                                <td style="text-align: left;">Packing</td>
                                 <td>
                                   <label>
                                     <input type="checkbox" />
@@ -1095,8 +1513,8 @@
                                   </label>
                                 </td>
                               </tr>
-                              <tr style="text-align: center">
-                                <td style="text-align: left">New Orders</td>
+                              <tr style="text-align: center;">
+                                <td style="text-align: left;">New Orders</td>
                                 <td>
                                   <label>
                                     <input type="checkbox" />
@@ -1209,17 +1627,17 @@
                         <div class="col-md-6"></div>
                         <div
                           class="col-md-12 form-group"
-                          style="display: inline-flex"
+                          style="display: inline-flex;"
                         >
                           <label for="recipient-name" class="form-label">
                             Permissions:
                           </label>
                           <table
-                            style="width: 100%; margin-left: 20px"
+                            style="width: 100%; margin-left: 20px;"
                             class="table table-striped border"
                           >
                             <thead>
-                              <tr style="text-align: center">
+                              <tr style="text-align: center;">
                                 <th></th>
                                 <th>Edit</th>
                                 <th>View</th>
@@ -1228,8 +1646,8 @@
                               </tr>
                             </thead>
                             <tbody>
-                              <tr style="text-align: center">
-                                <td style="text-align: left">Orders</td>
+                              <tr style="text-align: center;">
+                                <td style="text-align: left;">Orders</td>
                                 <td>
                                   <label>
                                     <input type="checkbox" />
@@ -1255,8 +1673,8 @@
                                   </label>
                                 </td>
                               </tr>
-                              <tr style="text-align: center">
-                                <td style="text-align: left">Packing</td>
+                              <tr style="text-align: center;">
+                                <td style="text-align: left;">Packing</td>
                                 <td>
                                   <label>
                                     <input type="checkbox" />
@@ -1282,8 +1700,8 @@
                                   </label>
                                 </td>
                               </tr>
-                              <tr style="text-align: center">
-                                <td style="text-align: left">New Orders</td>
+                              <tr style="text-align: center;">
+                                <td style="text-align: left;">New Orders</td>
                                 <td>
                                   <label>
                                     <input type="checkbox" />
@@ -1396,7 +1814,7 @@
                         <div class="col-md-6"></div>
                         <div
                           class="col-md-6 form-group"
-                          style="text-align: center"
+                          style="text-align: center;"
                         >
                           <label for="recipient-name" class="form-label">
                             <strong>Identity:</strong>
@@ -1449,7 +1867,7 @@
 
                         <div
                           class="col-md-6 form-group"
-                          style="text-align: center"
+                          style="text-align: center;"
                         >
                           <label for="recipient-name" class="form-label">
                             Billing Address:
@@ -1458,7 +1876,7 @@
 
                         <div class="col-md-6">
                           <form
-                            style="width: 100%"
+                            style="width: 100%;"
                             class="table table-striped border"
                           >
                             <input
@@ -1485,7 +1903,7 @@
 
                         <div
                           class="col-md-6 form-group"
-                          style="text-align: center"
+                          style="text-align: center;"
                         >
                           <label for="recipient-name" class="form-label">
                             Shipping Address:
@@ -1494,7 +1912,7 @@
 
                         <div class="col-md-6">
                           <form
-                            style="width: 100%"
+                            style="width: 100%;"
                             class="table table-striped border"
                           >
                             <input
@@ -1521,7 +1939,7 @@
 
                         <div
                           class="col-md-6 form-group"
-                          style="text-align: center"
+                          style="text-align: center;"
                         >
                           <label for="recipient-name" class="form-label">
                             Bank Account Details:
@@ -1530,7 +1948,7 @@
 
                         <div class="col-md-6">
                           <form
-                            style="width: 100%"
+                            style="width: 100%;"
                             class="table table-striped border"
                           >
                             <input
@@ -1697,7 +2115,7 @@
             <div class="col-12">
               <div class="card">
                 <div class="card-body">
-                  <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
+                  <!-- <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
                     <li class="nav-item" role="presentation">
                       <a
                         class="nav-link active"
@@ -1708,7 +2126,7 @@
                         aria-controls="pills-home"
                         aria-selected="true"
                       >
-                        B2B Offers
+                        Internal Users
                       </a>
                     </li>
                     <li class="nav-item" role="presentation">
@@ -1721,7 +2139,7 @@
                         aria-controls="pills-profile"
                         aria-selected="false"
                       >
-                        B2B Revenue
+                        IU Permissions
                       </a>
                     </li>
                     <li class="nav-item" role="presentation">
@@ -1734,7 +2152,7 @@
                         aria-controls="pills-contact"
                         aria-selected="false"
                       >
-                        B2C Offers
+                        External Users
                       </a>
                     </li>
                     <li class="nav-item" role="presentation">
@@ -1747,23 +2165,10 @@
                         aria-controls="pills-eu"
                         aria-selected="false"
                       >
-                        B2C Revenue
+                        EU Permissions
                       </a>
                     </li>
-                    <li class="nav-item" role="presentation">
-                        <a
-                          class="nav-link"
-                          id="pills-Report-tab"
-                          data-toggle="pill"
-                          href="#pills-Report"
-                          role="tab"
-                          aria-controls="pills-Report"
-                          aria-selected="false"
-                        >
-                          Report
-                        </a>
-                      </li>
-                  </ul>
+                  </ul> -->
 
                   <div class="tab-content" id="pills-tabContent">
                     <div
@@ -1772,98 +2177,58 @@
                       role="tabpanel"
                       aria-labelledby="pills-home-tab"
                     >
-                      <div class="row">
-                        <div class="col-md-6">
-                          <h4 class="card-title">Active Offers : 6</h4>
-                        </div>
-                        <div
-                          class="col-md-6 form-group"
-                          style="text-align: right"
-                        >
-                          <button
-                            type="button"
-                            style="float: right"
-                            class="btn btn-info text-white"
-                            data-bs-toggle="modal"
-                            data-bs-target="#exampleModal"
-                            data-whatever="@fat"
-                          >
-                            <i class="mdi mdi-plus"></i>
-                            New Offer
-                          </button>
-                        </div>
-                      </div>
-
-                      <div>
-                        <form>
-                          <div class="row">
-                            <div class="col-md-2 form-group">
+                      <form>
+                        <div class="row">
+                          <div class="col-md-6 form-group">
+                            <div class="input-group stylish-input-group">
                               <input
                                 type="text"
                                 class="form-control"
-                                id="recipient-name1"
-                                placeholder="Offers"
+                                placeholder="Level"
                               />
-                            </div>
-                            <div class="col-md-1 form-group">
-                              <input
-                                type="text"
-                                class="form-control"
-                                id="recipient-name1"
-                                placeholder="From"
-                              />
-                            </div>
-                            <div class="col-md-1 form-group">
-                              <input
-                                type="text"
-                                class="form-control"
-                                id="recipient-name1"
-                                placeholder="To"
-                              />
-                            </div>
-                            <div class="col-md-2 form-group">
-                              <select
-                                class="form-select col-12"
-                                id="inlineFormCustomSelect"
-                              >
-                                <option selected="">Level</option>
-                                <option value="1">One</option>
-                                <option value="2">Two</option>
-                                <option value="3">Three</option>
-                              </select>
-                            </div>
-
-                            <div class="col-md-2 form-group">
-                              <select
-                                class="form-select col-12"
-                                id="inlineFormCustomSelect"
-                              >
-                                <option selected="">Main Cat</option>
-                                <option value="1">One</option>
-                                <option value="2">Two</option>
-                                <option value="3">Three</option>
-                              </select>
-                            </div>
-                            <div class="col-md-2 form-group">
-                              <select
-                                class="form-select col-12"
-                                id="inlineFormCustomSelect"
-                              >
-                                <option selected="">Sub Cat</option>
-                                <option value="1">One</option>
-                                <option value="2">Two</option>
-                                <option value="3">Three</option>
-                              </select>
-                            </div>
-                            <div class="col-md-2 form-group">
-                              <button type="submit">
-                                <i class="fa fa-search"></i>
-                              </button>
+                              <span class="input-group-addon">
+                                <button type="submit">
+                                  <i class="fa fa-search"></i>
+                                </button>
+                              </span>
                             </div>
                           </div>
-                        </form>
+                          <!-- <div
+                            class="col-md-6 form-group"
+                            style="text-align: right;"
+                          >
+                            <button
+                              type="button"
+                              style="float: right;"
+                              class="btn btn-info text-white"
+                              data-bs-toggle="modal"
+                              data-bs-target="#exampleModal4"
+                              data-whatever="@fat"
+                            >
+                              <i class="mdi mdi-plus"></i>
+                              Add New
+                            </button>
+                          </div> -->
+                        </div>
+                      </form>
+                      <div style="float: left;">
+                        <h4 class="card-title">Users</h4>
+                        <h6 class="card-subtitle">
+                          Total Active Internal Users: 15 (3 Users left to
+                          create)
+                        </h6>
                       </div>
-
+                      <!-- <button
+                        type="button"
+                        style="float: right;"
+                        class="btn btn-info text-white"
+                        data-bs-toggle="modal"
+                        data-bs-target="#exampleModal"
+                        data-whatever="@fat"
+                      >
+                        <i class="mdi mdi-plus"></i>
+                        New Role
+                      </button> -->
                       <div class="table-responsive">
                         <table
                           id="myTable"
@@ -1871,28 +2236,39 @@
                         >
                           <thead>
                             <tr>
+                              <th scope="col" class="border">
+                                <label>
+                                  <input
+                                    type="checkbox"
+                                    data-tablesaw-checkall
+                                  />
+                                  <span class="sr-only">
+                                    Check All
+                                  </span>
+                                </label>
+                              </th>
+                              <th>Name</th>
                               <th>Level</th>
-                              <th>OfferName</th>
-                              <th>Main Category</th>
+                              <th>Role</th>
+                              <th>Last Login</th>
                               <th>Status</th>
-                              <th>Amount/Discount</th>
-                              <th>File</th>
-                              <th>Start Date</th>
-                              <th>End Date</th>
-                              <th style="width: 60px">Action</th>
+                              <th style="width: 15%;">Action</th>
                             </tr>
                           </thead>
                           <tbody id="checkall-target">
                             <tr>
+                              <td>
+                                <label>
+                                  <input type="checkbox" />
+                                  <span class="sr-only">Select Row</span>
+                                </label>
+                              </td>
+                              <td>Tiger Nixon</td>
                               <td>L1</td>
-                              <td>Abc</td>
-                              <td>xyz</td>
-                              <td>Active</td>
-                              <td>10%</td>
-                              <td>abc.png</td>
-                              <td>03-03-2022</td>
-                              <td>03-03-2022</td>
+                              <td>System Architect</td>
 
+                              <td>13 Feb 2022 10:11</td>
+                              <td>Active</td>
                               <td>
                                 <button
                                   type="button"
@@ -1902,208 +2278,304 @@
                                   data-whatever="@fat"
                                 >
                                   <i class="mdi mdi-eye"></i>
+                                  View
                                 </button>
                                 <button
                                   type="button"
                                   class="btn waves-effect waves-light btn-sm btn-info text-white"
                                 >
                                   <i class="mdi mdi-pencil"></i>
+                                  Edit
                                 </button>
                               </td>
                             </tr>
                             <tr>
-                              <td>L1</td>
-                              <td>Abc</td>
-                              <td>xyz</td>
+                              <td>
+                                <label>
+                                  <input type="checkbox" />
+                                  <span class="sr-only">Select Row</span>
+                                </label>
+                              </td>
+                              <td>Garrett Winters</td>
+                              <td>L2</td>
+                              <td>Accountant</td>
+                              <td>13 Feb 2022 10:11</td>
                               <td>Active</td>
-                              <td>10%</td>
-                              <td>abc.png</td>
-                              <td>03-03-2022</td>
-                              <td>03-03-2022</td>
-
                               <td>
                                 <button
                                   type="button"
                                   class="btn waves-effect waves-light btn-sm btn-info text-white"
-                                  data-bs-toggle="modal"
-                                  data-bs-target="#exampleModal1"
-                                  data-whatever="@fat"
                                 >
                                   <i class="mdi mdi-eye"></i>
+                                  View
                                 </button>
                                 <button
                                   type="button"
                                   class="btn waves-effect waves-light btn-sm btn-info text-white"
                                 >
                                   <i class="mdi mdi-pencil"></i>
+                                  Edit
                                 </button>
                               </td>
                             </tr>
                             <tr>
+                              <td>
+                                <label>
+                                  <input type="checkbox" />
+                                  <span class="sr-only">Select Row</span>
+                                </label>
+                              </td>
+                              <td>Ashton Cox</td>
                               <td>L1</td>
-                              <td>Abc</td>
-                              <td>xyz</td>
-                              <td>Active</td>
-                              <td>10%</td>
-                              <td>abc.png</td>
-                              <td>03-03-2022</td>
-                              <td>03-03-2022</td>
-
+                              <td>Junior Technical Author</td>
+                              <td>13 Feb 2022 10:11</td>
+                              <td>In-Active</td>
                               <td>
                                 <button
                                   type="button"
                                   class="btn waves-effect waves-light btn-sm btn-info text-white"
-                                  data-bs-toggle="modal"
-                                  data-bs-target="#exampleModal1"
-                                  data-whatever="@fat"
                                 >
                                   <i class="mdi mdi-eye"></i>
+                                  View
                                 </button>
                                 <button
                                   type="button"
                                   class="btn waves-effect waves-light btn-sm btn-info text-white"
                                 >
                                   <i class="mdi mdi-pencil"></i>
+                                  Edit
                                 </button>
                               </td>
                             </tr>
                             <tr>
-                              <td>L1</td>
-                              <td>Abc</td>
-                              <td>xyz</td>
+                              <td>
+                                <label>
+                                  <input type="checkbox" />
+                                  <span class="sr-only">Select Row</span>
+                                </label>
+                              </td>
+                              <td>Cedric Kelly</td>
+                              <td>L2</td>
+                              <td>Senior Javascript Developer</td>
+                              <td>13 Feb 2022 10:11</td>
                               <td>Active</td>
-                              <td>10%</td>
-                              <td>abc.png</td>
-                              <td>03-03-2022</td>
-                              <td>03-03-2022</td>
-
                               <td>
                                 <button
                                   type="button"
                                   class="btn waves-effect waves-light btn-sm btn-info text-white"
-                                  data-bs-toggle="modal"
-                                  data-bs-target="#exampleModal1"
-                                  data-whatever="@fat"
                                 >
                                   <i class="mdi mdi-eye"></i>
+                                  View
                                 </button>
                                 <button
                                   type="button"
                                   class="btn waves-effect waves-light btn-sm btn-info text-white"
                                 >
                                   <i class="mdi mdi-pencil"></i>
+                                  Edit
                                 </button>
                               </td>
                             </tr>
                             <tr>
+                              <td>
+                                <label>
+                                  <input type="checkbox" />
+                                  <span class="sr-only">Select Row</span>
+                                </label>
+                              </td>
+                              <td>Airi Satou</td>
                               <td>L1</td>
-                              <td>Abc</td>
-                              <td>xyz</td>
+                              <td>Accountant</td>
+                              <td>13 Feb 2022 10:11</td>
                               <td>Active</td>
-                              <td>10%</td>
-                              <td>abc.png</td>
-                              <td>03-03-2022</td>
-                              <td>03-03-2022</td>
-
                               <td>
                                 <button
                                   type="button"
                                   class="btn waves-effect waves-light btn-sm btn-info text-white"
-                                  data-bs-toggle="modal"
-                                  data-bs-target="#exampleModal1"
-                                  data-whatever="@fat"
                                 >
                                   <i class="mdi mdi-eye"></i>
+                                  View
                                 </button>
                                 <button
                                   type="button"
                                   class="btn waves-effect waves-light btn-sm btn-info text-white"
                                 >
                                   <i class="mdi mdi-pencil"></i>
+                                  Edit
                                 </button>
                               </td>
                             </tr>
                             <tr>
-                              <td>L1</td>
-                              <td>Abc</td>
-                              <td>xyz</td>
+                              <td>
+                                <label>
+                                  <input type="checkbox" />
+                                  <span class="sr-only">Select Row</span>
+                                </label>
+                              </td>
+                              <td>Brielle Williamson</td>
+                              <td>L2</td>
+                              <td>Integration Specialist</td>
+                              <td>13 Feb 2022 10:11</td>
                               <td>Active</td>
-                              <td>10%</td>
-                              <td>abc.png</td>
-                              <td>03-03-2022</td>
-                              <td>03-03-2022</td>
-
                               <td>
                                 <button
                                   type="button"
                                   class="btn waves-effect waves-light btn-sm btn-info text-white"
-                                  data-bs-toggle="modal"
-                                  data-bs-target="#exampleModal1"
-                                  data-whatever="@fat"
                                 >
                                   <i class="mdi mdi-eye"></i>
+                                  View
                                 </button>
                                 <button
                                   type="button"
                                   class="btn waves-effect waves-light btn-sm btn-info text-white"
                                 >
                                   <i class="mdi mdi-pencil"></i>
+                                  Edit
                                 </button>
                               </td>
                             </tr>
                             <tr>
+                              <td>
+                                <label>
+                                  <input type="checkbox" />
+                                  <span class="sr-only">Select Row</span>
+                                </label>
+                              </td>
+                              <td>Herrod Chandler</td>
                               <td>L1</td>
-                              <td>Abc</td>
-                              <td>xyz</td>
+                              <td>Sales Assistant</td>
+                              <td>13 Feb 2022 10:11</td>
                               <td>Active</td>
-                              <td>10%</td>
-                              <td>abc.png</td>
-                              <td>03-03-2022</td>
-                              <td>03-03-2022</td>
-
                               <td>
                                 <button
                                   type="button"
                                   class="btn waves-effect waves-light btn-sm btn-info text-white"
-                                  data-bs-toggle="modal"
-                                  data-bs-target="#exampleModal1"
-                                  data-whatever="@fat"
                                 >
                                   <i class="mdi mdi-eye"></i>
+                                  View
                                 </button>
                                 <button
                                   type="button"
                                   class="btn waves-effect waves-light btn-sm btn-info text-white"
                                 >
                                   <i class="mdi mdi-pencil"></i>
+                                  Edit
                                 </button>
                               </td>
                             </tr>
                             <tr>
-                              <td>L1</td>
-                              <td>Abc</td>
-                              <td>xyz</td>
+                              <td>
+                                <label>
+                                  <input type="checkbox" />
+                                  <span class="sr-only">Select Row</span>
+                                </label>
+                              </td>
+                              <td>Rhona Davidson</td>
+                              <td>L2</td>
+                              <td>Integration Specialist</td>
+                              <td>13 Feb 2022 10:11</td>
                               <td>Active</td>
-                              <td>10%</td>
-                              <td>abc.png</td>
-                              <td>03-03-2022</td>
-                              <td>03-03-2022</td>
-
                               <td>
                                 <button
                                   type="button"
                                   class="btn waves-effect waves-light btn-sm btn-info text-white"
-                                  data-bs-toggle="modal"
-                                  data-bs-target="#exampleModal1"
-                                  data-whatever="@fat"
                                 >
                                   <i class="mdi mdi-eye"></i>
+                                  View
                                 </button>
                                 <button
                                   type="button"
                                   class="btn waves-effect waves-light btn-sm btn-info text-white"
                                 >
                                   <i class="mdi mdi-pencil"></i>
+                                  Edit
+                                </button>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <label>
+                                  <input type="checkbox" />
+                                  <span class="sr-only">Select Row</span>
+                                </label>
+                              </td>
+                              <td>Colleen Hurst</td>
+                              <td>L1</td>
+                              <td>Javascript Developer</td>
+                              <td>13 Feb 2022 10:11</td>
+                              <td>Active</td>
+                              <td>
+                                <button
+                                  type="button"
+                                  class="btn waves-effect waves-light btn-sm btn-info text-white"
+                                >
+                                  <i class="mdi mdi-eye"></i>
+                                  View
+                                </button>
+                                <button
+                                  type="button"
+                                  class="btn waves-effect waves-light btn-sm btn-info text-white"
+                                >
+                                  <i class="mdi mdi-pencil"></i>
+                                  Edit
+                                </button>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <label>
+                                  <input type="checkbox" />
+                                  <span class="sr-only">Select Row</span>
+                                </label>
+                              </td>
+                              <td>Sonya Frost</td>
+                              <td>L2</td>
+                              <td>Software Engineer</td>
+                              <td>13 Feb 2022 10:11</td>
+                              <td>Active</td>
+                              <td>
+                                <button
+                                  type="button"
+                                  class="btn waves-effect waves-light btn-sm btn-info text-white"
+                                >
+                                  <i class="mdi mdi-eye"></i>
+                                  View
+                                </button>
+                                <button
+                                  type="button"
+                                  class="btn waves-effect waves-light btn-sm btn-info text-white"
+                                >
+                                  <i class="mdi mdi-pencil"></i>
+                                  Edit
+                                </button>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <label>
+                                  <input type="checkbox" />
+                                  <span class="sr-only">Select Row</span>
+                                </label>
+                              </td>
+                              <td>Jena Gaines</td>
+                              <td>L1</td>
+                              <td>Office Manager</td>
+                              <td>13 Feb 2022 10:11</td>
+                              <td>Active</td>
+                              <td>
+                                <button
+                                  type="button"
+                                  class="btn waves-effect waves-light btn-sm btn-info text-white"
+                                >
+                                  <i class="mdi mdi-eye"></i>
+                                  View
+                                </button>
+                                <button
+                                  type="button"
+                                  class="btn waves-effect waves-light btn-sm btn-info text-white"
+                                >
+                                  <i class="mdi mdi-pencil"></i>
+                                  Edit
                                 </button>
                               </td>
                             </tr>
@@ -2117,30 +2589,19 @@
                       role="tabpanel"
                       aria-labelledby="pills-profile-tab"
                     >
-                      <div class="b2b-revenue">
-                        <p>Total Revenue Generated :</p>
-                        <p>Offer-Wise Revenue Generated :</p>
-                        <p>Month-Wise Revenue Generated :</p>
-                        <p>Level-Wise Revenue Generated :</p>
+                      <div style="float: left;">
+                        <h4 class="card-title">Roles: 10</h4>
                       </div>
-                      <div style="margin-bottom: 15px">
-                        <div class="row">
-                          <div class="col-md-2">Sort</div>
-                          <div class="col-md-4">
-                            <select
-                              class="form-select col-12"
-                              id="inlineFormCustomSelect"
-                            >
-                              <option selected="">High to Low Revenue</option>
-                              <option value="1">Recent to Old Revenue</option>
-                              <option value="2">High to Low Level</option>
-                              <option value="3">Closed to Open Offers</option>
-                            </select>
-                          </div>
-                          <div class="col-md-6"></div>
-                        </div>
-                      </div>
-
+                      <button
+                        type="button"
+                        style="float: right;"
+                        class="btn btn-info text-white"
+                        data-bs-toggle="modal"
+                        data-bs-target="#exampleModal1"
+                        data-whatever="@fat"
+                      >
+                        New Role
+                      </button>
                       <div class="table-responsive">
                         <table
                           id="myTable"
@@ -2148,24 +2609,288 @@
                         >
                           <thead>
                             <tr>
-                              <th>Offer Name</th>
-                              <th>Level</th>
-                              <th>Revenue</th>
+                              <th>Role</th>
+                              <th>Users#</th>
                               <th>Status</th>
-                              <th>With in Days</th>
-                              <th>Users</th>
-                              <th style="width: 15%">Action</th>
+                              <th style="width: 15%;">Action</th>
+                              <th style="width: 10%;">Permissions</th>
                             </tr>
                           </thead>
                           <tbody id="checkall-target">
                             <tr>
-                              <td>ABC</td>
-                              <td>L1</td>
-                              <td>40,000</td>
-                              <td>Open</td>
+                              <td>System Architect</td>
+                              <td>1</td>
+                              <td>Active</td>
+                              <td>
+                                <button
+                                  type="button"
+                                  class="btn waves-effect waves-light btn-sm btn-info text-white"
+                                >
+                                  <i class="mdi mdi-eye"></i>
+                                  View
+                                </button>
+                                <button
+                                  type="button"
+                                  class="btn waves-effect waves-light btn-sm btn-info text-white"
+                                >
+                                  <i class="mdi mdi-pencil"></i>
+                                  Edit
+                                </button>
+                              </td>
+                              <td>
+                                <button
+                                  type="button"
+                                  class="btn waves-effect waves-light btn-sm btn-info text-white"
+                                >
+                                  <i class="mdi mdi-pencil"></i>
+                                  Edit
+                                </button>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>System Architect</td>
+                              <td>2</td>
+                              <td>Active</td>
+                              <td>
+                                <button
+                                  type="button"
+                                  class="btn waves-effect waves-light btn-sm btn-info text-white"
+                                >
+                                  <i class="mdi mdi-eye"></i>
+                                  View
+                                </button>
+                                <button
+                                  type="button"
+                                  class="btn waves-effect waves-light btn-sm btn-info text-white"
+                                >
+                                  <i class="mdi mdi-pencil"></i>
+                                  Edit
+                                </button>
+                              </td>
+                              <td>
+                                <button
+                                  type="button"
+                                  class="btn waves-effect waves-light btn-sm btn-info text-white"
+                                >
+                                  <i class="mdi mdi-pencil"></i>
+                                  Edit
+                                </button>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>System Architect</td>
+                              <td>3</td>
+                              <td>Active</td>
+                              <td>
+                                <button
+                                  type="button"
+                                  class="btn waves-effect waves-light btn-sm btn-info text-white"
+                                >
+                                  <i class="mdi mdi-eye"></i>
+                                  View
+                                </button>
+                                <button
+                                  type="button"
+                                  class="btn waves-effect waves-light btn-sm btn-info text-white"
+                                >
+                                  <i class="mdi mdi-pencil"></i>
+                                  Edit
+                                </button>
+                              </td>
+                              <td>
+                                <button
+                                  type="button"
+                                  class="btn waves-effect waves-light btn-sm btn-info text-white"
+                                >
+                                  <i class="mdi mdi-pencil"></i>
+                                  Edit
+                                </button>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>System Architect</td>
+                              <td>4</td>
+                              <td>Active</td>
+                              <td>
+                                <button
+                                  type="button"
+                                  class="btn waves-effect waves-light btn-sm btn-info text-white"
+                                >
+                                  <i class="mdi mdi-eye"></i>
+                                  View
+                                </button>
+                                <button
+                                  type="button"
+                                  class="btn waves-effect waves-light btn-sm btn-info text-white"
+                                >
+                                  <i class="mdi mdi-pencil"></i>
+                                  Edit
+                                </button>
+                              </td>
+                              <td>
+                                <button
+                                  type="button"
+                                  class="btn waves-effect waves-light btn-sm btn-info text-white"
+                                >
+                                  <i class="mdi mdi-pencil"></i>
+                                  Edit
+                                </button>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>System Architect</td>
+                              <td>5</td>
+                              <td>Active</td>
+                              <td>
+                                <button
+                                  type="button"
+                                  class="btn waves-effect waves-light btn-sm btn-info text-white"
+                                >
+                                  <i class="mdi mdi-eye"></i>
+                                  View
+                                </button>
+                                <button
+                                  type="button"
+                                  class="btn waves-effect waves-light btn-sm btn-info text-white"
+                                >
+                                  <i class="mdi mdi-pencil"></i>
+                                  Edit
+                                </button>
+                              </td>
+                              <td>
+                                <button
+                                  type="button"
+                                  class="btn waves-effect waves-light btn-sm btn-info text-white"
+                                >
+                                  <i class="mdi mdi-pencil"></i>
+                                  Edit
+                                </button>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>Admin</td>
+                              <td>6</td>
+                              <td>Active</td>
+                              <td>
+                                <button
+                                  type="button"
+                                  class="btn waves-effect waves-light btn-sm btn-info text-white"
+                                >
+                                  <i class="mdi mdi-eye"></i>
+                                  View
+                                </button>
+                                <button
+                                  type="button"
+                                  class="btn waves-effect waves-light btn-sm btn-info text-white"
+                                >
+                                  <i class="mdi mdi-pencil"></i>
+                                  Edit
+                                </button>
+                              </td>
+                              <td>
+                                <button
+                                  type="button"
+                                  class="btn waves-effect waves-light btn-sm btn-info text-white"
+                                >
+                                  <i class="mdi mdi-pencil"></i>
+                                  Edit
+                                </button>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>Manager</td>
+                              <td>7</td>
+                              <td>Active</td>
+                              <td>
+                                <button
+                                  type="button"
+                                  class="btn waves-effect waves-light btn-sm btn-info text-white"
+                                >
+                                  <i class="mdi mdi-eye"></i>
+                                  View
+                                </button>
+                                <button
+                                  type="button"
+                                  class="btn waves-effect waves-light btn-sm btn-info text-white"
+                                >
+                                  <i class="mdi mdi-pencil"></i>
+                                  Edit
+                                </button>
+                              </td>
+                              <td>
+                                <button
+                                  type="button"
+                                  class="btn waves-effect waves-light btn-sm btn-info text-white"
+                                >
+                                  <i class="mdi mdi-pencil"></i>
+                                  Edit
+                                </button>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>Architect</td>
+                              <td>8</td>
+                              <td>Active</td>
+                              <td>
+                                <button
+                                  type="button"
+                                  class="btn waves-effect waves-light btn-sm btn-info text-white"
+                                >
+                                  <i class="mdi mdi-eye"></i>
+                                  View
+                                </button>
+                                <button
+                                  type="button"
+                                  class="btn waves-effect waves-light btn-sm btn-info text-white"
+                                >
+                                  <i class="mdi mdi-pencil"></i>
+                                  Edit
+                                </button>
+                              </td>
+                              <td>
+                                <button
+                                  type="button"
+                                  class="btn waves-effect waves-light btn-sm btn-info text-white"
+                                >
+                                  <i class="mdi mdi-pencil"></i>
+                                  Edit
+                                </button>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>Manager</td>
+                              <td>9</td>
+                              <td>Active</td>
+                              <td>
+                                <button
+                                  type="button"
+                                  class="btn waves-effect waves-light btn-sm btn-info text-white"
+                                >
+                                  <i class="mdi mdi-eye"></i>
+                                  View
+                                </button>
+                                <button
+                                  type="button"
+                                  class="btn waves-effect waves-light btn-sm btn-info text-white"
+                                >
+                                  <i class="mdi mdi-pencil"></i>
+                                  Edit
+                                </button>
+                              </td>
+                              <td>
+                                <button
+                                  type="button"
+                                  class="btn waves-effect waves-light btn-sm btn-info text-white"
+                                >
+                                  <i class="mdi mdi-pencil"></i>
+                                  Edit
+                                </button>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>System Architect</td>
                               <td>10</td>
-                              <td>100</td>
-
+                              <td>Active</td>
                               <td>
                                 <button
                                   type="button"
@@ -2182,15 +2907,20 @@
                                   Edit
                                 </button>
                               </td>
+                              <td>
+                                <button
+                                  type="button"
+                                  class="btn waves-effect waves-light btn-sm btn-info text-white"
+                                >
+                                  <i class="mdi mdi-pencil"></i>
+                                  Edit
+                                </button>
+                              </td>
                             </tr>
                             <tr>
-                              <td>ABC</td>
-                              <td>L2</td>
-                              <td>86,000</td>
-                              <td>Closed</td>
-                              <td>15</td>
-                              <td>123</td>
-
+                              <td>System Architect</td>
+                              <td>11</td>
+                              <td>Active</td>
                               <td>
                                 <button
                                   type="button"
@@ -2207,98 +2937,7 @@
                                   Edit
                                 </button>
                               </td>
-                            </tr>
-                            <tr>
-                              <td>ABC</td>
-                              <td>L1</td>
-                              <td>40,000</td>
-                              <td>Open</td>
-                              <td>10</td>
-                              <td>100</td>
-
                               <td>
-                                <button
-                                  type="button"
-                                  class="btn waves-effect waves-light btn-sm btn-info text-white"
-                                >
-                                  <i class="mdi mdi-eye"></i>
-                                  View
-                                </button>
-                                <button
-                                  type="button"
-                                  class="btn waves-effect waves-light btn-sm btn-info text-white"
-                                >
-                                  <i class="mdi mdi-pencil"></i>
-                                  Edit
-                                </button>
-                              </td>
-                            </tr>
-                            <tr>
-                              <td>ABC</td>
-                              <td>L2</td>
-                              <td>86,000</td>
-                              <td>Closed</td>
-                              <td>15</td>
-                              <td>123</td>
-
-                              <td>
-                                <button
-                                  type="button"
-                                  class="btn waves-effect waves-light btn-sm btn-info text-white"
-                                >
-                                  <i class="mdi mdi-eye"></i>
-                                  View
-                                </button>
-                                <button
-                                  type="button"
-                                  class="btn waves-effect waves-light btn-sm btn-info text-white"
-                                >
-                                  <i class="mdi mdi-pencil"></i>
-                                  Edit
-                                </button>
-                              </td>
-                            </tr>
-                            <tr>
-                              <td>ABC</td>
-                              <td>L1</td>
-                              <td>40,000</td>
-                              <td>Open</td>
-                              <td>10</td>
-                              <td>100</td>
-
-                              <td>
-                                <button
-                                  type="button"
-                                  class="btn waves-effect waves-light btn-sm btn-info text-white"
-                                >
-                                  <i class="mdi mdi-eye"></i>
-                                  View
-                                </button>
-                                <button
-                                  type="button"
-                                  class="btn waves-effect waves-light btn-sm btn-info text-white"
-                                >
-                                  <i class="mdi mdi-pencil"></i>
-                                  Edit
-                                </button>
-                              </td>
-                            </tr>
-                            <tr>
-                              <td>ABC</td>
-                              <td>L2</td>
-                              <td>86,000</td>
-                              <td>Closed</td>
-                              <td>15</td>
-                              <td>123</td>
-
-                              <td>
-                                <button
-                                  type="button"
-                                  class="btn waves-effect waves-light btn-sm btn-info text-white"
-                                >
-                                  <i class="mdi mdi-eye"></i>
-                                  View
-                                </button>
                                 <button
                                   type="button"
                                   class="btn waves-effect waves-light btn-sm btn-info text-white"
@@ -2318,97 +2957,104 @@
                       role="tabpanel"
                       aria-labelledby="pills-contact-tab"
                     >
-                    <div class="row">
-                        <div class="col-md-6">
-                          <h4 class="card-title">Active Offers : 6</h4>
-                        </div>
-                        <div
-                          class="col-md-6 form-group"
-                          style="text-align: right"
-                        >
-                          <button
-                            type="button"
-                            style="float: right"
-                            class="btn btn-info text-white"
-                            data-bs-toggle="modal"
-                            data-bs-target="#exampleModal2"
-                            data-whatever="@fat"
-                          >
-                            <i class="mdi mdi-plus"></i>
-                            New Offer
-                          </button>
-                        </div>
-                      </div>
-
-                      <div>
-                        <form>
-                          <div class="row">
-                            <div class="col-md-2 form-group">
+                      <form>
+                        <div class="row">
+                          <div class="col-md-6 form-group">
+                            <div class="input-group stylish-input-group">
                               <input
                                 type="text"
                                 class="form-control"
-                                id="recipient-name1"
-                                placeholder="Offers"
+                                placeholder="Name"
                               />
-                            </div>
-                            <div class="col-md-1 form-group">
-                              <input
-                                type="text"
-                                class="form-control"
-                                id="recipient-name1"
-                                placeholder="From"
-                              />
-                            </div>
-                            <div class="col-md-1 form-group">
-                              <input
-                                type="text"
-                                class="form-control"
-                                id="recipient-name1"
-                                placeholder="To"
-                              />
-                            </div>
-                            <div class="col-md-2 form-group">
-                              <select
-                                class="form-select col-12"
-                                id="inlineFormCustomSelect"
-                              >
-                                <option selected="">Customer</option>
-                                <option value="1">One</option>
-                                <option value="2">Two</option>
-                                <option value="3">Three</option>
-                              </select>
-                            </div>
-
-                            <div class="col-md-2 form-group">
-                              <select
-                                class="form-select col-12"
-                                id="inlineFormCustomSelect"
-                              >
-                                <option selected="">Main Cat</option>
-                                <option value="1">One</option>
-                                <option value="2">Two</option>
-                                <option value="3">Three</option>
-                              </select>
-                            </div>
-                            <div class="col-md-2 form-group">
-                              <select
-                                class="form-select col-12"
-                                id="inlineFormCustomSelect"
-                              >
-                                <option selected="">Sub Cat</option>
-                                <option value="1">One</option>
-                                <option value="2">Two</option>
-                                <option value="3">Three</option>
-                              </select>
-                            </div>
-                            <div class="col-md-2 form-group">
-                              <button type="submit">
-                                <i class="fa fa-search"></i>
-                              </button>
+                              <span class="input-group-addon">
+                                <button type="submit">
+                                  <i class="fa fa-search"></i>
+                                </button>
+                              </span>
                             </div>
                           </div>
-                        </form>
+                          <div
+                            class="col-md-6 form-group"
+                            style="text-align: right;"
+                          >
+                            <button
+                              type="button"
+                              style="float: right;"
+                              class="btn btn-info text-white"
+                              data-bs-toggle="modal"
+                              data-bs-target="#exampleModal5"
+                              data-whatever="@fat"
+                            >
+                              <i class="mdi mdi-plus"></i>
+                              Add New
+                            </button>
+                          </div>
+                        </div>
+                      </form>
+
+                      <form>
+                        <div class="row">
+                          <div class="col-md-4 form-group">
+                            <div class="input-group stylish-input-group">
+                              <input
+                                type="text"
+                                class="form-control"
+                                placeholder="Name"
+                              />
+                              <span class="input-group-addon">
+                                <button type="submit">
+                                  <i class="fa fa-search"></i>
+                                </button>
+                              </span>
+                            </div>
+                          </div>
+                          <div class="col-md-4 form-group">
+                            <div class="input-group stylish-input-group">
+                              <input
+                                type="text"
+                                class="form-control"
+                                placeholder="Level"
+                              />
+                              <span class="input-group-addon">
+                                <button type="submit">
+                                  <i class="fa fa-search"></i>
+                                </button>
+                              </span>
+                            </div>
+                          </div>
+                          <div class="col-md-4 form-group">
+                            <div class="input-group stylish-input-group">
+                              <input
+                                type="text"
+                                class="form-control"
+                                placeholder="Location"
+                              />
+                              <span class="input-group-addon">
+                                <button type="submit">
+                                  <i class="fa fa-search"></i>
+                                </button>
+                              </span>
+                            </div>
+                          </div>
+                        </div>
+                      </form>
+                      <div style="float: left;">
+                        <h4 class="card-title">Total Levels</h4>
+                        <h6 class="card-subtitle">Level Wise Users</h6>
+                        <h6 class="card-subtitle">Total External Users</h6>
                       </div>
+
+                      <button
+                        type="button"
+                        style="float: right;"
+                        class="btn btn-info text-white"
+                        data-bs-toggle="modal"
+                        data-bs-target="#exampleModal2"
+                        data-whatever="@fat"
+                      >
+                        <i class="mdi mdi-plus"></i>
+                        New Role
+                      </button>
 
                       <div class="table-responsive">
                         <table
@@ -2417,28 +3063,28 @@
                         >
                           <thead>
                             <tr>
-                              <th>Customer</th>
-                              <th>OfferName</th>
-                              <th>Main Category</th>
+                              <!-- <th scope="col" class="border"><label><input type="checkbox"
+                                                                                                    data-tablesaw-checkall><span class="sr-only">
+                                                                                                    Check
+                                                                                                    All</span></label></th> -->
+                              <th>Name</th>
+                              <th>Level</th>
+
                               <th>Status</th>
-                              <th>Amount/Discount</th>
-                              <th>File</th>
-                              <th>Start Date</th>
-                              <th>End Date</th>
-                              <th style="width: 60px">Action</th>
+                              <th>Location</th>
+                              <th>Total Users</th>
+                              <th style="width: 15%;">Action</th>
                             </tr>
                           </thead>
                           <tbody id="checkall-target">
                             <tr>
-                              <td>xyz</td>
-                              <td>Abc</td>
-                              <td>xyz</td>
+                              <!-- <td><label><input type="checkbox"><span class="sr-only"> Select
+                                                                                                    Row</span></label></td> -->
+                              <td>Tiger Nixon</td>
+                              <td>Level</td>
                               <td>Active</td>
-                              <td>10%</td>
-                              <td>abc.png</td>
-                              <td>03-03-2022</td>
-                              <td>03-03-2022</td>
-
+                              <td>Location</td>
+                              <td>10</td>
                               <td>
                                 <button
                                   type="button"
@@ -2448,25 +3094,25 @@
                                   data-whatever="@fat"
                                 >
                                   <i class="mdi mdi-eye"></i>
+                                  View
                                 </button>
                                 <button
                                   type="button"
                                   class="btn waves-effect waves-light btn-sm btn-info text-white"
                                 >
                                   <i class="mdi mdi-pencil"></i>
+                                  Edit
                                 </button>
                               </td>
                             </tr>
                             <tr>
-                              <td>xyz</td>
-                              <td>Abc</td>
-                              <td>xyz</td>
+                              <!-- <td><label><input type="checkbox"><span class="sr-only"> Select
+                                                                                                    Row</span></label></td> -->
+                              <td>Tiger Nixon</td>
+                              <td>Level</td>
                               <td>Active</td>
-                              <td>10%</td>
-                              <td>abc.png</td>
-                              <td>03-03-2022</td>
-                              <td>03-03-2022</td>
-
+                              <td>Location</td>
+                              <td>10</td>
                               <td>
                                 <button
                                   type="button"
@@ -2476,25 +3122,25 @@
                                   data-whatever="@fat"
                                 >
                                   <i class="mdi mdi-eye"></i>
+                                  View
                                 </button>
                                 <button
                                   type="button"
                                   class="btn waves-effect waves-light btn-sm btn-info text-white"
                                 >
                                   <i class="mdi mdi-pencil"></i>
+                                  Edit
                                 </button>
                               </td>
                             </tr>
                             <tr>
-                              <td>xyz</td>
-                              <td>Abc</td>
-                              <td>xyz</td>
+                              <!-- <td><label><input type="checkbox"><span class="sr-only"> Select
+                                                                                                    Row</span></label></td> -->
+                              <td>Tiger Nixon</td>
+                              <td>Level</td>
                               <td>Active</td>
-                              <td>10%</td>
-                              <td>abc.png</td>
-                              <td>03-03-2022</td>
-                              <td>03-03-2022</td>
-
+                              <td>Location</td>
+                              <td>10</td>
                               <td>
                                 <button
                                   type="button"
@@ -2504,25 +3150,25 @@
                                   data-whatever="@fat"
                                 >
                                   <i class="mdi mdi-eye"></i>
+                                  View
                                 </button>
                                 <button
                                   type="button"
                                   class="btn waves-effect waves-light btn-sm btn-info text-white"
                                 >
                                   <i class="mdi mdi-pencil"></i>
+                                  Edit
                                 </button>
                               </td>
                             </tr>
                             <tr>
-                              <td>xyz</td>
-                              <td>Abc</td>
-                              <td>xyz</td>
+                              <!-- <td><label><input type="checkbox"><span class="sr-only"> Select
+                                                                                                    Row</span></label></td> -->
+                              <td>Tiger Nixon</td>
+                              <td>Level</td>
                               <td>Active</td>
-                              <td>10%</td>
-                              <td>abc.png</td>
-                              <td>03-03-2022</td>
-                              <td>03-03-2022</td>
-
+                              <td>Location</td>
+                              <td>10</td>
                               <td>
                                 <button
                                   type="button"
@@ -2532,25 +3178,25 @@
                                   data-whatever="@fat"
                                 >
                                   <i class="mdi mdi-eye"></i>
+                                  View
                                 </button>
                                 <button
                                   type="button"
                                   class="btn waves-effect waves-light btn-sm btn-info text-white"
                                 >
                                   <i class="mdi mdi-pencil"></i>
+                                  Edit
                                 </button>
                               </td>
                             </tr>
                             <tr>
-                              <td>xyz</td>
-                              <td>Abc</td>
-                              <td>xyz</td>
+                              <!-- <td><label><input type="checkbox"><span class="sr-only"> Select
+                                                                                                    Row</span></label></td> -->
+                              <td>Tiger Nixon</td>
+                              <td>Level</td>
                               <td>Active</td>
-                              <td>10%</td>
-                              <td>abc.png</td>
-                              <td>03-03-2022</td>
-                              <td>03-03-2022</td>
-
+                              <td>Location</td>
+                              <td>10</td>
                               <td>
                                 <button
                                   type="button"
@@ -2560,25 +3206,25 @@
                                   data-whatever="@fat"
                                 >
                                   <i class="mdi mdi-eye"></i>
+                                  View
                                 </button>
                                 <button
                                   type="button"
                                   class="btn waves-effect waves-light btn-sm btn-info text-white"
                                 >
                                   <i class="mdi mdi-pencil"></i>
+                                  Edit
                                 </button>
                               </td>
                             </tr>
                             <tr>
-                              <td>xyz</td>
-                              <td>Abc</td>
-                              <td>xyz</td>
+                              <!-- <td><label><input type="checkbox"><span class="sr-only"> Select
+                                                                                                    Row</span></label></td> -->
+                              <td>Tiger Nixon</td>
+                              <td>Level</td>
                               <td>Active</td>
-                              <td>10%</td>
-                              <td>abc.png</td>
-                              <td>03-03-2022</td>
-                              <td>03-03-2022</td>
-
+                              <td>Location</td>
+                              <td>10</td>
                               <td>
                                 <button
                                   type="button"
@@ -2588,25 +3234,25 @@
                                   data-whatever="@fat"
                                 >
                                   <i class="mdi mdi-eye"></i>
+                                  View
                                 </button>
                                 <button
                                   type="button"
                                   class="btn waves-effect waves-light btn-sm btn-info text-white"
                                 >
                                   <i class="mdi mdi-pencil"></i>
+                                  Edit
                                 </button>
                               </td>
                             </tr>
                             <tr>
-                              <td>xyz</td>
-                              <td>Abc</td>
-                              <td>xyz</td>
+                              <!-- <td><label><input type="checkbox"><span class="sr-only"> Select
+                                                                                                    Row</span></label></td> -->
+                              <td>Tiger Nixon</td>
+                              <td>Level</td>
                               <td>Active</td>
-                              <td>10%</td>
-                              <td>abc.png</td>
-                              <td>03-03-2022</td>
-                              <td>03-03-2022</td>
-
+                              <td>Location</td>
+                              <td>10</td>
                               <td>
                                 <button
                                   type="button"
@@ -2616,25 +3262,25 @@
                                   data-whatever="@fat"
                                 >
                                   <i class="mdi mdi-eye"></i>
+                                  View
                                 </button>
                                 <button
                                   type="button"
                                   class="btn waves-effect waves-light btn-sm btn-info text-white"
                                 >
                                   <i class="mdi mdi-pencil"></i>
+                                  Edit
                                 </button>
                               </td>
                             </tr>
                             <tr>
-                              <td>xyz</td>
-                              <td>Abc</td>
-                              <td>xyz</td>
+                              <!-- <td><label><input type="checkbox"><span class="sr-only"> Select
+                                                                                                    Row</span></label></td> -->
+                              <td>Tiger Nixon</td>
+                              <td>Level</td>
                               <td>Active</td>
-                              <td>10%</td>
-                              <td>abc.png</td>
-                              <td>03-03-2022</td>
-                              <td>03-03-2022</td>
-
+                              <td>Location</td>
+                              <td>10</td>
                               <td>
                                 <button
                                   type="button"
@@ -2644,12 +3290,154 @@
                                   data-whatever="@fat"
                                 >
                                   <i class="mdi mdi-eye"></i>
+                                  View
                                 </button>
                                 <button
                                   type="button"
                                   class="btn waves-effect waves-light btn-sm btn-info text-white"
                                 >
                                   <i class="mdi mdi-pencil"></i>
+                                  Edit
+                                </button>
+                              </td>
+                            </tr>
+                            <tr>
+                              <!-- <td><label><input type="checkbox"><span class="sr-only"> Select
+                                                                                                    Row</span></label></td> -->
+                              <td>Tiger Nixon</td>
+                              <td>Level</td>
+                              <td>Active</td>
+                              <td>Location</td>
+                              <td>10</td>
+                              <td>
+                                <button
+                                  type="button"
+                                  class="btn waves-effect waves-light btn-sm btn-info text-white"
+                                  data-bs-toggle="modal"
+                                  data-bs-target="#exampleModal1"
+                                  data-whatever="@fat"
+                                >
+                                  <i class="mdi mdi-eye"></i>
+                                  View
+                                </button>
+                                <button
+                                  type="button"
+                                  class="btn waves-effect waves-light btn-sm btn-info text-white"
+                                >
+                                  <i class="mdi mdi-pencil"></i>
+                                  Edit
+                                </button>
+                              </td>
+                            </tr>
+                            <tr>
+                              <!-- <td><label><input type="checkbox"><span class="sr-only"> Select
+                                                                                                    Row</span></label></td> -->
+                              <td>Tiger Nixon</td>
+                              <td>Level</td>
+                              <td>Active</td>
+                              <td>Location</td>
+                              <td>10</td>
+                              <td>
+                                <button
+                                  type="button"
+                                  class="btn waves-effect waves-light btn-sm btn-info text-white"
+                                  data-bs-toggle="modal"
+                                  data-bs-target="#exampleModal1"
+                                  data-whatever="@fat"
+                                >
+                                  <i class="mdi mdi-eye"></i>
+                                  View
+                                </button>
+                                <button
+                                  type="button"
+                                  class="btn waves-effect waves-light btn-sm btn-info text-white"
+                                >
+                                  <i class="mdi mdi-pencil"></i>
+                                  Edit
+                                </button>
+                              </td>
+                            </tr>
+                            <tr>
+                              <!-- <td><label><input type="checkbox"><span class="sr-only"> Select
+                                                                                                    Row</span></label></td> -->
+                              <td>Tiger Nixon</td>
+                              <td>Level</td>
+                              <td>Active</td>
+                              <td>Location</td>
+                              <td>10</td>
+                              <td>
+                                <button
+                                  type="button"
+                                  class="btn waves-effect waves-light btn-sm btn-info text-white"
+                                  data-bs-toggle="modal"
+                                  data-bs-target="#exampleModal1"
+                                  data-whatever="@fat"
+                                >
+                                  <i class="mdi mdi-eye"></i>
+                                  View
+                                </button>
+                                <button
+                                  type="button"
+                                  class="btn waves-effect waves-light btn-sm btn-info text-white"
+                                >
+                                  <i class="mdi mdi-pencil"></i>
+                                  Edit
+                                </button>
+                              </td>
+                            </tr>
+                            <tr>
+                              <!-- <td><label><input type="checkbox"><span class="sr-only"> Select
+                                                                                                    Row</span></label></td> -->
+                              <td>Tiger Nixon</td>
+                              <td>Level</td>
+                              <td>Active</td>
+                              <td>Location</td>
+                              <td>10</td>
+                              <td>
+                                <button
+                                  type="button"
+                                  class="btn waves-effect waves-light btn-sm btn-info text-white"
+                                  data-bs-toggle="modal"
+                                  data-bs-target="#exampleModal1"
+                                  data-whatever="@fat"
+                                >
+                                  <i class="mdi mdi-eye"></i>
+                                  View
+                                </button>
+                                <button
+                                  type="button"
+                                  class="btn waves-effect waves-light btn-sm btn-info text-white"
+                                >
+                                  <i class="mdi mdi-pencil"></i>
+                                  Edit
+                                </button>
+                              </td>
+                            </tr>
+                            <tr>
+                              <!-- <td><label><input type="checkbox"><span class="sr-only"> Select
+                                                                                                    Row</span></label></td> -->
+                              <td>Tiger Nixon</td>
+                              <td>Level</td>
+                              <td>Active</td>
+                              <td>Location</td>
+                              <td>10</td>
+                              <td>
+                                <button
+                                  type="button"
+                                  class="btn waves-effect waves-light btn-sm btn-info text-white"
+                                  data-bs-toggle="modal"
+                                  data-bs-target="#exampleModal1"
+                                  data-whatever="@fat"
+                                >
+                                  <i class="mdi mdi-eye"></i>
+                                  View
+                                </button>
+                                <button
+                                  type="button"
+                                  class="btn waves-effect waves-light btn-sm btn-info text-white"
+                                >
+                                  <i class="mdi mdi-pencil"></i>
+                                  Edit
                                 </button>
                               </td>
                             </tr>
@@ -2663,30 +3451,21 @@
                       role="tabpanel"
                       aria-labelledby="pills-eu-tab"
                     >
-                    <div class="b2b-revenue">
-                        <p>Total Revenue Generated :</p>
-                        <p>Offer-Wise Revenue Generated :</p>
-                        <p>Month-Wise Revenue Generated :</p>
-                        <p>Customer-Wise Revenue Generated :</p>
+                      <div style="float: left;">
+                        <h4 class="card-title">Levels</h4>
+                        <h6 class="card-subtitle">Roles</h6>
                       </div>
-                      <div style="margin-bottom: 15px">
-                        <div class="row">
-                          <div class="col-md-2">Sort</div>
-                          <div class="col-md-4">
-                            <select
-                              class="form-select col-12"
-                              id="inlineFormCustomSelect"
-                            >
-                              <option selected="">High to Low Revenue</option>
-                              <option value="1">Recent to Old Revenue</option>
-                              <option value="2">High to Low Customer</option>
-                              <option value="3">Closed to Open Offers</option>
-                            </select>
-                          </div>
-                          <div class="col-md-6"></div>
-                        </div>
-                      </div>
-
+                      <button
+                        type="button"
+                        style="float: right;"
+                        class="btn btn-info text-white"
+                        data-bs-toggle="modal"
+                        data-bs-target="#exampleModal3"
+                        data-whatever="@fat"
+                      >
+                        <i class="mdi mdi-plus"></i>
+                        New Role
+                      </button>
                       <div class="table-responsive">
                         <table
                           id="myTable"
@@ -2694,28 +3473,35 @@
                         >
                           <thead>
                             <tr>
-                              <th>Offer Name</th>
-                              <th>Customer</th>
-                              <th>Revenue</th>
+                              <!-- <th scope="col" class="border"><label><input type="checkbox"
+                                                                    data-tablesaw-checkall><span class="sr-only">
+                                                                    Check
+                                                                    All</span></label></th> -->
+
+                              <th>Role</th>
+                              <th>Users#</th>
                               <th>Status</th>
-                              <th>With in Days</th>
-                              <th>Users</th>
-                              <th style="width: 15%">Action</th>
+                              <th>Level</th>
+                              <th style="width: 15%;">Action</th>
+                              <th style="width: 15%;">Permission</th>
                             </tr>
                           </thead>
                           <tbody id="checkall-target">
                             <tr>
-                              <td>ABC</td>
-                              <td>xyz</td>
-                              <td>40,000</td>
-                              <td>Open</td>
-                              <td>10</td>
-                              <td>100</td>
+                              <!-- <td><label><input type="checkbox"><span class="sr-only"> Select
+                                                                    Row</span></label></td> -->
+                              <td>System Architect</td>
+                              <td>Tiger Nixon</td>
 
+                              <td>level</td>
+                              <td>Active</td>
                               <td>
                                 <button
                                   type="button"
                                   class="btn waves-effect waves-light btn-sm btn-info text-white"
+                                  data-bs-toggle="modal"
+                                  data-bs-target="#exampleModal1"
+                                  data-whatever="@fat"
                                 >
                                   <i class="mdi mdi-eye"></i>
                                   View
@@ -2728,19 +3514,34 @@
                                   Edit
                                 </button>
                               </td>
-                            </tr>
-                            <tr>
-                              <td>ABC</td>
-                              <td>xyz</td>
-                              <td>86,000</td>
-                              <td>Closed</td>
-                              <td>15</td>
-                              <td>123</td>
-
                               <td>
                                 <button
                                   type="button"
                                   class="btn waves-effect waves-light btn-sm btn-info text-white"
+                                  data-bs-toggle="modal"
+                                  data-bs-target="#exampleModal1"
+                                  data-whatever="@fat"
+                                >
+                                  <i class="mdi mdi-eye"></i>
+                                  View
+                                </button>
+                              </td>
+                            </tr>
+                            <tr>
+                              <!-- <td><label><input type="checkbox"><span class="sr-only"> Select
+                                                                    Row</span></label></td> -->
+                              <td>System Architect</td>
+                              <td>Tiger Nixon</td>
+
+                              <td>level</td>
+                              <td>Active</td>
+                              <td>
+                                <button
+                                  type="button"
+                                  class="btn waves-effect waves-light btn-sm btn-info text-white"
+                                  data-bs-toggle="modal"
+                                  data-bs-target="#exampleModal1"
+                                  data-whatever="@fat"
                                 >
                                   <i class="mdi mdi-eye"></i>
                                   View
@@ -2753,19 +3554,34 @@
                                   Edit
                                 </button>
                               </td>
-                            </tr>
-                            <tr>
-                              <td>ABC</td>
-                              <td>xyz</td>
-                              <td>40,000</td>
-                              <td>Open</td>
-                              <td>10</td>
-                              <td>100</td>
-
                               <td>
                                 <button
                                   type="button"
                                   class="btn waves-effect waves-light btn-sm btn-info text-white"
+                                  data-bs-toggle="modal"
+                                  data-bs-target="#exampleModal1"
+                                  data-whatever="@fat"
+                                >
+                                  <i class="mdi mdi-eye"></i>
+                                  View
+                                </button>
+                              </td>
+                            </tr>
+                            <tr>
+                              <!-- <td><label><input type="checkbox"><span class="sr-only"> Select
+                                                                    Row</span></label></td> -->
+                              <td>System Architect</td>
+                              <td>Tiger Nixon</td>
+
+                              <td>level</td>
+                              <td>Active</td>
+                              <td>
+                                <button
+                                  type="button"
+                                  class="btn waves-effect waves-light btn-sm btn-info text-white"
+                                  data-bs-toggle="modal"
+                                  data-bs-target="#exampleModal1"
+                                  data-whatever="@fat"
                                 >
                                   <i class="mdi mdi-eye"></i>
                                   View
@@ -2778,19 +3594,34 @@
                                   Edit
                                 </button>
                               </td>
-                            </tr>
-                            <tr>
-                              <td>ABC</td>
-                              <td>xyz</td>
-                              <td>86,000</td>
-                              <td>Closed</td>
-                              <td>15</td>
-                              <td>123</td>
-
                               <td>
                                 <button
                                   type="button"
                                   class="btn waves-effect waves-light btn-sm btn-info text-white"
+                                  data-bs-toggle="modal"
+                                  data-bs-target="#exampleModal1"
+                                  data-whatever="@fat"
+                                >
+                                  <i class="mdi mdi-eye"></i>
+                                  View
+                                </button>
+                              </td>
+                            </tr>
+                            <tr>
+                              <!-- <td><label><input type="checkbox"><span class="sr-only"> Select
+                                                                    Row</span></label></td> -->
+                              <td>System Architect</td>
+                              <td>Tiger Nixon</td>
+
+                              <td>level</td>
+                              <td>Active</td>
+                              <td>
+                                <button
+                                  type="button"
+                                  class="btn waves-effect waves-light btn-sm btn-info text-white"
+                                  data-bs-toggle="modal"
+                                  data-bs-target="#exampleModal1"
+                                  data-whatever="@fat"
                                 >
                                   <i class="mdi mdi-eye"></i>
                                   View
@@ -2803,19 +3634,34 @@
                                   Edit
                                 </button>
                               </td>
-                            </tr>
-                            <tr>
-                              <td>ABC</td>
-                              <td>xyz</td>
-                              <td>40,000</td>
-                              <td>Open</td>
-                              <td>10</td>
-                              <td>100</td>
-
                               <td>
                                 <button
                                   type="button"
                                   class="btn waves-effect waves-light btn-sm btn-info text-white"
+                                  data-bs-toggle="modal"
+                                  data-bs-target="#exampleModal1"
+                                  data-whatever="@fat"
+                                >
+                                  <i class="mdi mdi-eye"></i>
+                                  View
+                                </button>
+                              </td>
+                            </tr>
+                            <tr>
+                              <!-- <td><label><input type="checkbox"><span class="sr-only"> Select
+                                                                    Row</span></label></td> -->
+                              <td>System Architect</td>
+                              <td>Tiger Nixon</td>
+
+                              <td>level</td>
+                              <td>Active</td>
+                              <td>
+                                <button
+                                  type="button"
+                                  class="btn waves-effect waves-light btn-sm btn-info text-white"
+                                  data-bs-toggle="modal"
+                                  data-bs-target="#exampleModal1"
+                                  data-whatever="@fat"
                                 >
                                   <i class="mdi mdi-eye"></i>
                                   View
@@ -2828,19 +3674,34 @@
                                   Edit
                                 </button>
                               </td>
-                            </tr>
-                            <tr>
-                              <td>ABC</td>
-                              <td>xyz</td>
-                              <td>86,000</td>
-                              <td>Closed</td>
-                              <td>15</td>
-                              <td>123</td>
-
                               <td>
                                 <button
                                   type="button"
                                   class="btn waves-effect waves-light btn-sm btn-info text-white"
+                                  data-bs-toggle="modal"
+                                  data-bs-target="#exampleModal1"
+                                  data-whatever="@fat"
+                                >
+                                  <i class="mdi mdi-eye"></i>
+                                  View
+                                </button>
+                              </td>
+                            </tr>
+                            <tr>
+                              <!-- <td><label><input type="checkbox"><span class="sr-only"> Select
+                                                                    Row</span></label></td> -->
+                              <td>System Architect</td>
+                              <td>Tiger Nixon</td>
+
+                              <td>level</td>
+                              <td>Active</td>
+                              <td>
+                                <button
+                                  type="button"
+                                  class="btn waves-effect waves-light btn-sm btn-info text-white"
+                                  data-bs-toggle="modal"
+                                  data-bs-target="#exampleModal1"
+                                  data-whatever="@fat"
                                 >
                                   <i class="mdi mdi-eye"></i>
                                   View
@@ -2851,125 +3712,184 @@
                                 >
                                   <i class="mdi mdi-pencil"></i>
                                   Edit
+                                </button>
+                              </td>
+                              <td>
+                                <button
+                                  type="button"
+                                  class="btn waves-effect waves-light btn-sm btn-info text-white"
+                                  data-bs-toggle="modal"
+                                  data-bs-target="#exampleModal1"
+                                  data-whatever="@fat"
+                                >
+                                  <i class="mdi mdi-eye"></i>
+                                  View
+                                </button>
+                              </td>
+                            </tr>
+                            <tr>
+                              <!-- <td><label><input type="checkbox"><span class="sr-only"> Select
+                                                                    Row</span></label></td> -->
+                              <td>System Architect</td>
+                              <td>Tiger Nixon</td>
+
+                              <td>level</td>
+                              <td>Active</td>
+                              <td>
+                                <button
+                                  type="button"
+                                  class="btn waves-effect waves-light btn-sm btn-info text-white"
+                                  data-bs-toggle="modal"
+                                  data-bs-target="#exampleModal1"
+                                  data-whatever="@fat"
+                                >
+                                  <i class="mdi mdi-eye"></i>
+                                  View
+                                </button>
+                                <button
+                                  type="button"
+                                  class="btn waves-effect waves-light btn-sm btn-info text-white"
+                                >
+                                  <i class="mdi mdi-pencil"></i>
+                                  Edit
+                                </button>
+                              </td>
+                              <td>
+                                <button
+                                  type="button"
+                                  class="btn waves-effect waves-light btn-sm btn-info text-white"
+                                  data-bs-toggle="modal"
+                                  data-bs-target="#exampleModal1"
+                                  data-whatever="@fat"
+                                >
+                                  <i class="mdi mdi-eye"></i>
+                                  View
+                                </button>
+                              </td>
+                            </tr>
+                            <tr>
+                              <!-- <td><label><input type="checkbox"><span class="sr-only"> Select
+                                                                    Row</span></label></td> -->
+                              <td>System Architect</td>
+                              <td>Tiger Nixon</td>
+
+                              <td>level</td>
+                              <td>Active</td>
+                              <td>
+                                <button
+                                  type="button"
+                                  class="btn waves-effect waves-light btn-sm btn-info text-white"
+                                  data-bs-toggle="modal"
+                                  data-bs-target="#exampleModal1"
+                                  data-whatever="@fat"
+                                >
+                                  <i class="mdi mdi-eye"></i>
+                                  View
+                                </button>
+                                <button
+                                  type="button"
+                                  class="btn waves-effect waves-light btn-sm btn-info text-white"
+                                >
+                                  <i class="mdi mdi-pencil"></i>
+                                  Edit
+                                </button>
+                              </td>
+                              <td>
+                                <button
+                                  type="button"
+                                  class="btn waves-effect waves-light btn-sm btn-info text-white"
+                                  data-bs-toggle="modal"
+                                  data-bs-target="#exampleModal1"
+                                  data-whatever="@fat"
+                                >
+                                  <i class="mdi mdi-eye"></i>
+                                  View
+                                </button>
+                              </td>
+                            </tr>
+                            <tr>
+                              <!-- <td><label><input type="checkbox"><span class="sr-only"> Select
+                                                                    Row</span></label></td> -->
+                              <td>System Architect</td>
+                              <td>Tiger Nixon</td>
+
+                              <td>level</td>
+                              <td>Active</td>
+                              <td>
+                                <button
+                                  type="button"
+                                  class="btn waves-effect waves-light btn-sm btn-info text-white"
+                                  data-bs-toggle="modal"
+                                  data-bs-target="#exampleModal1"
+                                  data-whatever="@fat"
+                                >
+                                  <i class="mdi mdi-eye"></i>
+                                  View
+                                </button>
+                                <button
+                                  type="button"
+                                  class="btn waves-effect waves-light btn-sm btn-info text-white"
+                                >
+                                  <i class="mdi mdi-pencil"></i>
+                                  Edit
+                                </button>
+                              </td>
+                              <td>
+                                <button
+                                  type="button"
+                                  class="btn waves-effect waves-light btn-sm btn-info text-white"
+                                  data-bs-toggle="modal"
+                                  data-bs-target="#exampleModal1"
+                                  data-whatever="@fat"
+                                >
+                                  <i class="mdi mdi-eye"></i>
+                                  View
+                                </button>
+                              </td>
+                            </tr>
+                            <tr>
+                              <!-- <td><label><input type="checkbox"><span class="sr-only"> Select
+                                                                    Row</span></label></td> -->
+                              <td>System Architect</td>
+                              <td>Tiger Nixon</td>
+
+                              <td>level</td>
+                              <td>Active</td>
+                              <td>
+                                <button
+                                  type="button"
+                                  class="btn waves-effect waves-light btn-sm btn-info text-white"
+                                  data-bs-toggle="modal"
+                                  data-bs-target="#exampleModal1"
+                                  data-whatever="@fat"
+                                >
+                                  <i class="mdi mdi-eye"></i>
+                                  View
+                                </button>
+                                <button
+                                  type="button"
+                                  class="btn waves-effect waves-light btn-sm btn-info text-white"
+                                >
+                                  <i class="mdi mdi-pencil"></i>
+                                  Edit
+                                </button>
+                              </td>
+                              <td>
+                                <button
+                                  type="button"
+                                  class="btn waves-effect waves-light btn-sm btn-info text-white"
+                                  data-bs-toggle="modal"
+                                  data-bs-target="#exampleModal1"
+                                  data-whatever="@fat"
+                                >
+                                  <i class="mdi mdi-eye"></i>
+                                  View
                                 </button>
                               </td>
                             </tr>
                           </tbody>
                         </table>
                       </div>
-                    </div>
-
-
-                    <div
-                      class="tab-pane fade"
-                      id="pills-Report"
-                      role="tabpanel"
-                      aria-labelledby="pills-Report-tab"
-                    >
-<div class="row">
-    <div class="col-md-5">
-        <p>Highest to lowest revenue report : </p>
-    </div>
-    <div class="col-md-2">
-        <button class="btn btn-info">View</button>
-    </div>
-    <div class="col-md-2">
-        <button class="btn btn-info">Download</button>
-    </div>
-    <div class="col-md-3">
-    </div>
-
-    <div class="col-md-5">
-        <p>Monthly (Mar'21-mar'22) revenue report : </p>
-    </div>
-    <div class="col-md-2">
-        <button class="btn btn-info">View</button>
-    </div>
-    <div class="col-md-2">
-        <button class="btn btn-info">Download</button>
-    </div>
-    <div class="col-md-3">
-    </div>
-
-    <div class="col-md-5">
-        <p>Yearly (Last 5 Years) revenue report : </p>
-    </div>
-    <div class="col-md-2">
-        <button class="btn btn-info">View</button>
-    </div>
-    <div class="col-md-2">
-        <button class="btn btn-info">Download</button>
-    </div>
-    <div class="col-md-3">
-    </div>
-
-    <div class="col-md-5">
-        <p>Level 1 (Top Level) revenue report : </p>
-    </div>
-    <div class="col-md-2">
-        <button class="btn btn-info">View</button>
-    </div>
-    <div class="col-md-2">
-        <button class="btn btn-info">Download</button>
-    </div>
-    <div class="col-md-3">
-    </div>
-
-    
-    <div class="col-md-5">
-        <p>Level 2 (Top Level) revenue report : </p>
-    </div>
-    <div class="col-md-2">
-        <button class="btn btn-info">View</button>
-    </div>
-    <div class="col-md-2">
-        <button class="btn btn-info">Download</button>
-    </div>
-    <div class="col-md-3">
-    </div>
-
-    
-    <div class="col-md-5">
-        <p>Level 3 (Top Level) revenue report : </p>
-    </div>
-    <div class="col-md-2">
-        <button class="btn btn-info">View</button>
-    </div>
-    <div class="col-md-2">
-        <button class="btn btn-info">Download</button>
-    </div>
-    <div class="col-md-3">
-    </div>
-
-    
-    <div class="col-md-5">
-        <p>Level wise (Top Level) revenue report : </p>
-    </div>
-    <div class="col-md-2">
-        <button class="btn btn-info">View</button>
-    </div>
-    <div class="col-md-2">
-        <button class="btn btn-info">Download</button>
-    </div>
-    <div class="col-md-3">
-    </div>
-
-    
-    <div class="col-md-5">
-        <p>Active Offers revenue report : </p>
-    </div>
-    <div class="col-md-2">
-        <button class="btn btn-info">View</button>
-    </div>
-    <div class="col-md-2">
-        <button class="btn btn-info">Download</button>
-    </div>
-    <div class="col-md-3">
-    </div>
-</div>
-
-                    <!-- <p>Highest to lowest revenue report : <button>View</button><button>Download</button></p> -->
-
                     </div>
                   </div>
                 </div>
@@ -3005,27 +3925,27 @@
     <script src="node_modules/datatables.net-bs4/js/dataTables.responsive.min.js"></script>
     <script>
       $(function () {
-        $("#myTable").DataTable();
-        var table = $("#example").DataTable({
+        $('#myTable').DataTable()
+        var table = $('#example').DataTable({
           columnDefs: [
             {
               visible: false,
               targets: 2,
             },
           ],
-          order: [[2, "asc"]],
+          order: [[2, 'asc']],
           displayLength: 25,
           drawCallback: function (settings) {
-            var api = this.api();
+            var api = this.api()
             var rows = api
               .rows({
-                page: "current",
+                page: 'current',
               })
-              .nodes();
-            var last = null;
+              .nodes()
+            var last = null
             api
               .column(2, {
-                page: "current",
+                page: 'current',
               })
               .data()
               .each(function (group, i) {
@@ -3035,14 +3955,14 @@
                     .before(
                       '<tr class="group"><td colspan="5">' +
                         group +
-                        "</td></tr>"
-                    );
-                  last = group;
+                        '</td></tr>',
+                    )
+                  last = group
                 }
-              });
+              })
           },
-        });
-      });
+        })
+      })
     </script>
   </body>
 </html>
